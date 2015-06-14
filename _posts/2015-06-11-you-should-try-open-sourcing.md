@@ -32,7 +32,7 @@ I remember having some friends who started developing apps for iOS as well and t
 
 > It’s something really worth to try if you’re a Developer and you haven’t done it before.
 
-### Why contribute with Open Source projects helps you as a developer?
+### Why contributing with Open Source projects helps you as a developer?
 I said that it helps to developers but some of you might be thinking why?. These are some points I figured out after creating some Open Source libraries:
 
 - **Think about code structure**: Most of the times we’re constrained by defined patterns that come from the project itself, or maybe the language. **We code for a product** and forget about the code structure. The important fact there is coding a feature, or add a fix there that helps to solve this other bug. If you work in a team this might be a little bit different but if you work as a Freelance it’s something common. When you work on a library others developer are going to use it. The interface has to be clear, the code has to be well structured, otherwise they won’t be able to use “your product”. Before starting coding you’ll analyze your library requirements, how you would use that library if you were a developer and then design the core structure. I feel tempted to not follow these steps when I work for a project which is not a library. **In my last project I’ve bundled the core business logic in modules, for example for 8fit, I called it EFKit, or EFWatchKit for the Apple Watch code** It helps me to think on these code as a module that my main project depends on.
