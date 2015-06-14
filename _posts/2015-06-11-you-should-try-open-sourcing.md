@@ -33,36 +33,29 @@ Since then I’ve developed different tools in languages like Objective-C, Swift
 It’s something really worth to try if you’re a Developer and you haven’t done it before.
 
 ### Why contribute with Open Source projects helps you as a developer?
-I said that it helps as a developers but some of you might be thinking why. I will give you some reasons why I think it’s something helpful for developers:
+I said that it helps as a developers but some of you might be thinking why?. These are some points I figured out after creating some Open Source libraries:
 
-- **Think about code structure**: Most of the times we’re constrained by defined patterns that come from the project itself, or maybe the language. **We code for a product** and forget about the code structure. The important fact there is coding a feature, or add a fix there that helps to solve this other bug. If you work in a team this might be a little bit different but if you work as a Freelance it’s something common. When you work on a library others developer are going to use it. The interface has to be clear, the code has to be well structured, otherwise they won’t be able to use “your product”. Before starting coding you’ll analyze your library requirements, how you would use that library if you were a developer and then design the core structure. I feel tempted to not follow these steps when I work for a project which is not a library. **In my last projects I’ve bundled the core business logic in modules, for example for 8fit, I called it EFKit, or EFWatchKit for the Apple Watch code** It helps me to think on these code as a module that my main project depends on.
+- **Think about code structure**: Most of the times we’re constrained by defined patterns that come from the project itself, or maybe the language. **We code for a product** and forget about the code structure. The important fact there is coding a feature, or add a fix there that helps to solve this other bug. If you work in a team this might be a little bit different but if you work as a Freelance it’s something common. When you work on a library others developer are going to use it. The interface has to be clear, the code has to be well structured, otherwise they won’t be able to use “your product”. Before starting coding you’ll analyze your library requirements, how you would use that library if you were a developer and then design the core structure. I feel tempted to not follow these steps when I work for a project which is not a library. **In my last project I’ve bundled the core business logic in modules, for example for 8fit, I called it EFKit, or EFWatchKit for the Apple Watch code** It helps me to think on these code as a module that my main project depends on.
 - **Tests are important**: When you have an open source library published on Git developers will start contributing with it. They might not know about all the library and they want to just add an extra functionality. Do you know how easy it’s to introduce a regression there? Having everything tested ensures that nothing is broken and the project keeps stable.
-- **Versioning is also very important**: When you’ve others developers depending on your library you have to reflect the library changes through the versioning. I **recommend you to follow the [Semantic versioning][1]**. That way you can reflect big important changes in the library interface through major updates and use minor updates with small fixes.
+- **Versioning is also very important**: When you’ve othersdevelopers depending on your library you have to reflect the library changes through the versioning. I **recommend you to follow the [Semantic versioning][1]**. That way you can reflect big important changes in the library interface through major updates and use minor updates with small fixes.
 
-# MORE?
-# more?
-## 
-#### 
--
-- 
-- 
-[][2]a asdgasgsa 
+**Open Source opens your mind, and contributes to design cleaner and better code**
 
-### Things you have to keep in mind when you do it
-Have I convinced you? 
-- Documentation: 
-- Tests
-- Wiki page
-- Code structure
-- Code feedback
+### Things you have to keep in mind
+When you work an Open Source project that you are going to open to more people there’re some points that you don’t usually take care of but that you should if that project’s going to be opened to more people. These points help to get closer to the project and understand how it works. **You know how it works, or it components** because you have worked on that, but, what about the rest? Developers are your users and if you forget about these points, developers might not end up using your library. What are these points?:
+- **Documentation**: Code documentation is very important to understand the behaviour of classes/methods or other library components without digging into its implementation. Think about a method with multiple parameters, and a language not too stricter with types. How does the user know about the parameters you can pass to that method? If you’re using an strong typed language, great! but otherwise not documented code might lead to big headaches working with the library.
+- **Tests**: Do love testing?  You’ll end up doing. Testing is very important on Open Source projects because the more developers you have developing for the library the easier it’s to introduce a regression and that nobody detects it. It’s very important to have your project integrated with any **continuous integration** solution *(Travis, Jenkins, …)* Most of them are free for Open Source projects.
+- **Wiki page**: I hadn’t used Wiki pages until I created my first project on Github. There were a lot of things I had to explain and the README file was getting larger and larger. My recommendation is that if your project size is small enough just to explain it in one page of README, do it there. If the README becomes larger, move it to the Wiki, organize the Wiki in different pages and add a home reference page that links to them.
+- **Issues**: Enable your repo issues. Some developers disable them because they don’t want to hear about developers complaining about things working or because they don’t know how to use the library. After some libraries you’ll figure out that **issues is the communication channel between developers and you**. And something also important to keep in mind… Not all issues are valuable, don’t stress yourself trying to give a valid answer to all of them. You might find people asking for features that are impossible to support for the library that you designed. Think if it makes sense to add that feature, if it fits into the core code. After that design the feature and implement. Always **reference the issues** in your Pull Requests because it’s a good way to let the user know that you’re working on that.
+- **Contribution guidelines**: Luckily your library will become popular and more developers will contribute with the project. In that case having contribution guidelines will be helpful to avoid messy code in the future. Explain there the code style you’re using, how the project is structured and how you can contribute with that structure, what new proposals must include, for example, new PR must include *documented code*, *tests for that new feature*, *wiki page update*, …. It’ll save you time explaining developers the things they must fix in every PR. 
+- **Code structure**: Design first and then code. Think about how you would use that library, the public API you’ll like to find out in that library, and then start designing the core components behind that API. Your code must be scalable and reusable, think where the project might have new features in the future, and design it to support them. When we develop for a product we tend to not thing about code reusability and scalability (and we shouldn’t). If we don’t think that way the library will be usable now but it probably won’t after some months *(and you won’t be willing to keep supporting it, you’ll be conscious about not having done the things properly before)*
 
+Lastly and not less important, every Open Source project requires one thing, **compromise**. You’re building a product, you’re building a piece of code other projects depend on. I don’t know about any project that is self maintained. The project will have dependencies with system frameworks, or even with other libraries. Having dependencies mean that if these change the project will need some changes as well. If there’s no compromise with the project it’ll be unusable some months later *(unless you have a community that maintains it)*. An Open Source project **requires invested time**. The most common Open Source reference projects were built with a big community behind them. They started with a person having an idea, that was later supported by more and more developers that spent time to make it better and bigger.
 
-### Compromise (implement a library that you use in your projects)
+> If you’re thinking about building something Open Source, let me give a recommendation. Try to build something that **your project depends on**. It’s a good way to feel a compromise with the library.
 
-### Recommendation
-- Started post
-
+Hope you have enjoyed the article. If you’re another Open Source geek and you would like to comment any other point you consider is important also when working for these projects, feel free to add a comment or contact me, [pepibumur@gmail.com][2].
 
 
 [1]:	http://semver.org/ "Semanting Versioning"
-[2]:	asdgas "asga"
+[2]:	mailto://pepibumur@gmail.com
