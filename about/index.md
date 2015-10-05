@@ -15,6 +15,8 @@ The summer of 2013 I joined **Redbooth** as iOS Developer and I improved my skil
 
 I joined **8fit** in September 2014 as a Mobile Developer. I contributed with native features in Java/Objective-C/Swift and since then we've been moving the project to native (the project base is based on web technologies). I'm currently leading the Mobile team and coordinating the migration to native and the integration with QA and release cycles. I'm also improving my leadership skills.
 
+In November 2015 I start a new adventure with **SoundCloud** as a Mobile Engineer
+
 All these years as a developer I've also created Open Source projects in different languages. All of them are published in Github with their respective documentation, tests, an support through issues.
 
 ## Skills
