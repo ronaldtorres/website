@@ -3,6 +3,10 @@ PPinera website
 **Template used:** Minimal mistakes, is a two column responsive Jekyll theme perfect for powering your GitHub hosted blog. 
 http://mmistakes.github.io/minimal-mistakes/theme-setup/
 
+## Posts backlog
+- Framework oriented programming
+- Conforming Swift protocols
+
 ### Test locally
 If you want to test the blog locally you can do it easily with:
 
