@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Implementing a Collection Property for ReactiveCocoa
-excerpt: "These are the steps I followed to create a Collection Property for ReactiveCocoa. Very useful if you want to get events about changes produced in a collection"
+title: Implementing a Mutable Collection Property for ReactiveCocoa
+excerpt: "These are the steps I followed to create a Mutable Collection Property for ReactiveCocoa. Very useful if you want to get events about changes produced in a collection"
 modified: 2015-10-14
 tags: [reactivecocoa, reactive, cocoa, stream, signals]
 comments: true
@@ -114,3 +114,41 @@ When you work with collections in your view it's very complicated to have granul
 > What if we had this approach based on ReactiveCocoa, using Properties? Let's try to develop a MutableCollectionProperty
 
 *Note: I've created a repository where this new component has been implemented, [https://github.com/gitdoapp/RAC-MutableCollectionProperty](https://github.com/gitdoapp/RAC-MutableCollectionProperty). You can clone the repository and try it on your environment*
+
+### RAC-MutableCollectionProperty
+
+`MutableCollectionProperty` is a ReactiveCocoa property that notifies about the changes that are produced in an internal collection. It exposes Swift array methods to modify collections in order to redirect these changes to the attached subscribers as shown in the example below:
+
+{% highlight swift %}
+let property: MutableCollectionProperty<String> = MutableCollectionProperty(["test1", "test2"])
+property.changesProducer.startWithNext { [weak self] next in
+  case .StartChange:
+    self?.tableView.beginUpdates()
+  case .Insertion(let index, let element):
+    self?.tableView.insertRowsAtIndexPaths([NSIndexPath(row: index, section: 0)], withRowAnimation: .Automatic)
+  case .EndChange:
+    self?.tableView.beginUpdates()
+  default: break
+}
+property.append("test3")
+property.append("test4"s)
+{% endhighlight %}
+
+Every sequence of changes is preceded by an event `StartChange` and ends with a `EndChange`. It allows multiple changes together and set the view which is going to reflect these changes in an "update" state. The methods exposed by the property are:
+
+{% highlight swift %}
+public func removeFirst()
+public func removeLast()
+public func removeAll()
+public func removeAtIndex(index: Int)
+public func append(element: T)
+public func appendContentsOf(elements: [T])
+public func insert(newElement: T, atIndex index: Int)
+public func replace(subRange: Range<Int>, with elements: [T])
+{% endhighlight %}
+
+You can get this component from [here](https://github.com/gitdoapp/RAC-MutableCollectionProperty) and use it with ReactiveCocoa on your projects. I've already proposed the feature to the ReactiveCocoa team on this [PR](https://github.com/ReactiveCocoa/ReactiveCocoa/pull/2485) still waiting for response :).
+
+If you're interested on Reactive paradigms and you want to keep learning, I'm currently writing about about the use of Reactive in Swift apps using ReactiveCocoa. You follow the status [here](https://leanpub.com/functionalreactiveprogrammingswift)
+
+> If you found any bug or you would like to comment something about Reactive or this port in particular, feel free to drop me a line, pepibumur@gmail.com. We're using this an another Reactive concepts on [GitDo](www.gitdo.io)
