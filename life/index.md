@@ -92,3 +92,13 @@ image:
 > Recuerda que sobre todo al principio, la motivación es una montaña rusa: va y viene con mucha facilidad.
 
 > Lánzate solo si estás muy seguro de que es lo que realmente quieres. Si no te imaginas más feliz haciendo otra cosa. Tu gasolina inicial va a ser el optimismo: asegúrate de tener el depósito lleno.
+
+#### Louis Zamperini
+
+> All I want to tell young people is that you're not going to be anything in life unless you learn to commit to a goal. You have to reach deep within yourself to see if you are willing to make the sacrifices.
+
+> I'd made it this far and refused to give up because all my life I had always finished the race.
+
+> One moment of pain is worth a lifetime of glory
+
+> You only have one life. You should never be too busy to save it.
