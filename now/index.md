@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Life
-tags: [life, experience, todo]
+title: Now
+tags: [now, experience, todo]
 modified: 2014-10-11T20:53:07.573882-04:00
 comments: true
 image:
@@ -13,10 +13,10 @@ image:
 ## Current goals
 
 ### Launch GitDo
-- **How?**: 
-	- Investing 1 hour per day 
+- **How?**:
+	- Investing 1 hour per day
 	- Investing hours during the weekend
-- **Why?**: 
+- **Why?**:
 	- Have experience to launch something useful for the people
 	- Feel you're helping a community solving a necessity
 
@@ -43,7 +43,7 @@ image:
 ### Be more opened
 - **How?**:
 	- Try to talk with someone you don't know every day
-- **Why?**: 
+- **Why?**:
 	- Being more opened leads to meet more people easily.
 	- You don't get blocked in situations where you've to exchange some words with another person.
 
