@@ -9,7 +9,7 @@ image:
   credit: Pedro P.
   creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
 ---
-I'm Pedro Piñera Buendía, Electronic & Communication Engineer and Mobile Developer currently working on Redbooth. I've been working with mobile technologies from 2010 when I started developing apps for iOS, since then I've relesed applications such as **Solare** to help people to protect them from the sun, **yonkiPOPS**, an app that offers film recommendations to the users, **Movi time** to let you know about the cinemas in your area and their schedules, ...
+I'm Pedro Piñera Buendía, Electronic & Communication Engineer and Mobile Developer currently working at SoundCloud. I've been working with mobile technologies from 2010 when I started developing apps for iOS, since then I've relesed applications such as **Solare** to help people to protect them from the sun, **yonkiPOPS**, an app that offers film recommendations to the users, **Movi time** to let you know about the cinemas in your area and their schedules, ...
 
 The summer of 2013 I joined **Redbooth** as iOS Developer and I improved my skills there focusing in aspects like API interactions, integrations, data persistence or view management amongst other. I've been helping the Redbooth **Android** team too and I learnt then the fundamentals of Android development. Moreover learnt about **Ruby** implementing some libraries and controllers with it.
 
@@ -84,7 +84,7 @@ Ending 2014 I left Redbooth to join 8fit, founded by Pablo Villalba, which found
 - **Swift and Objective-C playing together:** Start using Swift in your Objective-C projects. Avoid some headaches with these useful tips and advices for the communication layer between your Objective-C code base and your future Swift implementations [Link](https://speakerdeck.com/pepibumur/swift-and-objective-c-playing-together)
 
 *Most of my posts were in the old website. I'll be publishing new ones soon*
- 
+
 <br><br>
 <a href="{{ site.url }}/assets/others/english_cv.pdf" class="btn">Get my CV</a>
 
