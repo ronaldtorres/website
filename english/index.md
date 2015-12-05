@@ -35,7 +35,7 @@ We use swag to refer a bag where you carry for example your clothes for the gym.
 - I was going to buy a swag for the gym but I ended up using always the same bag that I use for going to work.
 
 **Phrasal verb: Pull out**
-Pull out means extracting something form its place, for example we can use pull-out to refer we're extracting a teeth. We can also pull of to mean that the train is leaving the station, the traing pulled out on time. And finally it can also be used to mean that we're stopping taking part in an activity.
+Pull out means extracting something form its place, for example we can use pull-out to refer we're extracting a teeth. We can also pull of to mean that the train is leaving the station, the traing pulled out on time. And finally it can also be used to mean that we're stopping taking part in an activity or removing your soldiers from a given area.
 
 *According to newspaper reports, Barack Obama has said that America will pull out of Afghanistan in 2011.*
 
