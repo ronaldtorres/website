@@ -1,15 +1,15 @@
 ---
 layout: post
-title: Writing my first technical book using Lean Publishing: Functional Reactive Programming in Swift
-excerpt: I explained how I decided to start writing my first book and the tools I decided to use to follow the lean publishing principle
+title: "Writing my first technical book using Lean Publishing: Functional Reactive Programming in Swift"
+excerpt: "I explained how I decided to start writing my first book and the tools I decided to use to follow the lean publishing principle"
 modified: 2015-12-06
-tags: [lean, lean publishing, leanpub, reactive, reactivecocoa]
+tags: [lean, leanpub, reactive, reactivecocoa]
 comments: true
 image:
-  feature: headers/apple_watch.jpg
+  feature: headers/reactive-book.jpg
   credit: Pedro Piñera
 sitemap   :
-  priority : 0.5
+  priority : 1.0
   isfeatured : 0
 ---
 
@@ -26,6 +26,7 @@ That concept might sound similar to those who have experience with startups. At 
 - They’ll also make some suggestions so you can *improve your content* or organise it on a different way that makes more sense for their understanding.
 - If the content is not very interesting enough they’ll let you know and you can then *pivot* your book and offer a content that readers would pay for.
 
+</br>
 ![]({{site.url}}/images/posts/reactive-overview.png)
 
 ## Book hosting and edition language: Github and Markdown
@@ -34,6 +35,7 @@ I got used to using Markdown for text edition, I use it in my projects, reposito
 
 I also added in the same repository an **example project** that links book examples with coded examples in this project. I explain in the repository how to fetch the project and have it working locally. Another useful feature that will use from Github are **issues**. I’ll use it for direct feedback from users, they can report anything they found there and I can keep a track of things that are pending to be done. The book can also be versioned, why not? Github **releases** is the perfect solution for that, every new iteration of the book can be versioned with a new release in the repository.
 
+</br>
 ![]({{site.url}}/images/posts/reactive-github.png)
 
 ## Edition tool: Sublime Text
@@ -42,6 +44,7 @@ I tried multiple markdown editors that render your Markdown in real time but I e
 
 Sublime is perfect for me, it is fast, whenever you need a Markdown preview you can generate it with [this extension](https://github.com/revolunet/sublimetext-markdown-preview) and it colours your markdown syntax. And if you’re a programmer I’m sure you’re used to use it. Using the language you usually use for documentation and the same editor you also use for coding is perfect for programmers.
 
+</br>
 ![]({{site.url}}/images/posts/reactive-sublime.png)
 
 ## Organisation: Trello
