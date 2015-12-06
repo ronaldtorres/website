@@ -21,21 +21,33 @@ I thougt that a good way to achieve that is forcing myself to stick to the langu
 ## 7th December 2015
 
 **Stealth**
+<br>
 *Spanish translation 1: Sigilo, Cautela*
+<br>
 *Spanish translation 2: Furtivo, Sigiloso*
+<br>
 We're use it as and noun for an action or a movement that is is executed cautiously. For example the silence and stealth of a hungry cat, or the stealth of a robber going into a house. We can also use it as an adjective to refer that the action was executed in an sneaky way and without detection. The *adverb* of stealth is *stealthily* and we can use it with verbs, like for example the robber broke into the house stealthily.
 
 **Advocate**
+<br>
 *Spanish definition 1: Públicamente recomendar o apoyar*
+<br>
 *Spanish definition 2: Defensor*
+<br>
 We use advocate as a ver when we mean that we're supporting a particular cause or policy, for example we can be advocating the prohibition of bullfights, or we can also advocate the economic reform that the new polytic group is proposing. The person that advocates is called advocate, and we use generally with this structure *advocate of CAUSE*.
 
 **Break down**
+<br>
 *Spanish translation 1: Averiarse, romperse*
+<br>
 *Spanish translation 2: Llorar, romper a llorar*
+<br>
 *Spanish translation 3: Colapsar, hundiers*
+<br>
 *Spanish translation 4: Tirar abajo, derribar*
+<br>
 *Spanish translation 5: Descomponer, desglosar*
+<br>
 
 The down preposition next to the verb break adds the sense of going down, if we thinkg for example if an electronic device that is working, break down means that the device is not working anymore, but if we think on a building, and the building breaks down, it means that the building was demolished. From the personal perspective, if someone breaks down it means that the person can't support the situation and he/she starts crying, we could say that the  person is somehow destroyed by what's happening. 
 Finally the term is also use to say that we're splitting something in small pieces like for example, we're breaking down an article in multiples subtopics. 
