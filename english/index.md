@@ -27,7 +27,7 @@ I thougt that a good way to achieve that is forcing myself to stick to the langu
 *Spanish translation 2: Furtivo, Sigiloso*
 <br>
 We're use it as and noun for an action or a movement that is is executed cautiously. For example the silence and stealth of a hungry cat, or the stealth of a robber going into a house. We can also use it as an adjective to refer that the action was executed in an sneaky way and without detection. The *adverb* of stealth is *stealthily* and we can use it with verbs, like for example the robber broke into the house stealthily.
-
+<br><br>
 **Advocate**
 <br>
 *Spanish definition 1: Públicamente recomendar o apoyar*
@@ -35,7 +35,7 @@ We're use it as and noun for an action or a movement that is is executed cautiou
 *Spanish definition 2: Defensor*
 <br>
 We use advocate as a ver when we mean that we're supporting a particular cause or policy, for example we can be advocating the prohibition of bullfights, or we can also advocate the economic reform that the new polytic group is proposing. The person that advocates is called advocate, and we use generally with this structure *advocate of CAUSE*.
-
+<br><br>
 **Break down**
 <br>
 *Spanish translation 1: Averiarse, romperse*
