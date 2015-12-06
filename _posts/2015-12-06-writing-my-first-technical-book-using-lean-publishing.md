@@ -1,20 +1,20 @@
 ---
 layout: post
 title: Writing my first technical book using Lean Publishing: Functional Reactive Programming in Swift
-excerpt: "I explained how I decided to start writing my first book and the tools I decided to use to follow the lean publishing principle"
+excerpt: I explained how I decided to start writing my first book and the tools I decided to use to follow the lean publishing principle
 modified: 2015-12-06
 tags: [lean, lean publishing, leanpub, reactive, reactivecocoa]
 comments: true
 image:
-  feature: headers/earpods.jpg
+  feature: headers/apple_watch.jpg
   credit: Pedro Piñera
 sitemap   :
   priority : 0.5
   isfeatured : 0
 ---
 
-![]({{site.url}}/images/posts/reactive-header.png)
-
+<!-- ![]({{site.url}}/images/posts/reactive-header.png)
+ -->
 A few months ago I started writing my first book, [Functional Reactive Programming in Swift](https://leanpub.com/functionalreactiveprogrammingswift). I’ve always loved teaching and sharing knowledge but never thought I would be able to write a book like this one I’m writing. When I first heard about Reactive programming I didn’t find any reason why I should start using them in my projects, but with the time, I fell in love with the programming paradigm and I was able to experiment the advantages on my own. My loved increased when [ReactiveCocoa](https://github.com/reactivecocoa/reactivecocoa) the framework I was using for Reactive released its first version with **Swift compatibility**, version 3.0. It supposed introducing a new set of concepts that used the cool features of Swift, the one I liked most was the typed Signals/SignalProducers and the fluent interface. From the data layer to the presentation one, I used ReactiveCocoa everywhere. It became my indispensable framework in every new project I started. A lot of developers were wondering about the advantages of Reactive and Functional programming in their projects and most of them didn’t see them at all. In case of Reactive Programming I noticed a lack of real examples that motivate developers to use it. It was then when I thought writing a book it could be a great idea.
 
 ## The platform: Leanpub
