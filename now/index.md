@@ -108,3 +108,7 @@ image:
 
 > Imagine life as a game in which you are juggling some five balls in the air. You name them — Work, Family, Health, Friends and Spirit and you’re keeping all of these in the Air. You will soon understand that work is a rubber ball. If you drop it, it will bounce back.
 > But the other four Balls — Family, Health, Friends and Spirit — are made of glass. If youdrop one of these; they will be irrevocably scuffed, marked, nicked, damaged or evenshattered. They will never be the same.
+
+#### Albert Einstein
+
+> Make everything as simple as possible, but not simpler
