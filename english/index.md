@@ -18,6 +18,10 @@ I thougt that a good way to achieve that is forcing myself to stick to the langu
 
 > Every day learn a 2 new concepts and a phrasal verb
 
+## 7th December 2015
+
+**Stealth**
+
 ## 6th December 2015
 
 **Hitchhiker**
