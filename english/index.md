@@ -18,6 +18,27 @@ I thougt that a good way to achieve that is forcing myself to stick to the langu
 
 > Every day learn a 2 new concepts and a phrasal verb
 
+## 8th December 2015
+
+**Humble**
+<br>
+*Spanish translation 1: Humilde*
+I read this word by the first time on [this article](https://medium.com/desk-of-van-schneider/the-secret-is-the-beginning-354091434f6d#.229zdtewp) by *Tobias van Scheider*. When we say that someone is humble we mean that the person is happy with enough things and it's always willing to help. Being humble means that you just need a few things have happiness, you're not an ambitious person. In the article it's used in the following sentence:
+
+> This has always been a gentle reminder for myself when I was busy putting other people on pedestals. It’s a reminder that everyone is human, everyone has the same **humble beginnings**.
+
+Tobias wants to say that when these people started their own projects and business they did it with a few resources, and with the time they were able to get more and get to the point where they're nowadays, *humble beginnings*.
+
+**Wealth**
+<br>
+*Spanish translation 1: Riqueza*
+If we think about health that refers to your body state, wealth refers to the economic situation instead. With wealth we refer all your material possessions and things that make you feel a rich people. These things can be money, a car, a house, ... When we want to say that a person has a good wealthy we can use the adjective *wealthy*.
+
+**Stand out**
+<br>
+*Spanish translation 1: Resaltar*
+This phrasal verb is synonymous of highlight. We could say that after the speech the president stood out all the huge effort its government team. We can also use stand out to refer that something is very much different from the rest like for example if we say that a student stands out it means that he/she is smarter than other students in the class, or if we say that a color stands out it means that compared with the rest it's more noticeable.
+
 ## 7th December 2015
 
 **Stealth**
@@ -49,8 +70,8 @@ We use advocate as a ver when we mean that we're supporting a particular cause o
 *Spanish translation 5: Descomponer, desglosar*
 <br>
 
-The down preposition next to the verb break adds the sense of going down, if we thinkg for example if an electronic device that is working, break down means that the device is not working anymore, but if we think on a building, and the building breaks down, it means that the building was demolished. From the personal perspective, if someone breaks down it means that the person can't support the situation and he/she starts crying, we could say that the  person is somehow destroyed by what's happening. 
-Finally the term is also use to say that we're splitting something in small pieces like for example, we're breaking down an article in multiples subtopics. 
+The down preposition next to the verb break adds the sense of going down, if we thinkg for example if an electronic device that is working, break down means that the device is not working anymore, but if we think on a building, and the building breaks down, it means that the building was demolished. From the personal perspective, if someone breaks down it means that the person can't support the situation and he/she starts crying, we could say that the  person is somehow destroyed by what's happening.
+Finally the term is also use to say that we're splitting something in small pieces like for example, we're breaking down an article in multiples subtopics.
 
 ## 6th December 2015
 
@@ -79,4 +100,3 @@ Pull out means extracting something form its place, for example we can use pull-
 *According to newspaper reports, Barack Obama has said that America will pull out of Afghanistan in 2011.*
 
 More information about pull out here: [Link](http://online-english-lessons.eu/wordpress/2010/01/phrasal-verb-pull-out/)
-
