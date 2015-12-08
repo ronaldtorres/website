@@ -34,7 +34,7 @@ Tobias wants to say that when these people started their own projects and busine
 *Spanish translation 1: Riqueza*
 If we think about health that refers to your body state, wealth refers to the economic situation instead. With wealth we refer all your material possessions and things that make you feel a rich people. These things can be money, a car, a house, ... When we want to say that a person has a good wealthy we can use the adjective *wealthy*.
 
-**Stand out**
+**Phrasal verb: Stand out**
 <br>
 *Spanish translation 1: Resaltar*
 This phrasal verb is synonymous of highlight. We could say that after the speech the president stood out all the huge effort its government team. We can also use stand out to refer that something is very much different from the rest like for example if we say that a student stands out it means that he/she is smarter than other students in the class, or if we say that a color stands out it means that compared with the rest it's more noticeable.
@@ -57,7 +57,7 @@ We're use it as and noun for an action or a movement that is is executed cautiou
 <br>
 We use advocate as a ver when we mean that we're supporting a particular cause or policy, for example we can be advocating the prohibition of bullfights, or we can also advocate the economic reform that the new polytic group is proposing. The person that advocates is called advocate, and we use generally with this structure *advocate of CAUSE*.
 <br><br>
-**Break down**
+**Phrasal verb: Break down**
 <br>
 *Spanish translation 1: Averiarse, romperse*
 <br>
