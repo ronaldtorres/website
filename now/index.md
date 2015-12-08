@@ -112,3 +112,9 @@ image:
 #### Albert Einstein
 
 > Make everything as simple as possible, but not simpler
+
+> That is the way to learn the most, that when you are doing something with such enjoyment that you don't notice that the time passes.
+
+#### Alan Cohen
+
+> There is virtue in work and there is virtue in rest.
