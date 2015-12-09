@@ -13,7 +13,8 @@ image:
 
 2. Nothing is impossible but the death. If you want to achieve something you have to visualize the path to reach that point and all the things you need to achieve it.
 
-3. We born alone and die alone, make sure
+3. Whenever you commit a mistake, understand why it happened and learn from it to avoid the same in the future. Getting nervous or in a bad mood doesn't really help.
+
 
 ## Quotes
 Here is a collection of quotes I've been saving because I liked them, because I felt myself reflected in the quote, or just because I thought it shared a great inspiring value:
