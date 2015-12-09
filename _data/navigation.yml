@@ -1,10 +1,5 @@
-# Site navigation links
-
 - title: About
   url: /about/
-
-- title: Github
-  url: https://github.com/pepibumur
 
 - title: Now
   url: /now/
@@ -20,3 +15,6 @@
 
 - title: English
   url: /english/
+
+- title: Learnings
+  url: /learnings/
