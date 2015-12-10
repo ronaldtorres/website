@@ -18,6 +18,32 @@ I thougt that a good way to achieve that is forcing myself to stick to the langu
 
 > Every day learn a 2 new concepts and a phrasal verb
 
+## 10th December 2015
+
+## 9th December 2015
+<br>
+**Spark:**
+<br>
+*Spanish translation 1: Chispas*
+*Spanish translation 2: Soltar chispas*
+*Spanish translation 3: Desencadenar, provocar (lead to)*
+We use spark if we're talking about electricity for example if two electricity cables are not properly connected the connection can *spark* or for example the blaze was started by a *spark* from the fire.
+
+**Swallow:**
+<br>
+*Spanish translation 1: Tragar*
+*Spanish translation 2: Tolerar, Aceptar*
+The meaning of Swallow is ingesting something (food, drink, ...), that's the literal meaning. I could say for example I swallowed the pill with a bit of water, otherwise it would have been impossible. The verb has also a figurative meaning, when you want to say that you have to ingest things that you can't stand, then you're accepting them. For example, even if I didn't agree with their proposal at all, I had to swallow it because I couldn't give my opinion.
+
+**Blunt:**
+<br>
+*Spanish translation 1: Desafilado*
+*Spanish translation 2: Desafilar*
+*Spanish translation 2: Directo/Franco/Terminante (figurativo)*
+
+Blunt is the antonymous of *sharp*. For example a knife has a sharp side that you use to cut vegetables (yous hould be careful with it) and it also has a blunt side to bruise the fruit.
+The word has also a figurative meaning when you're refering to someone who's very direct telling things, like for example, Sally's  blunt statement shocked her friends, they didn't expect that.
+
 ## 8th December 2015
 
 **Humble**
