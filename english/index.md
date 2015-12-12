@@ -18,7 +18,53 @@ I thougt that a good way to achieve that is forcing myself to stick to the langu
 
 > Every day learn a 2 new concepts and a phrasal verb
 
+# 6th - 11th December
+- Numb - Hint - Bring up - Diaper - Shiver - Show off - Spark - Swallow - Blunt - Humble - Wealth - Stand out - Stealth - Advocate - Break down - Hitchhiker - Swag - Pull out -
+
+## 11th December
+<br>
+**Numb:**
+<br>
+*Spanish translation 1: Entumecido, Adormecido (adjetivo)*
+*Spanish translation 2: Entumecer, adormecer (verbo)*
+We use numb to refer to that state where we're almost sleeping because for example our body is very tired or because we were anaesthetise by a doctor before an operation. The same word can be used as an adjective or as a verb. For example we could say: The dentist numbed my mouth before extracting my wisdom teeth, he didn't want me to suffer or feel anything.
+
+<br>
+**Hint:**
+<br>
+*Spanish translation 1: Pista*
+*Spanish translation 2: Indicio*
+Hint is synonymous of clue, for example we could find the dog because of the hints its legs were leaving when it was walking. You can use both 
+*Interesting forum thread explaining the differences between hint/cluet: [Link](http://forum.wordreference.com/threads/clue-vs-hint.803997/)*
+
+> Hint is an indirect indication or suggestion where as a clue is direct information given about a particular matter.
+
+<br>
+**Bring up:**
+<br>
+*Spanish translation 1: Sacar un tema*
+*Spanish translation 2: Criar*
+Used in conversations *bring up* something means you start talking about a particular topic that wasn't before in a conversation. For example in this Christmas dinner I've plans to bring up my new relationship my family don't know anything about. You can also use bring up when you mean that you educated a child since it was very young. For example, we could say that a couple adopted a chinese baby and they brought him up.s
+
 ## 10th December 2015
+<br>
+**Diaper:**
+<br>
+A diaper is a plastic element that we use with children to retain their droppings when they can't control them. We change them periodically when it starts smelling and then we relize that is time to do it. 
+
+<br>
+**Shiver**:
+<br>
+*Spanish translation 1: Tiritar*
+*Spanish translation 2: Escalofrío, temblor*
+Shiver is an unexpected action from your body when it feels cold. For example we could say I was shivering in the mountain yesterday because we forgot our coats, it was very cold over there.
+
+<br>
+**Show off**:
+<br>
+*Spanish translation 2: Jactarse, Presumir, Fanfarronear*
+If we use simply the verb show it means that we want someone to see something we have but when we add the *off* preposition it means that we're also proud of it and that's why we're showing it. Show off has a negative meaning and it can be use as a noun to refer to those people that like showing off. We say that these people are *show-off* people.
+
 
 ## 9th December 2015
 <br>
