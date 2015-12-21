@@ -45,7 +45,7 @@ I decided not to continue with the same codebase which was strongly inspired in 
 
 - **Fully Tested**: I wanted the library to be robust and the best way to ensure that is through unit tests. I ensured that every of the methods provided behaves as expected and that the designed storages don't throw unexpected errors that might cause instability in developers apps. Thanks to [Quick](https://github.com/quick/quick) and [Nimble](https://github.com/quick/nimble) for its great Swift testing and mocking frameworks.
 
-### Things learnt with SugarRecord
+### Things learned with SugarRecord
 
 - **Developers want an example project:** Event if you fill the README with a lot of examples they want to see a project working where you show all the things they can do with your library.
 - **Developers don't read**: Use *cursive*, **bold** or quotes. They won't read, they want to install it using `CocoaPods` and start using it. You'll find developers that even don't know anything about CoreData and think that the magic of your library is the only thing they have to learn.
