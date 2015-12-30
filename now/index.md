@@ -68,9 +68,6 @@ image:
 - Learn German
 - Learn Chinese
 
-<<<<<<< HEAD
-=======
-
 ## Wise/Inspiring words from people
 
 #### Fernando Cejas
@@ -116,4 +113,3 @@ image:
 #### Alan Cohen
 
 > There is virtue in work and there is virtue in rest.
->>>>>>> 8bf6014caf4211d5680ea0456aa5932f58639062
