@@ -32,11 +32,11 @@ When I first tried the torrent client I added some console logs in these callbac
 Guess what? It worked! *(included real device, not only simulator)*
 
 {% highlight swift %}
-PTTorrentStreamer.sharedStreamer().startStreamingFromFileOrMagnetLink("magnet-link", progress: { (status) -\> Void in
+PTTorrentStreamer.sharedStreamer().startStreamingFromFileOrMagnetLink("magnet-link", progress: { (status) -> Void in
    print("Status: \(status)")
-}, readyToPlay: { (url) -\> Void in
+}, readyToPlay: { (url) -> Void in
    print("Ready to play \(url)")
-}) { (error) -\> Void in
+}) { (error) -> Void in
    print("Error: \(error)")
 }
 {% endhighlight %}
