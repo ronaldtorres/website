@@ -1,23 +1,23 @@
 title:            Pedro Piñera
 locale:           en_US
-url:              http://127.0.0.1:4000
+# url:              http://127.0.0.1:4000
 url:              http://www.ppinera.es
 permalink:   date
 markdown:    kramdown
-highlighter: pygments
+highlighter: rouge
 sass:
   sass_dir: _sass
   style: compressed
 gems:
   - jekyll-sitemap
   - emoji_for_jekyll
-
+  - jekyll-gist
 kramdown:
   auto_ids: true
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  use_coderay: false
+  enable_coderay: false
 
 # Site owner
 owner:
