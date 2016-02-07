@@ -27,7 +27,7 @@ If you're working on Xcode projects, no matter if they're a company project, an 
 
 ### Where does the idea of normalized scripts come from?
 
-This idea comes originally from [Github](https://github.com). It was a few weeks ago when googling, I found this [blog post](http://githubengineering.com/scripts-to-rule-them-all/) from the GitHub engineering team. They realized that there're a set of repetitive tasks on any project that could be normalized in scripts. The decided to standarize these scripts and call it *Scripts to Rule Them All*. **What a brilliant idea**.
+This idea comes originally from [Github](https://github.com). It was a few weeks ago when googling, I found this [blog post](http://githubengineering.com/scripts-to-rule-them-all/) from the GitHub engineering team. They realized that thereis  a set of repetitive tasks on any project that could be normalized in scripts. The decided to stanrdize these scripts and call it *Scripts to Rule Them All*. **What a brilliant idea**.
 
 Thanks *GitHub* for the idea and *@jspahrsummers* for creating the equivalent version for Xcode projects.
 
