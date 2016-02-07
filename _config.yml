@@ -4,7 +4,7 @@ locale:           en_US
 url:              http://www.ppinera.es
 permalink:   date
 markdown:    kramdown
-highlighter: pygments
+highlighter: rouge
 sass:
   sass_dir: _sass
   style: compressed
