@@ -46,7 +46,7 @@ It's been a very passionate year, we're almost ready to launch the first iOS app
 
 I hadn't done it before, I had been part of teams already built. But this time, we had to find people, motivated people that would like to commit to the project because they liked the idea and the people they would be working with. We found our great designer [@vicenteborrell](https://twitter.com/vicenteborrell) who decided jump into the design world and being co-founder with us in the project. So far he has been making sure the quality of the product is the best ever and that there's not misaligned.
 
-With almost the first version of the app ready, we increased again our team in order to quickly expand to other platforms. [@nando](https://twitter.com/nandodelauni), [@luis](https://twitter.com/luismayoral) and [@pol](https://twitter.com/poolqf) incorporated the team. People we had worked with before, that knew about the project and also had been users of it. Experts in their areas and very motivated about being part of such project.
+With almost the first version of the app ready, we increased again our team in order to quickly expand to other platforms. [@nando](https://twitter.com/nandodelauni), [@luis](https://twitter.com/mayoral) and [@pol](https://twitter.com/poolqf) incorporated the team. People we had worked with before, that knew about the project and also had been users of it. Experts in their areas and very motivated about being part of such project.
 
 > There's nothing as seeing all your team together, discussing what's next, talking about how things are going or planning the next team trip.
 
