@@ -16,7 +16,7 @@ image:
 3. Whenever you commit a mistake, understand why it happened and learn from it to avoid the same in the future. Getting nervous or in a bad mood doesn't really help.
 
 
-## Quotes
+## Wise/Inspiring words from people
 Here is a collection of quotes I've been saving because I liked them, because I felt myself reflected in the quote, or just because I thought it shared a great inspiring value:
 
 
