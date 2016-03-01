@@ -56,3 +56,7 @@ Here is a collection of quotes I've been saving because I liked them, because I 
 #### Albert Einstein
 
 > Make everything as simple as possible, but not simpler
+
+#### Fritz Perls
+
+> I do my thing and you do your thing. I am not in this world to live up to your expectations, And you are not in this world to live up to mine. You are you, and I am I, and if by chance we find each other, it's beautiful. If not, it can't be helped. (Fritz Perls, "Gestalt Therapy Verbatim", 1969)
