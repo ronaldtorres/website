@@ -60,3 +60,31 @@ Here is a collection of quotes I've been saving because I liked them, because I 
 #### Fritz Perls [(Gestalt prayer)](https://en.wikipedia.org/wiki/Gestalt_prayer)
 
 > I do my thing and you do your thing. I am not in this world to live up to your expectations, And you are not in this world to live up to mine. You are you, and I am I, and if by chance we find each other, it's beautiful. If not, it can't be helped. (Fritz Perls, "Gestalt Therapy Verbatim", 1969)
+
+#### Love of Lesbian
+
+> Tal vez has pensadno en renunciar. You aún no.
+
+#### Charles Bukowski
+
+> Si vas a intentarlo, ve hasta el final.
+
+#### Muhammad Ali
+
+> No hay placer en las peleas pero algunas peleas fue un placer ganarlas.
+
+#### Flight Club
+
+> Esta es tu vida, se está acabando a cada instante.
+
+#### Horacio CAbilla
+
+> Ve tan rápido como puedas, y tan lento como debas
+
+#### Hunter S. Thompson
+
+- Que la muerte tiemble al recibirnos.
+
+#### Vetusta Morla
+
+- No hay colisión, ni ley, ni gravedad que te pueda hacer caer aunque te tiren a dar.
