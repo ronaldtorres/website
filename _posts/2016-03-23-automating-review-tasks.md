@@ -6,8 +6,8 @@ modified: 2016-03-23
 tags: [review, danger, pr, github]
 comments: true
 image:
-  feature: headers/command.jpg
-  credit: Photo by Jeremy Thomas
+  feature: headers/danger.jpg
+  credit: Photo by Ales Krivec
 sitemap   :
   priority : 1.0
   isfeatured : 0
@@ -115,3 +115,5 @@ These are just some examples of *checks* that we're using but the options are in
 ## Conclusion
 
 There're manual processes that are unavoidable, even though, tools like Fastlane & Danger are helping to automate the majority of them. When we're so focused on our projects we don't worry that much about the time we spend in repetitive tasks *(since we only think about developin)*. The time that we can spend on these tasks can be huge and it's worth to spend some time setting up either *Danger*, *Fastlane* and try to automate as many processes as you can.
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/252296239&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
