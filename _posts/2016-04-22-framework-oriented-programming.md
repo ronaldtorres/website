@@ -199,7 +199,7 @@ Select the `Persistency.framework` from the inspector and in the right menu chan
 
 ![Core Framework linking against the Persistency one](/images/posts/Framework-Location.png)
 
-> Note: You should see as Location `Persistency.framework`. If you got a different location it's because you didn't build the `Persistency` framework before and Xcode is unable to ind the Framework `Build Products` directory.
+> Note: You should see as Location `Persistency.framework`. If you got a different location it's because you didn't build the `Persistency` framework before **(for the platform you're linking against)** and Xcode is unable to ind the Framework `Build Products` directory.
 
 ### 5. Linking your app
 
