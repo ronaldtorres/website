@@ -46,7 +46,7 @@ We were taking advantage of reusable components that other developers where offe
 
 Our box seemed to be also tied to our external dependencies and we could live with it. The problem came up either when from the product perspective the company pushed the software engineers to have a *watchOS*, a *tvOS* or add a new application to the family. That new application was supposed to reuse most of the things were already implemented in the existing app.
 
-> Yes! that moment when someone sayd: Oh, actually it should be very straightforward since we should be able to reuse most of our code from the main app. *(And your face turned into a poem)*
+> Yes! that moment when someone said: Oh, actually it should be very straightforward since we should be able to reuse most of our code from the main app. *(And your face turned into a poem)*
 
 Our code bases were not ready to these big changes. Then some of us took the **workaround** way, that term so familiar for many developers. Apple was pushing towards using dynamic frameworks for watch apps, why not following what Apple said? I create another target for the watch app, and share some classes between my application and the watch one. Problem solved! This solved part of the problem partially, and worarkonds shouldn't be the way we solve our problems, they are breakable, fragile, and don't scale.
 
