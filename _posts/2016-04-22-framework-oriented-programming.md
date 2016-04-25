@@ -48,7 +48,7 @@ Our box seemed to be also tied to our external dependencies and we could live wi
 
 > Yes! that moment when someone said: Oh, actually it should be very straightforward since we should be able to reuse most of our code from the main app. *(And your face turned into a poem)*
 
-Our code bases were not ready to these big changes. Then some of us took the **workaround** way, that term so familiar for many developers. Apple was pushing towards using dynamic frameworks for watch apps, why not following what Apple said? I create another target for the watch app, and share some classes between my application and the watch one. Problem solved! This solved part of the problem partially, and worarkonds shouldn't be the way we solve our problems, they are breakable, fragile, and don't scale.
+Our code bases were not ready to these big changes. Then some of us took the **workaround** way, that term so familiar for many developers. Apple was pushing towards using dynamic frameworks for watch apps, why not following what Apple said? I create another target for the watch app, and share some classes between my application and the watch one. Problem solved! This solved part of the problem partially, and workarounds shouldn't be the way we solve our problems, they are breakable, fragile, and don't scale.
 
 # Motivation
 
@@ -85,7 +85,7 @@ Design your frameworks graph as a stack with multiple layers where the applicati
 
 ![](/images/posts/Framework-Vertical.png)
 
-### 3 - Lower in the stack, fewer dependencies
+### 3. Lower in the stack, fewer dependencies
 The number of external dependencies should be directly proportional with the level of the framework in the stack *(i.e, the lower in the stack the less the external dependencies it should have)*. Dependencies of lower levels are also dependencies of upper levels, thus, the more dependencies we we have in these levels the more complex the graph and the setup becomes. Figure out if your Framework really needs that external dependency that you are thinking about. Most of the times we end up checking out dependencies to use only a few components from them. Checkout only these components/extensions/classes that you really need, or implement them by your own whenever it's possible.
 
 > Reduce external dependencies as you go lower in the stack.
@@ -169,7 +169,7 @@ The first thing you need is a workspace where all the projects will be. If you a
 Let's our persistency framework. With `File > New Project` create a Framework *(it can be either iOS/OSX)* we'll make it universal later on using a configuration file. In the creation dialog, select the option for adding the project to the Workspace that you have opened. The project will be automatically added to the same workspace.
 
 ### 3. Making it universal
-You might have notice that frameworks have different settings depending on the platform. If you create an iOS Framework and a MacOS framework and diff the project build settings you'll notice that some parameters differ. Fortunately, configuration files allow conditional variable assignment *(you can read more abou it [here](https://pewpewthespells.com/blog/xcconfig_guide.html))*. It allows specifying the configuration depending on other variables like the SDK. In this project you'll find an [universal config file](Config/Base.xconfig) that takes advantage of that to haven an universal configuration. Once you set that `.xcconfig` file as the configuration for youf Framework it could be used from a `iOS/tvOS/macOS/watchOS` application. Here's a short example of how the configuration file looks like:
+You might have notice that frameworks have different settings depending on the platform. If you create an iOS Framework and a MacOS framework and diff the project build settings you'll notice that some parameters differ. Fortunately, configuration files allow conditional variable assignment *(you can read more about it [here](https://pewpewthespells.com/blog/xcconfig_guide.html))*. It allows specifying the configuration depending on other variables like the SDK. In this project you'll find an [universal config file](https://github.com/pepibumur/framework-oriented-programming/blob/master/Config/Base.xcconfig) that takes advantage of that to haven an universal configuration. Once you set that `.xcconfig` file as the configuration for your Framework it could be used from a `iOS/tvOS/macOS/watchOS` application. Here's a short example of how the configuration file looks like:
 
 {% highlight bash %}
 SUPPORTED_PLATFORMS        = iphoneos iphonesimulator appletvsimulator appletvos macosx watchsimulator watchos
@@ -254,7 +254,7 @@ Frameworks support versioning. Versioning is also supported by dependency manage
 
 ## Static or dynamic
 
-If your frameworks code is `Swift` you don't have alternative other than using **dynamic frameworks**. They were recently introduced for iOS. Dynamic frameworks are linked with your app in runtime and allow embedding resources. Dynamically linked code allows reusability of your code, you can have two frameworks depending on the same framework without getting duplicated symbols errors. `Objective-C` can be either statically or dynamically linked. The benefit of static linking is that launch time is much better but these frameworks or libraries are hard to reuse unless you use a tool like [CocoaPods](https://cocoapods.orb) that helps with these conflicts that might arise with static libraries, making sure that they're not duplicated.
+If your frameworks code is `Swift` you don't have alternative other than using **dynamic frameworks**. They were recently introduced for iOS. Dynamic frameworks are linked with your app in runtime and allow embedding resources. Dynamically linked code allows reusability of your code, you can have two frameworks depending on the same framework without getting duplicated symbols errors. `Objective-C` can be either statically or dynamically linked. The benefit of static linking is that launch time is much better but these frameworks or libraries are hard to reuse unless you use a tool like [CocoaPods](https://cocoapods.org) that helps with these conflicts that might arise with static libraries, making sure that they're not duplicated.
 
 - **Dynamic**
   - If your framework includes Swift code.
@@ -275,8 +275,8 @@ Ideally external dependencies should be simplified because otherwise your depend
 
 - If you used **CocoaPods** for managing all your project dependencies then the best approach is using the same dependency manager. Specify these external dependencies in the respective `.podspec` files and that's all.
 - If you preferred the manual manner, then you have to add these dependencies to your workspace. They can be either:
-  - Resolved and checkout using **Carthage**.
-  - Checkout using **Git Submodules**.
+  - Resolved and checked out using **Carthage**.
+  - Checked out using **Git Submodules**.
 
 # Reference
 
