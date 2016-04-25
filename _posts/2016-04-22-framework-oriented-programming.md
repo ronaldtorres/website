@@ -15,7 +15,7 @@ sitemap   :
 
 [**All this post resources are available on this repository**](https://github.com/pepibumur/framework-oriented-programming)
 
-> The concept of Framework Oriented Programming is formulated as a set of principles that has been are and are improved as I iterate over this idea in real scenarios. Some of these principles might change. **Any open question that you might have feel free to propose it via email [pepibumur@gmail.com](mailto://pepibumur@gmail.com)**
+> The concept of Framework Oriented Programming is formulated as a set of principles that are getting improved as I iterate over this idea in real scenarios. Some of these principles might change. **Any open question that you might have feel free to propose it via email [pepibumur@gmail.com](mailto://pepibumur@gmail.com)**
 
 The ideas behind this paper are not new. They're based on existing principles and programming paradigms. My goal is to put them together, motivating and introducing Swift/Objective-C developers into something I called "Framework Oriented Programming (FOP)".
 
@@ -24,6 +24,7 @@ The ideas behind this paper are not new. They're based on existing principles an
 | :mag: |  [**Context**](#context) state of art in project architectures |
 | :candy: |  [**Motivation**](#motivation) why we came up with this architecture |
 | :one: |  [**Principles**](#principles): for a right implementation |
+| :surfer: |  [**Example**](#tutorial) how to implement it in your projects|
 | :surfer: |  [**Tutorial**](#tutorial) how to implement it in your projects|
 | :question: |  [**Open Questions**](#open-questions) that you might also have |
 | :book: |  [**Reference**](#reference) and resources that might be useful |
@@ -35,7 +36,7 @@ The ideas behind this paper are not new. They're based on existing principles an
 <br><br>
 We've always been told as a developers to follow one basic principle of design, try to make your code *reusable*. Design your classes, your business logic, your projects to be reusable. Project them into the future and imagine how these components could be used on different scenarios and contexts, pay special attention to the dependencies and prefer abstractions over concrections... There are bunch of principles and philosophies that can be applied to create reusable code from a low level perspective. However, when it's about going higher in the stack, we forget about it and we end up having projects tied to the platform and tied to our product use case. **What if we could design our apps in a way that could be easy to reuse and platform independent?**
 <br><br>
-Nobody predicted a few years ago we were going to have so many platforms to develop for in Swift/Objective-C. Mobile platforms and iOS was the first step for a lot of developers that wanted to give a try to something new, playing with the new features and possibilities that mobile development offered. By that time, the focus *(and also my focus)* was coding for iOS. I didn't think I could need part of all that code in future projects, and thus, I treated my project like big boxes *(not black because I knew about the magic I was placing inside)* that implemented from UI tasks to interactions with the database. The big box was the **main app target**, that one that Xcode creates for you when you start a new project from the scratch. Later on, thanks to [CocoaPods](https://cocoapods.org) we easily connected our big box with other external small boxes, [AFNetworking](https://github.com/afnetworking/afnetworking), [MagicalRecord](),... I'm sure some of them are familiar with you. Our dependecy graph looked like the schema below where each connected framework is an external dependency:
+Nobody predicted a few years ago we were going to have so many platforms to develop for in Swift/Objective-C. Mobile platforms and iOS was the first step for a lot of developers that wanted to give a try to something new, playing with the new features and possibilities that mobile development offered. By that time, the focus *(and also my focus)* was coding for iOS. I didn't think I could need part of all that code in future projects, and thus, I treated my projects like big boxes *(not black because I knew about the magic I was placing inside)* that implemented from UI tasks to interactions with the database. The big box was the **main app target**, that one that Xcode creates for you when you start a new project from the scratch. Later on, thanks to [CocoaPods](https://cocoapods.org) we easily connected our big box with other external small boxes, [AFNetworking](https://github.com/afnetworking/afnetworking), [MagicalRecord](),... I'm sure some of them are familiar with you.
 
 We were taking advantage of reusable components that other developers where offering in open. That saved and saves us a lot of time nowadays. However *(and unconsciously)*, our project was likely tied to the platform and the product use case we were coding for:
 
@@ -43,39 +44,38 @@ We were taking advantage of reusable components that other developers where offe
 - Designing the API layer to interact with a pre-existing API.
 - Reusing models in multiple layers. Sometimes even models that came from *CoreData*, *Realm* or any other persistence solution.
 
-Our box seemed to be also tied to our external dependencies and we could live with it. The problem came up either when from the product perspective the company pushed the software engineers to have a *watchOS*, a *tvOS* or add a new application to the family that was supposed to reuse most of the things were already implemented in the existing app.
+Our box seemed to be also tied to our external dependencies and we could live with it. The problem came up either when from the product perspective the company pushed the software engineers to have a *watchOS*, a *tvOS* or add a new application to the family. That new application was supposed to reuse most of the things were already implemented in the existing app.
 
-> Yes! that moment when someone says: Oh, actually it should be very straightforward since we should be able to reuse most of our code from the main app. *(And your face turned into a poem)*
+> Yes! that moment when someone sayd: Oh, actually it should be very straightforward since we should be able to reuse most of our code from the main app. *(And your face turned into a poem)*
 
 Our code bases were not ready to these big changes. Then some of us took the **workaround** way, that term so familiar for many developers. Apple was pushing towards using dynamic frameworks for watch apps, why not following what Apple said? I create another target for the watch app, and share some classes between my application and the watch one. Problem solved! This solved part of the problem partially, and worarkonds shouldn't be the way we solve our problems, they are breakable, fragile, and don't scale.
 
 # Motivation
 
-It was then when I decided to invest some time in figuring out how applications nowadays should be structured and documented it on this paper. The main goal of this architecture proposal is:
+It was then when I decided to invest some time in figuring out how applications nowadays should be structured and documented it on this paper. The main goal of this architecture proposal was:
 
 - **Easily expand to new platforms:** Creating a new version of your project for another platforms should be as easy as working on the UI layer, reusing all the business logic that comes already implemented in your frameworks.
 - **New products with similar core needs:** This is very sweet for startups, since it allows product related iterations. Companies can benefit from this  adding new products to the stack that share the same core logic as other products *(e.g. the new product interacts with the same API, the data model is the same...)*
-
 - **Aim open sourcing:** Have you ever wanted to open source a component in your project and it was hard because it was designed to be used in your product? What if it was designed in the other way around without thinking about where the component would be used? Designing without thinking in the use case leads to more generic implementation that might be handy for other developers and so, open-sourceable from your side.
+- **Plug in an out pieces with ease:** Having the business logic separated in small pieces helps when the project needs a replacement for any of these pieces. As the code is very isolated and the public interface abstracted these pieces could be easily replaced just exposing the same interface but replacing the private implementation.
 
-- **Plug in an out pieces with ease:** Having the business logic separated in small pieces helps when the project needs a replacement for any of these pieces. As the code is very isolated and the public interface abstracted these pieces could be easily replaced just exposing the same interface but replacing the private implementation. The rest of the frameworks / app  depend only on the public interface.
-
-
-I called it *"Framework Oriented Programming"* and brought the joyfulness of playing with **Legos** to the Swift/Objective-C development.
+I called it *"Framework Oriented Programming"* and brought the joyfulness of playing with **LEGO** to the Swift/Objective-C development.
 
 # Principles
 
 ### 1. Single responsibility
 
-SOLID principles also apply to framework. Frameworks should satisfy the single responsibility framework. They should have only one responsibility. If any of your designed frameworks might have multiple responsibility, think about slicing it in more layers.
+SOLID principles also apply to a framework. Frameworks should satisfy the single responsibility framework. They should have only one responsibility. If any of your designed frameworks might have multiple responsibility, think about slicing it in more layers.
 
 > For example, if we have an API interaction layer, and it offers not only the wrapper to the Foundation Networking layer but the requests  factories and models *(tied to your project use case)* think about splitting them into a `Networking` and an `API` frameworks.
 
 Frameworks that apparently had only one responsibility might get more later. It's up to the developer to identify that and take action on it, either separating them into multiple frameworks or extracting the logic that should be in a different one.
 
-Defining the responsibility of a framework is not easy. Think about a Framework as a box, that you give data to, it **does something** with your data, and provides you with some results. Does something is your framework's purpose. Keep that purpose simple and under a defined scope.
+Defining the responsibility of a framework is not easy. Think about a Framework as a box, that you give data to, it **does something** with your data, and provides you with some results. *"Does something"* is your framework's purpose. Keep that purpose simple and scoped.
 
 > Build single purpose boxes
+
+![Single Responsibility](/images/posts/Framework-Responsibilities.png)
 
 ### 2. Vertical dependencies over horizontal
 
@@ -83,41 +83,82 @@ Design your frameworks graph as a stack with multiple layers where the applicati
 
 > Design your stack dependencies vertically
 
+![Single Responsibility](/images/posts/Framework-Vertical.png)
+
 ### 3 - Lower in the stack, fewer dependencies
 The number of external dependencies should be directly proportional with the level of the framework in the stack *(i.e, the lower in the stack the less the external dependencies it should have)*. Dependencies of lower levels are also dependencies of upper levels, thus, the more dependencies we we have in these levels the more complex the graph and the setup becomes. Figure out if your Framework really needs that external dependency that you are thinking about. Most of the times we end up checking out dependencies to use only a few components from them. Checkout only these components/extensions/classes that you really need, or implement them by your own whenever it's possible.
 
 > Reduce external dependencies as you go lower in the stack.
 
+![Single Responsibility](/images/posts/Framework-External.png)
+
 ### 4. One step dependencies
 
-Frameworks should know only about the framework below *(one step)*. Further dependencies should be wrapped by the framework you are depending on *(either these further dependencies are local or external)*. Never expose them up, proxy the protocols, and wrap the models from the framework.
+Frameworks should know only about the framework below *(one step)*. Deeper dependencies should be wrapped by the framework you are depending on *(either these deeper dependencies are local or external)*. Never expose them up, proxy the protocols, and wrap the models from the framework.
 
 This makes replacement in the future easier. For example if you used another persistency solution like [Realm](https://realm.io) that uses their own defined models and you exposed them from your Framework
 
 > Don't expose lower dependencies to upper levels. Wrap them!
 
-### 5. Internal by default
-If you're using **Swift**, congrats :tada:, you get this for free. All components are by default `internal` and they won't be visible form other frameworks unless you specify it with the `public` modifier. As soon as you start *"consuming"* your frameworks you'll figure out which components have to be `public`. In case of **Objective-C** keep the headers private in the target headers configuration and make `public` only these that must be visible. When a component is `public` the developers that are depending on that frameworks feel the *"freedom"* and *"flexibility"* that lead to a misuse and coupling with private code.
+![Single Responsibility](/images/posts/Framework-OneStep.png)
 
-> Make all the frameworks private by default and make public only these needed.
+### 5. Internal by default
+If you're using **Swift**, congrats :tada:, you get this for free. All components are by default `internal` and they won't be visible form other frameworks unless you specify it with the `public` modifier. As soon as you start *"consuming"* your frameworks you'll figure out which components have to be `public`. In case of **Objective-C** keep the headers private in the target headers configuration and make `public` only these that must be visible. When a component is `public` the developers that are depending on that frameworks feel the *"freedom"* and *"flexibility"* that leads to a misuse and coupling with private code.
+
+> Make framework components internal by default and make public only these needed.
+
+![Single Responsibility](/images/posts/Framework-Internal.png)
 
 ### 6. Framework models
 Each framework should implement their own models. If you share models between multiple frameworks you are coupling these frameworks to the frameworks that provide these models. That said, a `Networking` framework should have defined models representing API responses, and a `Database` framework should have their own `Database` models. If these models are combined in a business logic framework, `Core` then they should be wrapped into different models.
 
 > Each framework defines its own models
 
+![Single Responsibility](/images/posts/Framework-Models.png)
+
 ### 7. Platform abstraction
-Decouple your framework from platform specific frameworks. What does it mean? If there's a Framework that is `macOS` or `iOS` only, for example `UIKit` or `AppKit`, try to not couple your framework to it. Instead come up with these components that you might need, a `Color` or a `Font`  class/struct. You can create extensions and platform macros to convert these frameworks components into components that are easier to work with from the application.
+Decouple your framework from platform specific frameworks. What does it mean? If there's a Framework that is `macOS` or `iOS` only, for example `UIKit` or `AppKit`, try not to couple your framework to it. Instead come up with these components that you might need, a `Color` or a `Font`  class/struct. You can create extensions and platform macros to convert these frameworks components into components that are easier to work with from the application.
 
 - Swift Preprocessor Directives: [Link](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithCAPIs.html#//apple_ref/doc/uid/TP40014216-CH8-XID_20)
 - Target conditionals and availability: [Link](https://www.cocoanetics.com/2012/09/target-conditionals-and-availability/)
 
 > Decoupled from platforms, extended to make it nicer to play with for platforms.
 
+{% highlight swift %}
+#if os(OSX)
+// OSX only code
+#endif
+{% endhighlight %}
+
+![Single Responsibility](/images/posts/Framework-Platform.png)
+
 ### 8. Protocol oriented interfaces
 Abstract your public interfaces with protocols. That decouples the access layer from the implementation. If a framework `A` depends on the protocol based interface of `B`, `B` can update its implementation without requiring any change in `A` *(since the exposed interface is the same)*. This principle is aligned with the Swift philosophy based on protocols, and that is well known as *Protocol Oriented Programming*. The same programming paradigm that applies to this principle. Your frameworks are responsible of certain tasks and you define them in a protocol based interface.
 
 > Define your Frameworks interfaces using protocols
+
+![Single Responsibility](/images/posts/Framework-Interface.png)
+
+# Example
+
+![FOP Example](/images/posts/Framework-Stack.png)
+
+There's an example project in this repository that includes:
+
+- External dependencies resolved using CocoaPods.
+- Local dependencies added manually to the same workspace.
+- External dependencies for local frameworks using Carthage.
+
+The stack of frameworks of that project is the one shown above. Networking/Persistency are responsible for interacting with the Rest API and the local database/keychain respectively. Core is responsible of the example business logic. Design includes set of reusable design models and values and Foundation provides components that are used by all the application frameworks.
+
+To setup the project locally:
+
+1. Git clone the repository `git@github.com:pepibumur/framework-oriented-programming.git`
+2. Install bundle dependencies `bundle install`
+3. Install carthage if you didn't have it installed `brew install carthage`
+4. Execute `bundle exec pod install` to resolve CocoaPods dependencies and create the workspace with them.
+5. Execute `bash script/dependencies` to resolve Carthage dependencies.
+6. Open the project using `Frameworks.xcworkspace`.
 
 # Tutorial (Dynamic Frameworks)
 
