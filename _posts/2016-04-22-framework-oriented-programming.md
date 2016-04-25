@@ -75,7 +75,7 @@ Defining the responsibility of a framework is not easy. Think about a Framework 
 
 > Build single purpose boxes
 
-![Single Responsibility](/images/posts/Framework-Responsibilities.png)
+![](/images/posts/Framework-Responsibilities.png)
 
 ### 2. Vertical dependencies over horizontal
 
@@ -83,14 +83,14 @@ Design your frameworks graph as a stack with multiple layers where the applicati
 
 > Design your stack dependencies vertically
 
-![Single Responsibility](/images/posts/Framework-Vertical.png)
+![](/images/posts/Framework-Vertical.png)
 
 ### 3 - Lower in the stack, fewer dependencies
 The number of external dependencies should be directly proportional with the level of the framework in the stack *(i.e, the lower in the stack the less the external dependencies it should have)*. Dependencies of lower levels are also dependencies of upper levels, thus, the more dependencies we we have in these levels the more complex the graph and the setup becomes. Figure out if your Framework really needs that external dependency that you are thinking about. Most of the times we end up checking out dependencies to use only a few components from them. Checkout only these components/extensions/classes that you really need, or implement them by your own whenever it's possible.
 
 > Reduce external dependencies as you go lower in the stack.
 
-![Single Responsibility](/images/posts/Framework-External.png)
+![](/images/posts/Framework-External.png)
 
 ### 4. One step dependencies
 
@@ -100,21 +100,21 @@ This makes replacement in the future easier. For example if you used another per
 
 > Don't expose lower dependencies to upper levels. Wrap them!
 
-![Single Responsibility](/images/posts/Framework-OneStep.png)
+![](/images/posts/Framework-OneStep.png)
 
 ### 5. Internal by default
 If you're using **Swift**, congrats :tada:, you get this for free. All components are by default `internal` and they won't be visible form other frameworks unless you specify it with the `public` modifier. As soon as you start *"consuming"* your frameworks you'll figure out which components have to be `public`. In case of **Objective-C** keep the headers private in the target headers configuration and make `public` only these that must be visible. When a component is `public` the developers that are depending on that frameworks feel the *"freedom"* and *"flexibility"* that leads to a misuse and coupling with private code.
 
 > Make framework components internal by default and make public only these needed.
 
-![Single Responsibility](/images/posts/Framework-Internal.png)
+![](/images/posts/Framework-Internal.png)
 
 ### 6. Framework models
 Each framework should implement their own models. If you share models between multiple frameworks you are coupling these frameworks to the frameworks that provide these models. That said, a `Networking` framework should have defined models representing API responses, and a `Database` framework should have their own `Database` models. If these models are combined in a business logic framework, `Core` then they should be wrapped into different models.
 
 > Each framework defines its own models
 
-![Single Responsibility](/images/posts/Framework-Models.png)
+![](/images/posts/Framework-Models.png)
 
 ### 7. Platform abstraction
 Decouple your framework from platform specific frameworks. What does it mean? If there's a Framework that is `macOS` or `iOS` only, for example `UIKit` or `AppKit`, try not to couple your framework to it. Instead come up with these components that you might need, a `Color` or a `Font`  class/struct. You can create extensions and platform macros to convert these frameworks components into components that are easier to work with from the application.
