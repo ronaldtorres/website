@@ -11,6 +11,7 @@ image:
 sitemap   :
   priority : 1.0
   isfeatured : 0
+comments: true
 ---
 
 
