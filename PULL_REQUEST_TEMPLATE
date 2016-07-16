@@ -1,0 +1,8 @@
+### How to review the PR
+
+1. Git checkout the repository `git checkout https://github.com/pepibumur/pepibumur.github.io`
+2. Install the dependencies with `bundle install`
+3. Execute`bundle exec jekyll serve`
+4. Open the link [http://127.0.0.1:4000/](http://127.0.0.1:4000)
+
+You can leave the comments directly on this PR.  Don't forget to add a comment here as a reviewer. I'll include you on the POST as a contributor.
