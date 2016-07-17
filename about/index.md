@@ -19,6 +19,10 @@ In November 2015 I start a new adventure with **SoundCloud** as a Mobile Enginee
 
 All these years as a developer I've also created Open Source projects in different languages. All of them are published in Github with their respective documentation, tests, an support through issues.
 
+## Trello Growth Board
+
+I strongly believe in openness and the importance of sharing our learnings with the people around us. Since life is also a project and we learn along the way I decided to create a [Trello Board](https://trello.com/b/V0KvuwXq/growth) where I have a personal backlog with things I'd like to learn, watch, read, and also small life projects that I'm about to accomplish. Feel free to have a look, comment or give me some ideas :).
+
 ## Skills
 
 **Mobile**
