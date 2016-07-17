@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Learnings
+title: Influential
 tags: [learnings, wisdom, life]
 modified: 2015-12-09
 image:
@@ -9,14 +9,19 @@ image:
   creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
 ---
 
-1. Split up big goals into small achievable chunks that you can progressively achieve. Completing this small steps will make you feel motivated and you'll progress faster. It takes time but you should never give up if it's your dream.
-
-2. Nothing is impossible but the death. If you want to achieve something you have to visualize the path to reach that point and all the things you need to achieve it.
-
-3. Whenever you commit a mistake, understand why it happened and learn from it to avoid the same in the future. Getting nervous or in a bad mood doesn't really help.
+# Books :book:
+*There's nothing in this section yet*
 
 
-## Wise/Inspiring words from people
+# Articles :newspaper:
+*There's nothing in this section yet*
+
+
+# Movies :movie_camera:
+*There's nothing in this section yet*
+
+
+# People :family:
 Here is a collection of quotes I've been saving because I liked them, because I felt myself reflected in the quote, or just because I thought it shared a great inspiring value:
 
 
