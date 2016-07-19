@@ -234,5 +234,5 @@ Are you a big company and you are already doing or trying to move into modules? 
 
 I'd like to thanks people below that helped me reviewing the article:
 
-- [Fran Sevillano](htps://github.com/frowing)
+- [Fran Sevillano](https://github.com/frowing)
 - [Gábor Nagy Farkas](https://github.com/gabornagyfarkas)
