@@ -57,7 +57,7 @@ In these cases it’s important that any entity in the app **interested** in tha
 
 #### Example
 
-When the `StreamViewController` is loaded we ask for data synchronization. This event doesn't report anything but it could return an error if we're interested in presenting an alert in that case. When the data is updated in the database we'll be oserving it and updating the collection view presenting that new data that has been inserted.
+When the `StreamViewController` is loaded we ask for data synchronization. This event doesn't report anything but it could return an error if we're interested in presenting an alert in that case. When the data is updated in the database we'll be observing it and updating the collection view presenting that new data that has been inserted.
 
 {% highlight swift %}
 class StreamViewController: UIViewController {
@@ -167,6 +167,6 @@ protocol Repository {
 
 > I did an implementation that is available on this [gist](https://gist.github.com/pepibumur/ba7a1b459634ebf29de0772272b8460b). It defines an `UserDefaultsObservable` that allows you to subscribe to. To keep the subscription alive you must keep a reference to the observable.
 
-# Conclussion
+# Conclusion
 
-Our apps are full of these scenarios where triggers and observations are completely separated. In that sense reacting to these triggers would prevent us from imperatively looking for the entities that might be interested in these events. We also decouple synchronization from fetching so if we wanted to replace any of those elements, you could easily do it without affecting the other. Moreover, don't think that being reactive is about using reactive concepts and libraries out of there. You can be reactive as well by subscribing to the `NSNotificationCenter` or using a `NSFetchedResultsController`. Libraries such as `RxSwift` and `ReactiveCocoa` provide a typed, more stream based solution, with some operators that allows you combining these events before they reacth the subscribers.
+Our apps are full of these scenarios where triggers and observations are completely separated. In that sense reacting to these triggers would prevent us from imperatively looking for the entities that might be interested in these events. We also decouple synchronization from fetching so if we wanted to replace any of those elements, you could easily do it without affecting the other. Moreover, don't think that being reactive is about using reactive concepts and libraries out of there. You can be reactive as well by subscribing to the `NSNotificationCenter` or using a `NSFetchedResultsController`. Libraries such as `RxSwift` and `ReactiveCocoa` provide a typed, more stream based solution, with some operators that allows you combining these events before they reach the subscribers.
