@@ -13,7 +13,7 @@
 <br></br>
 {% if author.speakerdeck %}<a href="http://speakerdeck.com/{{ author.speakerdeck }}" class="author-social" target="_blank">SpeakerDeck</a>{% endif %}
 {% if author.medium %}<a href="http://medium.com/{{ author.medium }}" class="author-social" target="_blank">Medium</a>{% endif %}
-<a href="https://{{ author.exposure }}.exposure.co/" class="author-social" target="_blank"><i class="fa fa-camera"></i> Exposure</a>
+{% if author.exposure %}<a href="https://{{ author.exposure }}.exposure.co/" class="author-social" target="_blank"><i class="fa fa-camera"></i> Exposure</a>{% endif %}
 {% if author.email %}<a href="mailto:{{ author.email }}" class="author-social" target="_blank"><i class="fa fa-envelope-square"></i> Email</a>{% endif %}
 {% if author.twitter %}<a href="http://twitter.com/{{ author.twitter }}" class="author-social" target="_blank"><i class="fa fa-twitter-square"></i> Twitter</a>{% endif %}
 {% if author.facebook %}<a href="http://facebook.com/{{ author.facebook }}" class="author-social" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a>{% endif %}

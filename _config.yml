@@ -37,7 +37,7 @@ owner:
     ad-slot:
   bing-verify:
   github: "pepibumur"
-  # exposure: "pepibumur"
+  exposure: 
   stackoverflow: "963511/pedro-piñera-buendia"
   linkedin: #linkedin
   instagram: pedropinera
@@ -46,7 +46,6 @@ owner:
   pinterest: #username
   foursquare: #username
   steam: #username
-  dribbble: "pepibumur"
   speakerdeck: pepibumur
   medium: "@pepibumur"
 

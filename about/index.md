@@ -5,19 +5,15 @@ tags: [about, me, profile, skills, ppinera]
 modified: 2014-10-11T20:53:07.573882-04:00
 comments: true
 image:
-  feature: headers/examples/sample-image-2.jpg
+  feature: others/about-photo.png
   credit: Pedro P.
   creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
 ---
-I'm Pedro Piñera Buendía, Electronic & Communication Engineer and Mobile Developer currently working at SoundCloud. I've been working with mobile technologies from 2010 when I started developing apps for iOS, since then I've relesed applications such as **Solare** to help people to protect them from the sun, **yonkiPOPS**, an app that offers film recommendations to the users, **Movi time** to let you know about the cinemas in your area and their schedules, ...
 
-The summer of 2013 I joined **Redbooth** as iOS Developer and I improved my skills there focusing in aspects like API interactions, integrations, data persistence or view management amongst other. I've been helping the Redbooth **Android** team too and I learnt then the fundamentals of Android development. Moreover learnt about **Ruby** implementing some libraries and controllers with it.
+I'm Pedro Piñera Buendía, 🇪🇸 iOS Developer currently working at SoundCloud as Core iOS Engineer. Even though I studied Telecommunication Engineer I became interested in mobile development back in 2010 and I've been doing that since then. I've worked for companies like [Redbooth](https://redbooht.com), [8fit](https://8fit.com) and rectenly [SoundCloud](https://soundcloud.com). I'm a passionated runner and traveller. I'm always willing to learn new things and become a better developer and person. I like sharing what I learn and I do it on this website but also in a Newsletter that you can [subscribe to](http://eepurl.com/b9-25H). I'm a strong believer in the power of openness. I'm open in many aspects of my life such as sharing the problems that I'm facing in life, my new discoveries as a developer, or the projects I work on that can be useful for more developers. Most of my spare time projects are Open Source libraries that I share on my GitHub account. You can check them out [here](https://github.com/pepibumur).
 
-I joined **8fit** in September 2014 as a Mobile Developer. I contributed with native features in Java/Objective-C/Swift and since then we've been moving the project to native (the project base is based on web technologies). I'm currently leading the Mobile team and coordinating the migration to native and the integration with QA and release cycles. I'm also improving my leadership skills.
-
-In November 2015 I start a new adventure with **SoundCloud** as a Mobile Engineer
-
-All these years as a developer I've also created Open Source projects in different languages. All of them are published in Github with their respective documentation, tests, an support through issues.
+<br><br>
+In my free time I've also worked on projects like [GitDo](http://gitdo.io), an Issues management tool for GitHub, and some other apps with [Caramba](https://github.com/caramba). We craft apps and tools for developers. We, as a developers, have a great tools to make this world better, why not using them?
 
 ## Trello Growth Board
 
@@ -25,9 +21,7 @@ I strongly believe in openness and the importance of sharing our learnings with 
 
 ## Skills
 
-**Mobile**
-
-- Setup project with an scalable structure and connect it with a **CI environment** (like travis, jenkings, wercker)
+- Setup project with an scalable structure and connect it with a **CI environment** (like Travis-CI, Jenkins, Wercker)
 - Interaction with **Web APIs** *(through client entities that handle remote request)*
 - **Local persistence** on databases, local app storage, ... *(experience with CoreData and Realm)*
 - **CocoaPods/Gradle** experience to setup different build configurations and integration with libraries/frameworks
@@ -38,20 +32,18 @@ I strongly believe in openness and the importance of sharing our learnings with 
 
 **Other Skills**
 
-- Experience in **Ruby**, developed small gems wich different purposes. I have also a few experience with **Rails**.
+- Experience in **Ruby**, developed small gems wich different purposes. I have also a few of experience with **Rails**.
 - **Javascript**: A bit of experience in Javascript, patterns and frameworks such as BackboneJS, JQuery, Underscore. Moreover I have experience using CoffeeScript as a Javascript language wrapper.
 
 **Played With**
 
-- Node, Gulp, Vagrant, Nginx, Jekyll, Octopress.
+- Node, Gulp, Nginx, Jekyll, Octopress.
 - Regular Expressions.
 - AngularJS, Ionic Framework.
-- Rails, ActiveRecord
-- Android Annotations, Loopj Async HTTP, Android TV Layout building.
+- Rails, ActiveRecord.
+- Android development.
 
 ## Work experience
-
-I've worked on different apps since I started as a mobile developer like Solare and Yonkipops amongst others but currently they are no longer mantained because I'm currently focused on my current project GitDo, and the company I'm working for, SoundCloud. I also maintain some Open Source libraries used by developers around the world.
 
 ### [Redbooth](https://redbooth.com/)
 I started with Redbooth in 2013 and I joined the iOS team to work remotely (I was finishing the University) as a Freelance. During the that year I was working for Redbooth I improved my knowledge on areas like data persistance, API interactions, Core Data, mobile architectures, Objective-C patterns, and had the opportunity to deal with XMPP helping the company to build its own chat client integrated into the company's solution. Moreover I had the opportunity to develop for the Android team too which for me was a good chance to dive into the Android development. I've been improving my Android background since them and although it's not at the level of the iOS one it's pretty one.
@@ -68,9 +60,15 @@ GitDo is my spare time project. I started with a college I worked with before at
 
 ## Open Source projects
 
-### iOS
-- **PopcornTimeTV:** PopcornTime client for tvOS. [Link](https://github.com/PopcornTimeTV/PopcornTimeTV)
+### Actively Maintained
+
 - **SugarRecord:** SugarRecord is a management library to make it easier work with CoreData and REALM. Thanks to SugarRecord you'll be able to start working with CoreData/REALM with just a few lines of code. [Link](https://github.com/SugarRecord/SugarRecord)
+- **WorkFrom:** Swift client for the [WorkFrom](https://workfrom.co/) API. [Link](https://github.com/carambalabs/WorkFromKit)
+- **DoneThisKit:** Swift client for the [iDoneThis API](https://i-done-this.readme.io/docs). [Link](https://github.com/carambalabs/DoneThisKit)
+- **CarambaKit:** Set of reusable component for [Caramba](https://github.com/carambalabs) apps. [Link](https://github.com/carambalabs/CarambaKit)
+
+### Non-Actively Maintained
+- **PopcornTimeTV:** PopcornTime client for tvOS. [Link](https://github.com/PopcornTimeTV/PopcornTimeTV)
 - **SoundCloudSwift:** SoundCloud API client written in Swift. [Link](https://github.com/pepibumur/SoundCloudSwift)
 - **ReactiveCommander:** Command pattern with a reactive interface written in Swift using RxSwift and ReactiveCocoa. [Link](https://github.com/pepibumur/ReactiveCommander).
 - **HTTPCommander:** Command pattern wrapper for HTTP requests. [Link](https://github.com/pepibumur/HTTPCommander).
@@ -80,20 +78,11 @@ GitDo is my spare time project. I started with a college I worked with before at
 - **MagicMP:** I noticed that the new MultiPeer framework introduced in iOS 7 was segmented in two main components and still using delegates. The framework has an abstraction layer in viewController format to explore nearby users, or advertiser devices, but.. What if we don't want to implement the module using viewControllers? Here's where MagicMP appears, it unifies both components in an easy way, with blocks and a singleton class, use whenever you want without depending on a ViewController. [Link](https://github.com/pepibumur/MagicMP)
 - **PPiShowtime-Google-iOS-Library:** Get showtimes from any City thanks to Google Showtime. I discovered there was no option to access to this information so I decided to parse the information directly from their Website. As iOS Developer I thought it would be useful to release a Objective-C class to get/parse this information for all developers. I called it PPiShowtime. [Link](https://github.com/pepibumur/PPiShowtime-Google-iOS-Library)
 
-### Android
-- **EditTextMentions:** EditText subclass with mentions detection (like Facebook or Twitter). https://github.com/pepibumur/EditTextMentions.
-- **Emojize:** Emojize is a Java library to convert keyboard emojis to chearsheet. [Link](https://github.com/pepibumur/emojize)
-
-### Python
-- **Pushpy:** Pushpy is a push notification server based on Python. It's composed by a users database to store users token ( and more information that the server owner wants ), a web interface with Google Login to send notifications using a web platform. The Google emails accounts allowed to send notifications are stored in another database. [Link](https://github.com/pepibumur/PushPy)
-
-## Applications released
-- **Solare:** Solare is an application to help people to protect their skin from ultraviolet light. It alerts when the levels are higher than the expected ones, the protection level that you should use of sun protector and everything is based in your location with real time information. [Link](https://itunes.apple.com/es/app/solare/id533472988?mt=8)
-- **YonkiPOPS Mobile:** yonkiPOPS is a great tool for alls movie lovers who wants to have a powerfull pocket tool. With this application you can seek information from any movie, to see the billboard of your nearest theaters and buy the tickets. All without leaving the application. [Link](https://itunes.apple.com/en/app/yonkipops-mobile/id550995249?mt=8)
-- **Movi Time:** Movi is a simple tool to find theaters near your position and know instantly billboard, schedules, and practical information for the film. [Link](https://itunes.apple.com/en/app/movi/id576948547?mt=8)
-- **iPremio:** Application to check if your Christmas Lottery is prized. [Link](https://itunes.apple.com/en/app/ipremio-loteria-de-navidad/id584583645?mt=8)
 
 ## Talks and posts
+- **Reactive Thinking in iOS** Learn how to change your mindset and design your apps to be Reactive [Link](https://speakerdeck.com/pepibumur/reactive-thinking-in-ios-development-reactive-amsterdam-meetup)
+- **Framework Oriented Programming** Organize your apps in reusable and platform independent frameworks [Link](https://speakerdeck.com/pepibumur/framework-oriented-programming)
+- **Network Testing** Testing your requests with Acceptance Tests on iOS [Link](https://speakerdeck.com/pepibumur/network-testing)
 - **GitDo: Designing the app infrastructure** Blog post that explains the architectural decissions that we took in order to implement the GitDo current architecture [Link](http://gitdo.io/blog/2015/12/30/gitdo-app-architecture)
 - **En busca de la arquitectura perfecta: VIPER (iOS):** Talk about the VIPER architecture applied to iOS application. I explain there the transition between using a monolytic architecture using MVC with elements too coupled to that new architecture where every component manages only one kind of operation.  [Link](http://2014.codemotion.es/en/agenda.html?recommended=#day2/en-busca-de-la-arquitectura-perfecta-viper-ios)
 - **Hybrid mobile applications for a fast development - 8fit:** Talk about the steps we followed on 8fit to have a mobile web-app solution for our platform with a real mobile experience. [Link](https://speakerdeck.com/pepibumur/hybrid-mobile-applications-for-a-fast-development) https://www.youtube.com/watch?v=5pf_GBR0dTs
