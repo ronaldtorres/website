@@ -18,8 +18,6 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   enable_coderay: false
-
-# Site owner
 owner:
   name: Pedro Piñera
   avatar: others/bio-photo.png
@@ -37,15 +35,8 @@ owner:
     ad-slot:
   bing-verify:
   github: "pepibumur"
-  exposure: 
   stackoverflow: "963511/pedro-piñera-buendia"
-  linkedin: #linkedin
   instagram: pedropinera
-  lastfm: #username
-  tumblr: #username
-  pinterest: #username
-  foursquare: #username
-  steam: #username
   speakerdeck: pepibumur
   medium: "@pepibumur"
 
