@@ -14,11 +14,7 @@ I’m Pedro Piñera Buendía, 🇪🇸 iOS Developer currently working at SoundC
 
 <br><br>
 
-In my free time, I’ve also worked on projects like [GitDo](http://gitdo.io), an Issues management tool for GitHub, and some other apps with [Caramba](https://github.com/caramba). We craft apps and tools for developers. We, as a developer, have great tools to make this world better, why not using them?
-
-## Trello Growth Board
-
-I strongly believe in openness and the importance of sharing our learnings with the people around us. Since life is also a project and we learn along the way I decided to create a [Trello Board](https://trello.com/b/V0KvuwXq/growth) where I have a personal backlog with things I'd like to learn, watch, read, and also small life projects that I'm about to accomplish. Feel free to have a look, comment or give me some ideas :).
+In my free time, I’ve also worked on projects like [GitDo](http://gitdo.io), an Issues management tool for GitHub, and some other apps with [Caramba](https://github.com/caramba). We craft apps and tools for developers. We, as developers, have great tools to make this world better, why not using them?
 
 ## Skills
 
@@ -62,13 +58,14 @@ GitDo is my spare time project. I started with a college I worked with before at
 ## Open Source projects
 
 ### Actively Maintained
-
+- **UnsplashKit:** [Unsplash](https://unsplash.com) client in Swift. [Link](https://github.com/carambalabs/UnsplashKit)
+- **Paparajote:** Client OAuth 2 handler written in Swift for iOS and macOS applications. [Link](https://gitlab.com/caramba/Paparajote)
 - **SugarRecord:** SugarRecord is a management library to make it easier work with CoreData and REALM. Thanks to SugarRecord you'll be able to start working with CoreData/REALM with just a few lines of code. [Link](https://github.com/SugarRecord/SugarRecord)
 - **WorkFrom:** Swift client for the [WorkFrom](https://workfrom.co/) API. [Link](https://github.com/carambalabs/WorkFromKit)
 - **DoneThisKit:** Swift client for the [iDoneThis API](https://i-done-this.readme.io/docs). [Link](https://github.com/carambalabs/DoneThisKit)
-- **CarambaKit:** Set of reusable component for [Caramba](https://github.com/carambalabs) apps. [Link](https://github.com/carambalabs/CarambaKit)
 
 ### Non-Actively Maintained
+- **CarambaKit:** Set of reusable component for [Caramba](https://github.com/carambalabs) apps. [Link](https://github.com/carambalabs/CarambaKit)
 - **PopcornTimeTV:** PopcornTime client for tvOS. [Link](https://github.com/PopcornTimeTV/PopcornTimeTV)
 - **SoundCloudSwift:** SoundCloud API client written in Swift. [Link](https://github.com/pepibumur/SoundCloudSwift)
 - **ReactiveCommander:** Command pattern with a reactive interface written in Swift using RxSwift and ReactiveCocoa. [Link](https://github.com/pepibumur/ReactiveCommander).
@@ -79,22 +76,24 @@ GitDo is my spare time project. I started with a college I worked with before at
 - **MagicMP:** I noticed that the new MultiPeer framework introduced in iOS 7 was segmented in two main components and still using delegates. The framework has an abstraction layer in viewController format to explore nearby users, or advertiser devices, but.. What if we don't want to implement the module using viewControllers? Here's where MagicMP appears, it unifies both components in an easy way, with blocks and a singleton class, use whenever you want without depending on a ViewController. [Link](https://github.com/pepibumur/MagicMP)
 - **PPiShowtime-Google-iOS-Library:** Get showtimes from any City thanks to Google Showtime. I discovered there was no option to access to this information so I decided to parse the information directly from their Website. As iOS Developer I thought it would be useful to release a Objective-C class to get/parse this information for all developers. I called it PPiShowtime. [Link](https://github.com/pepibumur/PPiShowtime-Google-iOS-Library)
 
-
-## Talks and posts
+## Talks
+- **Framework Oriented Programming (Mobiconf)**: Learn how to modularize your Swift/Objective-C project and benefit from it: reuse your code accross platform and scale your project and team easily. [Link](https://speakerdeck.com/pepibumur/framework-oriented-programming-mobiconf-2016) - [Youtube](https://www.youtube.com/watch?v=RGVxgo2BV50&t=1012s)
 - **Reactive Thinking in iOS** Learn how to change your mindset and design your apps to be Reactive [Link](https://speakerdeck.com/pepibumur/reactive-thinking-in-ios-development-reactive-amsterdam-meetup)
 - **Framework Oriented Programming** Organize your apps in reusable and platform independent frameworks [Link](https://speakerdeck.com/pepibumur/framework-oriented-programming)
 - **Network Testing** Testing your requests with Acceptance Tests on iOS [Link](https://speakerdeck.com/pepibumur/network-testing)
-- **GitDo: Designing the app infrastructure** Blog post that explains the architectural decissions that we took in order to implement the GitDo current architecture [Link](http://gitdo.io/blog/2015/12/30/gitdo-app-architecture)
 - **En busca de la arquitectura perfecta: VIPER (iOS):** Talk about the VIPER architecture applied to iOS application. I explain there the transition between using a monolytic architecture using MVC with elements too coupled to that new architecture where every component manages only one kind of operation.  [Link](http://2014.codemotion.es/en/agenda.html?recommended=#day2/en-busca-de-la-arquitectura-perfecta-viper-ios)
 - **Hybrid mobile applications for a fast development - 8fit:** Talk about the steps we followed on 8fit to have a mobile web-app solution for our platform with a real mobile experience. [Link](https://speakerdeck.com/pepibumur/hybrid-mobile-applications-for-a-fast-development) https://www.youtube.com/watch?v=5pf_GBR0dTs
 - **Swift and Objective-C playing together:** Start using Swift in your Objective-C projects. Avoid some headaches with these useful tips and advices for the communication layer between your Objective-C code base and your future Swift implementations [Link](https://speakerdeck.com/pepibumur/swift-and-objective-c-playing-together)
+
+## Posts
+- **GitDo: Designing the app infrastructure** Blog post that explains the architectural decissions that we took in order to implement the GitDo current architecture [Link](http://gitdo.io/blog/2015/12/30/gitdo-app-architecture)
 - **The spare time project journey. Why I started GitDo** Personal reflexion about myself and why I came up with the idea of investing my spare time working on GitDo [Link](http://www.ppinera.es/2016/02/08/bringing-the-magic-back.html)
 - **States - The source of truth** Overview of states in iOS apps, how we tipically handle them, current challenges with states and how to overcome them [Link](http://www.ppinera.es/2016/01/14/states-the-source-of-truth.html)
 
 ## Books
 
 - **Introducción a Swift** Book that introduces developers into Swift (in Spanish) [Link](https://leanpub.com/introduccionswift)
-- **Reactive Programming in your Swift Apps** Book that introduces developers into Reactive Programming using Swift as a language [Link](https://leanpub.com/reactiveprogrammingswift) **IN PROGRESS**
+
 
 <br><br>
 <a href="{{ site.url }}/assets/others/english_cv.pdf" class="btn">Get my CV</a>
