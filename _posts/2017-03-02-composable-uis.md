@@ -31,7 +31,7 @@ Another common issue besides the reusability is the fact that whenever the data 
 Despite you can use *React* natively with *React Native*, you don't need a framework for that, but just change your mindset when defining app ui-data hierarchies. Companies like [Spotify](https://spotify.com) have come up with a similar approach, the [Hub Framework](https://github.com/spotify/HubFramework), that abstracts you from composition, action handling, and lifecycle management. I like how flexible the framework it but I'm not a big fan of very opinionated frameworks, and Hub Framework is. As soon as you start using it, it influences the architecture of your apps heavily. I recommend you to watch this talk from [John Sundell](https://twitter.com/johnsundell), [Backend-driven UIs](https://www.youtube.com/watch?v=ypk-72mhYBk). It looks magic!
 <br><br>
 
-As I pointed out, with a midset change, you can also have your own component-driven UI, with reusable and composable components:
+As I pointed out, with a mindset change, you can also have your own component-driven UI, with reusable and composable components:
 
 ![An example of UI built with the component-based style](/images/posts/components-with.png)
 
@@ -57,5 +57,5 @@ Since with this approach, each component brings its state from the data source i
 
 ---
 
-Do you follow a similar approach in your projects? Are you considering moving towards that approach? I'd like to hear about your experience and the problems you found along the way. Reach out to [pepibumur@gmail.com](pepibumur@gmail.com) or leave a comment below.
+Do you follow a similar approach in your projects? Are you considering moving towards that approach? I'd like to hear about your experience and the problems you found along the way. Reach out to [pepibumur@gmail.com](mailto://pepibumur@gmail.com) or leave a comment below.
 
