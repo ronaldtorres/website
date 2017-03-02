@@ -45,11 +45,11 @@ class LikeComponent {
 }
 {% endhighlight %}
 
-Components can also respond to **actions**. For example, if you are trying to like a track, that turns into a few background operations to persist the new state into the API and the local store. In case the action response is more copmlicated and involves some UI, you can delegate de action to the app by using a delegate pattern. As an example, some actions might require a confirmation from the user. That confirmation can be handled from the outside.
+Components can also respond to **actions**. For example, if you are trying to like a track, that turns into a few background operations to persist the new state into the API and the local store. In case the action response is more complicated and involves some UI, you can delegate de action to the app by using a delegate pattern. As an example, some actions might require a confirmation from the user. That confirmation can be handled from the outside.
 
 <br><br>
 
-Since with this approach, each component brings its state from the data source it's important that the access to the data is **fast**. Otherwise, the UI will flicker, and that's terrible for the user experience. One idea to prevent that is having an in-memory data source where the states are indexed, for example using a `Dictionary`. This data source can be filled lazily, fetching the data the first time the data is needed, and ensuring the data keeps synchronized with the store underneath *(Core Data, Realm, serialization into disk..)*
+Since with this approach, each component brings its state from the data source, so it's important that the access to the data is **fast**. Otherwise, the UI will flicker, and that's terrible for the user experience. One idea to prevent that is having an in-memory data source where the states are indexed, for example using a `Dictionary`. This data source can be filled lazily, fetching the data the first time the data is needed, and ensuring the data keeps synchronized with the store underneath *(Core Data, Realm, serialization into disk..)*
 
 <br><br>
 
