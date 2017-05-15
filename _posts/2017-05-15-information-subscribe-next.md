@@ -5,7 +5,7 @@ excerpt: A brief reflexion on how we are consumers of very intensive information
 tags: [notifications, gadgets, devices]
 comments: true
 image:
-  feature: headers/composable-uis.jpg
+  feature: headers/information-next.jpg
   credit: Annie Spratt
 sitemap   :
   priority : 0.9
