@@ -5,7 +5,7 @@ excerpt: Read, update and write your Xcode projects from Swift
 tags: [xcodeproj, swift, xcode]
 comments: true
 image:
-  feature: headers/back-to-berlin.jpg
+  feature: headers/xcodeproj.jpg
   credit: Pedro
 sitemap   :
   priority : 0.9
