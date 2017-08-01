@@ -68,5 +68,5 @@ Also thanks to [@saky](https://twitter.com/saky) and [@sergigram](https://twitte
 - [Pbxproj identifiers](https://pewpewthespells.com/blog/pbxproj_identifiers.html)
 - [A brief look at the Xcode project format](http://danwright.info/blog/2010/10/xcode-pbxproject-files/)
 - [Xcode Project File Format](http://www.monobjc.net/xcode-project-file-format.html)
-- Nanaimo
+- [Nanaimo]()
 - XcodeGen
