@@ -22,7 +22,7 @@ sitemap   :
 
 At [SoundCloud](https://soundcloud.com), we found the process of executing a single unit test with Xcode a bit cumbersome when using one of those DSLs, especially if your tests target contains a lot of tests. By using plain XCTest, Xcode automatically shows you a play button next to your tests that you can click if you want to execute that particular test. With a DSL there’s no play button next to your tests. The only way to manually execute one is either using the exclusive keywords from the DSL or executing the tests once to see all the available tests in the “Tests Navigator”.
 
-The example below shows a plain XCTeset and the button to run that individual test:
+The example below shows a plain XCTest and the button to run that individual test:
 
 <br/>
 
