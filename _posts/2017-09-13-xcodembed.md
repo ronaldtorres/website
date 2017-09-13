@@ -27,8 +27,8 @@ I found myself in that situation and I was between modifying in the CocoaPods ba
 You can easily install the tool using [Homebrew](https://brew.sh/) with the following command:
 
 {% highlight bash %}
-brew tap pepibumur/xcodembed git@github.com:swift-xcode/xcode.git
-brew install xcodembed 
+brew tap swift-xcode/xcodembed git@github.com:swift-xcode/xcode.git
+brew install xcode 
 {% endhighlight %}
 
 ## A side note on xcode
