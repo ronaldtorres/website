@@ -5,8 +5,8 @@ excerpt: This post presents some elementary concepts of how Xcode projects are s
 tags: [xcodeproj, swift, xcode, xcodembed]
 comments: true
 image:
-  feature: headers/xcodeproj.jpg
-  credit: Pedro
+  feature: headers/modular-xcode.jpg
+  credit: Alexandre Godreau
 sitemap   :
   priority : 0.9
   isfeatured : 1
