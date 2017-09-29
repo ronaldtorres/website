@@ -71,7 +71,7 @@ Targets can have dependencies. Dependencies are frameworks or libraries that our
 - **Static linking:** 
   - The linking happens when the app gets compiled. 
   - The object file code from the library gets included into the application binary *(larger application binary size)*.
-  - Libraries use the file extension ".a", which comes from the (ar)chive file3 type. 
+  - Libraries use the file extension ".a", which comes from the (ar)chive file type. 
   - If the same library gets linked more than once, the compiler fails because of duplicated symbols.
 - **Dynamic linking:**
   - Modules are loaded at launch or runtime of an application.
