@@ -3,6 +3,7 @@ body {
 	font-family: $base-font;
 	color: $text-color;
 }
+
 .navigation-wrapper {
 	@include container;
 	padding: 2em 0 1em;
@@ -415,6 +416,9 @@ $button-size: 1.5rem;
 	p > a,
 	li > a {
 		text-decoration: underline;
+	}
+	p {
+		margin: 1.5em;
 	}
 }
 .toc {
