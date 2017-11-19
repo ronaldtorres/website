@@ -79,7 +79,7 @@ Targets can have dependencies. Dependencies are frameworks or libraries that our
 
 The difference between a framework and a library *(linked static or dynamically)* is that frameworks can contain multiple versions in the same bundle, and also additional assets that can be used by the code.
 
-> A library is a *.a* file which comes from the (ar)chive file type. A single archive file can only support a single architecture. If more than one architecture needs to be packaged, they can be bundled in a **fat Match-O binary**, a simple container format that can house multiple files of different architectures. If we would like to generate a fat Match-O binary, modify an existing one, or extract a library based on a specific architecture, we can use a command line tool called `lipo`.
+> A library is a *.a* file which comes from the (ar)chive file type. A single archive file can only support a single architecture. If more than one architecture needs to be packaged, they can be bundled in a **fat Mach-O binary**, a simple container format that can house multiple files of different architectures. If we would like to generate a fat Mach-O binary, modify an existing one, or extract a library based on a specific architecture, we can use a command line tool called `lipo`.
 
 
 You can read more about frameworks/libraries and static/dynamic on the [following link](https://pewpewthespells.com/blog/static_and_dynamic_libraries.html).
