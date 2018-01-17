@@ -25,7 +25,6 @@ owner:
   email: "pepibumur@gmail.com"
   disqus-shortname:
   twitter: "pepibumur"
-  facebook: "pepibumur"
   disqus-shortname: "pedropiera"
   google:
     plus: "PedroPiñeraBuendia"
@@ -37,7 +36,6 @@ owner:
   github: "pepibumur"
   stackoverflow: "963511/pedro-piñera-buendia"
   speakerdeck: pepibumur
-  medium: "@pepibumur"
 
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
