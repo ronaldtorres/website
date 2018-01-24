@@ -1,6 +1,8 @@
 ppinera.es
 ---------------
 
+> The website is deployed using [Netlify](netlify.com)
+
 ## Jekyll template
 Minimal mistakes, is a two column responsive Jekyll theme perfect for powering your GitHub hosted blog. 
 http://mmistakes.github.io/minimal-mistakes/theme-setup/
