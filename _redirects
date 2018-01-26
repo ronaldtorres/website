@@ -1,0 +1,3 @@
+# Redirect domain aliases to primary domain
+https://ppinera.com/* https://ppinera.es/:splat 301!
+https://www.ppinera.com/* https://ppinera.es/:splat 301!
