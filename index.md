@@ -4,6 +4,4 @@ excerpt: "Mobile developer, especially on iOS and an Open Source lover. Rails be
 tags: [PPinera, ios developer, mobile developer, sugarrecord, pedro piñera]
 image:
   feature: headers/home-header.jpg
-  credit: Utahca Flickr
-  creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
 ---
