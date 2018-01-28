@@ -53,7 +53,7 @@
     <div class="comments-wrap">
       {% if page.comments and page.comments-issue-number %}
       <h3>Comments</h3>
-      <p>Comments are published on the website <a href="{{site.repository}}">GitHub repository</a>. You can leave a comment on this post's <a href="{{site.repository}}/issues/{{page.comments-issue-number}}">issue</a>. Your comment will appeart automatically on this page.</p>
+      <p>Comments are published on the website <a target="blank" href="{{site.repository}}">GitHub repository</a>. You can leave a comment on this post's <a target="blank" href="{{site.repository}}/issues/{{page.comments-issue-number}}">issue</a>. Your comment will appeart automatically on this page.</p>
       <div id="comments-section" issue-number="{{ page.comments-issue-number }}"/>
       {% endif %}
     </div>
