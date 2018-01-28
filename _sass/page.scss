@@ -422,6 +422,15 @@ $button-size: 1.5rem;
 		margin-bottom: 1.5em;		
 	}
 }
+.comments-wrap {
+  p > a, li > a {
+		text-decoration: underline;
+  }
+  p {
+		margin-top: 1.5em;
+		margin-bottom: 1.5em;		
+	}
+}
 .toc {
 	display: none;
 	font-size: 95%;

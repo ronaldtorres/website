@@ -4,6 +4,7 @@ title: Who is controlling whom
 excerpt: With technology everywhere, we don't have control over it anymore. It's learnt how to hook us and keep us using it.
 tags: [hooked, internet, products]
 comments: true
+comments-issue-number: 9
 image:
   feature: headers/montreal.jpg
   credit: Photo by Anthony DELANOIX on Unsplash

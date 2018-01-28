@@ -16,6 +16,7 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   enable_coderay: false
+repository: https://github.com/pepibumur/pepibumur.github.io
 owner:
   name: Pedro Piñera
   avatar: others/bio-photo.png
