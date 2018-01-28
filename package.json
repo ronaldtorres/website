@@ -6,7 +6,7 @@
   "author": "Pedro Piñera <pepibumur@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "node_modules/.bin/webpack",
+    "build": "node_modules/.bin/webpack && bundle exec jekyll build",
     "dev": "concurrently \"node_modules/.bin/webpack -w\" \"jekyll serve\""
   },
   "devDependencies": {
