@@ -1,7 +1,5 @@
 title:            Pedro Piñera
 locale:           en_US
-# url:              http://127.0.0.1:4000
-# url:              http://www.ppinera.es
 permalink:   date
 markdown:    kramdown
 highlighter: rouge
@@ -23,9 +21,7 @@ owner:
   avatar: others/bio-photo.png
   bio: "Software Engineer and Open Sourcer"
   email: "pepibumur@gmail.com"
-  disqus-shortname:
   twitter: "pepibumur"
-  disqus-shortname: "pedropiera"
   google:
     plus: "PedroPiñeraBuendia"
     analytics: UA-3325566-3
