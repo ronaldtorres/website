@@ -9,3 +9,4 @@ node_modules
 _asset_bundler_cache
 .Ulysses-Group.plist
 .Ulysses-favorites.plist
+assets/js/bundle.js
