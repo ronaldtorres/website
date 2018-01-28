@@ -7,12 +7,12 @@ ppinera.es
 Minimal mistakes, is a two column responsive Jekyll theme perfect for powering your GitHub hosted blog. 
 http://mmistakes.github.io/minimal-mistakes/theme-setup/
 
-## Test locally
-If you want to test the blog locally you can do it easily with:
+## Setup
 
-```bash
-bundle exec jekyll serve
-```
+1. Git clone the project `git@github.com:pepibumur/pepibumur.github.io.git`.
+2. Install Bundler dependencies `bundle install`.
+3. Install Yarn dependencies `yarn install`.
+4. Execute `yarn dev` and open [http://127.0.0.1:4000/](http://127.0.0.1:4000/)
 
 ## Write about something
 If you would like me to write about something, don't hesitate to open a GitHub issue. Just let me know the topic/area you'd be interested about and I'll be happy to write a blog post about it.
