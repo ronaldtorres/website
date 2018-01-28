@@ -10,6 +10,8 @@
     "dev": "concurrently \"node_modules/.bin/webpack -w\" \"jekyll serve\""
   },
   "devDependencies": {
+    "@types/react": "^16.0.35",
+    "@types/react-dom": "^16.0.3",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
