@@ -37,7 +37,7 @@ export default class CommentsContainer extends React.Component<CommentsContainer
   }
 
   render() {
-    return <CommentsList comments={this.state.comments}/>
+    return <CommentsList comments={this.state.comments} issueNumber={this.props.issueNumber}/>
   }
 
 }
