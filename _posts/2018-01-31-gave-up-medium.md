@@ -4,7 +4,7 @@ title: I gave up using Medium
 excerpt: I gave up using Medium and here are the reasons that led me to make the decission.
 tags: [medium, blog, writing]
 comments: true
-comments-issue-number: 10
+comments-issue-number: 13
 image:
   feature: headers/gave-up-medium.jpg
   credit: Photo by Daryan Shamkhali on Unsplash
