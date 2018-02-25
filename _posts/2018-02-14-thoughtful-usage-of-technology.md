@@ -4,7 +4,7 @@ title: Thoughtful usage of technology
 excerpt: I gave up using Medium and here are the reasons that led me to make the decission.
 tags: [technology, detox, disconnection]
 comments: true
-comments-issue-number: 13
+comments-issue-number: 14
 image:
   feature: headers/thoughtful-technology.jpg
   credit: Photo by Clemente Ruiz Abenza on Unsplash
