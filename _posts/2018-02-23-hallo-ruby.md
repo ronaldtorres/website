@@ -4,7 +4,7 @@ title: Hallo Ruby, wie geht's?
 excerpt: It's been a long time since the last time I coded something on Ruby. In this blog post I talk about why I started using it again, and how it feels after spending a few years working with a compiled language like Swift.
 tags: [technology, detox, disconnection]
 comments: true
-comments-issue-number: 13
+comments-issue-number: 15
 image:
   feature: headers/gave-up-medium.jpg
   credit: Photo by Daryan Shamkhali on Unsplash
