@@ -24,6 +24,7 @@ owner:
   email: "pepibumur@gmail.com"
   twitter: "pepibumur"
   soundcloud: "ppinera"
+  spotify: pepibumur
   google:
     plus: "PedroPiñeraBuendia"
     analytics: UA-3325566-3
@@ -34,6 +35,9 @@ owner:
   github: "pepibumur"
   stackoverflow: "963511/pedro-piñera-buendia"
   speakerdeck: pepibumur
+webrick:
+  headers:
+    Access-Control-Allow-Origin: "*"
 
 include: [".htaccess"]
 exclude: ["lib", "webpack", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
