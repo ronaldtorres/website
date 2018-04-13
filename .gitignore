@@ -10,3 +10,4 @@ _asset_bundler_cache
 .Ulysses-Group.plist
 .Ulysses-favorites.plist
 assets/js/bundle.js
+yarn-error.log
