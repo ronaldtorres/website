@@ -59,8 +59,8 @@ Lastly and not less important, every Open Source project requires one thing, **c
 - **GDAnalytics**: I started that library for a side project I'm working on [Gitdo](http://gitdo.io). The purpose of that library is centralize analytics *(Flurry, Google Analytics, Fabric,..)* in a single API. It's highly inspired by [**SegmentIO**](https://segment.com/) and [**ARAnalytics**](https://github.com/orta/ARAnalytics)
 
 
-Hope you have enjoyed the article. If you’re another Open Source geek and you would like to comment any other point you consider is important also when working for these projects, feel free to add a comment or contact me, [pepibumur@gmail.com][2].
+Hope you have enjoyed the article. If you’re another Open Source geek and you would like to comment any other point you consider is important also when working for these projects, feel free to add a comment or contact me, [pedro@ppinera.es][2].
 
 
 [1]:	http://semver.org/ "Semanting Versioning"
-[2]:	mailto://pepibumur@gmail.com
+[2]:	mailto://pedro@ppinera.es

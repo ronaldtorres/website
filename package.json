@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Personal blog",
   "repository": "git@github.com:pepibumur/pepibumur.github.io.git",
-  "author": "Pedro Piñera <pepibumur@gmail.com>",
+  "author": "Pedro Piñera <pedro@ppinera.es>",
   "license": "MIT",
   "scripts": {
     "build": "node_modules/.bin/webpack && bundle exec jekyll build",

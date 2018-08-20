@@ -41,6 +41,6 @@ Working as a core engineer and being able to take decisions about the project ar
 
 <br><br>
 
-**Do you work on tools for other teams and would like to share them here? I’d like to hear about them. Do not hesitate to share them using the comments below or reach out to me via Twitter, [@pepibumur](https://twitter.com/pepibumur), or email, [pepibumur@gmail.com](mailto://pepibumur@gmail.com)**
+**Do you work on tools for other teams and would like to share them here? I’d like to hear about them. Do not hesitate to share them using the comments below or reach out to me via Twitter, [@pepibumur](https://twitter.com/pepibumur), or email, [pedro@ppinera.es](mailto://pedro@ppinera.es)**
 
 > Would you like to work with the SoundCloud iOS in a very challenging and exciting environment? SoundCloud is currently looking for iOS Engineers, check out the [positions page](https://soundcloud.com/jobs/2016-08-05-ios-engineer-berlin) for engineering to know about the open positions.

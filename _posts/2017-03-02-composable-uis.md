@@ -57,5 +57,5 @@ Since with this approach, each component brings its state from the data source, 
 
 ---
 
-Do you follow a similar approach in your projects? Are you considering moving towards that approach? I'd like to hear about your experience and the problems you found along the way. Reach out to [pepibumur@gmail.com](mailto://pepibumur@gmail.com) or leave a comment below.
+Do you follow a similar approach in your projects? Are you considering moving towards that approach? I'd like to hear about your experience and the problems you found along the way. Reach out to [pedro@ppinera.es](mailto://pedro@ppinera.es) or leave a comment below.
 

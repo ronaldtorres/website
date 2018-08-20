@@ -151,4 +151,4 @@ You can get this component from [here](https://github.com/gitdoapp/RAC-MutableCo
 
 If you're interested on Reactive paradigms and you want to keep learning, I'm currently writing about about the use of Reactive in Swift apps using ReactiveCocoa. You follow the status [here](https://leanpub.com/functionalreactiveprogrammingswift)
 
-> If you found any bug or you would like to comment something about Reactive or this port in particular, feel free to drop me a line, pepibumur@gmail.com. We're using this an another Reactive concepts on [GitDo](www.gitdo.io)
+> If you found any bug or you would like to comment something about Reactive or this port in particular, feel free to drop me a line, pedro@ppinera.es. We're using this an another Reactive concepts on [GitDo](www.gitdo.io)

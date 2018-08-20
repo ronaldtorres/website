@@ -122,4 +122,4 @@ RACSignal.createSignal({ (subscriber) -> RACDisposable! in
 
 > ReactiveCocoa is very useful when you're dealing with asynchronnous events because you can manipulate and combine them easily as you're receiving them. In that case we have different streams that we combine in a single stream we're we're receiving the collection items.
 
-If you want to use Reactive programming in your projects and don't know how, or you wanna talk about anything related with that, drop me a line, [pepibumur@gmail.com](mailto://pepibumur@gmail.com) 
+If you want to use Reactive programming in your projects and don't know how, or you wanna talk about anything related with that, drop me a line, [pedro@ppinera.es](mailto://pedro@ppinera.es) 
