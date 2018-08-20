@@ -25,12 +25,19 @@ Getting burnout of doing open source work is not something new. If you do a bit 
 - [Why open source developers are burning out: No respect](https://www.techrepublic.com/article/why-open-source-developers-are-burning-out-no-respect/)
 - [https://nolanlawson.com/2017/03/05/what-it-feels-like-to-be-an-open-source-maintainer/](https://nolanlawson.com/2017/03/05/what-it-feels-like-to-be-an-open-source-maintainer/)
 
-In this blog post I'll walk you through some changes I've made to have a healthier relationship with the open source world.
+In this blog post I'll walk you through some of the principles I'm sticking to in order to have a healthier open source contributions:
 
 ### It's not my job
-Open source is something that I do in my free time, something I'm not getting paid for, and which do for fun. While I have responsibilities and obligations at work 
+Open source is something that I do in my free time, something I'm not getting paid for, and which do for fun. I don't take open source responsibilities that seriously and dedicate the amount of time I consider healthy and balanced with other responsibilities. If notice I'm assuming too many responsibilities and dedicating too much time is because I stop having fun and start worrying too much about the project. That does not mean that we don't have responsibilities, because open source projects come with them. As soon as developers and companies depend on it, they'll find bugs or constraints which they'll need to get fixed and improved. If you don't have some commitment to the project, no one will use it. It's up to you to ensure that the commitment is well 
 
-### Have a vision and stick to it
+### Have a vision
+When I start an open source project I write down what I'm aiming for with it. Which issues I'm trying to solve, the maintenance the project is going to have, is it short or long term project? By doing so you avoid developers setting wrong expectations and you can use it to steer the project and guide discussions.  
+
+### Stick to your vision
+A vision is useless if we don't embrace it. We might hear lots of different opinions along the way. People that like your project and start supporting it since it's a baby, people that don't believe in the idea and think it's not worth spending time on something like that. If I dreamed with the project and envisioned it, I appreciate feedback but I'd like to prove myself wheter it was a wrong decision or something that brings value to developers.
+
+### Priorities
+
 
 ### Say no when you have to
 This is something I struggle a lot with because overall, I don't know how to say no. Luckilly, I'm getting better at this with some work. When 
