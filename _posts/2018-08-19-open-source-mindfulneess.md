@@ -27,28 +27,22 @@ Getting burnout of doing open source work is not something new. If you do a bit 
 
 In this blog post I'll walk you through some of the principles I'm sticking to in order to have a healthier open source contributions:
 
-### It's not my job
-Open source is something that I do in my free time, something I'm not getting paid for, and which do for fun. I don't take open source responsibilities that seriously and dedicate the amount of time I consider healthy and balanced with other responsibilities. If notice I'm assuming too many responsibilities and dedicating too much time is because I stop having fun and start worrying too much about the project. That does not mean that we don't have responsibilities, because open source projects come with them. As soon as developers and companies depend on it, they'll find bugs or constraints which they'll need to get fixed and improved. If you don't have some commitment to the project, no one will use it. It's up to you to ensure that the commitment is well 
+### Responsibilities
+Open source is something that I do in my free time, something I'm not getting paid for, and which I do for fun. I dedicate the amount of time I consider healthy and balanced with other responsibilities. If notice I'm assuming too many responsibilities and dedicating too much time is because I stop having fun and start worrying too much about the project. That does not mean that we don't have responsibilities, because open source projects come with them. As soon as developers and companies depend on it, they'll find bugs or constraints which they'll need to get fixed and improved. If you don't have some commitment to the project, no one will use it. 
 
-### Have a vision
-When I start an open source project I write down what I'm aiming for with it. Which issues I'm trying to solve, the maintenance the project is going to have, is it short or long term project? By doing so you avoid developers setting wrong expectations and you can use it to steer the project and guide discussions.  
+### Vision
+When I start an open source project I write down what I'm aiming for with it. Which issues I'm trying to solve, the maintenance the project is going to have, is it short or long term project? By doing so you avoid developers setting wrong expectations and you can use it to steer the project and guide discussions. For example, if it's an experimental project that you don't plain to maintain, that should be reflected somewhere on the README. Having a vision in the project is useful in discussions where you need to justify why you are making certain decissions.
 
-### Stick to your vision
-A vision is useless if we don't embrace it. We might hear lots of different opinions along the way. People that like your project and start supporting it since it's a baby, people that don't believe in the idea and think it's not worth spending time on something like that. If I dreamed with the project and envisioned it, I appreciate feedback but I'd like to prove myself wheter it was a wrong decision or something that brings value to developers.
+### No
+This is something I struggle a lot with because overall, I don't know how to say no. Luckily, I'm getting better at this with some work. Some examples of when I have to say know are:
+- When feature request is outside the scope of the project.
+- When the code quality don't follow the project standards.
+- When tests are missing.
+Not being assertive in an open source project might lead to some frustration and a bad of self-steem.
+
+### Goal
+A project without a goal is hard to steer. When I work on a new project and I tell people about it, I hear lots of different opinions along the way. People that like the project and start supporting, people that don't believe in the idea and think it's not worth spending time on something like that. If I dreamed with the project and envisioned it, I appreciate feedback but I'd like to prove myself whether it was a wrong decision or something that brings value to developers.
+
+I've sometimes been concerned about what other developers thought about the project and ended up losing motivation for the project.
 
 ### Priorities
-
-
-### Say no when you have to
-This is something I struggle a lot with because overall, I don't know how to say no. Luckilly, I'm getting better at this with some work. When 
-
-
-<!-- It's very easy to get trapped by the joy of doing open source work and reach a burnout point when your passion turns into indiference
-
-Although I'd read from different open source maintaners how easy is to get burned out being open source maintainer, I wasn't fully aware of how true that statement is until I took it more seriously. 
-
-Most of this cotributions usually happens outside work, 
- -->
-
-
-<!-- Unless you agree with your company, which rarely happens, the open source work that you do needs to be  -->
