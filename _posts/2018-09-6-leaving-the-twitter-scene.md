@@ -1,10 +1,10 @@
 ---
 layout: post
 title: Leaving the Twitter scene
-excerpt: Not being mindful when contributing and maintaining open source projects might lead to burnout or low self-steem. In this blog post I talk about some principles that I applied to have a healthier relationship with the open source.
-tags: [xcode, scale, swift, tuist, developer]
+excerpt: In this blog post I explain what led me to leave Twitter.
+tags: [twitter, social networks, genuine-self]
 comments: true
-comments-issue-number: 23
+comments-issue-number: 24
 image:
   feature: headers/leaving-twitter.jpg
   credit: Photo by Pavel Nekoranec on Unsplash
