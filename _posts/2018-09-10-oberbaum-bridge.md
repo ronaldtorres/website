@@ -15,4 +15,4 @@ sitemap   :
 - **What:** [Oberbaumbrücke](https://en.wikipedia.org/wiki/Oberbaum_Bridge)
 - **Surface:** Water color A4 paper.
 
-![Oberbaum bridge in Berlin]({{site.url}}/images/posts/oberbaum-bridge.jpg)
+![Oberbaumbrücke in Berlin]({{site.url}}/images/posts/oberbaum-bridge.jpg)
