@@ -92,7 +92,7 @@ I think tools should be treated with the same care as the project’s code. It s
 ### 🐞 Deficient error handling
 How often have you seen a tool blowing up an error which outputs the whole stacktrace. *Is it valuable for the developer using the tool?* No, that’s handy for the developer that writes the tool. The users of the tools need to know what happened, and why they couldn’t achieve what they were trying to achieve. **What caused the problem is an implementation detail that shouldn’t be exposed to the user.** If you are writing the tool, it takes more work to handle all possible scenarios, but by doing that you’ll offer the users a better experience, and they’ll be thankful for that. What's more, if you output a stack trace, they’ll think the source of the problem is in the tool itself. 
 
-### 💥 Nosy output
+### 💥 Noisy output
 In comparison to non-CLI software, like web or mobile apps, the interaction with the tools happens through the standard input and the standard output, what they type and what they see in the terminal. **There’s only one channel to communicate things to the user, so we have to use it well.** We might feel tempted to dump anything, but that results in a bad experience because we may present information that is irrelevant to the user. Not showing enough information is as bad as showing too much. If we show nothing, the developer might think that the process got stuck and that they should interrupt it. Too much information might make the developer feel overwhelmed. Whenever you plan to add an output, answer this question: *“Is this useful for the user?”*. If it’s not, don’t output it. See the terminal as a constrained canvas where strokes are expensive.
 
 ## 🤲 Open source and third-party tools
