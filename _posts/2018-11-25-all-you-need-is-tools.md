@@ -15,7 +15,7 @@ sitemap   :
 
 Almost a year ago, I joined the team *Mobile Tooling* at Shopify. It’s a team that focuses on developing tools and infrastructure that mobile developers can leverage to build and release high-quality apps. It was the first time I had the opportunity to work full time on tooling, something that I’d had the opportunity to experiment with in some open source space.
 
-> You can read [this blog post](https://engineering.shopify.com/blogs/engineering/mobile-tophatting-at-shopify-1) and [this other one](https://engineering.shopify.com/blogs/engineering/scaling-ios-ci-with-anka) to have an idea of the things that my team is building at Shopify.
+> You can read [Mobile Tophatting at Shopify](https://engineering.shopify.com/blogs/engineering/mobile-tophatting-at-shopify-1) and [Scaling iOS CI with Anka](https://engineering.shopify.com/blogs/engineering/scaling-ios-ci-with-anka) to have an idea of the things that my team is building at Shopify.
 
 Tooling is an area that is often disregarded. Since it doesn’t contribute directly to the product, most companies would rather have developers building the app, instead of building the tools that are necessary for that. What many companies don’t know is that having great tooling and infrastructure is vital for the projects to move forward steadily. It has a **significant impact on developers productivity, motivation, and the quality of the product** that is delivered to the end user.
 
