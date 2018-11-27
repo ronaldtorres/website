@@ -1,6 +1,8 @@
 ppinera.es
 ---------------
 
+[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/pepibumur)
+
 > The website is deployed using [Netlify](netlify.com)
 
 ## Jekyll template
