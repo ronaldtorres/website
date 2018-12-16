@@ -23,7 +23,7 @@ I'm a very casual and approachable person, like you and most people in this worl
 
 Here's the list of the companies that I've proudly been part of:
 
-- [Shopify](https://shopify.com/): Production engineer since 2018
+- [Shopify](https://shopify.com/): Senior production engineer since 2018
 - [SoundCloud](https://soundcloud.com/): Core iOS developer in 2015 and 2017
 - [8fit](https://8fit.com/): Mobile developer in 2014 and 2015
 - [Redbooth](https://redbooth.com/): iOS developer in 2013 and 2014
