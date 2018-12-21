@@ -29,6 +29,8 @@ owner:
   github: "pepibumur"
   stackoverflow: "963511/pedro-piñera-buendia"
   speakerdeck: pepibumur
+  exposure: pedropinera
+  kit: pedropinera
 webrick:
   headers:
     Access-Control-Allow-Origin: "*"
