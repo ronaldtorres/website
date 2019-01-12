@@ -31,6 +31,9 @@ owner:
   speakerdeck: pepibumur
   exposure: pedropinera
   kit: pedropinera
+  dev: pepibumur
+  coffee: 4mac2FLVH
+  linkedin: pedro-piñera-buendia-9765a9125
 webrick:
   headers:
     Access-Control-Allow-Origin: "*"
