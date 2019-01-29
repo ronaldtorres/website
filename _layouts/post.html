@@ -9,24 +9,7 @@
 
 <body class="post">
 
-{% include _browser-upgrade.html %}
-
 {% include _navigation.html %}
-
-{% if page.image.feature %}
-  <div class="image-wrap">
-  <img src=
-    {% if page.image.feature contains 'http' %}
-      "{{ page.image.feature }}"
-    {% else %}
-      "{{ site.url }}/images/{{ page.image.feature }}"
-    {% endif %}
-  alt="{{ page.title }} feature image">
-  {% if page.image.credit %}
-    <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
-  {% endif %}
-  </div><!-- /.image-wrap -->
-{% endif %}
 
 <div id="main" role="main">
   <div class="article-author-side">
@@ -51,7 +34,7 @@
       </footer>
     </div><!-- /.article-wrap -->
     <div class="comments-wrap">
-      {% if page.comments and page.comments-issue-number %}
+      {% if page.comments-issue-number %}
       <h3>Comments</h3>
       <p>Comments are published on the website <a target="blank" href="{{site.repository}}">GitHub repository</a>. You can leave a comment on this post's <a target="blank" href="{{site.repository}}/issues/{{page.comments-issue-number}}">issue</a>. Your comment will show up automatically on this page.</p>
       <div id="comments-section" issue-number="{{ page.comments-issue-number }}"/>

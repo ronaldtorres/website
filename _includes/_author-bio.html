@@ -1,5 +1,5 @@
 {% if page.author %}
-  {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %}
+  {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
 {% endif %}
 
 {% if author.avatar contains 'http' %}
@@ -16,9 +16,10 @@
 {% if author.dev %}<a href="https://dev.to/{{ author.dev }}/" class="author-social" target="_blank"><i class="fab fa-dev"></i>  Dev</a>{% endif %}
 {% if author.speakerdeck %}<a href="http://speakerdeck.com/{{ author.speakerdeck }}" class="author-social" target="_blank"><i class="fa fa-desktop"></i>  SpeakerDeck</a>{% endif %}
 {% if author.exposure %}<a href="https://{{ author.exposure }}.exposure.co/" class="author-social" target="_blank"><i class="fa fa-camera"></i> Exposure</a>{% endif %}
+{% if author.500px %}<a href="https://500px.com/{{ author.500px }}" class="author-social" target="_blank"><i class="fab fa-500px"></i>  500px</a>{% endif %}
 {% if author.email %}<a href="mailto:{{ author.email }}" class="author-social" target="_blank"><i class="fa fa-envelope-square"></i>  Email</a>{% endif %}
 {% if author.twitter %}<a href="http://twitter.com/{{ author.twitter }}" class="author-social" target="_blank"><i class="fab fa-twitter-square"></i>  Twitter</a>{% endif %}
-{% if author.linkedin %}<a href="http://linkedin.com/in/{{ author.linkedin }}" class="author-social" target="_blank"><i class="fab fa-linkedin-square"></i>  LinkedIn</a>{% endif %}
+{% if author.linkedin %}<a href="http://linkedin.com/in/{{ author.linkedin }}" class="author-social" target="_blank"><i class="fab fa-linkedin"></i>  LinkedIn</a>{% endif %}
 {% if author.github %}<a href="http://github.com/{{ author.github }}" class="author-social" target="_blank"><i class="fab fa-github"></i> Github</a>{% endif %}
 {% if author.stackoverflow %}<a href="http://stackoverflow.com/users/{{ author.stackoverflow }}" class="author-social" target="_blank"><i class="fab fa-stack-overflow"></i>  Stackoverflow</a>{% endif %}
 {% if author.soundcloud %}<a href="http://soundcloud.com/{{ author.soundcloud }}" class="author-social" target="_blank"><i class="fab fa-soundcloud"></i> SoundCloud</a>{% endif %}

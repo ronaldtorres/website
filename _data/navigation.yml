@@ -1,8 +1,10 @@
-- title: About
-  url: /about
 - title: Life
   url: /life
+- title: About
+  url: /about
+- title: Books
+  url: /books
+- title: Speaking
+  url: /speaking
 - title: Tuist
   url: https://tuist.io
-- title: GitHub
-  url: https://github.com/pepibumur
