@@ -9,6 +9,24 @@ In this page I keep track of the books that I read. Before the creation of this 
 
 > If you'd like to recommend me a book, you can [open an issue](https://github.com/pepibumur/pepibumur.github.io/issues/new?labels=book-recommendation&assignee=pepibumur)
 
+## Currently reading
+
+- La civilización del espectáculo - Mario Vargas Llosa
+
+## Backlog
+
+- Early retirement extreme.
+- Liderazgo - Daniel Goleman
+- How to break up from your book
+- The underground railroad
+- Higher calling
+- Bitwise, a life in code
+- How to Be Successful without Hurting Men's Feelings: Non-threatening Leadership Strategies for Women
+- Small Fry. - Lisa Brennan
+- Digital minimalism
+
+## Read
+
 ### [The learning photographer - scholarly texts on Hans Georg Berger's art work in Laos and Iran](https://trove.nla.gov.au/work/157104513?q&versionId=171256754)
 
 - **Rating:** ★★★★★
