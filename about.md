@@ -26,6 +26,15 @@ Here's the list of the companies that I've proudly been part of:
 - [8fit](https://8fit.com/): Mobile developer in 2014 and 2015
 - [Redbooth](https://redbooth.com/): iOS developer in 2013 and 2014
 
+## Values 🌱
+
+Here's a list of values that I believe in and that drive most of my decisions and passions in life:
+
+- **Genuineness:** I trust things and people when they are authentic, when they don't try to make up a false appearance. I often come across banal elements on the Internet, and I find it hard to put trust on them. Since I believe in being authentic, I seek authenticity myself. If feel bad, have flaws, did something wrong, or feel wonderful, that's what I share with others. I don't expect the same from others, nor I'd push them to do so.
+- **Openness:** I believe in the value of being open and sharing our learnings, mistakes, work, and experiences with others. This is a value that I learned from my experience doing open source work and I think it applies to other areas. I try to be open and direct when talking to people, when dumping thoughts on my blog, or having discussions on GitHub. When openness is reciprocal, it inspires wonderful interactions between people. 
+
+Nowadays, we often try to share a non-genuine version of ourselves on the Internet.
+
 ## Event organization 🎟
 
 For two years, I used to organize a conference in Barcelona for app designers and developers [ADDC](https://addconf.com):
