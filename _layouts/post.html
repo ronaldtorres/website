@@ -33,13 +33,6 @@
         <p class="byline"><strong>{{ page.title }}</strong> was published on <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>{% if page.modified %} and last modified on <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">{{ page.modified | date: "%B %d, %Y" }}</time>{% endif %}.</p>
       </footer>
     </div><!-- /.article-wrap -->
-    <div class="comments-wrap">
-      {% if page.comments-issue-number %}
-      <h3>Comments</h3>
-      <p>Comments are published on the website <a target="blank" href="{{site.repository}}">GitHub repository</a>. You can leave a comment on this post's <a target="blank" href="{{site.repository}}/issues/{{page.comments-issue-number}}">issue</a>. Your comment will show up automatically on this page.</p>
-      <div id="comments-section" issue-number="{{ page.comments-issue-number }}"/>
-      {% endif %}
-    </div>
   </article>
 </div><!-- /#main -->
 
