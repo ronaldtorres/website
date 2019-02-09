@@ -46,6 +46,4 @@ All these tests are run against **modified files**, and as a result, it warns yo
 
 Since we started using it at SoundCloud the project has been improving progressively and we're enforcing new good practices every day with new rules. Whenever we feel something can be *"Danger Checkable"* we implement the check and add it to the list of existing check.
 
-> How do you ensure good practices in your projects? I'd love to hear about them, feel free to share them as a comment in this post.
-
-<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/223271114&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+> How do you ensure good practices in your projects?

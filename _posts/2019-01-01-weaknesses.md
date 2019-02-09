@@ -31,7 +31,3 @@ On the social side of things, I'm a **little assertive**. If I disagree with som
 - If I start overthinking before doing something that scares me, stop the thoughts immediately and instead go ahead.
 
 These are some of the weaknesses that I'm becoming better at, and that I'm glad to share with you. I'm a little ashamed, especially when everyone around me seems so perfect and with no weaknesses at all. I'd like you to know that I'm not a perfect person, no one is, and that I have my own flaws too that I need to tackle. Hopefully, I can even get some help from you, I'd appreciate it a lot. I also hope this encourages more people to share their weaknesses without any sort of complex.
-
-Here's a song that I came across recently and that I think is good to add a final touch to the blog post. I hope you like it too.
-
-<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/232952686&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>

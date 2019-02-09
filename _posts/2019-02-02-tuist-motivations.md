@@ -32,5 +32,3 @@ I'm working on adding **two commands, build and test** so that you can build and
 **Slow but steadily, the baby is growing.** We want to make sure that we are taking steps in the right direction and that we continue to be aligned with our values. Moreover, we keep improving our test suite, to which we recently added acceptance tests with [Cucumber]() that test real scenarios. With projects and teams already depending on Tuist from their workflows, is crucial to make sure the tool works reliably and that minor versions don't break their projects.
 
 It seems it was yesterday when I ran `swift package generate` to bootstrap the project. **I can't wait to see all the features that we'll land on the project.**
-
-<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/564868620&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>

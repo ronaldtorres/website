@@ -35,5 +35,3 @@ It’s hard for me to see how new generations are more and more into mobile phon
 - If other person’s life is more interesting than yours then move the focus back to yours because your life is passing.
 
 ### Have social networks affected you or any person around you negatively? Feel free to write a comment commenting how you addressed the problem. It’s up to us to stop this.
-
-<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/8595297&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>

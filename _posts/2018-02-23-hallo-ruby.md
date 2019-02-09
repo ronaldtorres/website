@@ -41,5 +41,3 @@ There are things from writing software in Ruby that I'm enjoying a lot:
 I hope you enjoyed this brief reflection. If you are more familiar with Kotlin or Javascript, you can replace Swift and Ruby by Kotlin and Javascript and the points mentioned above should apply as well.  As I mentioned earlier, making the software that I write more accessible is for me one of the key motivators and having the opportunity to do it at Shopify is one of the best decisions I've recently made. You can expect more Ruby OSS coming from me from now on :).
 
 If you have had a similar experience transitioning from a static to a dynamic language I'd like to hear your experience. Don't hesitate to leave a comment right below.
-
-<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/402025701&color=%2394bc6c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>

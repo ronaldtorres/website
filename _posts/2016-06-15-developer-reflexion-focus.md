@@ -30,5 +30,3 @@ I’ve got to these points when I got overwhelmed. Not to get burnout at all but
 It’s impossible to keep up with all the things that surround us. There will always be a new pattern, programming language, library, and cool stuff that you can learn or work on. We live in the information era, more are more things come up everyday. Trying to ask our brain for keeping up with all of them is like asking for running a marathon, day after day. We’re killing our mental health.
 
 In these moments we need something very simple and important, **focus**. No real-time distractions that get your thinking out of your current focus. Do only one thing at the same time, and if there’s no time it’s also fine. Think about your life quality.
-
-<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/77812594&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>

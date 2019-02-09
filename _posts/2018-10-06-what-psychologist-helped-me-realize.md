@@ -30,5 +30,3 @@ Last but not least, I was introduced to the notion of **emotional intelligence**
 **Reasoning about my thinking, emotions, and time management** has significantly improved my life. Work is no longer my main focus, and I don't let it invade other areas of my life. I learned how to make better decisions and deal with emotions that used to affect me. All of that thanks to the professional help of a psychologist that understands how we, humans, think and behave. Our brain 🧠 is a muscle which we need to take care of. **Take care of it ❤️, take care of yourself.**
 
 If you are experiencing similar things in your life and would like to chat about it, don't hesitate to let me know. I'll be glad to share with you the ideas that worked for me.
-
-<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/480325692&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>

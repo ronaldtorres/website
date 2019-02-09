@@ -101,5 +101,3 @@ As you have seen, working on tooling is **exciting and challenging**. The proces
 If you found it exciting and you’d like to speak further, don’t hesitate to leave a comment or write me an email. We, mobile toolers *(if that’s an accepted word)*, go through similar struggles so the more we share, the more we can learn from each other.
 
 Have a nice week!
-
-<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/354224399&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
