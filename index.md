@@ -1,7 +1,6 @@
 ---
 layout: home
-title: Tech blog
-feed: feed/tech.xml
+title: Blog
 pagination:
   enabled: true
 ---

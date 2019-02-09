@@ -15,10 +15,6 @@ plugins:
   - emoji_for_jekyll
   - jekyll-gist
   - jekyll-paginate-v2
-feed:
-  path: feed/tech.xml
-  collections:
-    - life
 pagination:
   enabled: true
   per_page: 10
@@ -34,9 +30,6 @@ kramdown:
   enable_coderay: false
 collections:
   posts:
-    output: true
-  life:
-    permalink: /:year/:month/:day/:title:output_ext
     output: true
 repository: https://github.com/pepibumur/pepibumur.github.io
 author:
