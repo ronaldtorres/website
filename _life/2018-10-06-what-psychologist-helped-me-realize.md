@@ -3,7 +3,6 @@ layout: post
 title: "What a psychologist helped me realize"
 excerpt: It's been a few months going through a therapy that has helped me understand how my brain works and where the stress that I used to experience came from.
 tags: [berlin, oberbaum, water color, painting]
-comments-issue-number: 26
 ---
 
 A while ago I wrote a [blog post](/2018/05/25/stress) about the stress that I was suffering in my life. Back then, I decided to get some professional help, which turned out to be a great decision. Not only she helped me manage the stress, but I understood better how our brain works. I'm so glad that I made that decision, and I encourage anyone suffering stress or emotional issues to get help as well. 

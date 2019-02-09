@@ -3,7 +3,6 @@ layout: post
 title: Who is controlling whom
 excerpt: With technology everywhere, we don't have control over it anymore. It's learnt how to hook us and keep us using it.
 tags: [hooked, internet, products]
-comments-issue-number: 9
 ---
 
 Technology is everywhere nowadays. It's the computer that we use every day, our smartphone, the watch that is connected to the Internet, our new and futurist car that provides you with the last data about the traffic. There used to be more distance between us technology, but it's so widely adopted that nowadays we don't know how to live without technology. I feel like a few years ago we were the ones controlling the technology, but more and more, it's technology the one that is controlling us nowadays.

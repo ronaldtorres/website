@@ -3,7 +3,6 @@ layout: post
 title: Open source mindfulness
 excerpt: Not being mindful when contributing and maintaining open source projects might lead to burnout or low self-steem. In this blog post I talk about some principles that I applied to have a healthier relationship with the open source.
 tags: [xcode, scale, swift, tuist, developer]
-comments-issue-number: 23
 ---
 
 As a developer who likes and believes in the benefits of making our software open, I devoted a vast amount of time building open source libraries and tools in the open. It helps me learn and grow as a software engineer and experiment with things I can't experiment with at work. In most cases, those contributions happen before/after work, when you need to care about other important things in life like family, friends, and health. Yes, those things are more important than work or open source, regardless of how much you like it.

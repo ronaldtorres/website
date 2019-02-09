@@ -3,7 +3,6 @@ layout: post
 title: The hermeticism and rigidity of Xcode and its projects
 excerpt: Xcode and its projects are not as flexible as they could be, which makes it hard for companies to optimize their workflows and processes. In this post I'll analyze some of the things that I would improve from its build system and projects.
 tags: [hooked, internet, products]
-comments-issue-number: 10
 ---
 
 If you work with Xcode you are most likely familiar with its hermeticism. Compared to other programming languages, like Kotlin, where the build system is independent of the IDE *(Gradle)*, in Xcode everything is together and not well documented. Xcode projects have build settings and build phases that are the input to the build system that Xcode uses. Have you ever searched for what each of the build settings means? You'll most likely end up on StackOverflow or some random website where someone tried to figure out what these settings are for. Documentation is terrible, and developers have to do some reverse engineering to understand what they are for. When I see other build systems like Gradle, where you have total flexibility during the build process, and everything is documented I feel jealous. I wish Apple had something like that with Xcode. I'm optimistic, and I believe it's going to happen sooner or later, but I think we are far from having it.

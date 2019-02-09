@@ -3,7 +3,6 @@ layout: post
 title: Thoughtful usage of technology
 excerpt: I gave up using Medium and here are the reasons that led me to make the decission.
 tags: [technology, detox, disconnection]
-comments-issue-number: 14
 ---
 
 - I struggle to concentrate when I read.

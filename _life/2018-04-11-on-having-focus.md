@@ -3,7 +3,6 @@ layout: post
 title: On having focus
 excerpt: I'm struggling to have focus nowadays. In this post I describe why it's so hard for me to focus, and the things that I'm doing to overcome the problem.
 tags: [technology, focus, developer]
-comments-issue-number: 17
 ---
 
 There's something that has been happening to me lately, and that I'm struggling with: **having focus**. While this wasn't a problem a few years ago, and I was able to sit down and work on one thing at a time without distractions, I can't do that anymore. It might be that I'm getting older, or that I ambitiously pushed myself beyond my limits. The fact is that this started affecting me, losing motivation for things, and feeling exhausted with technology overall. 

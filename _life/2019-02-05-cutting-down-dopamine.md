@@ -2,7 +2,6 @@
 layout: post
 title: Cutting down dopamine sources
 excerpt: In this blog post I talk about why I stopped using Twitter and some thoughts that I have on our addiction to social networks.
-comments-issue-number: 35
 tags: [twitter, dopamine, social networks, addictions]
 ---
 

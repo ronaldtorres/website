@@ -3,7 +3,6 @@ layout: post
 title: Hallo Ruby, wie geht's?
 excerpt: It's been a long time since the last time I coded something on Ruby. In this blog post I talk about why I started using it again, and how it feels after spending a few years working with a compiled language like Swift.
 tags: [technology, detox, disconnection]
-comments-issue-number: 15
 ---
 
 It's been a long time since the last time I built something in Ruby. Most of the work that I've done with the language while I was iOS developer were changes on either the CocoaPods `Podfile`, or the `Fastfile`. I became super optimistic when Swift came out, and even built some command line tools and libraries contributing to the community. However, as I wrote in one of my posts, I decided to devote most of my time on interpreted and community-driven languages like Ruby or Javascript. Two things motivated me to make this decision:
