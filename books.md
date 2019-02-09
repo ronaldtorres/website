@@ -9,10 +9,6 @@ In this page I keep track of the books that I read. Before the creation of this 
 
 > If you'd like to recommend me a book, you can [open an issue](https://github.com/pepibumur/pepibumur.github.io/issues/new?labels=book-recommendation&assignee=pepibumur)
 
-## Currently reading
-
-- La civilización del espectáculo - Mario Vargas Llosa
-
 ## Backlog
 
 - Early retirement extreme.
