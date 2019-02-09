@@ -11,12 +11,9 @@
 <p>{{ author.bio }}</p>
 
 <br></br>
-{% if author.coffee %}<a href="https://www.buymeacoffee.com/{{ author.coffee }}/" class="author-social" target="_blank"><i class="fas fa-coffee"></i> Buy me a coffee</a>{% endif %}
-{% if author.kit %}<a href="https://kit.com/{{ author.kit }}/" class="author-social" target="_blank"><i class="fa fa-cogs"></i> Kit</a>{% endif %}
 {% if author.dev %}<a href="https://dev.to/{{ author.dev }}/" class="author-social" target="_blank"><i class="fab fa-dev"></i>  Dev</a>{% endif %}
 {% if author.speakerdeck %}<a href="http://speakerdeck.com/{{ author.speakerdeck }}" class="author-social" target="_blank"><i class="fa fa-desktop"></i>  SpeakerDeck</a>{% endif %}
 {% if author.exposure %}<a href="https://{{ author.exposure }}.exposure.co/" class="author-social" target="_blank"><i class="fa fa-camera"></i> Exposure</a>{% endif %}
-{% if author.500px %}<a href="https://500px.com/{{ author.500px }}" class="author-social" target="_blank"><i class="fab fa-500px"></i>  500px</a>{% endif %}
 {% if author.email %}<a href="mailto:{{ author.email }}" class="author-social" target="_blank"><i class="fa fa-envelope-square"></i>  Email</a>{% endif %}
 {% if author.twitter %}<a href="http://twitter.com/{{ author.twitter }}" class="author-social" target="_blank"><i class="fab fa-twitter-square"></i>  Twitter</a>{% endif %}
 {% if author.linkedin %}<a href="http://linkedin.com/in/{{ author.linkedin }}" class="author-social" target="_blank"><i class="fab fa-linkedin"></i>  LinkedIn</a>{% endif %}

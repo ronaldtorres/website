@@ -51,11 +51,8 @@ author:
   github: "pepibumur"
   stackoverflow: "963511/pedro-piñera-buendia"
   speakerdeck: pepibumur
-  kit: pedropinera
   dev: pepibumur
-  coffee: 4mac2FLVH
   linkedin: pedro-piñera-buendia-9765a9125
-  500px: pedropinera
 webrick:
   headers:
     Access-Control-Allow-Origin: "*"
