@@ -31,6 +31,8 @@ kramdown:
 collections:
   posts:
     output: true
+  galleries:
+    output: true
 repository: https://github.com/pepibumur/pepibumur.github.io
 author:
   name: Pedro Piñera
