@@ -1,5 +1,7 @@
 _site
 .sass-cache
+.tweet-cache
+.pygments-cache
 .DS_Store
 Gemfile.lock
 *.sublime-project
