@@ -6,17 +6,19 @@ comments-issue-number: 31
 tags: [electron, web, desktop apps, js, electronjs]
 ---
 
-One of the core parts of Tuist is [`xcodeproj`](https://github.com/tuist/xcodeproj), a Swift library that allows you to read, update and write Xcode projects. Tuist leverages the tool to generate projects and provide a convenient and friendly interface to your Xcode projects. The main gateway to modify Xcode projects is Xcode, the official IDE from Apple. Xcode knows the structure of the project and converts your actions within the project into changes in the project files. We barely have to touch those files ourselves, only if we get git conflicts and need to move some lines around.
+One of the core building block of [Tuist](https://tuist.io) is [`xcodeproj`](https://github.com/tuist/xcodeproj), a Swift library that allows you to read, update and write Xcode projects. Tuist leverages the tool to generate projects and provide a convenient and friendly interface to your Xcode projects. The main gateway to modify Xcode projects is Xcode, the official IDE from Apple. Xcode knows the structure of the project and converts your actions within the project into changes in the project files. We barely have to touch those files ourselves, only if we get git conflicts and need to move some lines around.
 
-However, there are certain situations where it might be useful to do some automation on those files, for example, to detect references to files that don’t exist, or invalid build settings. Even though you could check those things by parsing the file yourself and traversing the structure, you can do it more conveniently with `xcodeproj` which not only provides you with an API in Swift, but makes sure that your changes in the project file are persisted with the format that Xcode.
+There are some scenarios where it might be useful to do some automation on those files, for example, to detect references to files that don’t exist, or invalid build settings. Even though you could check those things by parsing the file yourself and traversing the structure, you can do it more conveniently with `xcodeproj`. It not only provides you with an API in Swift, but ensures that your changes in the project file are persisted with the format that Xcode.
 
-In this blog post, I’ll talk about the project and its structure, and jump into some use cases where you might consider introducing some automation in your projects with `xcodeproj`. 
+In this blog post, I’ll talk about the project and its structure, and jump into some examples where you might consider introducing some automation in your projects with `xcodeproj`.
+
+**Note that APIs might have changed since the blog post was written. If the examples don't run as expected I recommend checking out the documentation on the repository.**
 
 ## Xcodeproj, a monolithic format
 
-The Xcode project, which has an extension `xcodeproj` *(where the name of the library comes from)*, is a folder that contains several files that define different components of the project. One of the most interesting and complex files is the file `project.pbxproj`. You might  be familiar with it if you have run into git conflicts on Xcode projects before. This is a [property list file](TODO), like the `Info.plist`, but with a subtle difference that made implementing `xcodeproj` a challenge. The file has some custom annotations that Xcode adds along the file to make the format more human-readable and *(I'm guessing this one)* facilitate resolving git conflicts. Since the format is not documented, the library required several iterations to approximate very accurately the format of Xcode. 
+The Xcode project, which has an extension `xcodeproj` *(where the name of the library comes from)*, is a folder that contains several files that define different components of the project. One of the most interesting and complex files is the file `project.pbxproj`. You might  be familiar with it if you have run into git conflicts on Xcode projects before. This is a [property list file](TODO), like the `Info.plist`, but with a subtle difference that made implementing `xcodeproj` a challenge. The file has some custom annotations that Xcode adds along the file to make the format more human-readable and *(I'm guessing)* facilitate resolving git conflicts. Since the format is not documented, the library required several iterations to approximate very accurately the format of Xcode. 
 
-> We’d like to thank everyone who contributed to the project by reporting issues or fixing them directly. Thanks to their help, `xcodeproj` is now part of internal tools at companies like [Pinterest](https://pinterest.com) or [Lyft](https://lyft.com).
+> I’d like to thank everyone who contributed to the project by reporting issues or fixing them directly. Thanks to their help, `xcodeproj` is now part of internal tools at companies like [Pinterest](https://pinterest.com) or [Lyft](https://lyft.com).
 
 The `pbxproj` file contains a large list of objects, which in `xcodeproj` are modelled as `PBXObject` classes. They represent elements such as build phases *(`PBXBuildPhase`)*, targets *(`PBXNativeTarget`)* or files *(`PBXFileReference`)*. Those objects get a unique identifier *(UUID)* when Xcode creates them, and it’s used to declare references between objects. For example a target has references to its build phases using their UUIDs as shown in the example below:
 
@@ -27,15 +29,15 @@ buildPhases = (
 );
 {% endhighlight %}
 
-> The example above is from a project generated by the SPM. SPM has its own convention for naming those UUIDs, which doesn’t match Xcode’s default.
+> The example above is from a project generated by the SPM. SPM has its own convention for naming UUIDs, which doesn’t match Xcode’s default.
 
-For projects like SPM or Tuist, which leverage project generation, it’s crucial to **generate the UUIDs deterministically**. In other words, every time a project is generated, its objects always get the same UUIDs. Otherwise, Xcode and its build system would invalidate the cache and cause builds to start from a clean state. `xcodeproj` uses the object attributes and the attributes of its parents to make the generated id deterministic. Moreover, the format is more aligned with the formt that Xcode uses.
+For projects like SPM or Tuist, which leverage project generation, it’s crucial to **generate the UUIDs deterministically**. In other words, every time a project is generated, its objects always get the same UUIDs. Otherwise, Xcode and its build system would invalidate the cache and cause builds to start from a clean state. `xcodeproj` uses the object attributes and the attributes of its parents to make the generated id deterministic. Moreover, the format is better aligned with the one that Xcode uses.
 
 ## An undocumented format
 
-Conversely to Android applications that are built using Gradle, a build system that is extensively documented, the format of Xcode projects lacks documentation. Apple expects Xcode to be the interface to the projects, consequently they barely put effort into documenting the format or making it more declarative and git-friendly.
+Conversely to Android applications that are built using Gradle, a build system that is extensively documented, the format of Xcode projects lacks documentation. Apple expects Xcode to be the interface to the projects, consequently they barely put effort into documenting the project structure or making it more declarative and git-friendly.
 
-So if the format is not documented, how were were we able to develop a Swift library that works as an alternative interface to the projects? First and foremost, thanks of the pioneering work that the wonderful [CocoaPods](https://cocoapods.org) team did in that area. They developed the first ever library to read, update and write Xcode projects, [xcodeproj](https://github.com/cocoapods/xcodeproj). The library is written in Ruby and is a core component of CocoaPods.
+So if the format is not documented, how were we able to develop a Swift library that works as an alternative interface to the projects? First and foremost, thanks of the pioneering work that the wonderful [CocoaPods](https://cocoapods.org) team did in that area. They developed the first ever library to read, update and write Xcode projects, [xcodeproj](https://github.com/cocoapods/xcodeproj). The library is written in Ruby and is a core component of CocoaPods.
 
 The work of understanding the project pretty much consists on reverse-engineering how Xcode maps actions to changes into the project files. To give you an example, let's say that we'd like to understand how the linking of a new library reflects on the project files.
 
@@ -64,7 +66,7 @@ Next up, we need to add `xcodeproj` as a dependency. Edit the `Package.swift` an
 
 > Replace `6.5.0` with the version of xcodeproj that you'd like to use.
 
-That's all we need to start playing with the examples. Remember to `import xcodeproj` at the top of the `main.swift` file.
+That's all we need to start playing with the examples.
 
 ### Example 1: Generate an empty project
 In this example we'll write some Swift lines to create an empty Xcode project. *Exciting, isn't it?* If you every wondered what Xcode does when you click `File > New Project`, you'll learn it with this example. You'll realize that after all, creating an Xcode project is not as complex as it might seem. **You could write your own Xcode project generator**. Let me dump some code here and navigate you through it right after:
@@ -74,21 +76,21 @@ import Foundation
 import PathKit
 import xcodeproj
 
-// .pbxproj
+// 1 .pbxproj
 let pbxproj = PBXProj()
 
-// Groups
+// 2. Create groups
 let mainGroup = PBXGroup(sourceTree: .group)
 pbxproj.add(object: mainGroup)
 let productsGroup = PBXGroup(children: [], sourceTree: .group, name: "Products")
 pbxproj.add(object: productsGroup)
 
-// Configuration list
+// 3. Create configuration list
 let configurationList = XCConfigurationList()
 pbxproj.add(object: configurationList)
 try configurationList.addDefaultConfigurations()
 
-// Project
+// 4. Create project
 let project = PBXProject(name: "MyProject",
                            buildConfigurationList: configurationList,
                            compatibilityVersion: Xcode.Default.compatibilityVersion,
@@ -97,12 +99,13 @@ let project = PBXProject(name: "MyProject",
 pbxproj.add(object: project)
 pbxproj.rootObject = project
 
-// Workspace
+// 5. Create xcodeproj
 let workspaceData = XCWorkspaceData(children: [])
 let workspace = XCWorkspace(data: workspaceData)
-
 let xcodeproj = XcodeProj(workspace: workspace, pbxproj: pbxproj)
-let projectPath = Path("/Users/pedropinera/Downloads/Project.xcodeproj")
+
+// 6. Save project
+let projectPath = Path("/path/to/Project.xcodeproj")
 try xcodeproj.write(path: projectPath)
 {% endhighlight %}
 
@@ -111,8 +114,85 @@ Let's break that up analyze block by block:
 1. A `PBXProj` represents the `project.pbxproj` file contained in the project directory. The constructor initializes it with some default values expected by Xcode and an empty list of objects.
 2. The groups that one can see in the project navigator are represented by `PBXGroup` objects. Projects required two groups to be defined, the `mainGroup` which represents the root of the project and where other will groups will be added as children, and the `productsGroup` which is the group where Xcode creates references for all your project products *(e.g. apps, frameworks, libraries)*
 3. Projects and targets need what's called a configuration list, `XCConfigurationList`. A configuration list groups configurations like `Debug` and `Release` and ties them to a project or target. The call to the method `addDefaultConfigurations` creates the default build configurations, represented by the class `XCBuildConfiguration`. A `XCBuildConfiguration` object has a hash with build settings, and a reference to an `.xcconfig` file, both optional. We'll cover more on this in a another example.
+4. Next up, we need to initiate a `PBXProject` which contains project settings such as the configuration list, the name, the targets, and the groups.
+5. Last but not least, we need to create an instance of a `XcodeProj` which represents the project that is written to the disk. If you explore the content of any project, you'll realize that it contains a workspace. Therefore the `XcodeProj` instance needs the workspace attribute to be set with an object of type `XCWorkspace`.
+6. Changes need to be persisted into disk by calling `write` on the project and passing the path where we'd like to write it.
 
 > Notice that the objects that are created to be part of the project need to be added to the `pbxproj`.
+
+If you run the code above, you'll get an Xcode project that works in Xcode. However, it does not contain any target or schemes that you can work with. The goal with this example was to give you a sense of what the xcodeproj API and Xcode projects look like. Using `xcodeproj` to generate your company's projects would require a lot of work so unless there's a good reason for it, you can use tools like [XcodeGen](https://github.com/yonaskolb/xcodegen) or [Tuist](https://github.com/tuist/tuist) instead. Those tools allow you define your projects in a different format, for example yaml or Swift, and they convert your definition into an Xcode project. The resulting definition file is much simpler and human-readable than Xcode's `.pbxproj`
+
+### Example 2: Add a target to an existing project
+
+Continuing with examples that help you understand the project's structure, we are going to add a target to an existing project. Like I did with the preceding example, I'll introduce you to the code first:
+
+{% highlight swift %}
+import xcodeproj
+import PathKit
+
+// 1. Read the project
+let path = Path("/path/to/Project.xcodeproj")
+let project = try XcodeProj(path: path)
+let pbxproj = project.pbxproj
+let targetName = "MyFramework"
+let pbxProject = pbxproj.projects.first!
+
+// 2. Create configuration list
+let configurationList = XCConfigurationList()
+pbxproj.add(object: configurationList)
+try configurationList.addDefaultConfigurations()
+
+// 3. Create build phases
+let sourcesBuildPhase = PBXSourcesBuildPhase()
+pbxproj.add(object: sourcesBuildPhase)
+let resourcesBuildPhase = PBXResourcesBuildPhase()
+pbxproj.add(object: PBXResourcesBuildPhase())
+
+// 4. Create the product reference
+let productType = PBXProductType.framework
+let productName = "\(targetName).\(productType.fileExtension!)"
+let productReference = PBXFileReference(sourceTree: .buildProductsDir, name: productName)
+pbxproj.add(object: productReference)
+pbxProject.productsGroup?.children.append(productReference)
+
+// 5. Create the target
+let target = PBXNativeTarget(name: "MyFramework",
+                             buildConfigurationList: configurationList,
+                             buildPhases: [sourcesBuildPhase, resourcesBuildPhase],
+                             productName: productName,
+                             product: productReference,
+                             productType: productType)
+pbxproj.add(object: target)
+pbxProject.targets.append(target)
+
+try project.write(path: path)
+{% endhighlight %}
+
+1. The first thing that we need to do is read the project from disk. `XcodeProj` provides a constructor that takes a path to the project directory. `xcodeproj` decodes the project and its objects. Notice that we are assuming that the `pbxproj` contains at least a project. If nothing has been messed up with the project that's always the case. 
+2. Like we did when we generated the project, targets need configurations. We are not defining any build settings but if you wish, I recommend you to explore the constructors of the classes. You'll get to see all the attributes that are configurable.
+3. A target has build phases. `xcodeproj` provides classes representing each of the build phases supported by Xcode, all of them following the naming convention `PB---BuildPhase`. In our example, we are creating two build phases for the sources and the resources.
+4. Targets need a reference to their output product. It's the file that you see under the `Products` directory when you create a new target with Xcode. It references the product in the derived data directory. Since we are creating the target manually, we need to create that reference ourselves. For that we use an object of type `PBXFileReference`. The name is initialized with two attributes, the name and the `sourceTree` which defines the parent directory or the association with its parent group. You can see all the possible values that `sourceTree` can take. In the case of the target product, the file must be relative to the build products directory. Don't forget to add the product as a child of the project products group.
+
+{% highlight swift %}
+public enum PBXSourceTree {
+    case none
+    case absolute // Absolute path.
+    case group // Path relative to the parent group.
+    case sourceRoot // Path relative to the project source root directory.
+    case buildProductsDir // Path relative to the build products directory.
+    case sdkRoot // Path relative to the SDK directory.
+    case developerDir // Path relative to the developer directory.
+    case custom(String) // Custom path.
+}
+{% endhighlight %}
+
+5. With all the ingredients to bake the target, we can create the instance and add it to the project.
+6. Write the project back to disk and open the project. Voila 🎉! A new target shows up in your project.
+
+> Note: A `pbxproj` can contain more than one project when an Xcode project is added as sub-project of a project. In that case Xcode adds the project as a file reference and then adds the reference to the `pbxproj.projects` attribute.
+
+<!-- 1. Targets are represented by `PBXNativeTarget` objects. There are other types of targets but for the sake of simplicity, I'll leave them out of the scope of the blog post. -->
+
 
 ### Example 2: Get the linked frameworks and libraries of a target
 
