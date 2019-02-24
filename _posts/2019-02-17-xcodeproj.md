@@ -194,6 +194,8 @@ public enum PBXSourceTree {
 
 If you don't plan to generate your Xcode projects, the first two examples might not look useful. Nevertheless, they serve as a good foundation to follow more exciting examples that follow. From this example on, we'll see real scenarios where you might consider the introduction of `xcodeproj`. In this one, we'll write some code that allows us to detect when the project have file references to files that don't exist in the project directory. This usually happens when git conflicts are not well resolved.
 
+### Example 4: Detect Info.plist files being copied to the product Bundle
+
 
 ### Example 2: Get the linked frameworks and libraries of a target
 
