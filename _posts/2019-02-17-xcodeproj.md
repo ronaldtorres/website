@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Interacting with your Xcode projects in Swift
-excerpt: This tiny blog post contains some thoughts on the rants I often see about apps written in Electron and what's my opinion on the framework and the apps written with it.
-comments-issue-number: 31
-tags: [electron, web, desktop apps, js, electronjs]
+title: Interacting with Xcode projects in Swift
+excerpt: This blog post is an introduction to the format of Xcode projects and xcodeproj, a Swift library that helps read and update Xcode projects in Swift. The post contains a few hands-on examples for developers to experiment with the library.
+tags: [xcodeproj, swift, xcode, project]
 ---
 
 One of the core building block of [Tuist](https://tuist.io) is [`xcodeproj`](https://github.com/tuist/xcodeproj), a Swift library that allows you to read, update and write Xcode projects. Tuist leverages the tool to generate projects and provide a convenient and friendly interface to your Xcode projects. The main gateway to modify Xcode projects is Xcode, the official IDE from Apple. Xcode knows the structure of the project and converts your actions within the project into changes in the project files. We barely have to touch those files ourselves, only if we get git conflicts and need to move some lines around.
@@ -124,7 +123,7 @@ If you run the code above, you'll get an Xcode project that works in Xcode. Howe
 
 ### Example 2: Add a target to an existing project
 
-Continuing with examples that help you understand the project's structure, we are going to add a target to an existing project. Like I did with the preceding example, I'll introduce you to the code first:
+Continuing with examples that help you understand the project's structure, we'll add a target to an existing project. Like I did with the preceding example, I'll introduce you to the code first:
 
 {% highlight swift %}
 import xcodeproj
@@ -191,7 +190,9 @@ public enum PBXSourceTree {
 
 > Note: A `pbxproj` can contain more than one project when an Xcode project is added as sub-project of a project. In that case Xcode adds the project as a file reference and then adds the reference to the `pbxproj.projects` attribute.
 
-<!-- 1. Targets are represented by `PBXNativeTarget` objects. There are other types of targets but for the sake of simplicity, I'll leave them out of the scope of the blog post. -->
+### Example 3: Detect missing file references
+
+If you don't plan to generate your Xcode projects, the first two examples might not look useful. Nevertheless, they serve as a good foundation to follow more exciting examples that follow. From this example on, we'll see real scenarios where you might consider the introduction of `xcodeproj`. In this one, we'll write some code that allows us to detect when the project have file references to files that don't exist in the project directory. This usually happens when git conflicts are not well resolved.
 
 
 ### Example 2: Get the linked frameworks and libraries of a target
