@@ -65,6 +65,16 @@ Next up, we need to add `xcodeproj` as a dependency. Edit the `Package.swift` an
 
 > Replace `6.5.0` with the version of xcodeproj that you'd like to use.
 
+Alternatively, you can use [swift-sh](https://github.com/mxcl/swift-sh), a very useful tool that facilitates the definition of Swift scripts with external dependencies. The only thing you need to do is to install the tool, which can be done with Homebrew by running `brew install swift-sh` and create a Swift script where you'll code the examples:
+
+{% highlight swift %}
+#!/usr/bin/swift sh
+
+import Foundation
+import xcodeproj // tuist/xcodeproj
+import PathKit // kylef/PathKit
+{% endhighlight %}
+
 That's all we need to start playing with the examples.
 
 ### Example 1: Generate an empty project
@@ -190,9 +200,14 @@ public enum PBXSourceTree {
 
 > Note: A `pbxproj` can contain more than one project when an Xcode project is added as sub-project of a project. In that case Xcode adds the project as a file reference and then adds the reference to the `pbxproj.projects` attribute.
 
-### Example 3: Detect missing file references
+### Example 3: Setting up Carthage build phase
+One of the differences of Carthage compared to CocoaPods is that they don't touch your projects. That makes the process of adding/removing dependencies somewhat inconvenient because there is an extra step that the developers have to do themselves, setting up a build phase that copies and strips the symbols from the pre-compiled fat frameworks. *What if we could automate that?* Here you have another wonderful example of how you could leverage `xcodeproj`.
 
-If you don't plan to generate your Xcode projects, the first two examples might not look useful. Nevertheless, they serve as a good foundation to follow more exciting examples that follow. From this example on, we'll see real scenarios where you might consider the introduction of `xcodeproj`. In this one, we'll write some code that allows us to detect when the project have file references to files that don't exist in the project directory. This usually happens when git conflicts are not well resolved.
+
+
+### Example 4: Detect missing file references
+
+<!-- If you don't plan to generate your Xcode projects, the first two examples might not look useful. Nevertheless, they serve as a good foundation to follow more exciting examples that follow. From this example on, we'll see real scenarios where you might consider the introduction of `xcodeproj`. In this one, we'll write some code that allows us to detect when the project have file references to files that don't exist in the project directory. This usually happens when git conflicts are not well resolved. -->
 
 ### Example 4: Detect Info.plist files being copied to the product Bundle
 
