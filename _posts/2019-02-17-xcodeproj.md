@@ -15,16 +15,16 @@ In this blog post, I’ll talk about the project and its structure, and jump int
 
 ## Xcodeproj, a monolithic format
 
-The Xcode project, which has an extension `xcodeproj` *(where the name of the library comes from)*, is a folder that contains several files that define different components of the project. One of the most interesting and complex files is the file `project.pbxproj`. You might  be familiar with it if you have run into git conflicts on Xcode projects before. This is a [property list file](TODO), like the `Info.plist`, but with a subtle difference that made implementing `xcodeproj` a challenge. The file has some custom annotations that Xcode adds along the file to make the format more human-readable and *(I'm guessing)* facilitate resolving git conflicts. Since the format is not documented, the library required several iterations to approximate very accurately the format of Xcode. 
+The Xcode project, which has an extension `xcodeproj` _(where the name of the library comes from)_, is a folder that contains several files that define different components of the project. One of the most interesting and complex files is the file `project.pbxproj`. You might be familiar with it if you have run into git conflicts on Xcode projects before. This is a [property list file](TODO), like the `Info.plist`, but with a subtle difference that made implementing `xcodeproj` a challenge. The file has some custom annotations that Xcode adds along the file to make the format more human-readable and _(I'm guessing)_ facilitate resolving git conflicts. Since the format is not documented, the library required several iterations to approximate very accurately the format of Xcode.
 
 > I’d like to thank everyone who contributed to the project by reporting issues or fixing them directly. Thanks to their help, `xcodeproj` is now part of internal tools at companies like [Pinterest](https://pinterest.com) or [Lyft](https://lyft.com).
 
-The `pbxproj` file contains a large list of objects, which in `xcodeproj` are modelled as `PBXObject` classes. They represent elements such as build phases *(`PBXBuildPhase`)*, targets *(`PBXNativeTarget`)* or files *(`PBXFileReference`)*. Those objects get a unique identifier *(UUID)* when Xcode creates them, and it’s used to declare references between objects. For example a target has references to its build phases using their UUIDs as shown in the example below:
+The `pbxproj` file contains a large list of objects, which in `xcodeproj` are modelled as `PBXObject` classes. They represent elements such as build phases _(`PBXBuildPhase`)_, targets _(`PBXNativeTarget`)_ or files _(`PBXFileReference`)_. Those objects get a unique identifier _(UUID)_ when Xcode creates them, and it’s used to declare references between objects. For example a target has references to its build phases using their UUIDs as shown in the example below:
 
 {% highlight plist %}
 buildPhases = (
-  OBJ_593 /* Sources */,
-  OBJ_599 /* Frameworks */,
+OBJ*593 /* Sources _/,
+OBJ_599 /_ Frameworks \_/,
 );
 {% endhighlight %}
 
@@ -44,7 +44,7 @@ The work of understanding the project pretty much consists on reverse-engineerin
 2. Change the target settings to link the library.
 3. Use `git diff` and see what changed.
 
-Some of that work was already done by CocoaPods, but that did not prevent us from having to do it as well. For instance, we wanted to expose as optionals the attributes that are optionals in projects. *How did we know which attributes were optionals?* We removed them from the project, and tried to open the project with Xcode. If Xcode was able to open the project, that indicated that the attribute was optional. If Xcode crashed, it meant that the attribute was required. *Do you imagine doing that with every attribute of each object?* It was a vast amount of work, but luckily something that we don't have to do often because new Xcode versions barely introduce new attributes.
+Some of that work was already done by CocoaPods, but that did not prevent us from having to do it as well. For instance, we wanted to expose as optionals the attributes that are optionals in projects. _How did we know which attributes were optionals?_ We removed them from the project, and tried to open the project with Xcode. If Xcode was able to open the project, that indicated that the attribute was optional. If Xcode crashed, it meant that the attribute was required. _Do you imagine doing that with every attribute of each object?_ It was a vast amount of work, but luckily something that we don't have to do often because new Xcode versions barely introduce new attributes.
 
 ## Hands-on examples
 
@@ -78,7 +78,8 @@ import PathKit // kylef/PathKit
 That's all we need to start playing with the examples.
 
 ### Example 1: Generate an empty project
-In this example we'll write some Swift lines to create an empty Xcode project. *Exciting, isn't it?* If you every wondered what Xcode does when you click `File > New Project`, you'll learn it with this example. You'll realize that after all, creating an Xcode project is not as complex as it might seem. **You could write your own Xcode project generator**. Let me dump some code here and navigate you through it right after:
+
+In this example we'll write some Swift lines to create an empty Xcode project. _Exciting, isn't it?_ If you every wondered what Xcode does when you click `File > New Project`, you'll learn it with this example. You'll realize that after all, creating an Xcode project is not as complex as it might seem. **You could write your own Xcode project generator**. Let me dump some code here and navigate you through it right after:
 
 {% highlight swift %}
 import Foundation
@@ -101,10 +102,10 @@ try configurationList.addDefaultConfigurations()
 
 // 4. Create project
 let project = PBXProject(name: "MyProject",
-                           buildConfigurationList: configurationList,
-                           compatibilityVersion: Xcode.Default.compatibilityVersion,
-                           mainGroup: mainGroup,
-                           productsGroup: productsGroup)
+buildConfigurationList: configurationList,
+compatibilityVersion: Xcode.Default.compatibilityVersion,
+mainGroup: mainGroup,
+productsGroup: productsGroup)
 pbxproj.add(object: project)
 pbxproj.rootObject = project
 
@@ -121,7 +122,7 @@ try xcodeproj.write(path: projectPath)
 Let's break that up analyze block by block:
 
 1. A `PBXProj` represents the `project.pbxproj` file contained in the project directory. The constructor initializes it with some default values expected by Xcode and an empty list of objects.
-2. The groups that one can see in the project navigator are represented by `PBXGroup` objects. Projects required two groups to be defined, the `mainGroup` which represents the root of the project and where other will groups will be added as children, and the `productsGroup` which is the group where Xcode creates references for all your project products *(e.g. apps, frameworks, libraries)*
+2. The groups that one can see in the project navigator are represented by `PBXGroup` objects. Projects required two groups to be defined, the `mainGroup` which represents the root of the project and where other will groups will be added as children, and the `productsGroup` which is the group where Xcode creates references for all your project products _(e.g. apps, frameworks, libraries)_
 3. Projects and targets need what's called a configuration list, `XCConfigurationList`. A configuration list groups configurations like `Debug` and `Release` and ties them to a project or target. The call to the method `addDefaultConfigurations` creates the default build configurations, represented by the class `XCBuildConfiguration`. A `XCBuildConfiguration` object has a hash with build settings, and a reference to an `.xcconfig` file, both optional. We'll cover more on this in a another example.
 4. Next up, we need to initiate a `PBXProject` which contains project settings such as the configuration list, the name, the targets, and the groups.
 5. Last but not least, we need to create an instance of a `XcodeProj` which represents the project that is written to the disk. If you explore the content of any project, you'll realize that it contains a workspace. Therefore the `XcodeProj` instance needs the workspace attribute to be set with an object of type `XCWorkspace`.
@@ -166,32 +167,32 @@ pbxProject.productsGroup?.children.append(productReference)
 
 // 5. Create the target
 let target = PBXNativeTarget(name: "MyFramework",
-                             buildConfigurationList: configurationList,
-                             buildPhases: [sourcesBuildPhase, resourcesBuildPhase],
-                             productName: productName,
-                             product: productReference,
-                             productType: productType)
+buildConfigurationList: configurationList,
+buildPhases: [sourcesBuildPhase, resourcesBuildPhase],
+productName: productName,
+product: productReference,
+productType: productType)
 pbxproj.add(object: target)
 pbxProject.targets.append(target)
 
 try project.write(path: path)
 {% endhighlight %}
 
-1. The first thing that we need to do is read the project from disk. `XcodeProj` provides a constructor that takes a path to the project directory. `xcodeproj` decodes the project and its objects. Notice that we are assuming that the `pbxproj` contains at least a project. If nothing has been messed up with the project that's always the case. 
+1. The first thing that we need to do is read the project from disk. `XcodeProj` provides a constructor that takes a path to the project directory. `xcodeproj` decodes the project and its objects. Notice that we are assuming that the `pbxproj` contains at least a project. If nothing has been messed up with the project that's always the case.
 2. Like we did when we generated the project, targets need configurations. We are not defining any build settings but if you wish, I recommend you to explore the constructors of the classes. You'll get to see all the attributes that are configurable.
 3. A target has build phases. `xcodeproj` provides classes representing each of the build phases supported by Xcode, all of them following the naming convention `PB---BuildPhase`. In our example, we are creating two build phases for the sources and the resources.
 4. Targets need a reference to their output product. It's the file that you see under the `Products` directory when you create a new target with Xcode. It references the product in the derived data directory. Since we are creating the target manually, we need to create that reference ourselves. For that we use an object of type `PBXFileReference`. The name is initialized with two attributes, the name and the `sourceTree` which defines the parent directory or the association with its parent group. You can see all the possible values that `sourceTree` can take. In the case of the target product, the file must be relative to the build products directory. Don't forget to add the product as a child of the project products group.
 
 {% highlight swift %}
 public enum PBXSourceTree {
-    case none
-    case absolute // Absolute path.
-    case group // Path relative to the parent group.
-    case sourceRoot // Path relative to the project source root directory.
-    case buildProductsDir // Path relative to the build products directory.
-    case sdkRoot // Path relative to the SDK directory.
-    case developerDir // Path relative to the developer directory.
-    case custom(String) // Custom path.
+case none
+case absolute // Absolute path.
+case group // Path relative to the parent group.
+case sourceRoot // Path relative to the project source root directory.
+case buildProductsDir // Path relative to the build products directory.
+case sdkRoot // Path relative to the SDK directory.
+case developerDir // Path relative to the developer directory.
+case custom(String) // Custom path.
 }
 {% endhighlight %}
 
@@ -200,19 +201,100 @@ public enum PBXSourceTree {
 
 > Note: A `pbxproj` can contain more than one project when an Xcode project is added as sub-project of a project. In that case Xcode adds the project as a file reference and then adds the reference to the `pbxproj.projects` attribute.
 
-### Example 3: Setting up Carthage build phase
-One of the differences of Carthage compared to CocoaPods is that they don't touch your projects. That makes the process of adding/removing dependencies somewhat inconvenient because there is an extra step that the developers have to do themselves, setting up a build phase that copies and strips the symbols from the pre-compiled fat frameworks. *What if we could automate that?* Here you have another wonderful example of how you could leverage `xcodeproj`.
+### Example 3: Detect missing file references
+
+If you have solved git conflicts before in your Xcode projects, you might already know that sometimes, you end up with files in your build phases that reference files that don't exist. Most times, Xcode doesn't let you know about it and you end up with a project in a project in a not-so-good state. What if we were able to detect that before Xcode even tries to compile your app?
+
+{% highlight swift %}
+import xcodeproj
+import PathKit
+
+let path = Path("/path/to/project.xcodeproj")
+
+let project = try XcodeProj(path: path)
+let pbxproj = project.pbxproj
+let pbxProject = pbxproj.projects.first!
+
+/// 1. Get build phases files
+let buildFiles = pbxproj.nativeTargets
+    .flatMap({ $0.buildPhases })
+    .flatMap({ $0.files })
+
+try buildFiles.forEach { (buildFile) in
+    /// 2. Check if the reference exists
+    guard let fileReference = buildFile.file  else {
+        fatalError("The build file \(buildFile.uuid) has a missing reference")
+        return
+    }
+    
+    /// 3. Check if the references an existing file
+    let filePath = try fileReference.fullPath(sourceRoot: path.parent())
+    if filePath?.exists == false {
+        fatalError("The file reference \(fileReference.uuid) references a file that doesn't exist")
+    }
+}
+{% endhighlight %}
+
+1. Projects have an attribute, `nativeTargets`, that returns all the targets of the project. From each target, we can get its list of build phases accessing the attribute `buildPhases`. Build phases are objects of the type `PBXBuildPhase` which expose an attribute, `files` with the files that are part of the build phase. Build phase files, build files, are represented by the class `PBXBuildFile`.
+2. The first thing that we do is checking if the file reference exist. Notice that we are accessing the `file` attribute from the build file. That's because a build file is a type that works as a reference to a file from your project groups. The same file represented by its `PBXFileReference` object, can be referenced from multiple build phases resulting in multiple `PBXBuildFile`s but just one `PBXFileReference`. We check whether the file reference exists. If it doesn't, it probably means that we didn't solve the git conflict properly and removed a reference that was being referenced by a build file.
+3. After checking if the file reference exists, we check that the file reference points to an existing file. We can do that by obtaining the absolute path calling the method `fullPath` on the file reference. Notice that we need to pass a sourceRoot argument, which is the directory that contains the project.
+
+### Example 4: Detecting if a Info.plist is being copied as a resource
+Another common scenario when working with Xcode projects, is when we add a file to the copy resources build phase when it shouldn't be there. A good example of this one is copying the `Info.plist` file. Have you been there before? Fortunately, we can leverage `xcodeproj` to detect that as well.
+
+{% highlight swift %}
+import xcodeproj
+import PathKit
+
+let path = Path("/pat/to/project.xcodeproj")
+
+// Read the project
+let project = try XcodeProj(path: path)
+let pbxproj = project.pbxproj
+let pbxProject = pbxproj.projects.first!
+
+try pbxproj.nativeTargets.forEach { target in
+    // 1. Get the resources build phase
+    let resourcesBuildPhase = try target.resourcesBuildPhase()
+    
+    resourcesBuildPhase?.files.forEach { buildFile in
+        guard let fileReference = buildFile.file else { return }
+        
+        /// 2. Check if the path or name reference an Info.plist file
+        if fileReference.path?.contains("Info.plist") == true ||
+            fileReference.name?.contains("Info.plist") == true {
+            fatalError("The target \(target.name) resources build phase is copying an Info.plist file")
+        }
+    }
+}
+{% endhighlight %}
+
+1. We can obtain the resources build phase from a target calling the convenience method `resourcesBuildPhase()`. If the build phase doesn't exist, it'll return a `nil` value.
+2. As we did in the previous example, we get the file reference of each build phase, and we check whether the name or the path contain `Info.plist`. If they do, we let the developer know.
+
+> Note that checking the name of the file being `Info.plist` is not enough cause it might be a file that is not the a target `Info.plist`. If we want to be more precise, we'd need to check if it references the same file as the `INFOPLIST_FILE` build setting. For the sake of simplicity, we only check one thing in the example.
+
+## Ensuring a healthy state in your projects
+
+As we've seen, with a few lines of Swift, we can implement relatively simple checks that can be run as part of the local development or as a build step on CI to make sure that your projects are in a good state. Thanks to [xcodeproj](https://github.com/tuist/xcode) you can do it in a language that you are familiar with, Swift.
+
+Having your projects in a good state is crucial to make your builds reproducible and avoid unexpected compilation issues that might arise later as a result of a bad change that went unnoticed.
 
 
+## Projects powered by xcodeproj
 
-### Example 4: Detect missing file references
+Before closing the blog post, I'd like to give you some examples of tools that leveraged `xcodeproj` to make your life easier as a developer.
 
-<!-- If you don't plan to generate your Xcode projects, the first two examples might not look useful. Nevertheless, they serve as a good foundation to follow more exciting examples that follow. From this example on, we'll see real scenarios where you might consider the introduction of `xcodeproj`. In this one, we'll write some code that allows us to detect when the project have file references to files that don't exist in the project directory. This usually happens when git conflicts are not well resolved. -->
+- **[Tuist](https://github.com/tuist/tuist):** Tuist is a tool that helps you define, maintain, and interact with your Xcode projects at any scale. It's the project that motivated the development of xcodeproj. 
+- **[Cake](https://github.com/mxcl/cake):** A delicious, quality‑of‑life supplement for your app‑development toolbox. 
+- **[XcodeGen](https://github.com/yonaskolb/xcodegen):** A Swift command line tool for generating your Xcode project 
+- **[AutoEnvironment](https://github.com/GirAppe/AutoEnvironment):** Tool to automatically generate Environment.swift based on Xcode project.
+- **[Deli](https://github.com/kawoou/Deli):** Deli is an easy-to-use Dependency Injection(DI).
+- **[Accio](https://github.com/JamitLabs/Accio):** A dependency manager driven by SwiftPM that works for iOS/tvOS/watchOS/macOS projects.
+- **[xccheck](https://github.com/werediver/xccheck):** A diagnostic tool for Xcode projects.
+- **[expel](https://github.com/krbarnes/expel):** Automatically move your Xcode project build settings to xcconfig files.
+- **[xcodemissing](https://github.com/jeffctown/xcodemissing):** A tool to find and delete files that are missing from Xcode projects.
+- **[xcodeproj-modify](https://github.com/skagedal/xcodeproj-modify):** Adds a Run Script phase to an Xcode project.
+- **[Templar](https://github.com/SpectralDragon/Templar):** A template generator.
 
-### Example 4: Detect Info.plist files being copied to the product Bundle
-
-
-### Example 2: Get the linked frameworks and libraries of a target
-
-### Example 3: Detect duplicated source files
-
+I hope after reading this blog post you have a better sense of how Xcode projects are structured, and how even though Xcode doesn't expose any API for you to read/update your projects, you can leverage a tool like [xcodeproj](https://github.com/tuist/xcodeproj) to do so.
