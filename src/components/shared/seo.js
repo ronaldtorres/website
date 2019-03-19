@@ -26,14 +26,16 @@ function SEO({ description, lang, meta, keywords, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const titleTemplate = title ? `%s | ${site.siteMetadata.title}` : `%s`
+  const _title = title ? title : site.siteMetadata.title
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={_title}
+      titleTemplate={titleTemplate}
       meta={[
         {
           name: `description`,
@@ -41,7 +43,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: _title,
         },
         {
           property: `og:description`,
@@ -61,7 +63,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: _title,
         },
         {
           name: `twitter:description`,
@@ -84,7 +86,16 @@ function SEO({ description, lang, meta, keywords, title }) {
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  keywords: [],
+  keywords: [
+    `ppinera`,
+    `pedro pinera`,
+    `ios developer`,
+    `mobile developer`,
+    `tuist`,
+    `shopify`,
+    `ruby`,
+    `pedro piñera`,
+  ],
 }
 
 SEO.propTypes = {
@@ -92,7 +103,6 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
 }
 
 export default SEO
