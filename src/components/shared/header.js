@@ -14,12 +14,14 @@ import Span from "./span"
 import styled from "styled-components"
 import { StaticQuery, graphql, Link } from "gatsby"
 import { Button } from "rebass"
+import { flex } from "styled-system"
 
 const Name = styled.h1`
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='24' height='29' viewport='0 0 100 100' style='fill:black;font-size:14px;'><text y='50%'>🚀</text></svg>")
       16 0,
     auto; /*emojicursor.app*/
   margin-bottom: 0px;
+  text-align: center;
 `
 
 const Icon = ({ icon, url }) => {
@@ -54,7 +56,7 @@ const Links = () => {
         }
       `}
       render={data => (
-        <Box>
+        <Box alignSelf="center">
           <Icon icon={faGithub} url={data.site.siteMetadata.links.github} />
           <Icon icon={faAt} url={data.site.siteMetadata.links.email} />
           <Icon icon={faTwitter} url={data.site.siteMetadata.links.twitter} />
@@ -75,6 +77,7 @@ const Links = () => {
 }
 
 const HoverButton = styled(Button)`
+  ${flex}
   display: inline-block;
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
@@ -95,6 +98,7 @@ const HoverButton = styled(Button)`
 
 const SectionButton = ({ title, url, path }) => {
   const linkStyle = {
+    textDecoration: "none",
     color: "white",
     ":hover, :link, :visited": {
       color: "white",
@@ -115,19 +119,25 @@ const SectionButton = ({ title, url, path }) => {
     )
   }
   return (
-    <HoverButton mx={[1, 2]} bg="main">
+    <HoverButton m={[1, 2]} bg="main" flex="1">
       {link}
     </HoverButton>
   )
 }
 const Sections = () => {
   return (
-    <Flex backgroundColor="secondary">
+    <Flex
+      backgroundColor="secondary"
+      flex="1"
+      flexWrap="wrap"
+      alignItems={["stretch", "stretch", "stretch"]}
+      flexDirection={["column", "column", "row"]}
+    >
+      <SectionButton title="Blog 📝" path="/" />
       <SectionButton title="About 👨‍💻" path="/about" />
       <SectionButton title="Books 📚" path="/books" />
       <SectionButton title="Speaking 🎤" path="/speaking" />
-      {/* <SectionButton title="Tuist 📱" url="/tuist" /> */}
-      {/* <SectionButton title="Maria ❤️" url="/tuist" /> */}
+      <SectionButton title="Tuist 📱" url="https://tuist.io" />
     </Flex>
   )
 }
@@ -139,7 +149,7 @@ const Description = () => {
   return (
     <Box py={[3]} style={style}>
       Software Engineer at{" "}
-      <a href="https://shopify.com">
+      <a href="https://shopify.com" style={{ textDecoration: "none" }}>
         <Span color="shopify">Shopify</Span>
       </a>{" "}
       🛍. I like building tools for developers and doing open source.
@@ -153,10 +163,9 @@ const Description = () => {
 
 const Header = () => {
   const headerStyle = {
-    flex: 1,
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: "stretch",
   }
   return (
     <header style={headerStyle}>

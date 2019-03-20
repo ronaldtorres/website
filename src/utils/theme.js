@@ -27,7 +27,7 @@ export default {
     swift: "#FF621F",
     javascript: "#F9DE00",
     main: "#22aaa1",
-    secondary: "#8980f5",
+    secondary: "#7149c1",
     hover: "#76cdf2",
   },
 }

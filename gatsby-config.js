@@ -28,8 +28,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages`,
-        path: `${__dirname}/pages`,
+        name: `markdown`,
+        path: `${__dirname}/markdown`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -65,7 +65,29 @@ module.exports = {
         // GitHub Flavored Markdown mode (default: true)
         gfm: true,
         // Plugins configs
-        plugins: [],
+        plugins: [
+          `gatsby-remark-smartypants`,
+          `gatsby-remark-autolink-headers`,
+          {
+            resolve: "gatsby-remark-gemoji-to-image",
+            // default options, can be ignored
+            options: {
+              base: "https://github.githubassets.com/images/icons/emoji/",
+              ext: ".png",
+              height: "1.2em",
+            },
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false,
+            },
+          },
+        ],
       },
     },
   ],

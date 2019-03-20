@@ -3,9 +3,20 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import { ThemeProvider } from "styled-components"
 import Header from "./shared/header"
+import Footer from "./shared/footer"
 import theme from "../utils/theme"
 import { Flex } from "rebass"
 import GlobalStyle from "../utils/global-style"
+import styled from "styled-components"
+import { space } from "styled-system"
+
+const Body = styled.div`
+  ${space}
+`
+
+const Main = styled.main`
+  ${space}
+`
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -22,22 +33,13 @@ const Layout = ({ children }) => (
       <>
         <GlobalStyle />
         <ThemeProvider theme={theme}>
-          <Flex flexDirection="column" px={[2, 4]} py={[2, 4]}>
-            <Header siteTitle={data.site.siteMetadata.title} />
-            <div
-              style={{
-                margin: `0 auto`,
-                maxWidth: 960,
-                padding: `0px 1.0875rem 1.45rem`,
-                paddingTop: 0,
-              }}
-            >
-              <main>{children}</main>
-              <footer>
-                © {new Date().getFullYear()}, Built with ❤️ by Pedro Piñera
-              </footer>
-            </div>
-          </Flex>
+          <div>
+            <Body px={[40, 200]} py={[2, 3]}>
+              <Header siteTitle={data.site.siteMetadata.title} />
+              <Main py={[3, 4]}>{children}</Main>
+            </Body>
+            <Footer />
+          </div>
         </ThemeProvider>
       </>
     )}
