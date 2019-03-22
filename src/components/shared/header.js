@@ -27,6 +27,8 @@ const Name = styled.h1`
 const Icon = ({ icon, url }) => {
   const style = {
     margin: "5px",
+    height: "20px",
+    width: "20px",
   }
   return (
     <a href={url} target="__blank">
@@ -119,7 +121,7 @@ const SectionButton = ({ title, url, path }) => {
     )
   }
   return (
-    <HoverButton m={[1, 2]} bg="main" flex="1">
+    <HoverButton m={[1, 2]} bg="main">
       {link}
     </HoverButton>
   )

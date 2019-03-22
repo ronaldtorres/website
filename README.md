@@ -11,3 +11,5 @@ Personal website built with GatsbyJS
 ## TODO
 
 - Pagination of blog posts
+- Better syntax highlighting for Swift.
+- Jump to the next/previus blog post from a post.
