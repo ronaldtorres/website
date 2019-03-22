@@ -1,4 +1,4 @@
-# pedro.pinera.es
+# pedropinera.es
 
 Personal website built with GatsbyJS
 
