@@ -26,6 +26,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       createNodeField({ node, name: `type`, value: "blog" })
       createNodeField({ node, name: `slug`, value: slug })
       createNodeField({ node, name: `date`, value: date })
+    } else {
+      const filename = createFilePath({ node, getNode })
+      createNodeField({ node, name: `slug`, value: filename })
     }
   }
 }

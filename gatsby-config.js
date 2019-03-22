@@ -3,7 +3,7 @@ module.exports = {
     siteUrl: `https://ppinera.es`,
     title: `Pedro Piñera`,
     description: `Software Engineer at Shopify where I build tools for Mobile Developers (mostly in Ruby). I'm an open source who likes to share their experiences, learnings and work. When I'm not coding Ruby or Rails, you can find me playing with Swift.`,
-    author: `@pepibumur`,
+    author: `pepibumur`,
     links: {
       github: "https://github.com/pepibumur",
       email: "mailto:pedro@ppinera.es",
@@ -70,6 +70,38 @@ module.exports = {
           `gatsby-remark-smartypants`,
           `gatsby-remark-autolink-headers`,
           {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+          {
+            resolve: `gatsby-remark-social-cards`,
+            options: {
+              title: {
+                field: "title",
+                font: "DejaVuSansCondensed",
+                color: "black",
+                size: 48,
+                style: "bold",
+                x: null,
+                y: null,
+              },
+              meta: {
+                parts: ["Pedro Piñera"],
+                font: "DejaVuSansCondensed",
+                color: "black",
+                size: 24,
+                style: "normal",
+                x: null,
+                y: null,
+              },
+              background: "#22aaa1",
+              xMargin: 24,
+              yMargin: 24,
+            },
+          },
+          {
             resolve: "gatsby-remark-gemoji-to-image",
             // default options, can be ignored
             options: {
@@ -122,7 +154,6 @@ module.exports = {
                   .replace(/src="\//g, `src="${siteUrl}/`)
                   .replace(/"\/static\//g, `"${siteUrl}/static/`)
                   .replace(/,\s*\/static\//g, `,${siteUrl}/static/`)
-                console.log(edge.node.frontmatter.excerpt)
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.frontmatter.excerpt,
                   date: edge.node.fields.date,

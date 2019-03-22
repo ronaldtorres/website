@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/shared/seo"
+import Meta from "../components/shared/meta"
 import { graphql } from "gatsby"
 import Avatar from "../components/shared/avatar"
 import { Flex } from "rebass"
@@ -9,7 +9,7 @@ const AboutPage = ({ data }) => {
   const { markdownRemark } = data
   return (
     <Layout>
-      <SEO title="About" />
+      <Meta title="About" />
       <Flex flexDirection="column" alignItems="center" p={4}>
         <Avatar />
       </Flex>

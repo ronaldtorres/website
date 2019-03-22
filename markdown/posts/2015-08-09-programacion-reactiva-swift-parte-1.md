@@ -11,7 +11,7 @@ Todas las librerías que encontramos hoy en día si echamos un vistazo en Github
 
 >Si tienes curiosidad en el repositorio de [RXSwift](https://github.com/ReactiveX/RxSwift) encontrarás una tabla donde comparan RXSwift con el resto de alternativas para Swift.
 
-![]({{site.url}}/images/posts/reactive_sream.png)
+![](images/reactive_sream.png)
 
 ## Patrones de observación
 

@@ -54,7 +54,7 @@ As with schemes, workspaces are plain xml files that can be easily modified.
 <br/>
 
 <p align="center">
-  <img src="{{site.url}}/images/posts/modular-workspace.png" width="350px"/>
+  <img src="images/modular-workspace.png" width="350px"/>
 </p>
 
 # Dependencies 🌱
@@ -79,7 +79,7 @@ You can read more about frameworks/libraries and static/dynamic on the [followin
 
 <br/>
 <p align="center">
-  <img src="{{site.url}}/images/posts/modular-linking.png" width="500px"/>
+  <img src="images/modular-linking.png" width="500px"/>
 </p>
 
 <br/>
@@ -103,7 +103,7 @@ When our app depends on precompiled dependencies it's important that the depende
 
 <br/>
 <p align="center">
-  <img src="{{site.url}}/images/posts/modular-dependencies.png" width="400px"/>
+  <img src="images/modular-dependencies.png" width="400px"/>
 </p>
 
 
@@ -151,7 +151,7 @@ The image below illustrates how the setup looks like:
 <br/>
 
 <p align="center">
-  <img src="{{site.url}}/images/posts/modular-cocoapods.png" width="300px"/>
+  <img src="images/modular-cocoapods.png" width="300px"/>
 </p>
 
 ## Carthage
@@ -170,7 +170,7 @@ Carthage approach is pretty different. Besides the resolution of dependencies, t
 
 
 <p align="center">
-  <img src="{{site.url}}/images/posts/modular-carthage.png" width="300px"/>
+  <img src="images/modular-carthage.png" width="300px"/>
 </p>
 
 ------

@@ -1,8 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/shared/seo"
+import Meta from "../components/shared/meta"
 import { Link } from "gatsby"
-import { format } from "timeago.js"
 import { space } from "styled-system"
 import styled from "styled-components"
 
@@ -21,7 +20,7 @@ const Post = ({ post }) => {
         <PostTitle mb={1}>
           <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
         </PostTitle>
-        <small>{format(post.fields.date)}</small>
+        <small>{post.fields.date}</small>
       </header>
       <p>{post.frontmatter.excerpt}</p>
     </PostArticle>
@@ -37,7 +36,7 @@ const IndexPage = ({
   ))
   return (
     <Layout>
-      <SEO />
+      <Meta />
       {Posts}
     </Layout>
   )

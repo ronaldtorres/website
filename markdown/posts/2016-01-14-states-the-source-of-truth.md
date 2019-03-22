@@ -16,7 +16,7 @@ Have you ever wondered why we use singletons for some components in our apps? Th
 
 > Since we don’t subscribe to singleton state changes, we might reach inconsistent states in entities that depend on the singleton state.
 
-![]({{site.url}}/images/posts/states_1.png)
+![](images/states_1.png)
 
 ## Flux
 
@@ -30,7 +30,7 @@ If you haven’t seen it yet, I recommend you to watch this two talks:
 I heard about Flux a few days ago when I watch the talk Realm published on their website. Flux is an architecture originally proposed by Facebook that aims unidirectional data flows in apps to build user interfaces. What’s the core idea of Flux?
 <br><br>
 
-![]({{site.url}}/images/posts/states_2.png)
+![](images/states_2.png)
 
 - **States are persisted in stores.** You can have multiple stores in your app depending on how many states you want to have. For example, you can have a state that reflects the app navigation state, or another state that reflects the user session in your app. States would be persisted in two respective stores, `NavigationStore`, and `UserSessionStore`.
 - **Actions fire state changes:** Actions are the source of state changes as side effects. Actions can be view lifecycle events, user actions, … Whenever something can change the store state, that’s an action. They don’t contain information about how the state will change.
@@ -39,7 +39,7 @@ I heard about Flux a few days ago when I watch the talk Realm published on their
 
 There are some frameworks that implement the core concepts of Flux for Swift, the most popular one is [ReduxKit](https://github.com/ReduxKit/ReduxKit) that also offers reactive wrappers.
 
-![]({{site.url}}/images/posts/states_3.png)
+![](images/states_3.png)
 
 ## Reactive Programming
 
@@ -80,7 +80,7 @@ We are forced to cache states in our apps to offer a good experience to our user
 
 The reason for persisting the API state in our local database or storage is to make navigation in the app faster. If we download the user repositories on GitHub and persist them in our database, when the user goes into the repositories view we don’t have to show a hilarious spinner while we are downloading the data. The schema of states would be the following one:
 
-![]({{site.url}}/images/posts/states_4.png)
+![](images/states_4.png)
 
 Deciding when the state is synchronized is crucial for a good user experience. Synchronizing it too often can be bad in terms of performance but synchronizing it not enough times can lead to a bad experience. Once you decide which states are going to be persisted from the API and you have a schema of your app structure, design when the states will be synchronized.
 
@@ -90,7 +90,7 @@ Deciding when the state is synchronized is crucial for a good user experience. S
 
 As I mentioned earlier, due to performance reasons, when the data from a database is accessed we create a cached version in memory that we access to. It means we add a new state to the game, having then the API state, the database state, and our copy in memory of the database state. *Three states that has to be synchronized!* The schema looks like this one:
 
-![]({{site.url}}/images/posts/states_5.png)
+![](images/states_5.png)
 
 The complexity increases since we need to synchronize two states, the API with the database, and the database with the memory. Plus, the view has to react to the memory copy changes. Since the state is automatically propagated from the presentation layer we have to subscribe to these states and update the view accordingly and trigger the synchronization action.
 

@@ -33,7 +33,7 @@ If you have used Carthage before in your projects you might already be familiar 
 
 <br/>
 
-![An example of the Xcode build phase that uses the command to embed the frameworks]({{site.url}}/images/posts/Frameworks-Embed.png)
+![An example of the Xcode build phase that uses the command to embed the frameworks](images/Frameworks-Embed.png)
 
 1. We run the command `xcode frameworks embed` using bash.
 2. We specified as input files all the frameworks that will be copied. The path can be absolute or relative to the project directory. Remember that you can use any of the available Xcode build variables, like `$(SRCROOT)`.

@@ -1,13 +1,13 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/shared/seo"
+import Meta from "../components/shared/meta"
 import { graphql } from "gatsby"
 
 const BooksPage = ({ data }) => {
   const { markdownRemark } = data
   return (
     <Layout>
-      <SEO
+      <Meta
         title="Books"
         description="Page where I keep track of all the books that I've read"
         keywords={["books", "reading"]}

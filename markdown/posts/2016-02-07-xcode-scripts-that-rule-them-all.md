@@ -6,7 +6,7 @@ modified: 2016-02-07
 tags: [setup, xcode, script]
 ---
 
-![image]({{site.url}}/images/posts/scripts-rule-them-all.png)
+![image](images/scripts-rule-them-all.png)
 
 I have been recently working on [SugarRecord 2.0](https://github.com/pepibumur/sugarrecord) and one of the things I tried to do for that version was making it easier for contributors to clone the project and start contributing with it. I realized a few months ago that [Carthage](https://github.com/carthage/carthage) and [ReactiveCocoa](https://github.com/reactivecocoa/reactive) had a folder called `script` with a set of normalized scripts. I cloned these projects, executed the script `bootstrap` there and I had the project ready to contribute with. Wow! that's awesome.
 

@@ -10,7 +10,4 @@ Personal website built with GatsbyJS
 
 ## TODO
 
-- Blog
-  - Fix all the broken images
-- Syntax highlighting
-- RSS
+- Pagination of blog posts
