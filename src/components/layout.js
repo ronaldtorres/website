@@ -35,7 +35,7 @@ const Layout = ({ children }) => (
           <div>
             <Body px={[40, 200]} py={[2, 3]}>
               <Header siteTitle={data.site.siteMetadata.title} />
-              <Main py={[3, 4]}>{children}</Main>
+              <Main py={[4, 4]}>{children}</Main>
             </Body>
             <Footer />
           </div>

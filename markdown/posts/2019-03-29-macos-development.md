@@ -1,7 +1,7 @@
 ---
 layout: post
 title: macOS development and being comfortable
-excerpt: 
+excerpt: I've been avoiding macOS development for no reason. This blog post is a short reflection on why I think I've been doing it.
 tags: [comfortable, macos, development]
 ---
 
