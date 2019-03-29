@@ -18,7 +18,7 @@ Functions is not anything new, back in the school we were told that a function i
 Notice that when we create a function we’re actually a scope of operations that doesn’t take data out of there, consequently the logic subset is constrained.
 Thinking about it the concept isn’t complex at all, but… we were given more flexibility when we were told that we could save states under something called classes, voila! OOP
 
-![]({{site.url}}/images/posts/black-box.png)
+![](images/black-box.png)
 
 ## Object oriented programming
 

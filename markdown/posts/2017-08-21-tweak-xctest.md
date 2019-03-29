@@ -9,7 +9,7 @@ tags: [xcodeproj, swift, xcode]
 
 <br/>
 
-![An example of a test using Specta]({{site.url}}/images/posts/xctest-specta.png)
+![An example of a test using Specta](images/xctest-specta.png)
 
 <br/>
 
@@ -19,7 +19,7 @@ The example below shows a plain XCTest and the button to run that individual tes
 
 <br/>
 
-![An example of a test using plain XCTest]({{site.url}}/images/posts/xctest-plain.png)
+![An example of a test using plain XCTest](images/xctest-plain.png)
 
 <br/>
 

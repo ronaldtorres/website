@@ -1,18 +1,29 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/shared/seo"
+import Meta from "../components/shared/meta"
 import { Link } from "gatsby"
-import { format } from "timeago.js"
+import { space } from "styled-system"
+import styled from "styled-components"
+
+const PostTitle = styled.h2`
+  ${space}
+`
+
+const PostArticle = styled.article`
+  ${space}
+`
 
 const Post = ({ post }) => {
   return (
-    <div>
-      <Link to={post.fields.slug}>
-        <h2>{post.frontmatter.title}</h2>
-      </Link>
-      <div>{format(post.fields.date)}</div>
-      <p>{post.excerpt}</p>
-    </div>
+    <PostArticle mb={5}>
+      <header>
+        <PostTitle mb={1}>
+          <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
+        </PostTitle>
+        <small>{post.fields.date}</small>
+      </header>
+      <p>{post.frontmatter.excerpt}</p>
+    </PostArticle>
   )
 }
 const IndexPage = ({
@@ -20,11 +31,12 @@ const IndexPage = ({
     allMarkdownRemark: { edges },
   },
 }) => {
-  const Posts = edges.map(edge => <Post post={edge.node} />)
+  const Posts = edges.map((edge, index) => (
+    <Post key={index} post={edge.node} />
+  ))
   return (
     <Layout>
-      <SEO />
-      <h1>Posts</h1>
+      <Meta />
       {Posts}
     </Layout>
   )
@@ -48,6 +60,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            excerpt
           }
         }
       }

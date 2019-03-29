@@ -1,4 +1,4 @@
-# pedro.pinera.es
+# pedropinera.es
 
 Personal website built with GatsbyJS
 
@@ -10,7 +10,6 @@ Personal website built with GatsbyJS
 
 ## TODO
 
-- Blog
-  - Fix all the broken images
-- Syntax highlighting
-- RSS
+- Pagination of blog posts
+- Better syntax highlighting for Swift.
+- Jump to the next/previus blog post from a post.

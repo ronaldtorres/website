@@ -43,4 +43,4 @@ Would you like to share a video of a talk you watched online? Or some photos of 
 <br>
 <br>
 
-![]({{site.url}}/images/posts/swift-footer.png)
+![](images/swift-footer.png)

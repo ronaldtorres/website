@@ -7,7 +7,7 @@ tags: [danger, github, soundcloud]
 ---
 
 
-![Boy Scouts]({{site.url}}/images/posts/boyscouts.jpg)
+![Boy Scouts](images/boyscouts.jpg)
 
 <br><br>
 

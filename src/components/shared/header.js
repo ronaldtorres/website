@@ -17,9 +17,6 @@ import { Button } from "rebass"
 import { flex } from "styled-system"
 
 const Name = styled.h1`
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='24' height='29' viewport='0 0 100 100' style='fill:black;font-size:14px;'><text y='50%'>🚀</text></svg>")
-      16 0,
-    auto; /*emojicursor.app*/
   margin-bottom: 0px;
   text-align: center;
 `
@@ -27,6 +24,8 @@ const Name = styled.h1`
 const Icon = ({ icon, url }) => {
   const style = {
     margin: "5px",
+    height: "20px",
+    width: "20px",
   }
   return (
     <a href={url} target="__blank">
@@ -78,22 +77,6 @@ const Links = () => {
 
 const HoverButton = styled(Button)`
   ${flex}
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: box-shadow, transform;
-  transition-property: box-shadow, transform;
-  :hover,
-  :focus,
-  :active {
-    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-  }
 `
 
 const SectionButton = ({ title, url, path }) => {
@@ -119,7 +102,7 @@ const SectionButton = ({ title, url, path }) => {
     )
   }
   return (
-    <HoverButton m={[1, 2]} bg="main" flex="1">
+    <HoverButton m={[1, 2]} bg="main">
       {link}
     </HoverButton>
   )
@@ -130,6 +113,7 @@ const Sections = () => {
       backgroundColor="secondary"
       flex="1"
       flexWrap="wrap"
+      justifyContent={["center", "center", "center"]}
       alignItems={["stretch", "stretch", "stretch"]}
       flexDirection={["column", "column", "row"]}
     >

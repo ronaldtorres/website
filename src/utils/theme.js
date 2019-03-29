@@ -7,7 +7,7 @@ breakpoints.lg = breakpoints[2]
 breakpoints.xl = breakpoints[3]
 
 // Space
-const space = [0, 4, 8, 16, 32]
+const space = [0, 4, 8, 16, 32, 64, 128]
 space.small = space[1]
 space.medium = space[2]
 space.large = space[3]

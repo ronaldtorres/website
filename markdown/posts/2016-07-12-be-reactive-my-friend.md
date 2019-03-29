@@ -41,7 +41,7 @@ I’ll guide you in this post through some common scenarios and explain how to s
 
 ## Databases and data synchronization
 
-![]({{site.url}}/images/posts/reactive-database.png)
+![](images/reactive-database.png)
 
 #### Scenario
 Databases are sources of truth in our apps. They save the data, in most of cases coming from an external *API*. Since apps want to offer the best user experience, they get sync with the API as the user navigates through the app. `viewDidLoad()` is the common place where most of developers trigger the data sync. However, there are more places where the data can be sync. Those apps that sync the data predictively do it from places such as background operations or push notifications. 
@@ -76,7 +76,7 @@ class StreamViewController: UIViewController {
 
 ## Keychain and user login/logout
 
-![]({{site.url}}/images/posts/reactive-keychain.png)
+![](images/reactive-keychain.png)
 
 #### Scenario
 
