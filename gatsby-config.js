@@ -69,6 +69,15 @@ module.exports = {
           `gatsby-remark-smartypants`,
           `gatsby-remark-autolink-headers`,
           {
+            resolve: "gatsby-remark-embed-soundcloud",
+            options: {
+              width: 800,
+              height: 100,
+              color: "#22aaa1",
+              autoplay: false,
+            },
+          },
+          {
             resolve: "gatsby-remark-gemoji-to-image",
             // default options, can be ignored
             options: {
