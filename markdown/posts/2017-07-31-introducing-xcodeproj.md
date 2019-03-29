@@ -30,15 +30,15 @@ If you are very excited and can’t wait to try it out, these are the steps that
 
 First of all you have to add the dependency. You can do it by specifying the dependency in your Package.swift
 
-{% gist b0d53f59b471047abb7a4275008964d6 %}
+`gist:pepibumur/b0d53f59b471047abb7a4275008964d6`
 
 If you are using [Marathon](https://github.com/JohnSundell/Marathon), you can update your `Marathonfile` to specify the dependency
 
-{% gist f069ea32f1685fa85680608670d9ed14 %}
+`gist:pepibumur/f069ea32f1685fa85680608670d9ed14`
 
 Once done, you can use it by just importing xcodeproj. Here you have some examples of things that you can do with xcodeproj:
 
-{% gist 649fa8fe22f27d176ddf78c5e524e536 %}
+`gist:pepibumur/649fa8fe22f27d176ddf78c5e524e536`
 
 ## What’s next
 

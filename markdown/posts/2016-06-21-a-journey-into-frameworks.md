@@ -29,7 +29,7 @@ It’s not that hard as it seems, but we are so used to let CocoaPods that we fo
 
 > Note: You might find some external dependencies as already compiled Frameworks *(e.g. Crashlytics)*. In that case, add the Framework as part of the project and link your Framework against these Frameworks. They’ll probably offer a binary per platform. In order to keep your Framework multi-platform you should play with the *Frameworks Search Path*. You should point that attribute to a different folder depending on the platform:
 
-{% gist 79ce98a26949e20d526acb201359433b %}
+`gist:pepibumur/79ce98a26949e20d526acb201359433b`
 
 ## Next steps
 Once the **Testing** framework is defined these testing dependencies can be removed from the `Podfile` and use the Framework instead. It can be easily linking from the application target *Build phases*. You’ll probably have to refactor some imports because they were importing the external dependencies directly.  It becomes simpler thanks to the Framework.

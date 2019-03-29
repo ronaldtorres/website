@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
+import Tags from "../components/shared/tags"
 import { Link, graphql } from "gatsby"
 import { space } from "styled-system"
 import { Box, Flex } from "rebass"
@@ -21,7 +22,8 @@ const Post = ({ post }) => {
         <PostTitle mb={1}>
           <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
         </PostTitle>
-        <small>{post.fields.date}</small>
+        <time>{post.fields.date}</time>
+        <Tags tags={post.frontmatter.tags} />
       </header>
       <p>{post.frontmatter.excerpt}</p>
     </PostArticle>
@@ -32,7 +34,7 @@ const Footer = ({ currentPage, numPages }) => {
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
   const prevPage =
-    currentPage - 1 === 1 ? "/blog" : `/blog/${(currentPage - 1).toString()}`
+    currentPage - 1 === 1 ? "/" : `/blog/${(currentPage - 1).toString()}`
   const nextPage = `/blog/${(currentPage + 1).toString()}`
 
   return (
@@ -88,6 +90,7 @@ export const blogListQuery = graphql`
             slug
           }
           frontmatter {
+            tags
             title
             excerpt
           }

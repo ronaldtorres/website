@@ -22,7 +22,7 @@ tags: [xcode, ios swift, objective-c, testing, appcode]
 
 Thanks CocoaPods! It’s super easy if you’re using CocoaPods with your project. Just add the line for the [Szimpla](https://github.com/pepibumur/szimpla) dependency:
 
-{% gist 056f9d27d90096f7084fa7f24bdbd3fc %}
+`gist:pepibumur/056f9d27d90096f7084fa7f24bdbd3fc`
 
 ## Defining the Snapshots Directory
 
@@ -37,14 +37,14 @@ Part of the setups including specifying in which directory the requests snapshot
 
 The first time you define the test you should run it recording the requests and saving them locally. Execute your test with record. Once it gets recorded. You can update the recorded requests according to your needs *(you can even use regular expression)*. Then update the record method to use the validate one. Future tests executions will use the recorded data to match the requests.
 
-{% gist 7bfe2c9bc71298cb2bb02989111b6afd %}
+`gist:pepibumur/7bfe2c9bc71298cb2bb02989111b6afd`
 
 
 ## Using it with Unit Tests (Nimble Expectation)
 
 [Szimpla](https://github.com/pepibumur/szimpla) also provides expectations for Nimble. You can apply the same logic to your pieces of code and check if after a given closure is executed, a set of requests have been sent:
 
-{% gist 09cb0838aef77fdd3726fa98271f7b16 %}
+`gist:pepibumur/09cb0838aef77fdd3726fa98271f7b16`
 
 ---
 

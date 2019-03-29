@@ -70,6 +70,13 @@ module.exports = {
           `gatsby-remark-smartypants`,
           `gatsby-remark-autolink-headers`,
           {
+            resolve: "gatsby-remark-embed-gist",
+            options: {
+              username: "weirdpattern",
+              includeDefaultCss: true,
+            },
+          },
+          {
             resolve: "gatsby-remark-embed-soundcloud",
             options: {
               width: 800,
