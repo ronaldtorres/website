@@ -77,15 +77,6 @@ module.exports = {
             },
           },
           {
-            resolve: "gatsby-remark-embed-soundcloud",
-            options: {
-              width: 800,
-              height: 200,
-              color: "#22aaa1",
-              autoplay: false,
-            },
-          },
-          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,

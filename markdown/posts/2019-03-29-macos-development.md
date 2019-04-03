@@ -38,5 +38,3 @@ I'd rather remain comfortable around the things in my domain.
 Introducing myself into macOS has helped me realize that it's an stupid idea to get stuck in your comfort area. There are many things to explore and learn, and even though we have grown a personality, and with it a comfort zone, that does not mean that we cannot expand it. I'll work more and more on feeling uncomfortable.
 
 Have a great weekend!
-
-https://soundcloud.com/voluntier/sobhan-hasti-voluntier-remix-free-download
