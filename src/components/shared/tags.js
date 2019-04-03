@@ -3,7 +3,7 @@ import { Box, Flex } from "rebass"
 
 export default ({ tags }) => {
   return (
-    <Flex flexDirection="row">
+    <Flex flexDirection="row" flexWrap="wrap">
       {tags.map((tag, index) => {
         return (
           <Box
