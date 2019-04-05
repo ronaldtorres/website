@@ -7,23 +7,16 @@ const Avatar = () => (
   <StaticQuery
     query={graphql`
       query {
-        placeholderImage: file(relativePath: { eq: "avatar.jpg" }) {
+        placeholderImage: file(relativePath: { eq: "avatar.png" }) {
           childImageSharp {
-            fixed(width: 150, height: 150) {
+            fixed(width: 150, height: 200) {
               ...GatsbyImageSharpFixed
             }
           }
         }
       }
     `}
-    render={data => (
-      <Img
-        fixed={data.placeholderImage.childImageSharp.fixed}
-        style={{
-          borderRadius: "150px",
-        }}
-      />
-    )}
+    render={data => <Img fixed={data.placeholderImage.childImageSharp.fixed} />}
   />
 )
 export default Avatar
