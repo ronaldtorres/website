@@ -7,15 +7,20 @@ export default createGlobalStyle`
   }
   h1, h2, h3, h4, h5, h6 {
     a {
-      text-decoration: none;
+      color: black;
     }
   }
 
   ::-moz-selection { background: ${theme.colors.hover}; }
   ::selection { background: ${theme.colors.hover} }
 
+  a {
+    text-shadow: none;
+    background-image: none;
+  }
+
   p > a {
-    text-decoration: underline;
+
   }
 
   /* PRISM */

@@ -82,6 +82,7 @@ const HoverButton = styled(Button)`
 const SectionButton = ({ title, url, path }) => {
   const linkStyle = {
     textDecoration: "none",
+    fontFamily: "'Rosario',sans-serif",
     color: "white",
     ":hover, :link, :visited": {
       color: "white",
