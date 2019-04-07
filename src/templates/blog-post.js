@@ -54,7 +54,7 @@ export default ({ data }) => {
           <TelegramShareButton
             url={url}
             title={title}
-            style={{ margin: "4px" }}
+            style={{ margin: "4px", cursor: "pointer" }}
           >
             <TelegramIcon size={32} round={true} />
           </TelegramShareButton>
@@ -62,7 +62,7 @@ export default ({ data }) => {
             url={url}
             title={title}
             via={author}
-            style={{ margin: "4px" }}
+            style={{ margin: "4px", cursor: "pointer" }}
           >
             <TwitterIcon size={32} round={true} />
           </TwitterShareButton>
@@ -70,14 +70,22 @@ export default ({ data }) => {
             url={url}
             title={title}
             description={post.frontmatter.excerpt}
-            style={{ margin: "4px" }}
+            style={{ margin: "4px", cursor: "pointer" }}
           >
             <LinkedinIcon size={32} round={true} />
           </LinkedinShareButton>
-          <RedditShareButton url={url} title={title} style={{ margin: "4px" }}>
+          <RedditShareButton
+            url={url}
+            title={title}
+            style={{ margin: "4px", cursor: "pointer" }}
+          >
             <RedditIcon size={32} round={true} />
           </RedditShareButton>
-          <EmailShareButton url={url} subject={title} style={{ margin: "4px" }}>
+          <EmailShareButton
+            url={url}
+            subject={title}
+            style={{ margin: "4px", cursor: "pointer" }}
+          >
             <EmailIcon size={32} round={true} />
           </EmailShareButton>
         </Flex>

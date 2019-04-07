@@ -1,0 +1,24 @@
+- name: Tuist
+  description: A command line tool to generate, maintain and interact with your Xcode projects at any scale
+  link: https://github.com/tuist/tuist
+  language: swift
+
+- name: XcodeProj
+  description: A library to read, update and write Xcode projects, schemes. and workspaces.
+  link: https://github.com/tuist/xcodeproj
+  language: swift
+
+- name: simulator
+  description: A library to interact with the system simulators through simctl.
+  link: https://github.com/angledotdev/simulator
+  language: swift
+
+- name: Shell
+  description: A syntactic-sugar library on top of Foundation's Process to run tasks on the system.
+  link: https://github.com/tuist/shell
+  language: swift
+
+- name: Acho
+  description: A library to ask users to select an element from a list on the terminal.
+  link: https://github.com/tuist/acho
+  language: swift

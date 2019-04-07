@@ -3,7 +3,7 @@ import theme from "./theme"
 
 export default createGlobalStyle`
   main h1 {
-    color: ${theme.colors.secondary};
+    color: ${theme.colors.main};
   }
   h1, h2, h3, h4, h5, h6 {
     a {
@@ -15,8 +15,13 @@ export default createGlobalStyle`
   ::selection { background: ${theme.colors.hover} }
 
   a {
+    color: ${theme.colors.main};
     text-shadow: none;
     background-image: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 
   p > a {

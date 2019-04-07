@@ -9,14 +9,20 @@ const Avatar = () => (
       query {
         placeholderImage: file(relativePath: { eq: "avatar.png" }) {
           childImageSharp {
-            fixed(width: 150, height: 200) {
-              ...GatsbyImageSharpFixed
+            fixed(width: 200) {
+              ...GatsbyImageSharpFixed_noBase64
             }
           }
         }
       }
     `}
-    render={data => <Img fixed={data.placeholderImage.childImageSharp.fixed} />}
+    render={data => (
+      <Img
+        fixed={data.placeholderImage.childImageSharp.fixed}
+        width="200px"
+        height="200px"
+      />
+    )}
   />
 )
 export default Avatar

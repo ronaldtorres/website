@@ -111,7 +111,7 @@ const SectionButton = ({ title, url, path }) => {
 const Sections = () => {
   return (
     <Flex
-      backgroundColor="secondary"
+      backgroundColor="main"
       flex="1"
       flexWrap="wrap"
       justifyContent={["center", "center", "center"]}
@@ -122,7 +122,7 @@ const Sections = () => {
       <SectionButton title="About 👨‍💻" path="/about" />
       <SectionButton title="Books 📚" path="/books" />
       <SectionButton title="Speaking 🎤" path="/speaking" />
-      <SectionButton title="Tuist 📱" url="https://tuist.io" />
+      <SectionButton title="Open Source 🐙" path="/open-source" />
     </Flex>
   )
 }

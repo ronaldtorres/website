@@ -25,9 +25,8 @@ export default {
     shopify: "#96bf48",
     ruby: "#ff2400",
     swift: "#FF621F",
-    javascript: "#F9DE00",
-    main: "#22aaa1",
-    secondary: "#7149c1",
+    javascript: "#baaa1b",
+    main: "#7149c1",
     hover: "#76cdf2",
   },
 }

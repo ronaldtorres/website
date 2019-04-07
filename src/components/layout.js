@@ -28,20 +28,23 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
-      <>
-        <GlobalStyle />
-        <ThemeProvider theme={theme}>
-          <div>
-            <Body px={[40, 200]} py={[2, 3]}>
-              <Header siteTitle={data.site.siteMetadata.title} />
-              <Main py={[4, 4]}>{children}</Main>
-            </Body>
-            <Footer />
-          </div>
-        </ThemeProvider>
-      </>
-    )}
+    render={data => {
+      const px = [40, 200]
+      return (
+        <>
+          <GlobalStyle />
+          <ThemeProvider theme={theme}>
+            <div>
+              <Body px={px} py={[2, 3]}>
+                <Header siteTitle={data.site.siteMetadata.title} />
+                <Main py={[4, 4]}>{children}</Main>
+              </Body>
+              <Footer px={px} />
+            </div>
+          </ThemeProvider>
+        </>
+      )
+    }}
   />
 )
 
