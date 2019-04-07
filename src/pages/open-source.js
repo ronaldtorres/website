@@ -2,26 +2,30 @@ import React from "react"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
 import { graphql } from "gatsby"
-import { Box, Flex, Heading } from "rebass"
 
 const Project = ({ project }) => {
-  const iconClass = `devicon-${project.language}-plain`
   return (
-    <Box width="200px" p={2} m={2} style={{ textAlign: "center" }}>
-      <a href={project.link} target="__blank">
-        <Heading mb={2} color="main">
-          <i class={iconClass} />
-          <br />
-          {project.name}
-        </Heading>
-      </a>
-      <p>{project.description}</p>
-    </Box>
+    <>
+      <h2 color="main">{project.frontmatter.name}</h2>
+      <ul>
+        <li>
+          <b>State:</b> {project.frontmatter.state}
+        </li>
+        <li>
+          <b>Programming language:</b> {project.frontmatter.language}
+        </li>
+        <li>
+          <b>Repository:</b>{" "}
+          <a href={project.frontmatter.link}>{project.frontmatter.link}</a>
+        </li>
+      </ul>
+      <div dangerouslySetInnerHTML={{ __html: project.html }} />
+    </>
   )
 }
 
 const OpenSourcePage = ({ data }) => {
-  const projectEdges = data.allOpensourceYaml.edges
+  const projectEdges = data.allMarkdownRemark.edges
   return (
     <Layout>
       <Meta
@@ -52,11 +56,11 @@ const OpenSourcePage = ({ data }) => {
         Below you'll find the projects that I'm proud of maintaining or having
         maintained.
       </p>
-      <Flex flexDirection="row" flexWrap="wrap" justifyContent="center">
+      <div>
         {projectEdges.map((edge, index) => {
           return <Project key={index} project={edge.node} />
         })}
-      </Flex>
+      </div>
     </Layout>
   )
 }
@@ -65,13 +69,19 @@ export default OpenSourcePage
 
 export const query = graphql`
   query OpenSourceQuery {
-    allOpensourceYaml {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/open-source/.+\\\\.md/" } }
+      sort: { order: DESC, fields: [fields___date] }
+    ) {
       edges {
         node {
-          name
-          description
-          link
-          language
+          frontmatter {
+            name
+            link
+            language
+            state
+          }
+          html
         }
       }
     }

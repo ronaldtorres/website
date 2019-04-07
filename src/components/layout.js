@@ -29,7 +29,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => {
-      const px = [40, 200]
+      const px = [40, 250]
       return (
         <>
           <GlobalStyle />
