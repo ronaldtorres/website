@@ -102,8 +102,14 @@ const SectionButton = ({ title, url, path }) => {
       </Link>
     )
   }
+  let buttonStyle = {
+    "-webkit-user-select": "none",
+    "-moz-user-select": "none",
+    "-ms-user-select": "none",
+    "user-select": "none",
+  }
   return (
-    <HoverButton m={[1, 2]} bg="main">
+    <HoverButton m={[1, 2]} bg="main" style={buttonStyle}>
       {link}
     </HoverButton>
   )
