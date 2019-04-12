@@ -22,7 +22,7 @@ const Post = ({ post }) => {
         <PostTitle mb={1}>
           <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
         </PostTitle>
-        <time>{post.fields.date}</time>
+        <div>{post.fields.date}</div>
         <Tags tags={post.frontmatter.tags} />
       </header>
       <p>{post.frontmatter.excerpt}</p>
