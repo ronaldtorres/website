@@ -43,10 +43,7 @@
     "styled-system": "^4.0.5",
     "timeago.js": "^4.0.0-beta.2",
     "typography": "^0.16.19",
-    "typography-theme-doelger": "^0.16.19",
-    "typography-theme-funston": "^0.16.19",
-    "typography-theme-sutro": "^0.16.19",
-    "typography-theme-twin-peaks": "^0.16.19"
+    "typography-theme-github": "^0.16.19"
   },
   "devDependencies": {
     "prettier": "^1.16.4",
