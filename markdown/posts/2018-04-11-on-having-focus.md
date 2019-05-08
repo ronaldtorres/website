@@ -1,5 +1,4 @@
 ---
-layout: post
 title: On having focus
 excerpt: I'm struggling to have focus nowadays. In this post I describe why it's so hard for me to focus, and the things that I'm doing to overcome the problem.
 tags: [technology, focus, developer]

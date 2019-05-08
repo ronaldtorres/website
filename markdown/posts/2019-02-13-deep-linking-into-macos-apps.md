@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Deep linking into macOS apps
 excerpt: Some comments on what's the state of art of macOS handling deeplinks.
 tags: [deeplink, macos, cocoa, safari]

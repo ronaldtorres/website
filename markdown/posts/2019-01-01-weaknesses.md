@@ -1,5 +1,4 @@
 ---
-layout: post
 title: I do have weaknesses too
 excerpt: In this article I open myself up and talk about some of weaknesses that have been with me for a long time and that I'm currently trying to overcome.
 tags: [pedro, weaknesses, competitiveness, planning, assertiveness]

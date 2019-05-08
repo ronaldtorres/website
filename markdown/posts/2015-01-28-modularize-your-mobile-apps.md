@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Modularize your mobile projects
 excerpt: "Learn how to split your app components in different bundles instead of dealing with an unique bundle that packages the whole app"
 modified: 2015-01-28

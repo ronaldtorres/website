@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Leaving Redbooth
 excerpt: "I took de decision to leave Redbooth and join to a new adventure. I explain here the reasons, everything I learned from there and my expectations for 8fit"
 modified: 2014-10-29

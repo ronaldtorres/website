@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Functional is about functions (Swift)
 excerpt: "Quick introduction to what Functional Programming in Swift is from the simple perspective of functions"
 modified: 2015-10-27

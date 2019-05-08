@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Automating iOS review tasks with Danger"
 excerpt: "Post that explains how to automate review tasks with the help of the tool Danger"
 modified: 2016-03-23

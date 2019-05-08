@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "What a psychologist helped me realize"
 excerpt: It's been a few months going through a therapy that has helped me understand how my brain works and where the stress that I used to experience came from.
 tags: [berlin, oberbaum, water color, painting]

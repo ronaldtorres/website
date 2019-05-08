@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Extensions, dependency injection and frameworks
 excerpt: Learn how handy protocol extensions can be, when used in a frameworks architecture.
 tags: [soundcloud, core, developer, ios, xcode, swift, extensionss]

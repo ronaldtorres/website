@@ -12,12 +12,14 @@ import {
 import { faAt } from "@fortawesome/free-solid-svg-icons"
 import Span from "./span"
 import styled from "styled-components"
-import { StaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import { Button } from "rebass"
-import { flex } from "styled-system"
+import { flex, display, space } from "styled-system"
+import theme from "../../utils/theme"
 
 const Name = styled.h1`
   margin-bottom: 0px;
+  border-bottom: none;
   text-align: center;
 `
 
@@ -26,6 +28,7 @@ const Icon = ({ icon, url }) => {
     margin: "5px",
     height: "20px",
     width: "20px",
+    color: theme.colors.dark,
   }
   return (
     <a href={url} target="__blank">
@@ -35,48 +38,46 @@ const Icon = ({ icon, url }) => {
 }
 
 const Links = () => {
-  return (
-    <StaticQuery
-      query={graphql`
-        query HeaderQuery {
-          site {
-            siteMetadata {
-              links {
-                linkedin
-                soundcloud
-                github
-                email
-                twitter
-                spotify
-                stackoverflow
-              }
+  const {
+    site: { siteMetadata },
+  } = useStaticQuery(
+    graphql`
+      query HeaderQuery {
+        site {
+          siteMetadata {
+            links {
+              linkedin
+              soundcloud
+              github
+              email
+              twitter
+              spotify
+              stackoverflow
             }
           }
         }
-      `}
-      render={data => (
-        <Box alignSelf="center">
-          <Icon icon={faGithub} url={data.site.siteMetadata.links.github} />
-          <Icon icon={faAt} url={data.site.siteMetadata.links.email} />
-          <Icon icon={faTwitter} url={data.site.siteMetadata.links.twitter} />
-          <Icon icon={faLinkedin} url={data.site.siteMetadata.links.linkedin} />
-          <Icon
-            icon={faStackOverflow}
-            url={data.site.siteMetadata.links.stackoverflow}
-          />
-          <Icon
-            icon={faSoundcloud}
-            url={data.site.siteMetadata.links.soundcloud}
-          />
-          <Icon icon={faSpotify} url={data.site.siteMetadata.links.spotify} />
-        </Box>
-      )}
-    />
+      }
+    `
+  )
+  return (
+    <Box alignSelf="center">
+      <Icon icon={faGithub} url={siteMetadata.links.github} />
+      <Icon icon={faAt} url={siteMetadata.links.email} />
+      <Icon icon={faTwitter} url={siteMetadata.links.twitter} />
+      <Icon icon={faLinkedin} url={siteMetadata.links.linkedin} />
+      <Icon icon={faStackOverflow} url={siteMetadata.links.stackoverflow} />
+      <Icon icon={faSoundcloud} url={siteMetadata.links.soundcloud} />
+      <Icon icon={faSpotify} url={siteMetadata.links.spotify} />
+    </Box>
   )
 }
 
 const HoverButton = styled(Button)`
   ${flex}
+`
+
+const StyledFlex = styled(Flex)`
+  ${display}
 `
 
 const SectionButton = ({ title, url, path }) => {
@@ -116,7 +117,8 @@ const SectionButton = ({ title, url, path }) => {
 }
 const Sections = () => {
   return (
-    <Flex
+    <StyledFlex
+      display={["none", "none", "flex"]}
       backgroundColor="main"
       flex="1"
       flexWrap="wrap"
@@ -124,12 +126,11 @@ const Sections = () => {
       alignItems={["stretch", "stretch", "stretch"]}
       flexDirection={["column", "column", "row"]}
     >
-      <SectionButton title="Blog 📝" path="/" />
       <SectionButton title="About 👨‍💻" path="/about" />
       <SectionButton title="Books 📚" path="/books" />
       <SectionButton title="Speaking 🎤" path="/speaking" />
       <SectionButton title="Open Source 🐙" path="/open-source" />
-    </Flex>
+    </StyledFlex>
   )
 }
 
@@ -152,21 +153,34 @@ const Description = () => {
   )
 }
 
-const Header = () => {
+const StyledHeader = styled.header`
+  ${space}
+`
+
+const NameLink = styled(Link)`
+  color: ${theme.colors.dark};
+  &:hover {
+    text-decoration: none;
+  }
+`
+
+const Header = ({ px }) => {
   const headerStyle = {
     display: "flex",
     flexDirection: "column",
     alignItems: "stretch",
   }
   return (
-    <header style={headerStyle}>
+    <StyledHeader px={px} style={headerStyle}>
       <Box mb={0}>
-        <Name>Pedro Piñera</Name>
+        <NameLink to="/">
+          <Name>Pedro Piñera</Name>
+        </NameLink>
       </Box>
       <Links />
       <Description />
       <Sections />
-    </header>
+    </StyledHeader>
   )
 }
 

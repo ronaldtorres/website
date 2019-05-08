@@ -1,5 +1,4 @@
 ---
-layout: post
 title: My thoughts on using React Native
 excerpt: I describe in this article what for me are the positive and negative points towards using React Native as technology for building your mobile apps.
 tags: [react native, mobile, swift, javascript]

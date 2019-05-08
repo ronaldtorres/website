@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Interacting with Xcode projects in Swift
 excerpt: This blog post is an introduction to the format of Xcode projects and xcodeproj, a Swift library that helps read and update Xcode projects in Swift. The post contains a few hands-on examples for developers to experiment with the library.
 tags: [xcodeproj, swift, xcode, project]

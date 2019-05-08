@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Open Source
 excerpt: In this blog post I talk about why I work on open source projects and what are the most important elements for me when starting an open source community.
 tags: [open source, xcbuddy, swift, xcode]

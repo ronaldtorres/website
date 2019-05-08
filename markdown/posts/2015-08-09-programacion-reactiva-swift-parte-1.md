@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Programación Reactiva en Swift: Parte 1, Introducción"
 modified: 2014-10-29
 tags: [reactive, objective-c, swift, reactive cocoa]

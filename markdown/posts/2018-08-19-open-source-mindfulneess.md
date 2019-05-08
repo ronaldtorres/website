@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Open source mindfulness
 excerpt: Not being mindful when contributing and maintaining open source projects might lead to burnout or low self-steem. In this blog post I talk about some principles that I applied to have a healthier relationship with the open source.
 tags: [xcode, scale, swift, tuist, developer]

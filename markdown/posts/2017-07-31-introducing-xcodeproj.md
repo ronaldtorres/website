@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Introducing xcodeproj
 excerpt: Read, update and write your Xcode projects from Swift
 tags: [xcodeproj, swift, xcode]

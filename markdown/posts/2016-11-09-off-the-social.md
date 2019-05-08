@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Stepping off the social world
 excerpt: 
 tags: [facebook, twitter, instagram, social]

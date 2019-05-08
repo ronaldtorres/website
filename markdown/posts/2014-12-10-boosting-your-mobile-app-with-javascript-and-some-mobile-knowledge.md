@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Boosting your mobile app with Javascript and some mobile knowledge"
 excerpt: "Learn how useful might be giving some steps on mobile (Android/iOS) launching mobile solutions with web knowledge and with the same mobile native experience as any other app"
 modified: 2014-12-19

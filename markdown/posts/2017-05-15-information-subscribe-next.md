@@ -1,5 +1,4 @@
 ---
-layout: post
 title: information.subscribe(next)
 excerpt: A brief reflexion on how we are consumers of very intensive information streams.
 tags: [notifications, gadgets, devices]

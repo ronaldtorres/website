@@ -1,5 +1,4 @@
 ---
-layout: post
 title: GitHub workspaces using email
 excerpt: With this simple tweak I managed to have a notifications-free GitHub dashboard with workspaces right on my email.
 tags: [github, emails, productivity]

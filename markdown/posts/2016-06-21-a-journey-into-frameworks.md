@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "A journey into Frameworks - Le Testing Framework"
 excerpt: "One of posts that tells about the migration from a monolithic architecture based in single target to have multiple reusable Frameworks."
 modified: 2016-06021

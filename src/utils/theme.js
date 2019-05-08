@@ -22,6 +22,7 @@ export default {
   space,
   fontSizes,
   colors: {
+    dark: "rgba(0, 0, 0, 0.8)",
     shopify: "#96bf48",
     ruby: "#ff2400",
     swift: "#FF621F",

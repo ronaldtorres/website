@@ -1,5 +1,4 @@
 ---
-layout: post
 title: My first Apple Watch impressions
 excerpt: After a day using Apple Watch I would like to share my impressions with the new Apple toy and why I wouldn’t buy the first version
 modified: 2015-06-07

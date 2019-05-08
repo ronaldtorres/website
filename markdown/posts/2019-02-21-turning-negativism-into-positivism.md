@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Turning negativism into positivism
 excerpt: Short reflection on how beneficial it can be turning negativism into something positive.
 tags: [philosophy, work, life]

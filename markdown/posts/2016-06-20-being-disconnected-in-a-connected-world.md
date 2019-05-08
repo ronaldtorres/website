@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Being disconnected in a connected world"
 excerpt: "In a world where social networks are moving relationships to the Internet people is becoming more disconnected."
 modified: 2016-05-23

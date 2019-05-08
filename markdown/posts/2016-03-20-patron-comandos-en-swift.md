@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "El patrón Comando en Swift"
 excerpt: "Cómo he aplicado el patrón de comandos en Swift para desarrollar el core de GitDo"
 modified: 2016-02-28

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: This app could not be installed at this time
 excerpt: Because sometimes Xcode cannot install your apps, and you have to figure out why.
 tags: [ios, watch, xcode, install]

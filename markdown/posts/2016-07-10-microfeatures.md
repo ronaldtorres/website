@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Micro Features Architecture for iOS"
 excerpt: "Organize your app in small features that you "
 modified: 2016-06021

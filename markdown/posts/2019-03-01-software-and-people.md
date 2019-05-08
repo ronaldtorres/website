@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Software and people
 excerpt: A reflection on what's one of the most important things to me when building software, the people that make it possible.
 tags: [work, development, people, shopify, open source]

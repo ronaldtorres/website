@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Boy Scouts rule with Danger"
 excerpt: "Post where I explain how Danger helped us at SoundCloud to apply the programming Boy Scouts rule to our workflow"
 modified: 2016-05-23

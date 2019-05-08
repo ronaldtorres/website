@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Framework Oriented Programming (iOS/tvOS/macOS/watchOS)"
 excerpt: "Architectural approach for iOS/tvOS/macOS/watchOS based on organizing your business logic in frameworks"
 modified: 2016-04-22

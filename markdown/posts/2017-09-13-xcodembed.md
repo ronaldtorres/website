@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Conditionally embed your dynamic frameworks
 excerpt: A command line tool written in Swift for copying the frameworks from your project to the output frameworks directory.
 tags: [xcodeproj, swift, xcode, xcodembed]

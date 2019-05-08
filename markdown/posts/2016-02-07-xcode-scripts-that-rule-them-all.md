@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Xcode scripts to rule them all"
 excerpt: "Set of normalized scripts very useful for Xcode projects. Individual contributors will be familiar with them after they clone the project."
 modified: 2016-02-07

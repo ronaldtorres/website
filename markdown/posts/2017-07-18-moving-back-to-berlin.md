@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Moving back to Berlin
 excerpt: A brief retrospective on what my life has been in the last few months and my thougts on my move to Berlin.
 tags: [budapest, berlin, remote]

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Install the last Carthage version on CI services (Travis, Circle, ...)"
 excerpt: "Very simple script to keep your Carthage version updated without depending on Brew."
 modified: 2015-12-06

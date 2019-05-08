@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Developer  Reflexion: Focus"
 excerpt: "Reflexion from a developer point of view about the importance of keeping a focus daily to have a good quality of life"
 modified: 2016-05-23

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Full control in your hybrid mobile apps with a local server, 8fit
 excerpt: "Custom solution to have full control over your hybrid apps bundling the content locally and controlling updates"
 modified: 2015-05-25

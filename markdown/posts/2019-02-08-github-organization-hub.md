@@ -1,5 +1,4 @@
 ---
-layout: post
 title: GitHub as an organization hub
 excerpt: With the recent GitHub announcement of personal projects, I'm considering using GitHub as a todo platform where I can not only keep track of work-related tasks, but also personal ones. In this brief blog post I talk about how I used to organize myself, and why I think GitHub projects might suit my needs well.
 tags: [github, projects, todo, organization, productivity ]

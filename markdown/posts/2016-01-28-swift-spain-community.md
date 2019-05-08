@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Swift Spain Community"
 excerpt: "Creating the first Slack Community for Swift developers in Spain"
 modified: 2016-01-28

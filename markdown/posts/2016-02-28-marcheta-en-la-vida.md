@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Marcheta en la vida"
 excerpt: "Mi experiencia de haber salido a vivir fuera de España y las lecciones aprendidas"
 modified: 2016-02-28

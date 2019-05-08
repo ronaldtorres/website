@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Little tweak to be more productive writing XCTest tests
 excerpt: Because readability might compromise productivity.
 tags: [xcodeproj, swift, xcode]

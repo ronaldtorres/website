@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Be Reactive my friend
 excerpt: Article that explains the benefits of reactive programming in the iOS world.
 modified: 2014-11-04

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Developing tools for developers
 excerpt: Learnings from being a core developer and providing other teams with the tools that they need for their daily work.
 tags: [soundcloud, core, developer, ios, xcode]

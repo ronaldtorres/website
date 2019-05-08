@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Composable UIs
 excerpt: Build UIs based on reusable components that you can compose in more complex hierarchies.
 tags: [swift, components, react, react native, ios, xcode]
