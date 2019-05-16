@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import theme from "../../utils/theme"
 import styled from "styled-components"
 import { Flex, Box } from "rebass"
 import { display } from "styled-system"
@@ -52,6 +51,7 @@ const Menu = () => {
       <MenuButton path="/books">Books</MenuButton>
       <MenuButton path="/speaking">Speaking</MenuButton>
       <MenuButton path="/open-source">Open Source</MenuButton>
+      <MenuButton path="/wiki">Wiki</MenuButton>
     </Flex>
   )
 }

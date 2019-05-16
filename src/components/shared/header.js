@@ -125,6 +125,7 @@ const Sections = () => {
       <SectionButton title="Books 📚" path="/books" />
       <SectionButton title="Speaking 🎤" path="/speaking" />
       <SectionButton title="Open Source 🐙" path="/open-source" />
+      <SectionButton title="Wiki 📝" path="/wiki" />
     </StyledFlex>
   )
 }

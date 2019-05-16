@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  const px = [40, 80, 250]
+  const px = [40, 80, 150]
   return (
     <>
       <GlobalStyle />

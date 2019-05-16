@@ -22,6 +22,12 @@ At Shopify, with several apps in the stores, that model was not sustainable at o
 
 In this talk, I’ll talk about how my team, with zero experience in Rails at that time, embarked on designing and building the platform from scratch. Among others, we’ll see the challenges of standardizing the process and the coordination with third-party services like CI, GitHub and the store APIs. Moreover, I’ll share how the process of developing an internal service at Shopify looks, and how we leveraged our design system, Polaris, to move fast and build a product that is consistent and aligned with the company.
 
+## Upcoming
+
+- **All you need is tools**
+  - Where: AltConf 2019 (San Jose)
+  - When: June 2019
+  
 ## Past
 
 Here's a list of some of the talks that I've given at conferences.
