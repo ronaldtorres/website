@@ -104,10 +104,7 @@ const SectionButton = ({ title, url, path }) => {
     )
   }
   let buttonStyle = {
-    "-webkit-user-select": "none",
-    "-moz-user-select": "none",
-    "-ms-user-select": "none",
-    "user-select": "none",
+    userSelect: "none",
   }
   return (
     <HoverButton m={[1, 2]} bg="main" style={buttonStyle}>
@@ -119,12 +116,10 @@ const Sections = () => {
   return (
     <StyledFlex
       display={["none", "none", "flex"]}
-      backgroundColor="main"
-      flex="1"
       flexWrap="wrap"
-      justifyContent={["center", "center", "center"]}
-      alignItems={["stretch", "stretch", "stretch"]}
-      flexDirection={["column", "column", "row"]}
+      justifyContent={"center"}
+      alignItems={"center"}
+      flexDirection={"row"}
     >
       <SectionButton title="About 👨‍💻" path="/about" />
       <SectionButton title="Books 📚" path="/books" />
