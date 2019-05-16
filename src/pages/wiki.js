@@ -2,11 +2,15 @@ import React from "react"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
 import { graphql } from "gatsby"
+import { Link } from "gatsby"
 
 const WikiItem = ({ wiki }) => {
   return (
     <li>
-      <b>{wiki.title}:</b> <span>{wiki.excerpt}</span>
+      <Link to={wiki.fields.slug}>
+        <b>{wiki.frontmatter.title}:</b>
+      </Link>{" "}
+      <span>{wiki.frontmatter.excerpt}</span>
     </li>
   )
 }
@@ -24,12 +28,12 @@ const WikiPage = ({ data }) => {
       <div>
         <h1>Wiki</h1>
         <p>
-          This wiki page is a space for me to share ideas, lessons and notes
-          that I come up with:
+          This page is a space for me to share ideas, lessons and notes that I
+          come up with:
         </p>
         <ul>
           {wikiEdges.map((edge, index) => {
-            return <WikiItem key={index} wiki={edge.node.frontmatter} />
+            return <WikiItem key={index} wiki={edge.node} />
           })}
         </ul>
       </div>
@@ -47,6 +51,9 @@ export const query = graphql`
     ) {
       edges {
         node {
+          fields {
+            slug
+          }
           frontmatter {
             title
             excerpt

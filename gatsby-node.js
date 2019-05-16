@@ -33,7 +33,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
-  return graphql(
+  const fetchBlogPosts = graphql(
     `
       {
         allMarkdownRemark(
@@ -50,7 +50,9 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `
-  ).then(result => {
+  )
+
+  const createBlogPosts = fetchBlogPosts.then(result => {
     const posts = result.data.allMarkdownRemark.edges
     const postsPerPage = 10
     const numPages = Math.ceil(posts.length / postsPerPage)
@@ -73,11 +75,42 @@ exports.createPages = ({ graphql, actions }) => {
     result.data.allMarkdownRemark.edges.forEach(({ node }, index) => {
       createPage({
         path: node.fields.slug,
-        component: path.resolve(`./src/templates/blog-post.js`),
+        component: path.resolve(`./src/templates/markdown.js`),
         context: {
           slug: node.fields.slug,
         },
       })
     })
   })
+  const fetchWiki = graphql(
+    `
+      {
+        allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/wiki/.+\\\\.md/" } }
+          sort: { order: DESC, fields: [fields___date] }
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `
+  )
+  const createWiki = fetchWiki.then(result => {
+    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      createPage({
+        path: node.fields.slug,
+        component: path.resolve(`./src/templates/markdown.js`),
+        context: {
+          slug: node.fields.slug,
+        },
+      })
+    })
+  })
+
+  return Promise.all([createBlogPosts, createWiki])
 }
