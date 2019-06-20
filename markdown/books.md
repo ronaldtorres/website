@@ -4,8 +4,7 @@ In this page I keep track of the books that I read. Before the creation of this 
 
 ## Currently reading
 
-[The Manager's Path
-A Guide for Tech Leaders Navigating Growth and Change](http://shop.oreilly.com/product/0636920056843.do)
+[Hippie by Paulo Coelho](https://www.goodreads.com/book/show/39731666-hippie)
 
 ## Backlog
 
@@ -20,6 +19,11 @@ A Guide for Tech Leaders Navigating Growth and Change](http://shop.oreilly.com/p
 - Digital minimalism
 
 ## Read
+
+### [The Manager's Path: A Guide for Tech Leaders Navigating Growth and Change](http://shop.oreilly.com/product/0636920056843.do)
+- **Rating:** ★★★★☆
+- **Finished:** May 2019
+- **Thoughts:** I didn't read the whole book because there are sections that focus on tips for CTOs or managers of several tips. The content that I read for developers interested in managing individuals or a single team was very interesting and I believe useful.
 
 ### [Team Geek](http://shop.oreilly.com/product/0636920018025.do)
 
