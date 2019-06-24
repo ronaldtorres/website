@@ -1,7 +1,7 @@
 ---
 title: The tale of Xcode projects' complexity
-excerpt: "Just an observation of a trend that I've seen in our industry: developers rushing to be the gain the label of expert in a given technology."
-tags: [unhealthy-tech, stress, technology, wwdc]
+excerpt: This is a short story of how Xcode projects can end up being very complex and hard to maintain.
+tags: [xcode, projects, accidental complexity, swift]
 ---
 
 The CEO of our company wants the product to have an iOS app. We embark on building it, so we start by creating the project: we open Xcode, select new project, and then Xcode dumps the following into a local directory:
