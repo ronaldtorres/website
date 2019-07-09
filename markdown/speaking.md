@@ -19,6 +19,7 @@ Here's a list of some of the talks that I've given at conferences.
 
   - Where: AltConf 2019 (San Jose)
   - When: June 2019
+  - Video: [Link](https://www.youtube.com/watch?v=ydWpnj-PIjQ)
 
 - [**The intrepid adventure of scaling a mobile app**](https://t3chfest.uc3m.es/2018/)
 

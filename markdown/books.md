@@ -20,6 +20,11 @@ In this page I keep track of the books that I read. Before the creation of this 
 
 ## Read
 
+### [The enemy understands the system](https://www.casadellibro.com/libro-el-enemigo-conoce-el-sistema/9788417636395/9501752)
+- **Rating:** ★★★★★
+- **Finished:** July 2019
+- **Thoughts:** It's the most thought-provoking book that I've read lately, perhaps because it's a topic that I'm very interested in. It narrates the story of internet, from its inception as a decentralized solution safe from government or lobbies interests, until nowadays, when companies like Facebook, Twitter, or even the US government are using it to manipulate people leveraging humans' vulnerabilities. I tried not to become paranoid reading it because some facts that they share are scary.
+
 ### [The Manager's Path: A Guide for Tech Leaders Navigating Growth and Change](http://shop.oreilly.com/product/0636920056843.do)
 - **Rating:** ★★★★☆
 - **Finished:** May 2019
