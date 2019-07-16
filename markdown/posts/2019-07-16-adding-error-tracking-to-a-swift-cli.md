@@ -105,7 +105,7 @@ If we run that command, we should get the tool compiled and linked dynamically a
 If we distribute the binary under `.build/release/MyTool`,
 users will get an error when they try to run it from the terminal.
 Since the framework is dynamically linked,
-the linker will try to link the framework at runtime and will fail because it won't be able to link it.
+the linker will try to link the framework at runtime and will fail because it won't be able to find it.
 
 To fix the issue, you need to make sure of 2 things:
 - The frameworks is copied as part of the installation.
