@@ -115,7 +115,7 @@ If we assume we'll copy the framework into the `/usr/local/Frameworks` directory
 we can run the following command to add that directory to the runtime search paths.
 
 ```bash
-install_name_tool -add_rpath "/usr/local/Frameworks"
+install_name_tool -add_rpath "/usr/local/Frameworks" "/path/to/MyTool"
 ```
 
 After running that command,
