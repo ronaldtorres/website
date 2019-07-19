@@ -13,7 +13,7 @@ but they'll never be able to help us get rid of them entirely.
 
 When bugs happen,
 it's crucial to be notified automatically with the right information that helps us debug and fix the bug quickly.
-That's why platforms like [Crashlytics](https://try.crashlytics.com/) or [Sentry](https://sentryio) exist.
+That's why platforms like [Crashlytics](https://try.crashlytics.com/) or [Sentry](https://sentry.io) exist.
 They provide an SDK to add to your projects that collect handled and unhandled errors and report them to a web service. 
 If you are an iOS developer, 
 you are most likely familiar with them.
@@ -66,7 +66,7 @@ OTHER_LDFLAGS = $(inherited) -framework "Sentry"
 With the file `MyTool.xcconfig` in the project directory, we can run the following command:
 
 ```
-swift package generate-xcodeproj --xcconfig-verrides MyTool.xcconfig
+swift package generate-xcodeproj --xcconfig-overrides MyTool.xcconfig
 ```
 
 Notice the `---xcconfig-overrides` the argument that indicates the SwiftPM to use a different xcconfig file for the generated Xcode project.
