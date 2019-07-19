@@ -10,7 +10,7 @@ const AboutPage = ({ data }) => {
   return (
     <Layout>
       <Meta title="About" />
-      <Flex flexDirection="column" alignItems="start">
+      <Flex flexDirection="column" alignItems="center">
         <Avatar />
       </Flex>
       <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />

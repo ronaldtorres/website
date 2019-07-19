@@ -130,12 +130,16 @@ const Sections = () => {
   )
 }
 
+const StyledDescription = styled(Box)`
+  ${display}
+`
+
 const Description = () => {
   const style = {
     textAlign: "center",
   }
   return (
-    <Box py={[3]} style={style}>
+    <StyledDescription py={[3]} style={style} display={["none", "block"]}>
       Software Engineer at{" "}
       <a href="https://shopify.com" style={{ textDecoration: "none" }}>
         <Span color="shopify">Shopify</Span>
@@ -145,7 +149,7 @@ const Description = () => {
       Mostly doing <Span color="ruby">Ruby</Span> &{" "}
       <Span color="swift">Swift</Span>, and sometimes{" "}
       <Span color="javascript">Javascript</Span>
-    </Box>
+    </StyledDescription>
   )
 }
 

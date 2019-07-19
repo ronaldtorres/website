@@ -25,13 +25,13 @@ const StyledFlex = styled(Flex)`
   ${display}
 `
 
-const MenuButton = ({ path, children }) => {
+const MenuButton = ({ path, alt, children }) => {
   const style = {
     color: "white",
   }
   return (
     <Box>
-      <Link style={style} to={path}>
+      <Link style={style} to={path} alt={alt}>
         {children}
       </Link>
     </Box>
@@ -47,11 +47,33 @@ const Menu = () => {
       flexDirection="column"
       alignItems="center"
     >
-      <MenuButton path="/about">About</MenuButton>
-      <MenuButton path="/books">Books</MenuButton>
-      <MenuButton path="/speaking">Speaking</MenuButton>
-      <MenuButton path="/open-source">Open Source</MenuButton>
-      <MenuButton path="/wiki">Wiki</MenuButton>
+      <MenuButton path="/about" alt="Read more about Pedro Piñera">
+        About
+      </MenuButton>
+      <MenuButton
+        path="/books"
+        alt="Contains the books that Pedro has read with his personal review, and the book that he's currently reading"
+      >
+        Books
+      </MenuButton>
+      <MenuButton
+        path="/speaking"
+        alt="It contains a list of talks that Pedro has given in some conferences, as well as a list of upcoming talks."
+      >
+        Speaking
+      </MenuButton>
+      <MenuButton
+        path="/open-source"
+        alt="This page contains a list of open source projects that Pedro is maintainer of"
+      >
+        Open Source
+      </MenuButton>
+      <MenuButton
+        path="/wiki"
+        alt="It contains a series of documents that whose content don't fit the blog post format"
+      >
+        Wiki
+      </MenuButton>
     </Flex>
   )
 }

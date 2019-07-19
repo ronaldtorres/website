@@ -30,6 +30,7 @@ export default ({ px }) => {
         alignItems="flex-start"
         px={px}
         pb={3}
+        pt={4}
       >
         <Box mr={1}>
           <a href={twitter} target="__blank">

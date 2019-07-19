@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  const px = [40, 80, 150]
+  const px = [15, 80, 150]
   return (
     <>
       <GlobalStyle />
@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
 
             <Header siteTitle={title} px={px} />
 
-            <Main py={[4, 4]} px={px}>
+            <Main py={[1, 4]} px={px}>
               {children}
             </Main>
           </Body>

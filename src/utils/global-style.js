@@ -2,9 +2,6 @@ import { createGlobalStyle } from "styled-components"
 import theme from "./theme"
 
 export default createGlobalStyle`
-  main h1 {
-    color: ${theme.colors.main};
-  }
   h1, h2, h3, h4, h5, h6 {
     a {
       color: black;
@@ -16,8 +13,8 @@ export default createGlobalStyle`
 
   a {
     color: ${theme.colors.main};
-    text-shadow: none;
     background-image: none;
+    text-decoration: underline;
   }
 
   a:hover {

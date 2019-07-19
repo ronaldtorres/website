@@ -3,21 +3,6 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import Meta from "../components/shared/meta"
 import Helmet from "react-helmet"
-import { Flex } from "rebass"
-import {
-  LinkedinShareButton,
-  TwitterShareButton,
-  TelegramShareButton,
-  RedditShareButton,
-  EmailShareButton,
-} from "react-share"
-import {
-  TwitterIcon,
-  TelegramIcon,
-  LinkedinIcon,
-  RedditIcon,
-  EmailIcon,
-} from "react-share"
 
 export default ({ data }) => {
   const post = data.markdownRemark
@@ -49,47 +34,7 @@ export default ({ data }) => {
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <footer />
       </article>
-      <footer>
-        <Flex flexDirection="row" justifyContent="center">
-          <TelegramShareButton
-            url={url}
-            title={title}
-            style={{ margin: "4px", cursor: "pointer" }}
-          >
-            <TelegramIcon size={32} round={true} />
-          </TelegramShareButton>
-          <TwitterShareButton
-            url={url}
-            title={title}
-            via={author}
-            style={{ margin: "4px", cursor: "pointer" }}
-          >
-            <TwitterIcon size={32} round={true} />
-          </TwitterShareButton>
-          <LinkedinShareButton
-            url={url}
-            title={title}
-            description={post.frontmatter.excerpt}
-            style={{ margin: "4px", cursor: "pointer" }}
-          >
-            <LinkedinIcon size={32} round={true} />
-          </LinkedinShareButton>
-          <RedditShareButton
-            url={url}
-            title={title}
-            style={{ margin: "4px", cursor: "pointer" }}
-          >
-            <RedditIcon size={32} round={true} />
-          </RedditShareButton>
-          <EmailShareButton
-            url={url}
-            subject={title}
-            style={{ margin: "4px", cursor: "pointer" }}
-          >
-            <EmailIcon size={32} round={true} />
-          </EmailShareButton>
-        </Flex>
-      </footer>
+      <footer />
     </Layout>
   )
 }

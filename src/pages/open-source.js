@@ -71,7 +71,7 @@ export const query = graphql`
   query OpenSourceQuery {
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/open-source/.+\\\\.md/" } }
-      sort: { order: DESC, fields: [fields___date] }
+      sort: { order: ASC, fields: [fields___date] }
     ) {
       edges {
         node {
