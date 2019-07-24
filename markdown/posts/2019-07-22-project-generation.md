@@ -82,4 +82,41 @@ and configure the Xcode during the project generation.
 Tuist is more strict than Xcode with the validation of the projects and the environment.
 **If it knows that the project won't compile, it fails immediately.** Developers time is precious and shouldn't be wasted. 
 
-## 3 - Miconfigurations
+## 3 - Misconfigurations
+
+The growth of Xcode projects come with complexity,
+and when things become complex,
+it's easier to make mistakes.
+A wrong build settings flag 
+or a missing argument in a script build phase 
+can be the source of compilation and App Store validation errors.
+
+Xcode runs weak validations on projects.
+It assumes the developers know what they are doing, 
+and heavily relies on components like the build system or the app uploader to catch issues. There are two significant drawbacks with that approach:
+
+* It might take some time. 
+For example, if a dynamic 
+framework is being copied into another framework. 
+The error will show up when the app is being uploaded to the store.
+* Most of the times,
+the errors say nothing about the source of the error. 
+For instance, 
+if you try to link a iOS framework against a macOS's *(something that Xcode allows)*,
+the compilation will fail with a `framework not found` error message.
+
+Tuist is more strict in this regards and runs validations during the project generation.
+If it knows something won't compile,
+it'll fail and tell developers why.
+We understand configuring a large project can be a hard task,
+and we want developers to do it right **at any scale.**
+
+## 4 - Consistency
+
+When an Xcode codebase spreads across multiple directories, 
+having a consistent structure across Xcode projects become crucial. 
+
+
+<!-- Besides `.xcconfig` files,
+which allow sharing build settings across targets and projects,
+Xcode doesn't provide options to share -->
