@@ -14,11 +14,11 @@ export default createGlobalStyle`
   a {
     color: ${theme.colors.main};
     background-image: none;
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   a:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   p > a {

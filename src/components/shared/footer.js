@@ -29,7 +29,7 @@ export default ({ px }) => {
         flexDirection="row"
         alignItems="flex-start"
         px={px}
-        pb={3}
+        pb={5}
         pt={4}
       >
         <Box mr={1}>

@@ -59,9 +59,9 @@ FRAMEWORK_SEARCH_PATHS=$(inherited) $(SRCROOT)/Frameworks
 OTHER_LDFLAGS = $(inherited) -framework "Sentry"
 ```
 
-- **LD_RUNPATH_SEARCH_PATHS**: Defines a list of directories where the dynamic linker can look up the linked frameworks. We are adding `$(SRCROOT)/Frameworks`, which is the `Frameworks` directory relative to the path where the generated Xcode project is.
-- **FRAMEWORK_SEARCH_PATHS**: Defines the directories that contain the frameworks to be linked during the compilation process.
-- **OTHER_LDFLAGS:** With this setting we include the linker flag `-framework Sentry` to link against the Sentry framework. You'll need to replace Sentry with the name of your framework.
+- **LD\_RUNPATH\_SEARCH\_PATHS**: Defines a list of directories where the dynamic linker can look up the linked frameworks. We are adding `$(SRCROOT)/Frameworks`, which is the `Frameworks` directory relative to the path where the generated Xcode project is.
+- **FRAMEWORK\_SEARCH\_PATHS**: Defines the directories that contain the frameworks to be linked during the compilation process.
+- **OTHER\_LDFLAGS:** With this setting we include the linker flag `-framework Sentry` to link against the Sentry framework. You'll need to replace Sentry with the name of your framework.
 
 With the file `MyTool.xcconfig` in the project directory, we can run the following command:
 

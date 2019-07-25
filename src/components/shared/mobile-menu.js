@@ -47,6 +47,9 @@ const Menu = () => {
       flexDirection="column"
       alignItems="center"
     >
+      <MenuButton path="/" alt="Home page">
+        Home
+      </MenuButton>
       <MenuButton path="/about" alt="Read more about Pedro Piñera">
         About
       </MenuButton>
@@ -68,12 +71,12 @@ const Menu = () => {
       >
         Open Source
       </MenuButton>
-      <MenuButton
+      {/* <MenuButton
         path="/wiki"
         alt="It contains a series of documents that whose content don't fit the blog post format"
       >
         Wiki
-      </MenuButton>
+      </MenuButton> */}
     </Flex>
   )
 }
