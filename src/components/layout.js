@@ -7,15 +7,17 @@ import Footer from "./shared/footer"
 import theme from "../utils/theme"
 import GlobalStyle from "../utils/global-style"
 import styled from "styled-components"
-import { space } from "styled-system"
+import { space, width, display, flex } from "styled-system"
 import MobileMenu from "./shared/mobile-menu"
 
 const Body = styled.div`
   ${space}
+  ${width}
 `
 
 const Main = styled.main`
   ${space}
+  ${width}
 `
 
 const Layout = ({ children }) => {
@@ -37,8 +39,14 @@ const Layout = ({ children }) => {
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <div>
-          <Body>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <Body width={["100%", "100%", "52em", "64em"]}>
             <MobileMenu />
 
             <Header siteTitle={title} px={px} />
@@ -46,8 +54,8 @@ const Layout = ({ children }) => {
             <Main py={[1, 4]} px={px}>
               {children}
             </Main>
+            <Footer px={px} style={{ flex: 1 }} />
           </Body>
-          <Footer px={px} />
         </div>
       </ThemeProvider>
     </>
