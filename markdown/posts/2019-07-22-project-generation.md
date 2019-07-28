@@ -113,10 +113,63 @@ and we want developers to do it right **at any scale.**
 
 ## 4 - Consistency
 
-When an Xcode codebase spreads across multiple directories, 
-having a consistent structure across Xcode projects become crucial. 
+Consistency is crucial to scale up apps. 
+Without it,
+the work across multiple projects becomes more difficult.
+Jumps between projects require an extra effort to understand how projects differ from each other. Moreover, inconsistent projects are more error prone.
 
+Although ensuring consistency is easier when all the Xcode projects are part of the same repository,
+Xcode doesn't help much with it.
+The only feature that helps with consistency by reusing build settings across projects are the `.xcconfig` files.
 
-<!-- Besides `.xcconfig` files,
-which allow sharing build settings across targets and projects,
-Xcode doesn't provide options to share -->
+Consistency can also manifest in:
+- The list of targets of each of the projects.
+- The list of target build phases and their names.
+- The list of project schemes and their configuration.
+
+The way Tuist helps making the projects more consistent is by having a programmable interface where developers can leverage Swift features like functions.
+The definition of a project can be the result of calling a function:
+
+```swift
+func frameworkProject(name: String) -> Project {
+  // Targets
+  let framework = Target(name: name, product: .framework)
+  let unitTests = Target(name: "\(name)Tests", product: .unitTests)
+  let uiTests = Target(name: "\(name)UITests", product: .uiTests)
+  let targets = [framework, unitTests, uiTests]
+
+  return Project(name: name, targets: targets)
+}
+
+let searchFramework = frameworkProject(name: "Search")
+let coreFramework = frameworkProject(name: "Core")
+```
+
+*How beautiful is that?*
+Using Swift over declarative formats like YAML makes it possible without having to re-invent the well.
+
+## 5 - Complexities
+
+One of the most important lessons that a developer can learn for coding is KISS *(keep it simple an stupid)*.
+I believe the same applies to Xcode projects.
+In this case,
+the complexity is hard to avoid because it's Xcode the one exposing it.
+
+After the creation of projects,
+Xcode leaves the developers with the responsibility of maintaining and keeping them up to date.
+That's proven not to be an easy job.
+For instance,
+with the recent introduction of support for Swift Packages in Xcode,
+many developers are still [figuring out how the new Tetris piece fits their overly complex projects](https://ppinera.es/2019/06/23/the-tale-xcode-projects-complexity/),
+that are perhaps already using CocoaPods or Carthage. 
+
+Tuist has taken a stance similar to the one Rails has in the web ecosystem: 
+*complex tasks are abstracted and made easier,
+and only if necessary,
+developers can manage intricacies by themselves.*
+It defaults to simplicity and prevents the complexity of the projects' structure from growing proportionally with the number and size of the projects.
+
+Believe me, 
+seeing how easy it is to describe the structure of a large project also makes scaling apps a enjoyable task.
+
+## 6 - Workflows
