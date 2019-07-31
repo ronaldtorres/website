@@ -173,3 +173,138 @@ Believe me,
 seeing how easy it is to describe the structure of a large project also makes scaling apps a enjoyable task.
 
 ## 6 - Workflows
+
+Many projects depend on tools like [CocoaPods](https://cocoapods.org), 
+[SwiftGen](https://github.com/SwiftGen/SwiftGen), 
+or [Sourcery](https://github.com/krzysztofzablocki/Sourcery) to be run before opening the project.
+If developers forget to run them,
+they might end up getting errors.
+They are sometimes obvious errors, like your `Podfile.lock` is out of sync,
+but other times they are not.
+Some teams decide to automate all these tasks using Fastlane lanes,
+which do nothing but calling underlying system commands:
+
+```ruby
+lane :bootstrap do
+  cocoapods
+  swiftgen
+  sourcery
+end
+```
+
+Installing the team's certificates and provisioning profiles is another example.
+Many teams in the industry decided to use Fastlane for that,
+but again,
+we are putting the developer in the position of having to remember running `fastlane match`,
+and knowing which certificates/provisioning profiles they need for the job at hand.
+
+*What if if all those tasks where beautifully integrated into the process of generating a project?*
+That's what Tuist aims for.
+It determines which tasks need to be executed,
+and executes them as part of the project generation.
+The idea is the developer doesn't have to think about all of that.
+They can just remember one and easy to remember command:
+
+```bash
+tuist generate
+```
+
+## 7 - Conflicts
+
+Having many Git conflicts is perhaps one of the most annoying things of working on large Xcode projects.
+The likeliness of having conflicts is proportional to the amount of people contributing to the project,
+and in the case of Xcode,
+to the size of the project.
+Xcode projects have a monolithic structure;
+most of their content lives in a file, the `project.pbxproj`.
+Any change to the project through Xcode gets reflected in that file.
+
+If there are many branches being merged in your project,
+having to rebase often to solve git conflicts can be very annoying,
+even more if the CI takes long every time we rebase and push the changes to remote.
+
+Tuist diminishes the conflicts significantly because Xcode projects don't need to be part of the repository.
+
+## 8 - Globs
+
+
+
+## 9 - CLI
+
+Xcode provides `xcodebuild`, a command line tool to interact with the project.
+Both,
+its input and and output are so verbose that most developers wrap them with tools like [Gym](https://docs.fastlane.tools/actions/gym/) or [xcpretty](https://github.com/xcpretty/xcpretty).
+Moreover,
+there are common use cases like building, signing, and publishing the app to the App Store,
+that require the interaction with other CLIs besides `xcodebuild`.
+Most projects solve this issue by using [Fastlane](https://fastlane.tools/),
+but that creates a new contract between the `Fastfiles` and your projects that can break easily,
+and as a consequence,
+presenting developers with failing lanes that they need to debug and fix.
+*Have you ever experienced trying to release an app,
+and run into issues because someone changed something in the signing settings of the project and forgot to update that lane that configures the environment for signing?*
+
+Tuist knows your projects and will leverage that information to offer a simple set of commands.
+Being positioned in a directory where there's a project defined,
+I could execute something like:
+
+```bash
+tuist build
+```
+
+And that'd build all the targets from the project in the current directory.
+If building requires installing CocoaPods dependencies,
+or generating code for your resources using SwiftGen,
+Tuist will do it as part of the command execution.
+The idea here is removing the need of having to use a tool like Fastlane,
+which in my experience,
+results in complex Fastiles that grow proportionally with the number of Xcode projects.
+Tuist embraces [KISS](https://en.wikipedia.org/wiki/KISS_principle).
+
+## 10 - Caching
+
+At some point in the growth of a projects,
+build times start affecting developers' productivity.
+They push code to GitHub and it takes over 20 minutes to compile.
+We consider using [Carthage](https://github.com/Carthage/Carthage) to precompile the dependencies,
+and that gives us a bit of breath that is insignificant compared to the compilation time of the project.
+We heard that [Buck](https://github.com/facebook/buck) and [Bazel](https://bazel.build/) help mitigate the issue, 
+but our team is so small that we can't invest time and resources into replacing our build system entirely.
+We hope for Apple to release new versions of the Swift compiler and magic flags that speed up our builds,
+but that's being too hopeful; 
+they optimize for the majority of their userbase,
+and that's small-medium sized apps.
+
+One of Tuist's goals is to help with this need projects have when they scale. 
+The idea is very simple.
+All the modules,
+being a module a framework or a library,
+are hashed,
+compiled,
+and uploaded to a cloud storage.
+That's done for every commit that is built on CI.
+When developers want to work with the project locally,
+Tuist generates the dependency graph,
+and generates the project by using pre-compiled modules for those targets that we don't plan to work on.
+For instance,
+let's say we have an App that depends on a dynamic framework `Search`,
+which depends on another framework called `Core`.
+Since we only plan to work on the app at the moment,
+Tuist will give us a project hat contains a target with the source code of the app,
+which links against `Search`,
+and copies both `Search` and `Core` into the product directory.
+
+---
+
+All of that makes me very excited when I work on Tuist.
+I believe working on a large Xcode project has to be as fun as working on small ones.
+Over the years, 
+I've seen tools like Fastlane helping small/medium projects,
+and tools like Buck and Bazel helping large ones,
+but there's space in the middle of that spectrum where projects end up hacking their way through to scale.
+I dream with the Rails for the development of apps using Xcode.
+A tool that provides simple abstractions and makes it easier to enforce practices at any level of the project.
+
+If that sounds exciting, 
+and would like to take part on this journey,
+you can start by joining our [Slack channel](http://slack.tuist.io/) and reading [the documentation](https://docs.tuist.io).
