@@ -4,7 +4,7 @@ excerpt: Trying to add error tracking to Tuist, I realized how the process is no
 tags: [tuist, swift, xcode, ios]
 ---
 
-A few days ago I published a [thread](https://twitter.com/pedropbuendia/status/1153252000685072384) on Twitter in which I shared what I think is the value of generated Xcode projects.
+Last week I published a [thread](https://twitter.com/pedropbuendia/status/1153252000685072384) on Twitter in which I shared what I think is the value of generated Xcode projects.
 I've been a huge advocate of generated Xcode projects since I worked at SoundCloud, 
 where I realized the maintenance cost that modular Xcode projects bring.
 
@@ -225,9 +225,31 @@ even more if the CI takes long every time we rebase and push the changes to remo
 
 Tuist diminishes the conflicts significantly because Xcode projects don't need to be part of the repository.
 
-## 8 - Globs
+## 8 - File patterns
 
+Xcode projects have references to the files and folders that are part of it.
+Because of that,
+it was very common to end up with a project files and folders hierarchy that was inconsistent with the structure in the filesystem.
+This has improved with the recent Xcode versions,
+but it's still certainly annoying having to drag & drop files to the Xcode projects to use them from targets.
 
+Tuist makes that way easier by using glob patterns.
+Rather than individually referencing files,
+we can define a glob pattern,
+for example `Sources/**/*.swift`, 
+and Tuist will unfold the pattern and add the resolved paths to the project.
+This makes it easier to define conventions in regards to the folders structure.
+For example,
+the example below is a function that ensures that all the targets,
+regardless of the project they belong to,
+have the sources in the same directory.
+
+```swift
+func target(name: String) -> Target {
+  return Target(name: name,
+               sources: "Sources/**/*.swift")
+}
+```
 
 ## 9 - CLI
 
