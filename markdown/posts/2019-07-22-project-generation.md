@@ -53,7 +53,7 @@ Using [SwiftGen](https://github.com/SwiftGen/SwiftGen) to generate code from our
 or [Carthage](https://github.com/Carthage/Carthage) to embed dynamic frameworks,
 is an implicit dependency.
 If they don't exist,
-the compilation might fails.
+the compilation might fail.
 
 Teams overcome this problem by including in the project `README.md` a list of steps that they need to execute before opening the project in Xcode. There are two caveats with this approach: it's hard to ensure that developer environments are configured consistently *(e.g. the same version of  a tool)* and notify them when one of the dependencies requires an update *(e.g. a new certificate to be installed in the Keychain)*.
 
@@ -93,7 +93,7 @@ can be the source of compilation and App Store validation errors.
 
 Xcode runs weak validations on projects.
 It assumes the developers know what they are doing, 
-and heavily relies on components like the build system or the app uploader to catch issues. There are two significant drawbacks with that approach:
+and heavily relies on components like the build system or the app uploader to catch issues. There are two drawbacks with that approach:
 
 * It might take some time. 
 For example, if a dynamic 
@@ -182,7 +182,7 @@ they might end up getting errors.
 They are sometimes obvious errors, like your `Podfile.lock` is out of sync,
 but other times they are not.
 Some teams decide to automate all these tasks using Fastlane lanes,
-which do nothing but calling underlying system commands:
+which calls underlying system commands:
 
 ```ruby
 lane :bootstrap do
@@ -223,7 +223,7 @@ If there are many branches being merged in your project,
 having to rebase often to solve git conflicts can be very annoying,
 even more if the CI takes long every time we rebase and push the changes to remote.
 
-Tuist diminishes the conflicts significantly because Xcode projects don't need to be part of the repository.
+Tuist diminishes the conflicts because Xcode projects don't need to be part of the repository.
 
 ## 8 - File patterns
 
@@ -262,9 +262,9 @@ that require the interaction with other CLIs besides `xcodebuild`.
 Most projects solve this issue by using [Fastlane](https://fastlane.tools/),
 but that creates a new contract between the `Fastfiles` and your projects that can break easily,
 and as a consequence,
-presenting developers with failing lanes that they need to debug and fix.
+present developers with failing lanes that they need to debug and fix.
 *Have you ever experienced trying to release an app,
-and run into issues because someone changed something in the signing settings of the project and forgot to update that lane that configures the environment for signing?*
+and running into issues because someone changed something in the signing settings of the project and forgot to update that lane that configures the environment for signing?*
 
 Tuist knows your projects and will leverage that information to offer a simple set of commands.
 Being positioned in a directory where there's a project defined,
