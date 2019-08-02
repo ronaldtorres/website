@@ -1,6 +1,6 @@
 ---
 title: Project generation
-excerpt: Trying to add error tracking to Tuist, I realized how the process is not very straightforward. This blog post describes the process that I followed to help other Swift developers add error tracking to their CLI tools.
+excerpt: This blog post describes the advantages of dynamic over static Xcode projects, and how Tuist leverages project generation to help teams overcome the challenges associated to scaling up projects.
 tags: [tuist, swift, xcode, ios]
 ---
 
