@@ -34,9 +34,7 @@ let app = Target(name: "App", product: .application, dependencies: [
 let profile = Target(name: "Profile", product: .framework, dependencies: [
   .target("Utilities")
 ])
-let utilities = Target(name: "Utilities", product: .staticLibrary, dependencies: [
-  .target("Utilities")
-])
+let utilities = Target(name: "Utilities", product: .staticLibrary)
 ```
 Furthermore,
 it generates Xcode projects with just the pieces that the developer needs to do their work. 
