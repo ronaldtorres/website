@@ -148,7 +148,7 @@ Using Swift over declarative formats like YAML makes it possible without having 
 
 ## 5 - Complexities
 
-One of the most important lessons that a developer can learn for coding is KISS *(keep it simple an stupid)*.
+One of the most important lessons that a developer can learn for coding is KISS *(keep it simple and stupid)*.
 I believe the same applies to Xcode projects.
 In this case,
 the complexity is hard to avoid because it's Xcode the one exposing it.
