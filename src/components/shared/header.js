@@ -123,10 +123,10 @@ const Sections = () => {
     >
       <SectionButton title="Blog ✍️" path="/" />
       <SectionButton title="About 👨‍💻" path="/about" />
-      <SectionButton title="Books 📚" path="/books" />
+      {/* <SectionButton title="Books 📚" path="/books" /> */}
       <SectionButton title="Speaking 🎤" path="/speaking" />
       <SectionButton title="Open Source 🐙" path="/open-source" />
-      {/* <SectionButton title="Wiki 📝" path="/wiki" /> */}
+      <SectionButton title="Docs 📝" path="/wiki" />
     </StyledFlex>
   )
 }
