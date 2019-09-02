@@ -65,18 +65,18 @@ const Menu = () => {
       >
         Speaking
       </MenuButton>
-      <MenuButton
+      {/* <MenuButton
         path="/open-source"
         alt="This page contains a list of open source projects that Pedro is maintainer of"
       >
         Open Source
-      </MenuButton>
-      {/* <MenuButton
+      </MenuButton> */}
+      <MenuButton
         path="/wiki"
         alt="It contains a series of documents that whose content don't fit the blog post format"
       >
         Wiki
-      </MenuButton> */}
+      </MenuButton>
     </Flex>
   )
 }
