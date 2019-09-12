@@ -1,4 +1,4 @@
-/** @jx jsx */
+/** @jsx jsx */
 import { jsx } from "theme-ui"
 
 import React from "react"
@@ -13,7 +13,9 @@ const MicroBlogPage = () => {
         title="Micro blog"
         description="This page contains tiny posts with thoughts, ideas, reflections, that are not long enough to justify a blog post"
       />
-      <Timeline />
+      <div sx={{ paddingTop: 4 }}>
+        <Timeline />
+      </div>
     </Layout>
   )
 }

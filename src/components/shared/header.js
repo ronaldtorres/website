@@ -121,7 +121,7 @@ const Sections = () => {
       alignItems={"center"}
       flexDirection={"row"}
     >
-      <SectionButton title="Microblog 📝" path="/micro-blog" />
+      <SectionButton title="Micro blog 📝" path="/micro-blog" />
       <SectionButton title="About 👨‍💻" path="/about" />
       <SectionButton title="Speaking 🎤" path="/speaking" />
       <SectionButton title="Open Source 🐙" path="/open-source" />
