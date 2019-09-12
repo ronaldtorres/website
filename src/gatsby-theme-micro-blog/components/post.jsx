@@ -6,7 +6,7 @@ import { Styled } from "theme-ui"
 export default ({ date, body, tags }) => {
   return (
     <Styled.root>
-      <div
+      <article
         sx={{
           borderRadius: 1,
           px: 4,
@@ -19,9 +19,9 @@ export default ({ date, body, tags }) => {
           borderStyle: "solid",
         }}
       >
-        <div sx={{ fontSize: 1, color: "accent" }}>{date}</div>
+        <header sx={{ fontSize: 1, color: "accent" }}>{date}</header>
         <MDXRenderer>{body}</MDXRenderer>
-        <div sx={{ display: "flex", flexWrap: "wrap" }}>
+        <footer sx={{ display: "flex", flexWrap: "wrap" }}>
           {tags.map((tag, index) => {
             return (
               <span
@@ -41,8 +41,8 @@ export default ({ date, body, tags }) => {
               </span>
             )
           })}
-        </div>
-      </div>
+        </footer>
+      </article>
     </Styled.root>
   )
 }
