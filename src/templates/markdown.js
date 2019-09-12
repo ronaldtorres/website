@@ -6,11 +6,7 @@ import Helmet from "react-helmet"
 
 export default ({ data }) => {
   const post = data.markdownRemark
-  const url = `${data.site.siteMetadata.siteUrl}${
-    data.markdownRemark.fields.slug
-  }`
   const title = post.frontmatter.title
-  const author = data.site.siteMetadata.author
   return (
     <Layout>
       <Meta
@@ -45,7 +41,6 @@ export const query = graphql`
       siteMetadata {
         title
         siteUrl
-        author
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

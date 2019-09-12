@@ -2,7 +2,6 @@
   "name": "ppinera-website",
   "private": true,
   "description": "Personal website",
-  "version": "0.1.0",
   "author": "Pedro Piñera pedro@ppinera.es",
   "dependencies": {
     "@emotion/core": "^10.0.17",
@@ -55,23 +54,12 @@
     "prettier": "^1.16.4",
     "slug": "^1.0.0"
   },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "scripts": {
+    "clean": "gatsby clean",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "serve": "gatsby serve"
   }
 }
