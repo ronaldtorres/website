@@ -18,6 +18,7 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-theme-ui`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -197,6 +198,12 @@ module.exports = {
             title: "Pedro Piñera's Blog RSS Feed",
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-theme-micro-blog`,
+      options: {
+        rootDir: __dirname,
       },
     },
   ],
