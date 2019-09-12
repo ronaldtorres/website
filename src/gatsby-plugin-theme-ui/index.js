@@ -47,7 +47,7 @@ export default {
   colors: {
     text: "#000",
     background: "#fff",
-    accent: styledSystemTheme.colors.shopify,
+    accent: styledSystemTheme.colors.main,
     muted: "#e8e8e8",
   },
 }
