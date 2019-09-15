@@ -50,8 +50,8 @@ const Menu = () => {
       <MenuButton path="/" alt="Home page">
         Home
       </MenuButton>
-      <MenuButton path="/micro-blog" alt="Micro blog">
-        Micro blog
+      <MenuButton path="/journal" alt="Journal">
+        Journal
       </MenuButton>
       <MenuButton path="/about" alt="Read more about Pedro Piñera">
         About
