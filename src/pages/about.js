@@ -1,29 +1,31 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
-import { graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Avatar from "../components/shared/avatar"
-import { Flex } from "rebass"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
-const AboutPage = ({ data }) => {
-  const { markdownRemark } = data
+const AboutPage = () => {
+  const { file } = useStaticQuery(graphql`
+    {
+      file(relativePath: { eq: "about.mdx" }) {
+        relativePath
+        childMdx {
+          body
+        }
+      }
+    }
+  `)
   return (
     <Layout>
       <Meta title="About" />
-      <Flex flexDirection="column" alignItems="center">
+      <div sx={{ flexDirection: "column", alignItems: "vertical" }}>
         <Avatar />
-      </Flex>
-      <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
+      </div>
+      <MDXRenderer>{file.childMdx.body}</MDXRenderer>
     </Layout>
   )
 }
 
 export default AboutPage
-
-export const query = graphql`
-  query AboutPageQuery {
-    markdownRemark(fileAbsolutePath: { regex: "/.+/about\\\\.md/" }) {
-      html
-    }
-  }
-`

@@ -206,5 +206,16 @@ module.exports = {
         rootDir: __dirname,
       },
     },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [".mdx"],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+          },
+        ],
+      },
+    },
   ],
 }
