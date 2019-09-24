@@ -1,6 +1,6 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
-import { Flex, Box } from "rebass"
 
 export default ({ px }) => {
   const {
@@ -23,31 +23,34 @@ export default ({ px }) => {
   `)
   const feed = "/feed.xml"
   return (
-    <footer style={{ flex: 1 }}>
-      <Flex
-        alignSelf="stretch"
-        flexDirection="row"
-        alignItems="flex-start"
-        px={px}
-        pb={5}
-        pt={4}
+    <footer sx={{ flex: 1 }}>
+      <div
+        sx={{
+          display: "flex",
+          alignSelf: "stretch",
+          flexDirection: "row",
+          alignItems: "flex-start",
+          px: px,
+          paddingBottom: 5,
+          paddingTop: 4,
+        }}
       >
-        <Box mr={1}>
+        <div sx={{ mr: 1 }}>
           <a href={twitter} target="__blank">
             twitter
           </a>
-        </Box>
+        </div>
         •
-        <Box mx={1}>
+        <div sx={{ mx: 1 }}>
           <a href={github} target="__blank">
             github
           </a>
-        </Box>
-        <Box flex={1} />
+        </div>
+        <div sx={{ flex: 1 }} />
         <a href={feed} target="__blank">
           rss
         </a>
-      </Flex>
+      </div>
     </footer>
   )
 }
