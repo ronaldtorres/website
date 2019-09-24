@@ -50,5 +50,9 @@ export default {
     accent: styledSystemTheme.colors.main,
     muted: "#e8e8e8",
     dark: styledSystemTheme.colors.dark,
+    shopify: styledSystemTheme.colors.shopify,
+    ruby: styledSystemTheme.colors.ruby,
+    swift: styledSystemTheme.colors.swift,
+    javascript: styledSystemTheme.colors.javascript,
   },
 }

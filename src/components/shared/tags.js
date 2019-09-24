@@ -1,33 +1,29 @@
-import React from "react"
-import { Box, Flex } from "rebass"
-import styled from "styled-components"
-
-const UnselectableBox = styled(Box)`
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-`
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 
 export default ({ tags }) => {
+  const tagStyle = {
+    "-webkit-user-select": "none",
+    "-moz-user-select": "none",
+    "-ms-user-select": "none",
+    "user-select": "none",
+    mr: 2,
+    px: 2,
+    my: 2,
+    bg: "accent",
+    color: "white",
+    fontSize: 1,
+    borderRadius: "4px",
+  }
   return (
-    <Flex flexDirection="row" flexWrap="wrap">
+    <div sx={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
       {tags.map((tag, index) => {
         return (
-          <UnselectableBox
-            mr={2}
-            px={2}
-            my={2}
-            key={index}
-            bg="main"
-            color="white"
-            fontSize={1}
-            style={{ borderRadius: "4px" }}
-          >
+          <div sx={tagStyle} key={index}>
             {tag}
-          </UnselectableBox>
+          </div>
         )
       })}
-    </Flex>
+    </div>
   )
 }

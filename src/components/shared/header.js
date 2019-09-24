@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import React from "react"
 import { Box, Flex } from "rebass"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -10,7 +12,6 @@ import {
   faSpotify,
 } from "@fortawesome/free-brands-svg-icons"
 import { faAt } from "@fortawesome/free-solid-svg-icons"
-import Span from "./span"
 import styled from "styled-components"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { Button } from "rebass"
@@ -142,13 +143,13 @@ const Description = () => {
     <StyledDescription py={[3]} style={style} display={["none", "block"]}>
       Software Engineer at{" "}
       <a href="https://shopify.com" style={{ textDecoration: "none" }}>
-        <Span color="shopify">Shopify</Span>
+        <span sx={{ color: "shopify" }}>Shopify</span>
       </a>{" "}
       🛍. I like building tools for developers and doing open source.
       <br />
-      Mostly doing <Span color="ruby">Ruby</Span> &{" "}
-      <Span color="swift">Swift</Span>, and sometimes{" "}
-      <Span color="javascript">Javascript</Span>
+      Mostly doing <span sx={{ color: "ruby" }}>Ruby</span> &{" "}
+      <span sx={{ color: "swift" }}>Swift</span>, and sometimes{" "}
+      <span sx={{ color: "javascript" }}>Javascript</span>
     </StyledDescription>
   )
 }
