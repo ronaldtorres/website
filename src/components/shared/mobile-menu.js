@@ -1,51 +1,56 @@
-import React, { useState } from "react"
-import styled from "styled-components"
-import { Flex, Box } from "rebass"
-import { display } from "styled-system"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
+
+import { useState } from "react"
 import { Link } from "gatsby"
+
 const Button = ({ onClick }) => {
-  const stripeStyle = { height: "4px" }
+  const stripeStyle = { height: "4px", bg: "dark" }
   return (
-    <Flex
-      style={{ height: "20px", width: "20px", cursor: "pointer" }}
-      bg="white"
-      flexDirection="column"
-      alignItems="stretch"
-      justifyContent="space-around"
+    <div
+      sx={{
+        height: "20px",
+        width: "20px",
+        cursor: "pointer",
+        bg: "white",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "stretch",
+        justifyContent: "space-around",
+      }}
       onClick={onClick}
     >
-      <Box bg="dark" style={stripeStyle} />
-      <Box bg="dark" style={stripeStyle} />
-      <Box bg="dark" style={stripeStyle} />
-    </Flex>
+      <div sx={stripeStyle} />
+      <div sx={stripeStyle} />
+      <div sx={stripeStyle} />
+    </div>
   )
 }
-
-const StyledFlex = styled(Flex)`
-  ${display}
-`
 
 const MenuButton = ({ path, alt, children }) => {
   const style = {
     color: "white",
   }
   return (
-    <Box>
+    <div>
       <Link style={style} to={path} alt={alt}>
         {children}
       </Link>
-    </Box>
+    </div>
   )
 }
 
 const Menu = () => {
   return (
-    <Flex
-      p={3}
-      bg="dark"
-      color="white"
-      flexDirection="column"
-      alignItems="center"
+    <div
+      sx={{
+        display: "flex",
+        padding: 3,
+        bg: "dark",
+        color: "white",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
     >
       <MenuButton path="/" alt="Home page">
         Home
@@ -55,12 +60,6 @@ const Menu = () => {
       </MenuButton>
       <MenuButton path="/about" alt="Read more about Pedro Piñera">
         About
-      </MenuButton>
-      <MenuButton
-        path="/books"
-        alt="Contains the books that Pedro has read with his personal review, and the book that he's currently reading"
-      >
-        Books
       </MenuButton>
       <MenuButton
         path="/speaking"
@@ -80,7 +79,7 @@ const Menu = () => {
       >
         Wiki
       </MenuButton>
-    </Flex>
+    </div>
   )
 }
 
@@ -90,11 +89,11 @@ export default () => {
     setIsOpened(!isOpened)
   }
   return (
-    <StyledFlex display={["block", "block", "none"]}>
+    <div sx={{ display: ["block", "block", "none"] }}>
       {isOpened && <Menu />}
-      <Flex p={3}>
+      <div sx={{ display: "flex", padding: 3 }}>
         <Button onClick={onClick} />
-      </Flex>
-    </StyledFlex>
+      </div>
+    </div>
   )
 }

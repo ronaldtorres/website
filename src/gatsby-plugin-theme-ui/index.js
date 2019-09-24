@@ -49,5 +49,6 @@ export default {
     background: "#fff",
     accent: styledSystemTheme.colors.main,
     muted: "#e8e8e8",
+    dark: styledSystemTheme.colors.dark,
   },
 }
