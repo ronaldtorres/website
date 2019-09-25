@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
         <body sx={{ width: ["100%", "100%", "52em", "64em"] }}>
           <MobileMenu />
 
-          <Header siteTitle={title} px={px} />
+          <Header siteTitle={title} sx={{ px }} />
 
           <main sx={{ py: [1, 4], px: px }}>{children}</main>
           <div sx={{ px: px }}>
