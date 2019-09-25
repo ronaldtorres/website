@@ -28,12 +28,9 @@ const Button = ({ onClick }) => {
 }
 
 const MenuButton = ({ path, alt, children }) => {
-  const style = {
-    color: "white",
-  }
   return (
     <div>
-      <Link style={style} to={path} alt={alt}>
+      <Link sx={{ color: "white" }} to={path} alt={alt}>
         {children}
       </Link>
     </div>
