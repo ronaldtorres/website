@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./shared/header"
 import Footer from "./shared/footer"
