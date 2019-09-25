@@ -1,7 +1,9 @@
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import React from "react"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
-import { graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import { Link } from "gatsby"
 
 const WikiItem = ({ wiki }) => {
@@ -15,8 +17,30 @@ const WikiItem = ({ wiki }) => {
   )
 }
 
-const WikiPage = ({ data }) => {
-  const wikiEdges = data.allMarkdownRemark.edges
+const WikiPage = () => {
+  const {
+    allMarkdownRemark: { edges: wikiEdges },
+  } = useStaticQuery(graphql`
+    {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/wiki/.+\\\\.md/" } }
+        sort: { order: DESC, fields: [fields___date] }
+      ) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              excerpt
+              tags
+            }
+          }
+        }
+      }
+    }
+  `)
 
   return (
     <Layout>
@@ -42,25 +66,3 @@ const WikiPage = ({ data }) => {
 }
 
 export default WikiPage
-
-export const query = graphql`
-  query WikiQuery {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/wiki/.+\\\\.md/" } }
-      sort: { order: DESC, fields: [fields___date] }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            excerpt
-            tags
-          }
-        }
-      }
-    }
-  }
-`

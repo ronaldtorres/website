@@ -1,24 +1,11 @@
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import React from "react"
-import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { ThemeProvider } from "styled-components"
 import Header from "./shared/header"
 import Footer from "./shared/footer"
-import theme from "../utils/theme"
 import GlobalStyle from "../utils/global-style"
-import styled from "styled-components"
-import { space, width, display, flex } from "styled-system"
 import MobileMenu from "./shared/mobile-menu"
-
-const Body = styled.div`
-  ${space}
-  ${width}
-`
-
-const Main = styled.main`
-  ${space}
-  ${width}
-`
 
 const Layout = ({ children }) => {
   const {
@@ -38,32 +25,26 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
-      <ThemeProvider theme={theme}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <Body width={["100%", "100%", "52em", "64em"]}>
-            <MobileMenu />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <body sx={{ width: ["100%", "100%", "52em", "64em"] }}>
+          <MobileMenu />
 
-            <Header siteTitle={title} px={px} />
+          <Header siteTitle={title} px={px} />
 
-            <Main py={[1, 4]} px={px}>
-              {children}
-            </Main>
-            <Footer px={px} style={{ flex: 1 }} />
-          </Body>
-        </div>
-      </ThemeProvider>
+          <main sx={{ py: [1, 4], px: px }}>{children}</main>
+          <div sx={{ px: px }}>
+            <Footer />
+          </div>
+        </body>
+      </div>
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

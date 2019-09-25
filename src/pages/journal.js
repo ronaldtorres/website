@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
-import React from "react"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
 import { Timeline } from "gatsby-theme-micro-blog"

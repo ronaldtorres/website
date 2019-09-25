@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import React from "react"
-import { Box, Flex } from "rebass"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faGithub,
@@ -12,28 +11,18 @@ import {
   faSpotify,
 } from "@fortawesome/free-brands-svg-icons"
 import { faAt } from "@fortawesome/free-solid-svg-icons"
-import styled from "styled-components"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import { Button } from "rebass"
-import { flex, display, space } from "styled-system"
-import theme from "../../utils/theme"
-
-const Name = styled.h1`
-  margin-bottom: 0px;
-  border-bottom: none;
-  text-align: center;
-`
 
 const Icon = ({ icon, url }) => {
-  const style = {
+  const sx = {
     margin: "5px",
     height: "20px",
     width: "20px",
-    color: theme.colors.dark,
+    color: "dark",
   }
   return (
     <a href={url} target="__blank">
-      <FontAwesomeIcon style={style} icon={icon} />
+      <FontAwesomeIcon sx={sx} icon={icon} />
     </a>
   )
 }
@@ -61,7 +50,7 @@ const Links = () => {
     `
   )
   return (
-    <Box alignSelf="center">
+    <div sx={{ alignSelf: "center" }}>
       <Icon icon={faGithub} url={siteMetadata.links.github} />
       <Icon icon={faAt} url={siteMetadata.links.email} />
       <Icon icon={faTwitter} url={siteMetadata.links.twitter} />
@@ -69,17 +58,9 @@ const Links = () => {
       <Icon icon={faStackOverflow} url={siteMetadata.links.stackoverflow} />
       <Icon icon={faSoundcloud} url={siteMetadata.links.soundcloud} />
       <Icon icon={faSpotify} url={siteMetadata.links.spotify} />
-    </Box>
+    </div>
   )
 }
-
-const HoverButton = styled(Button)`
-  ${flex}
-`
-
-const StyledFlex = styled(Flex)`
-  ${display}
-`
 
 const SectionButton = ({ title, url, path }) => {
   const linkStyle = {
@@ -93,56 +74,57 @@ const SectionButton = ({ title, url, path }) => {
   let link
   if (url) {
     link = (
-      <a href={url} target="__blank" style={linkStyle}>
+      <a href={url} target="__blank" sx={linkStyle}>
         {title}
       </a>
     )
   } else {
     link = (
-      <Link to={path} style={linkStyle}>
+      <Link to={path} sx={linkStyle}>
         {title}
       </Link>
     )
   }
-  let buttonStyle = {
-    userSelect: "none",
-  }
   return (
-    <HoverButton m={[1, 2]} bg="main" style={buttonStyle}>
+    <div
+      sx={{
+        userSelect: "none",
+        bg: "accent",
+        margin: [1, 2],
+        px: 2,
+        py: 1,
+        borderRadius: 1,
+      }}
+    >
       {link}
-    </HoverButton>
+    </div>
   )
 }
 const Sections = () => {
   return (
-    <StyledFlex
-      display={["none", "none", "flex"]}
-      flexWrap="wrap"
-      justifyContent={"center"}
-      alignItems={"center"}
-      flexDirection={"row"}
+    <div
+      sx={{
+        display: ["none", "none", "flex"],
+        flexWrap: "wrap",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "row",
+      }}
     >
       <SectionButton title="Journal 📝" path="/journal" />
       <SectionButton title="About 👨‍💻" path="/about" />
       <SectionButton title="Speaking 🎤" path="/speaking" />
       <SectionButton title="Open Source 🐙" path="/open-source" />
       <SectionButton title="Wiki 📝" path="/wiki" />
-    </StyledFlex>
+    </div>
   )
 }
 
-const StyledDescription = styled(Box)`
-  ${display}
-`
-
 const Description = () => {
-  const style = {
-    textAlign: "center",
-  }
   return (
-    <StyledDescription py={[3]} style={style} display={["none", "block"]}>
+    <div sx={{ py: 3, display: ["none", "block"], textAlign: "center" }}>
       Software Engineer at{" "}
-      <a href="https://shopify.com" style={{ textDecoration: "none" }}>
+      <a href="https://shopify.com" sx={{ textDecoration: "none" }}>
         <span sx={{ color: "shopify" }}>Shopify</span>
       </a>{" "}
       🛍. I like building tools for developers and doing open source.
@@ -150,38 +132,40 @@ const Description = () => {
       Mostly doing <span sx={{ color: "ruby" }}>Ruby</span> &{" "}
       <span sx={{ color: "swift" }}>Swift</span>, and sometimes{" "}
       <span sx={{ color: "javascript" }}>Javascript</span>
-    </StyledDescription>
+    </div>
   )
 }
 
-const StyledHeader = styled.header`
-  ${space}
-`
-
-const NameLink = styled(Link)`
-  color: ${theme.colors.dark};
-  &:hover {
-    text-decoration: none;
-  }
-`
-
 const Header = ({ px }) => {
-  const headerStyle = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "stretch",
-  }
   return (
-    <StyledHeader px={px} style={headerStyle}>
-      <Box mb={0}>
-        <NameLink to="/">
-          <Name>Pedro Piñera</Name>
-        </NameLink>
-      </Box>
+    <header
+      sx={{
+        px: px,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "stretch",
+      }}
+    >
+      <div sx={{ mb: 0 }}>
+        <Link
+          sx={{ color: "dark", "&:hover": { textDecoration: "none" } }}
+          to="/"
+        >
+          <h1
+            sx={{
+              marginBottom: "0px",
+              borderBottom: "none",
+              textAlign: "center",
+            }}
+          >
+            Pedro Piñera
+          </h1>
+        </Link>
+      </div>
       <Links />
       <Description />
       <Sections />
-    </StyledHeader>
+    </header>
   )
 }
 

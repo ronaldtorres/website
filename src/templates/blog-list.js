@@ -1,32 +1,23 @@
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import React from "react"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
 import Tags from "../components/shared/tags"
 import { Link, graphql } from "gatsby"
-import { space } from "styled-system"
-import { Box, Flex } from "rebass"
-import styled from "styled-components"
-
-const PostTitle = styled.h2`
-  ${space}
-`
-
-const PostArticle = styled.article`
-  ${space}
-`
 
 const Post = ({ post }) => {
   return (
-    <PostArticle mb={5}>
+    <article sx={{ mb: 5 }}>
       <header>
-        <PostTitle mb={1}>
+        <h2 sx={{ mb: 1 }}>
           <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
-        </PostTitle>
+        </h2>
         <div>{post.fields.date}</div>
         <Tags tags={post.frontmatter.tags} />
       </header>
       <p>{post.frontmatter.excerpt}</p>
-    </PostArticle>
+    </article>
   )
 }
 
@@ -38,18 +29,25 @@ const Footer = ({ currentPage, numPages }) => {
   const nextPage = `/blog/${(currentPage + 1).toString()}`
 
   return (
-    <Flex flex="1" flexDirection="row" justifyContent="space-between">
+    <div
+      sx={{
+        display: "flex",
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: "space-between",
+      }}
+    >
       {!isFirst && (
-        <Box>
+        <div>
           <Link to={prevPage}>Previous page</Link>
-        </Box>
+        </div>
       )}
       {!isLast && (
-        <Box>
+        <div>
           <Link to={nextPage}>Next page</Link>
-        </Box>
+        </div>
       )}
-    </Flex>
+    </div>
   )
 }
 

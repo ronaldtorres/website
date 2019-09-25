@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
 
-export default ({ px }) => {
+export default () => {
   const {
     site: {
       siteMetadata: {
@@ -30,7 +30,6 @@ export default ({ px }) => {
           alignSelf: "stretch",
           flexDirection: "row",
           alignItems: "flex-start",
-          px: px,
           paddingBottom: 5,
           paddingTop: 4,
         }}

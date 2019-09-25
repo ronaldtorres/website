@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components"
-import theme from "./theme"
+import theme from "../gatsby-plugin-theme-ui/index"
 
 export default createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
@@ -8,11 +8,11 @@ export default createGlobalStyle`
     }
   }
 
-  ::-moz-selection { background: ${theme.colors.hover}; }
-  ::selection { background: ${theme.colors.hover} }
+  ::-moz-selection { background: ${theme.colors.textSelection}; }
+  ::selection { background: ${theme.colors.textSelection} }
 
   a {
-    color: ${theme.colors.main};
+    color: ${theme.colors.accent};
     background-image: none;
     text-decoration: none;
   }

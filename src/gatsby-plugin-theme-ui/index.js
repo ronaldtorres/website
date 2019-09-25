@@ -1,6 +1,5 @@
 import theme from "typography-theme-github"
 import { toTheme } from "@theme-ui/typography"
-import styledSystemTheme from "../utils/theme"
 
 // Breakpoints
 const breakpoints = ["40em", "52em", "64em", "80em"]
@@ -47,12 +46,13 @@ export default {
   colors: {
     text: "#000",
     background: "#fff",
-    accent: styledSystemTheme.colors.main,
+    accent: "#7149c1",
     muted: "#e8e8e8",
-    dark: styledSystemTheme.colors.dark,
-    shopify: styledSystemTheme.colors.shopify,
-    ruby: styledSystemTheme.colors.ruby,
-    swift: styledSystemTheme.colors.swift,
-    javascript: styledSystemTheme.colors.javascript,
+    dark: "rgba(0, 0, 0, 0.8)",
+    shopify: "#96bf48",
+    ruby: "#ff2400",
+    swift: "#FF621F",
+    javascript: "#baaa1b",
+    textSelection: "#76cdf2",
   },
 }

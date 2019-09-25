@@ -4,7 +4,7 @@ In this page I keep track of the books that I read. Before the creation of this 
 
 ## Currently reading
 
-[Hippie by Paulo Coelho](https://www.goodreads.com/book/show/39731666-hippie)
+
 
 ## Backlog
 

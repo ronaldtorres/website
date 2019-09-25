@@ -1,3 +1,6 @@
+/** @jsx jsx */
+import { jsx } from "theme-ui"
+
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
@@ -18,9 +21,7 @@ export default ({ data }) => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:image"
-          content={`${data.site.siteMetadata.siteUrl}${
-            data.markdownRemark.fields.slug
-          }twitter-card.jpg`}
+          content={`${data.site.siteMetadata.siteUrl}${data.markdownRemark.fields.slug}twitter-card.jpg`}
         />
       </Helmet>
       <article>

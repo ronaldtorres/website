@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
-import { graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 
 const Project = ({ project }) => {
   return (
@@ -24,7 +24,27 @@ const Project = ({ project }) => {
   )
 }
 
-const OpenSourcePage = ({ data }) => {
+const OpenSourcePage = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/open-source/.+\\\\.md/" } }
+        sort: { order: ASC, fields: [fields___date] }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              name
+              link
+              language
+              state
+            }
+            html
+          }
+        }
+      }
+    }
+  `)
   const projectEdges = data.allMarkdownRemark.edges
   return (
     <Layout>
@@ -66,24 +86,3 @@ const OpenSourcePage = ({ data }) => {
 }
 
 export default OpenSourcePage
-
-export const query = graphql`
-  query OpenSourceQuery {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/open-source/.+\\\\.md/" } }
-      sort: { order: ASC, fields: [fields___date] }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            name
-            link
-            language
-            state
-          }
-          html
-        }
-      }
-    }
-  }
-`

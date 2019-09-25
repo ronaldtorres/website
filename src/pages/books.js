@@ -1,10 +1,16 @@
 import React from "react"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
-import { graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 
-const BooksPage = ({ data }) => {
-  const { markdownRemark } = data
+const BooksPage = () => {
+  const { markdownRemark } = useStaticQuery(graphql`
+    {
+      markdownRemark(fileAbsolutePath: { regex: "/.+/books\\\\.md/" }) {
+        html
+      }
+    }
+  `)
   return (
     <Layout>
       <Meta
@@ -18,11 +24,3 @@ const BooksPage = ({ data }) => {
 }
 
 export default BooksPage
-
-export const query = graphql`
-  query BooksPageQuery {
-    markdownRemark(fileAbsolutePath: { regex: "/.+/books\\\\.md/" }) {
-      html
-    }
-  }
-`

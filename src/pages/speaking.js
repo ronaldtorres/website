@@ -1,9 +1,16 @@
 import React from "react"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
-import { graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 
-const SpeakingPage = ({ data }) => {
+const SpeakingPage = () => {
+  const data = useStaticQuery(graphql`
+    {
+      markdownRemark(fileAbsolutePath: { regex: "/.+/speaking\\\\.md/" }) {
+        html
+      }
+    }
+  `)
   const { markdownRemark } = data
   return (
     <Layout>
@@ -18,11 +25,3 @@ const SpeakingPage = ({ data }) => {
 }
 
 export default SpeakingPage
-
-export const query = graphql`
-  query SpeakingPageQuery {
-    markdownRemark(fileAbsolutePath: { regex: "/.+/speaking\\\\.md/" }) {
-      html
-    }
-  }
-`
