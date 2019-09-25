@@ -18,7 +18,6 @@ module.exports = {
     },
   },
   plugins: [
-    `gatsby-plugin-theme-ui`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -121,24 +120,21 @@ module.exports = {
       options: {
         extensions: [".mdx"],
         gatsbyRemarkPlugins: [
-          // {
-          //   resolve: `gatsby-remark-autolink-headers`,
-          // },
-          // `gatsby-remark-smartypants`,
-          // `gatsby-remark-autolink-headers`,
-          // {
-          //   resolve: "gatsby-remark-embed-gist",
-          //   options: {
-          //     username: "weirdpattern",
-          //     includeDefaultCss: true,
-          //   },
-          // },
-          // {
-          //   resolve: `gatsby-remark-images`,
-          //   options: {
-          //     maxWidth: 590,
-          //   },
-          // },
+          `gatsby-remark-smartypants`,
+          `gatsby-remark-autolink-headers`,
+          {
+            resolve: "gatsby-remark-embed-gist",
+            options: {
+              username: "weirdpattern",
+              includeDefaultCss: true,
+            },
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
           // {
           //   resolve: `gatsby-remark-social-cards`,
           //   options: {
@@ -165,17 +161,17 @@ module.exports = {
           //     yMargin: 24,
           //   },
           // },
-          // {
-          //   resolve: "gatsby-remark-gemoji-to-image",
-          //   // default options, can be ignored
-          //   options: {
-          //     base: "https://github.githubassets.com/images/icons/emoji/",
-          //     ext: ".png",
-          //     height: "1.2em",
-          //   },
-          // },
+          {
+            resolve: "gatsby-remark-gemoji-to-image",
+            options: {
+              base: "https://github.githubassets.com/images/icons/emoji/",
+              ext: ".png",
+              height: "1.2em",
+            },
+          },
         ],
       },
     },
+    `gatsby-plugin-theme-ui`,
   ],
 }
