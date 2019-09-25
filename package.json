@@ -43,11 +43,7 @@
     "react-helmet": "^5.2.0",
     "react-share": "^2.4.0",
     "react-typography": "^0.16.19",
-    "rebass": "^3.0.1",
-    "styled-components": "^4.1.3",
-    "styled-system": "^4.0.5",
     "theme-ui": "^0.2.42",
-    "timeago.js": "^4.0.0-beta.2",
     "typography": "^0.16.19",
     "typography-theme-github": "^0.16.19"
   },
