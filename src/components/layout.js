@@ -24,24 +24,24 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
-      <div
+
+      <body
         sx={{
+          width: ["100%", "100%", "52em", "64em"],
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
         }}
       >
-        <body sx={{ width: ["100%", "100%", "52em", "64em"] }}>
-          <MobileMenu />
+        <MobileMenu />
 
-          <Header siteTitle={title} sx={{ px: [15, 80, 150] }} />
+        <Header siteTitle={title} sx={{ px: [15, 80, 150] }} />
 
-          <main sx={{ py: [1, 4], px: [15, 80, 150] }}>{children}</main>
-          <div sx={{ px: [15, 80, 150] }}>
-            <Footer />
-          </div>
-        </body>
-      </div>
+        <main sx={{ py: [1, 4], px: [15, 80, 150] }}>{children}</main>
+        <div sx={{ px: [15, 80, 150] }}>
+          <Footer />
+        </div>
+      </body>
     </>
   )
 }
