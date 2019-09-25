@@ -54,7 +54,7 @@ const Footer = ({ currentPage, numPages }) => {
 const BlogList = ({
   pageContext,
   data: {
-    allMarkdownRemark: { edges },
+    allMdx: { edges },
   },
 }) => {
   const Posts = edges.map((edge, index) => (
@@ -73,7 +73,7 @@ export default BlogList
 
 export const blogListQuery = graphql`
   query blogListQuery($skip: Int!, $limit: Int!) {
-    allMarkdownRemark(
+    allMdx(
       filter: { fields: { type: { eq: "blog" } } }
       sort: { order: DESC, fields: [fields___date] }
       limit: $limit

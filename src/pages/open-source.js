@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
 import { graphql, useStaticQuery } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const Project = ({ project }) => {
   return (
@@ -19,7 +20,7 @@ const Project = ({ project }) => {
           <a href={project.frontmatter.link}>{project.frontmatter.link}</a>
         </li>
       </ul>
-      <div dangerouslySetInnerHTML={{ __html: project.html }} />
+      <MDXRenderer>{project.body}</MDXRenderer>
     </>
   )
 }
@@ -27,7 +28,7 @@ const Project = ({ project }) => {
 const OpenSourcePage = () => {
   const data = useStaticQuery(graphql`
     {
-      allMarkdownRemark(
+      allMdx(
         filter: { fileAbsolutePath: { regex: "/open-source/.+\\\\.md/" } }
         sort: { order: ASC, fields: [fields___date] }
       ) {
@@ -39,13 +40,13 @@ const OpenSourcePage = () => {
               language
               state
             }
-            html
+            body
           }
         }
       }
     }
   `)
-  const projectEdges = data.allMarkdownRemark.edges
+  const projectEdges = data.allMdx.edges
   return (
     <Layout>
       <Meta

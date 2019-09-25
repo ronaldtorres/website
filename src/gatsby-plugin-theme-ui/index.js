@@ -1,5 +1,6 @@
 import theme from "typography-theme-github"
 import { toTheme } from "@theme-ui/typography"
+import prismTheme from "@theme-ui/prism/presets/night-owl.json"
 
 // Breakpoints
 const breakpoints = ["40em", "52em", "64em", "80em"]
@@ -54,5 +55,15 @@ export default {
     swift: "#FF621F",
     javascript: "#baaa1b",
     textSelection: "#76cdf2",
+  },
+  styles: {
+    pre: {
+      ...prismTheme,
+      padding: 3,
+      borderRadius: 2,
+    },
+    code: {
+      fontSize: 1,
+    },
   },
 }

@@ -31,7 +31,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown`,
-        path: `${__dirname}/markdown`,
+        path: `${__dirname}/markdown/`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -54,83 +54,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        // CommonMark mode (default: true)
-        commonmark: true,
-        // Footnotes mode (default: true)
-        footnotes: true,
-        // Pedantic mode (default: true)
-        pedantic: true,
-        // GitHub Flavored Markdown mode (default: true)
-        gfm: true,
-        // Plugins configs
-        plugins: [
-          `gatsby-remark-smartypants`,
-          `gatsby-remark-autolink-headers`,
-          {
-            resolve: "gatsby-remark-embed-gist",
-            options: {
-              username: "weirdpattern",
-              includeDefaultCss: true,
-            },
-          },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 590,
-            },
-          },
-          {
-            resolve: `gatsby-remark-social-cards`,
-            options: {
-              title: {
-                field: "title",
-                font: "DejaVuSansCondensed",
-                color: "white",
-                size: 48,
-                style: "bold",
-                x: null,
-                y: null,
-              },
-              meta: {
-                parts: ["Pedro Piñera"],
-                font: "DejaVuSansCondensed",
-                color: "white",
-                size: 24,
-                style: "normal",
-                x: null,
-                y: null,
-              },
-              background: "#7149c1",
-              xMargin: 24,
-              yMargin: 24,
-            },
-          },
-          {
-            resolve: "gatsby-remark-gemoji-to-image",
-            // default options, can be ignored
-            options: {
-              base: "https://github.githubassets.com/images/icons/emoji/",
-              ext: ".png",
-              height: "1.2em",
-            },
-          },
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              classPrefix: "language-",
-              inlineCodeMarker: null,
-              aliases: {},
-              showLineNumbers: false,
-              noInlineHighlight: false,
-            },
-          },
-        ],
-      },
-    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -148,42 +71,29 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
-                const siteUrl = site.siteMetadata.siteUrl
-                const postText = `
-                <div style="margin-top=55px; font-style: italic;">(This is an article posted to my blog at pedropinera.es. You can read it online by <a href="${siteUrl +
-                  edge.node.fields.slug}">clicking here</a>.)</div>
-              `
-
-                let html = edge.node.html
-                html = html
-                  .replace(/href="\//g, `href="${siteUrl}/`)
-                  .replace(/src="\//g, `src="${siteUrl}/`)
-                  .replace(/"\/static\//g, `"${siteUrl}/static/`)
-                  .replace(/,\s*\/static\//g, `,${siteUrl}/static/`)
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.frontmatter.excerpt,
                   date: edge.node.fields.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": html + postText }],
                 })
               })
             },
             query: `
               {
-                allMarkdownRemark(
+                allMdx(
                   limit: 1000,
                   filter: { fields: { type: { eq: "blog" } } },
                   sort: { order: DESC, fields: [fields___date] }
                 ) {
                   edges {
                     node {
-                      html
-                      fields { 
-                        slug 
-                        date  
+                      body
+                      fields {
+                        slug
+                        date
                       }
                       frontmatter {
                         title
@@ -211,9 +121,59 @@ module.exports = {
       options: {
         extensions: [".mdx"],
         gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-autolink-headers`,
-          },
+          // {
+          //   resolve: `gatsby-remark-autolink-headers`,
+          // },
+          // `gatsby-remark-smartypants`,
+          // `gatsby-remark-autolink-headers`,
+          // {
+          //   resolve: "gatsby-remark-embed-gist",
+          //   options: {
+          //     username: "weirdpattern",
+          //     includeDefaultCss: true,
+          //   },
+          // },
+          // {
+          //   resolve: `gatsby-remark-images`,
+          //   options: {
+          //     maxWidth: 590,
+          //   },
+          // },
+          // {
+          //   resolve: `gatsby-remark-social-cards`,
+          //   options: {
+          //     title: {
+          //       field: "title",
+          //       font: "DejaVuSansCondensed",
+          //       color: "white",
+          //       size: 48,
+          //       style: "bold",
+          //       x: null,
+          //       y: null,
+          //     },
+          //     meta: {
+          //       parts: ["Pedro Piñera"],
+          //       font: "DejaVuSansCondensed",
+          //       color: "white",
+          //       size: 24,
+          //       style: "normal",
+          //       x: null,
+          //       y: null,
+          //     },
+          //     background: "#7149c1",
+          //     xMargin: 24,
+          //     yMargin: 24,
+          //   },
+          // },
+          // {
+          //   resolve: "gatsby-remark-gemoji-to-image",
+          //   // default options, can be ignored
+          //   options: {
+          //     base: "https://github.githubassets.com/images/icons/emoji/",
+          //     ext: ".png",
+          //     height: "1.2em",
+          //   },
+          // },
         ],
       },
     },

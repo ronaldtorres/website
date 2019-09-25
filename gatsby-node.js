@@ -10,7 +10,7 @@ const path = require(`path`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `Mdx`) {
     const fileNode = getNode(node.parent)
     if (fileNode.relativePath.includes("posts")) {
       const filename = createFilePath({ node, getNode, basePath: `posts` })
@@ -36,7 +36,7 @@ exports.createPages = ({ graphql, actions }) => {
   const fetchBlogPosts = graphql(
     `
       {
-        allMarkdownRemark(
+        allMdx(
           filter: { fields: { type: { eq: "blog" } } }
           sort: { order: DESC, fields: [fields___date] }
         ) {
@@ -53,7 +53,7 @@ exports.createPages = ({ graphql, actions }) => {
   )
 
   const createBlogPosts = fetchBlogPosts.then(result => {
-    const posts = result.data.allMarkdownRemark.edges
+    const posts = result.data.allMdx.edges
     const postsPerPage = 10
     const numPages = Math.ceil(posts.length / postsPerPage)
 
@@ -72,7 +72,7 @@ exports.createPages = ({ graphql, actions }) => {
     })
 
     // Create blog posts
-    result.data.allMarkdownRemark.edges.forEach(({ node }, index) => {
+    result.data.allMdx.edges.forEach(({ node }, index) => {
       createPage({
         path: node.fields.slug,
         component: path.resolve(`./src/templates/markdown.js`),
@@ -85,7 +85,7 @@ exports.createPages = ({ graphql, actions }) => {
   const fetchWiki = graphql(
     `
       {
-        allMarkdownRemark(
+        allMdx(
           filter: { fileAbsolutePath: { regex: "/wiki/.+\\\\.md/" } }
           sort: { order: DESC, fields: [fields___date] }
         ) {
@@ -101,7 +101,7 @@ exports.createPages = ({ graphql, actions }) => {
     `
   )
   const createWiki = fetchWiki.then(result => {
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    result.data.allMdx.edges.forEach(({ node }) => {
       createPage({
         path: node.fields.slug,
         component: path.resolve(`./src/templates/markdown.js`),

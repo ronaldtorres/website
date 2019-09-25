@@ -2,16 +2,16 @@ import React from "react"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
 import { graphql, useStaticQuery } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const SpeakingPage = () => {
-  const data = useStaticQuery(graphql`
+  const { mdx } = useStaticQuery(graphql`
     {
-      markdownRemark(fileAbsolutePath: { regex: "/.+/speaking\\\\.md/" }) {
-        html
+      mdx(fileAbsolutePath: { regex: "/.+/speaking\\\\.md/" }) {
+        body
       }
     }
   `)
-  const { markdownRemark } = data
   return (
     <Layout>
       <Meta
@@ -19,7 +19,7 @@ const SpeakingPage = () => {
         description="This page contains a list of talks that I've given at conferences and some talk proposals that I wrote up to give at any conference that might be interested"
         keywords={["speaking", "conferences", "ios", "swift", "ruby", "rails"]}
       />
-      <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
+      <MDXRenderer>{mdx.body}</MDXRenderer>
     </Layout>
   )
 }

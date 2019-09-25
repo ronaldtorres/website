@@ -6,29 +6,30 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import Meta from "../components/shared/meta"
 import Helmet from "react-helmet"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 export default ({ data }) => {
-  const post = data.markdownRemark
-  const title = post.frontmatter.title
+  const entity = data.mdx
+  const title = entity.frontmatter.title
   return (
     <Layout>
       <Meta
         title={title}
-        keywords={post.frontmatter.tags}
-        description={post.frontmatter.excerpt}
+        keywords={entity.frontmatter.tags}
+        description={entity.frontmatter.excerpt}
       />
       <Helmet>
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:image"
-          content={`${data.site.siteMetadata.siteUrl}${data.markdownRemark.fields.slug}twitter-card.jpg`}
+          content={`${data.site.siteMetadata.siteUrl}${entity.fields.slug}twitter-card.jpg`}
         />
       </Helmet>
       <article>
         <header>
           <h1>{title}</h1>
         </header>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <MDXRenderer>{entity.body}</MDXRenderer>
         <footer />
       </article>
       <footer />
@@ -44,11 +45,11 @@ export const query = graphql`
         siteUrl
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(fields: { slug: { eq: $slug } }) {
       fields {
         slug
       }
+      body
       frontmatter {
         title
         tags

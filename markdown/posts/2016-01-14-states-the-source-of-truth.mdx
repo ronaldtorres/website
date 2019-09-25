@@ -5,13 +5,13 @@ modified: 2015-01-10
 tags: [tvos, popcorn time, torrent]
 ---
 
-I have been these days thinking about how we do manage states in our iOS apps. States are a source of information but also the source of bugs, why? Because we spread states across multiple components, duplicate them, and we forget about considering derived states. Our app shows off unexpected behaviors, and we struggle to find the reason. The user credentials are persisted in the *Keychain*, so we know whether the user is logged in or not, but our *ApiClient* also contains that information. Which one should I trust? Are you sure both are synchronizing when any of them changes? I’m sure you miss some. States are a common source of bugs in our apps. There are no silver bullets to solve this problem but multiple approaches out there, programming paradigms, patterns and tricks that can help you with the state simplification.
+I have been these days thinking about how we do manage states in our iOS apps. States are a source of information but also the source of bugs, why? Because we spread states across multiple components, duplicate them, and we forget about considering derived states. Our app shows off unexpected behaviors, and we struggle to find the reason. The user credentials are persisted in the _Keychain_, so we know whether the user is logged in or not, but our _ApiClient_ also contains that information. Which one should I trust? Are you sure both are synchronizing when any of them changes? I’m sure you miss some. States are a common source of bugs in our apps. There are no silver bullets to solve this problem but multiple approaches out there, programming paradigms, patterns and tricks that can help you with the state simplification.
 
 ## Singletons
 
 ### An attempt to centralize state
 
-Have you ever wondered why we use singletons for some components in our apps? There are performance reasons, it also provides an instance that can be accessed from any point of your app, and in regard states, it has a reference to a state. The famous *ApiClient.sharedIntance()* that has information about the access token is a great example. Singletons are great to keep states, as we can access them from anywhere. Nonetheless, we tend to modify its state imperatively without considering that all the consumers of the singleton instance might get into an inconsistent state since they are not subscribed to state changes of the singleton instance.
+Have you ever wondered why we use singletons for some components in our apps? There are performance reasons, it also provides an instance that can be accessed from any point of your app, and in regard states, it has a reference to a state. The famous _ApiClient.sharedIntance()_ that has information about the access token is a great example. Singletons are great to keep states, as we can access them from anywhere. Nonetheless, we tend to modify its state imperatively without considering that all the consumers of the singleton instance might get into an inconsistent state since they are not subscribed to state changes of the singleton instance.
 
 > Since we don’t subscribe to singleton state changes, we might reach inconsistent states in entities that depend on the singleton state.
 
@@ -27,7 +27,6 @@ If you haven’t seen it yet, I recommend you to watch this two talks:
 - Flux — Application Architecture for Building User Interfaces: [Link](https://facebook.github.io/flux/)
 
 I heard about Flux a few days ago when I watch the talk Realm published on their website. Flux is an architecture originally proposed by Facebook that aims unidirectional data flows in apps to build user interfaces. What’s the core idea of Flux?
-<br><br>
 
 ![](images/states_2.png)
 
@@ -51,11 +50,11 @@ Sources of truth, where states are located are the source of these streams. Ever
 
 Some frameworks provide components that are based on notifications when state changes take place:
 
-- **`CoreData`:** *NSFetchedResultsController* notifies when there are changes in the database. We react to these changes, updating our collection, and inserting, updating, deleting items from a collection/table view.
-- **`NSUserDefaults`:** We can use *NSNotifications* to detect when something has changed in user default and then propagate the changes back to the subscribers.
-- **`Realm`:** It also provides very generic notifications which might not be enough for your use cases *(they are working on improving them)*. Hopefully, there are libraries like [RealmResultsController](https://github.com/redbooth/RealmResultsController) that implements the idea of *NSFetchedResultsController* for Realm.
+- **`CoreData`:** _NSFetchedResultsController_ notifies when there are changes in the database. We react to these changes, updating our collection, and inserting, updating, deleting items from a collection/table view.
+- **`NSUserDefaults`:** We can use _NSNotifications_ to detect when something has changed in user default and then propagate the changes back to the subscribers.
+- **`Realm`:** It also provides very generic notifications which might not be enough for your use cases _(they are working on improving them)_. Hopefully, there are libraries like [RealmResultsController](https://github.com/redbooth/RealmResultsController) that implements the idea of _NSFetchedResultsController_ for Realm.
 
-These components could be easily wrapped into *Observables*, or *Signals/SignalProducers* if you want to work with Reactive concepts. Once wrapped, you can map, filter, combine, observe on a given *scheduler*, … The magic of Reactive.
+These components could be easily wrapped into _Observables_, or _Signals/SignalProducers_ if you want to work with Reactive concepts. Once wrapped, you can map, filter, combine, observe on a given _scheduler_, … The magic of Reactive.
 
 > Reactive is not a requirement for unidirectional data flow design but makes it easier
 
@@ -63,13 +62,13 @@ These components could be easily wrapped into *Observables*, or *Signals/SignalP
 
 ### Performance implications
 
-There are some scenarios where it’s impossible to have a single source of truth because of performance reasons. Accessing data sources like databases or *APIs* is expensive in term of resources consumption. We cannot execute a request to an *API* for every row in a *TableView*, or a execute a query against a database every time we render a cell. Those are typical examples where we are forced to duplicate our source of truth and have a cached version that can be quickly accessed *(typically in memory)*.
+There are some scenarios where it’s impossible to have a single source of truth because of performance reasons. Accessing data sources like databases or _APIs_ is expensive in term of resources consumption. We cannot execute a request to an _API_ for every row in a _TableView_, or a execute a query against a database every time we render a cell. Those are typical examples where we are forced to duplicate our source of truth and have a cached version that can be quickly accessed _(typically in memory)_.
 
 Whenever you think about cache the source of truth ask yourself the following question:
 
 > Is it expensive in terms of performance?
 
-Is it expensive accessing `NSUserDefaults`? And `Keychain`? If it isn’t why do we create cached copies and add complexity making sure states are synchronized? Can’t the *ApiClient* have an accessor to `Keychain` instead of the copied token that is restored when the app is opened?
+Is it expensive accessing `NSUserDefaults`? And `Keychain`? If it isn’t why do we create cached copies and add complexity making sure states are synchronized? Can’t the _ApiClient_ have an accessor to `Keychain` instead of the copied token that is restored when the app is opened?
 
 ### Examples of cached states
 
@@ -87,21 +86,19 @@ Deciding when the state is synchronized is crucial for a good user experience. S
 
 **Memory collection caching a local database collection**
 
-As I mentioned earlier, due to performance reasons, when the data from a database is accessed we create a cached version in memory that we access to. It means we add a new state to the game, having then the API state, the database state, and our copy in memory of the database state. *Three states that has to be synchronized!* The schema looks like this one:
+As I mentioned earlier, due to performance reasons, when the data from a database is accessed we create a cached version in memory that we access to. It means we add a new state to the game, having then the API state, the database state, and our copy in memory of the database state. _Three states that has to be synchronized!_ The schema looks like this one:
 
 ![](images/states_5.png)
 
 The complexity increases since we need to synchronize two states, the API with the database, and the database with the memory. Plus, the view has to react to the memory copy changes. Since the state is automatically propagated from the presentation layer we have to subscribe to these states and update the view accordingly and trigger the synchronization action.
 
 ## Recommendations
-We cannot avoid states in our apps, but simplify and avoid derived states. There isn’t a perfect solution, synchronization is complex. You cannot ensure that states are perfectly synchronized since synchronization between local and remote states involves network requests *(and they can fail)*, but at least, follow safe principles that will get us close to the ideal synchronization state. These are some principles that I personally try to follow in my apps:
+
+We cannot avoid states in our apps, but simplify and avoid derived states. There isn’t a perfect solution, synchronization is complex. You cannot ensure that states are perfectly synchronized since synchronization between local and remote states involves network requests _(and they can fail)_, but at least, follow safe principles that will get us close to the ideal synchronization state. These are some principles that I personally try to follow in my apps:
 
 - **Design where the sources of truth will be:** Where your session will be persisted, where the collections of data will be. And whenever it’s possible, avoid duplicating states. Don’t copy the `Keychain` user session to an instance in memory, or the user profile persisted in `NSUserDefaults` to a copy in memory. If there are no performance implications, don’t copy the data.
-- **Designing when the states are synchronizing is as important as designing the states:** You can have a good states design but they are not properly synchronized. Consequently, the user experience of your app is bad. States synchronization is usually driven by your Application lifecycle and navigation. *Be predictive!*
+- **Designing when the states are synchronizing is as important as designing the states:** You can have a good states design but they are not properly synchronized. Consequently, the user experience of your app is bad. States synchronization is usually driven by your Application lifecycle and navigation. _Be predictive!_
 - **Design unidirectional flows for states propagation:** Don’t move states in multiple directions. Derived states should be generated automatically when the source states change.
 - **State generation independent from state subscription:** Keep the schema of Flux in mind. With actions states change but nothing else. Any side action is the result of a subscription to these states.
 
 #### I hope you liked the article, the best solution for your app depends on your app itself, its data model, its persistence solution, … Find what’s the architecture that best adapt to your problem and try to keep the principles mentioned above in mind and simplify states!
-
-
-

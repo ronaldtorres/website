@@ -19,10 +19,10 @@ const WikiItem = ({ wiki }) => {
 
 const WikiPage = () => {
   const {
-    allMarkdownRemark: { edges: wikiEdges },
+    allMdx: { edges: wikiEdges },
   } = useStaticQuery(graphql`
     {
-      allMarkdownRemark(
+      allMdx(
         filter: { fileAbsolutePath: { regex: "/wiki/.+\\\\.md/" } }
         sort: { order: DESC, fields: [fields___date] }
       ) {
