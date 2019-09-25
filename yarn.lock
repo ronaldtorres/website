@@ -6166,7 +6166,7 @@ gatsby-theme-micro-blog@^1.1.2:
     moment "^2.24.0"
     theme-ui "^0.2.41"
 
-gatsby-transformer-remark@^2.3.7:
+gatsby-transformer-remark@^2.6.24:
   version "2.6.24"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.6.24.tgz#5e73d63688cafb8ef82680a4594a03bc59685b08"
   integrity sha512-UeUGZzCL8/I8O0nAW/j0FwJvNDy0mQ3+EoVe3gX5C5wOB0Sjq4RLPs1316OfEom4dNntPATIRpw0ngr00dNaNg==

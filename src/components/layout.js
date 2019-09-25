@@ -37,7 +37,7 @@ const Layout = ({ children }) => {
           <Header siteTitle={title} sx={{ px: [15, 80, 150] }} />
 
           <main sx={{ py: [1, 4], px: [15, 80, 150] }}>{children}</main>
-          <div sx={{ px: px }}>
+          <div sx={{ px: [15, 80, 150] }}>
             <Footer />
           </div>
         </body>
