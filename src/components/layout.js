@@ -21,9 +21,13 @@ const Layout = ({ children }) => {
       }
     }
   `)
+  const padding = {
+    paddingLeft: [15, 80, 150],
+    paddingRight: [15, 80, 150],
+  }
   return (
     <>
-      {/* <GlobalStyle /> */}
+      <GlobalStyle />
       <div
         sx={{
           display: "flex",
@@ -34,10 +38,10 @@ const Layout = ({ children }) => {
         <body sx={{ width: ["100%", "100%", "52em", "64em"] }}>
           <MobileMenu />
 
-          <Header siteTitle={title} sx={{ px: [15, 80, 150] }} />
+          <Header siteTitle={title} sx={{ ...padding }} />
 
-          <main sx={{ py: [1, 4], px: [15, 80, 150] }}>{children}</main>
-          <div sx={{ px: [15, 80, 150] }}>
+          <main sx={{ ...padding, py: [1, 4] }}>{children}</main>
+          <div sx={{ ...padding }}>
             <Footer />
           </div>
         </body>
