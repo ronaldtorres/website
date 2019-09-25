@@ -13,15 +13,17 @@ import { faAt } from "@fortawesome/free-solid-svg-icons"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 const Icon = ({ icon, url }) => {
-  const sx = {
-    margin: "5px",
-    height: "20px",
-    width: "20px",
-    color: "dark",
-  }
   return (
     <a href={url} target="__blank">
-      <FontAwesomeIcon sx={sx} icon={icon} />
+      <FontAwesomeIcon
+        sx={{
+          margin: "5px",
+          height: "20px",
+          width: "20px",
+          color: "dark",
+        }}
+        icon={icon}
+      />
     </a>
   )
 }
