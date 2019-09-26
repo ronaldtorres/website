@@ -1,15 +1,15 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-// import {
-//   faGithub,
-//   faTwitter,
-//   faLinkedin,
-//   faStackOverflow,
-//   faSoundcloud,
-//   faSpotify,
-// } from "@fortawesome/free-brands-svg-icons"
-// import { faAt } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faGithub,
+  faTwitter,
+  faLinkedin,
+  faStackOverflow,
+  faSoundcloud,
+  faSpotify,
+} from "@fortawesome/free-brands-svg-icons"
+import { faAt } from "@fortawesome/free-solid-svg-icons"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 const Icon = ({ icon, url }) => {
@@ -52,13 +52,13 @@ const Links = () => {
   )
   return (
     <div sx={{ alignSelf: "center" }}>
-      {/* <Icon icon={faGithub} url={siteMetadata.links.github} />
+      <Icon icon={faGithub} url={siteMetadata.links.github} />
       <Icon icon={faAt} url={siteMetadata.links.email} />
       <Icon icon={faTwitter} url={siteMetadata.links.twitter} />
       <Icon icon={faLinkedin} url={siteMetadata.links.linkedin} />
       <Icon icon={faStackOverflow} url={siteMetadata.links.stackoverflow} />
       <Icon icon={faSoundcloud} url={siteMetadata.links.soundcloud} />
-      <Icon icon={faSpotify} url={siteMetadata.links.spotify} /> */}
+      <Icon icon={faSpotify} url={siteMetadata.links.spotify} />
     </div>
   )
 }
