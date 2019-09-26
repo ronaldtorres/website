@@ -6,6 +6,7 @@ import Header from "./shared/header"
 import Footer from "./shared/footer"
 import GlobalStyle from "../utils/global-style"
 import MobileMenu from "./shared/mobile-menu"
+import ColorModeButton from "./shared/color-mode-button"
 
 const Layout = ({ children }) => {
   const {

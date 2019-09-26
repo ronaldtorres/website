@@ -162,16 +162,17 @@ const Header = () => {
           mb: 0,
           display: "flex",
           alignItems: "center",
-          justifyContent: ["center", "space-between"],
+          justifyContent: ["center", "center", "space-between"],
         }}
       >
-        <div sx={{ width: 110, display: ["none", "block"] }} />
+        <div sx={{ width: 110, display: ["none", "none", "block"] }} />
         <Link
           sx={{ color: "text", "&:hover": { textDecoration: "none" } }}
           to="/"
         >
           <h1
             sx={{
+              mt: [2, 2, 4],
               marginBottom: "0px",
               borderBottom: "none",
               textAlign: "center",
@@ -180,7 +181,9 @@ const Header = () => {
             Pedro Piñera
           </h1>
         </Link>
-        <ColorModeButton style={{ width: 110, display: ["none", "block"] }} />
+        <ColorModeButton
+          style={{ width: 110, display: ["none", "none", "block"] }}
+        />
       </div>
       <Links />
       <Description />

@@ -3,16 +3,17 @@ import { jsx } from "theme-ui"
 
 import { useState } from "react"
 import { Link } from "gatsby"
+import ColorModeButton from "./color-mode-button"
 
 const Button = ({ onClick }) => {
-  const stripeStyle = { height: "4px", bg: "dark" }
+  const stripeStyle = { height: "4px", bg: "text" }
   return (
     <div
       sx={{
         height: "20px",
         width: "20px",
         cursor: "pointer",
-        bg: "white",
+        bg: "background",
         display: "flex",
         flexDirection: "column",
         alignItems: "stretch",
@@ -93,8 +94,16 @@ export default () => {
   return (
     <div sx={{ display: ["block", "block", "none"] }}>
       {isOpened && <Menu />}
-      <div sx={{ display: "flex", padding: 3 }}>
+      <div
+        sx={{ display: "flex", padding: 3, justifyContent: "space-between" }}
+      >
         <Button onClick={onClick} />
+        <ColorModeButton
+          style={{
+            width: 110,
+            display: ["block", "block", "none"],
+          }}
+        />
       </div>
     </div>
   )
