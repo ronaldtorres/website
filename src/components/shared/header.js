@@ -17,7 +17,10 @@ const Icon = ({ icon, url }) => {
     <a href={url} target="__blank">
       <FontAwesomeIcon
         size="20px"
+        fixedWidth
         sx={{
+          width: "20px",
+          height: "20px",
           margin: "5px",
           color: "dark",
         }}
