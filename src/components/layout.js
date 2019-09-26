@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
   const px = [15, 80, 150]
   return (
     <>
-      <GlobalStyle />
+      {/* <GlobalStyle /> */}
       <body
         sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
       >
