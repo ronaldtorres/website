@@ -16,10 +16,9 @@ const Icon = ({ icon, url }) => {
   return (
     <a href={url} target="__blank">
       <FontAwesomeIcon
+        size="20px"
         sx={{
           margin: "5px",
-          height: "20px",
-          width: "20px",
           color: "dark",
         }}
         icon={icon}
