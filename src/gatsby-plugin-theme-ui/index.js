@@ -49,7 +49,7 @@ export default {
     background: "#fff",
     primary: "#7149c1",
     secondary: "#00a7e1",
-    muted: "#a8a8a8",
+    muted: "#eaeaea",
     dark: "rgba(0, 0, 0, 0.8)",
     shopify: "#96bf48",
     ruby: "#ff2400",
