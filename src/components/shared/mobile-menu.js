@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
-// import { useState } from "react"
+import { useState } from "react"
 import { Link } from "gatsby"
 
 const Button = ({ onClick }) => {
@@ -81,16 +81,16 @@ const Menu = () => {
 }
 
 export default () => {
-  // const [isOpened, setIsOpened] = useState(false)
-  // const onClick = () => {
-  //   setIsOpened(!isOpened)
-  // }
+  const [isOpened, setIsOpened] = useState(false)
+  const onClick = () => {
+    setIsOpened(!isOpened)
+  }
   return (
     <div sx={{ display: ["block", "block", "none"] }}>
-      {/* {isOpened && <Menu />}
+      {isOpened && <Menu />}
       <div sx={{ display: "flex", padding: 3 }}>
         <Button onClick={onClick} />
-      </div> */}
+      </div>
     </div>
   )
 }
