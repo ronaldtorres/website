@@ -121,7 +121,6 @@ module.exports = {
       options: {
         extensions: [".mdx"],
         gatsbyRemarkPlugins: [
-          `gatsby-remark-smartypants`,
           `gatsby-remark-autolink-headers`,
           {
             resolve: "gatsby-remark-embed-gist",
