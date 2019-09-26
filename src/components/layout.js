@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./shared/header"
 import Footer from "./shared/footer"
 import GlobalStyle from "../utils/global-style"
-import MobileMenu from "./shared/mobile-menu"
+// import MobileMenu from "./shared/mobile-menu"
 
 const Layout = ({ children }) => {
   const {
@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
         sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
       >
         <div sx={{ width: ["100%", "100%", "52em", "64em"] }}>
-          <MobileMenu />
+          {/* <MobileMenu /> */}
 
           <Header siteTitle={title} sx={{ px: px }} />
 

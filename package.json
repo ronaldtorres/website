@@ -4,7 +4,6 @@
   "description": "Personal website",
   "author": "Pedro Piñera pedro@ppinera.es",
   "dependencies": {
-    "@emotion/core": "^10.0.17",
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
     "@fortawesome/free-brands-svg-icons": "^5.7.2",
     "@fortawesome/free-regular-svg-icons": "^5.7.2",
@@ -53,5 +52,8 @@
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "serve": "gatsby serve"
+  },
+  "resolutions": {
+    "sharp": "0.22.1"
   }
 }
