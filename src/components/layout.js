@@ -28,14 +28,11 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
-      <div
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
+
+      <body
+        sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
       >
-        <body sx={{ width: ["100%", "100%", "52em", "64em"] }}>
+        <div sx={{ width: ["100%", "100%", "52em", "64em"] }}>
           <MobileMenu />
 
           <Header siteTitle={title} sx={{ ...padding }} />
@@ -44,8 +41,8 @@ const Layout = ({ children }) => {
           <div sx={{ ...padding }}>
             <Footer />
           </div>
-        </body>
-      </div>
+        </div>
+      </body>
     </>
   )
 }
