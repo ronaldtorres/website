@@ -5,15 +5,23 @@ export default () => (
   <Global
     styles={theme => ({
       "h1, h2, h3, h4, h5, h6": {
+        color: theme.colors.text,
+      },
+      "h1, h2, h3, h4, h5, h6": {
         a: {
-          color: "black",
+          color: theme.colors.secondary,
         },
       },
-      ".anchor": {
+      ".header-anchor": {
         marginRight: "10px",
+        fill: theme.colors.muted,
+      },
+      body: {
+        bg: theme.colors.background,
+        color: theme.colors.text,
       },
       a: {
-        color: theme.colors.accent,
+        color: theme.colors.secondary,
         backgroundImage: "none",
         textDecoration: "none",
       },

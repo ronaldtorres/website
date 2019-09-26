@@ -17,7 +17,7 @@ export default ({ date, body, tags }) => {
         borderStyle: "solid",
       }}
     >
-      <header sx={{ fontSize: 1, color: "accent" }}>{date}</header>
+      <header sx={{ fontSize: 1, color: "primary" }}>{date}</header>
       <MDXRenderer>{body}</MDXRenderer>
       <footer sx={{ display: "flex", flexWrap: "wrap" }}>
         {tags.map((tag, index) => {
@@ -27,7 +27,7 @@ export default ({ date, body, tags }) => {
                 fontSize: 1,
                 marginRight: 1,
                 marginBottom: 1,
-                bg: "accent",
+                bg: "primary",
                 color: "white",
                 px: 2,
                 py: 1,

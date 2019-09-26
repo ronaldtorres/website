@@ -10,7 +10,7 @@ export default ({ tags }) => {
     mr: 2,
     px: 2,
     my: 2,
-    bg: "accent",
+    bg: "primary",
     color: "white",
     fontSize: 1,
     borderRadius: "4px",

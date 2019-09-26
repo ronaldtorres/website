@@ -121,7 +121,12 @@ module.exports = {
       options: {
         extensions: [".mdx"],
         gatsbyRemarkPlugins: [
-          `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              className: "header-anchor",
+            },
+          },
           {
             resolve: "gatsby-remark-embed-gist",
             options: {

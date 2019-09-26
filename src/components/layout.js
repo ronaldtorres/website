@@ -21,7 +21,8 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  const px = [15, 80, 150]
+
+  const px = [4, 5, 6]
   return (
     <>
       <GlobalStyle />

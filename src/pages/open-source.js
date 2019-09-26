@@ -6,7 +6,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const Project = ({ project }) => {
   return (
-    <>
+    <article>
       <h2 color="main">{project.frontmatter.name}</h2>
       <ul>
         <li>
@@ -21,7 +21,7 @@ const Project = ({ project }) => {
         </li>
       </ul>
       <MDXRenderer>{project.body}</MDXRenderer>
-    </>
+    </article>
   )
 }
 

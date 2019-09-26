@@ -47,14 +47,21 @@ export default {
   colors: {
     text: "#000",
     background: "#fff",
-    accent: "#7149c1",
-    muted: "#e8e8e8",
+    primary: "#7149c1",
+    secondary: "#00a7e1",
+    muted: "#a8a8a8",
     dark: "rgba(0, 0, 0, 0.8)",
     shopify: "#96bf48",
     ruby: "#ff2400",
     swift: "#FF621F",
     javascript: "#baaa1b",
-    textSelection: "#76cdf2",
+    modes: {
+      dark: {
+        background: "#000",
+        text: "#fff",
+        muted: "#fefefe",
+      },
+    },
   },
   styles: {
     pre: {

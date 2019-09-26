@@ -43,8 +43,7 @@ const Menu = () => {
       sx={{
         display: "flex",
         padding: 3,
-        bg: "dark",
-        color: "white",
+        bg: "primary",
         flexDirection: "column",
         alignItems: "center",
       }}

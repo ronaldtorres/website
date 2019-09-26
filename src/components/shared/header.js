@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, useColorMode } from "theme-ui"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faGithub,
@@ -11,6 +11,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons"
 import { faAt } from "@fortawesome/free-solid-svg-icons"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import ColorModeButton from "./color-mode-button"
 
 const Icon = ({ icon, url }) => {
   return (
@@ -22,7 +23,7 @@ const Icon = ({ icon, url }) => {
           width: "20px",
           height: "20px",
           margin: "5px",
-          color: "dark",
+          color: "text",
         }}
         icon={icon}
       />
@@ -92,7 +93,7 @@ const SectionButton = ({ title, url, path }) => {
     <div
       sx={{
         userSelect: "none",
-        bg: "accent",
+        bg: "primary",
         margin: [1, 2],
         px: 2,
         py: 1,
@@ -126,7 +127,13 @@ const Sections = () => {
 
 const Description = () => {
   return (
-    <div sx={{ py: 3, display: ["none", "block"], textAlign: "center" }}>
+    <div
+      sx={{
+        py: 3,
+        display: ["none", "block"],
+        textAlign: "center",
+      }}
+    >
       Software Engineer at{" "}
       <a href="https://shopify.com" sx={{ textDecoration: "none" }}>
         <span sx={{ color: "shopify" }}>Shopify</span>
@@ -140,19 +147,27 @@ const Description = () => {
   )
 }
 
-const Header = ({ px }) => {
+const Header = () => {
   return (
     <header
       sx={{
-        px: px,
+        px: [4, 5, 6],
         display: "flex",
         flexDirection: "column",
         alignItems: "stretch",
       }}
     >
-      <div sx={{ mb: 0 }}>
+      <div
+        sx={{
+          mb: 0,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: ["center", "space-between"],
+        }}
+      >
+        <div sx={{ width: 110, display: ["none", "block"] }} />
         <Link
-          sx={{ color: "dark", "&:hover": { textDecoration: "none" } }}
+          sx={{ color: "text", "&:hover": { textDecoration: "none" } }}
           to="/"
         >
           <h1
@@ -165,6 +180,7 @@ const Header = ({ px }) => {
             Pedro Piñera
           </h1>
         </Link>
+        <ColorModeButton style={{ width: 110, display: ["none", "block"] }} />
       </div>
       <Links />
       <Description />
