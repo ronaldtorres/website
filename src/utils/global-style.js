@@ -9,6 +9,9 @@ export default () => (
           color: "black",
         },
       },
+      ".anchor": {
+        marginRight: "10px",
+      },
       a: {
         color: theme.colors.accent,
         backgroundImage: "none",

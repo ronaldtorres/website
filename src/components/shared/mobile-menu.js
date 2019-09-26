@@ -76,6 +76,12 @@ const Menu = () => {
       >
         Wiki
       </MenuButton>
+      <MenuButton
+        path="/books"
+        alt="This page contains the books that I read in the past, the one that I'm currently reading, and a list of books that I'm planning to read next"
+      >
+        Books
+      </MenuButton>
     </div>
   )
 }

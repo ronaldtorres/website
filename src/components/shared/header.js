@@ -119,6 +119,7 @@ const Sections = () => {
       <SectionButton title="Speaking 🎤" path="/speaking" />
       <SectionButton title="Open Source 🐙" path="/open-source" />
       <SectionButton title="Wiki 📝" path="/wiki" />
+      <SectionButton title="Books 📚" path="/books" />
     </div>
   )
 }
