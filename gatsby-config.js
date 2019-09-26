@@ -130,12 +130,6 @@ module.exports = {
               includeDefaultCss: true,
             },
           },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 590,
-            },
-          },
           // {
           //   resolve: `gatsby-remark-social-cards`,
           //   options: {
@@ -162,14 +156,6 @@ module.exports = {
           //     yMargin: 24,
           //   },
           // },
-          {
-            resolve: "gatsby-remark-gemoji-to-image",
-            options: {
-              base: "https://github.githubassets.com/images/icons/emoji/",
-              ext: ".png",
-              height: "1.2em",
-            },
-          },
         ],
       },
     },
