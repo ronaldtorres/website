@@ -21,7 +21,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
       const slug = `/${slugify([date].join("-"), "/")}/${title}/`
 
-      createNodeField({ node, name: `type`, value: "blog" })
+      createNodeField({ node, name: `type`, value: "blog-post" })
       createNodeField({ node, name: `slug`, value: slug })
       createNodeField({ node, name: `date`, value: date })
     } else {
@@ -37,7 +37,7 @@ exports.createPages = ({ graphql, actions }) => {
     `
       {
         allMdx(
-          filter: { fields: { type: { eq: "blog" } } }
+          filter: { fields: { type: { eq: "blog-post" } } }
           sort: { order: DESC, fields: [fields___date] }
         ) {
           edges {

@@ -85,7 +85,7 @@ module.exports = {
               {
                 allMdx(
                   limit: 1000,
-                  filter: { fields: { type: { eq: "blog" } } },
+                  filter: { fields: { type: { eq: "blog-post" } } },
                   sort: { order: DESC, fields: [fields___date] }
                 ) {
                   edges {
@@ -134,32 +134,33 @@ module.exports = {
               includeDefaultCss: true,
             },
           },
-          // {
-          //   resolve: `gatsby-remark-social-cards`,
-          //   options: {
-          //     title: {
-          //       field: "title",
-          //       font: "DejaVuSansCondensed",
-          //       color: "white",
-          //       size: 48,
-          //       style: "bold",
-          //       x: null,
-          //       y: null,
-          //     },
-          //     meta: {
-          //       parts: ["Pedro Piñera"],
-          //       font: "DejaVuSansCondensed",
-          //       color: "white",
-          //       size: 24,
-          //       style: "normal",
-          //       x: null,
-          //       y: null,
-          //     },
-          //     background: "#7149c1",
-          //     xMargin: 24,
-          //     yMargin: 24,
-          //   },
-          // },
+          {
+            resolve: `gatsby-remark-social-cards`,
+            options: {
+              type: "blog-post",
+              title: {
+                field: "title",
+                font: "DejaVuSansCondensed",
+                color: "white",
+                size: 48,
+                style: "bold",
+                x: null,
+                y: null,
+              },
+              meta: {
+                parts: ["Pedro Piñera"],
+                font: "DejaVuSansCondensed",
+                color: "white",
+                size: 24,
+                style: "normal",
+                x: null,
+                y: null,
+              },
+              background: "#7149c1",
+              xMargin: 24,
+              yMargin: 24,
+            },
+          },
         ],
       },
     },

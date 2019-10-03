@@ -73,7 +73,7 @@ export default BlogList
 export const blogListQuery = graphql`
   query blogListQuery($skip: Int!, $limit: Int!) {
     allMdx(
-      filter: { fields: { type: { eq: "blog" } } }
+      filter: { fields: { type: { eq: "blog-post" } } }
       sort: { order: DESC, fields: [fields___date] }
       limit: $limit
       skip: $skip
