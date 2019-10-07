@@ -35,7 +35,7 @@
     "react": "^16.8.4",
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.0",
-    "react-share": "^2.4.0",
+    "react-share": "^3.0.1",
     "react-typography": "^0.16.19",
     "theme-ui": "^0.2.43",
     "typography": "^0.16.19",
