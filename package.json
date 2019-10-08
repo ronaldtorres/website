@@ -32,7 +32,7 @@
     "gatsby-transformer-sharp": "^2.2.19",
     "prismjs": "^1.15.0",
     "prop-types": "^15.7.2",
-    "react": "^16.8.4",
+    "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.0",
     "react-share": "^3.0.1",
