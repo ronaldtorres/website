@@ -5680,12 +5680,12 @@ gatsby-page-utils@^0.0.23:
     micromatch "^3.1.10"
     slash "^3.0.0"
 
-gatsby-plugin-feed@^2.3.15:
-  version "2.3.15"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-2.3.15.tgz#06c6b0e96176485551ff83abb890184434009c18"
-  integrity sha512-oe2EFpmHsBTCF2q4nVELnJOjkKCFwakckLdEmSuZaLD5KTuBi19tqysDc3cZgWcFVsrDl78HYkXqelsgYg9YJg==
+gatsby-plugin-feed@^2.3.18:
+  version "2.3.18"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-2.3.18.tgz#f2ad511bffa46229c60fa7ca9f1a011c921278a2"
+  integrity sha512-GylMxMYMPRD+LERYLtwXFuUTGSjMy7kzmlNl8sOR6sTT8kLLU6krmaf7l1frACof13sLmoTXr4LnPPhGttv4Lw==
   dependencies:
-    "@babel/runtime" "^7.6.2"
+    "@babel/runtime" "^7.6.3"
     "@hapi/joi" "^15.1.1"
     fs-extra "^8.1.0"
     lodash.merge "^4.6.2"
