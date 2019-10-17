@@ -37,7 +37,7 @@
     "react-helmet": "^5.2.0",
     "react-share": "^3.0.1",
     "react-typography": "^0.16.19",
-    "theme-ui": "^0.2.43",
+    "theme-ui": "^0.2.44",
     "typography": "^0.16.19",
     "typography-theme-github": "^0.16.19"
   },
