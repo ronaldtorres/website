@@ -1,0 +1,14 @@
+---
+tags: ["swift", "package", "docker"]
+---
+
+Just as a note to self, the following one-line Docker command is very useful to build/test Swift packages in a Docker container:
+
+```bash
+docker run --rm \
+    --volume "$(pwd):/package" \
+    --workdir "/package" \
+    swift:5.1 \
+    /bin/bash -c \
+    "swift package fetch && swift test --build-path ./.build/linux"
+```
