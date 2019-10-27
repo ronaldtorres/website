@@ -14,6 +14,9 @@ export default () => (
         marginRight: "10px",
         fill: theme.colors.muted,
       },
+      ".js-focus-visible :focus:not(.focus-visible)": {
+        outline: "none",
+      },
       body: {
         bg: theme.colors.background,
         color: theme.colors.text,
