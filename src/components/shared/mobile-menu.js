@@ -9,6 +9,7 @@ const Button = ({ onClick }) => {
   const stripeStyle = { height: "4px", bg: "text" }
   return (
     <div
+      tabIndex="0"
       sx={{
         height: "20px",
         width: "20px",
@@ -19,6 +20,7 @@ const Button = ({ onClick }) => {
         alignItems: "stretch",
         justifyContent: "space-around",
       }}
+      onKeyDown={onClick}
       onClick={onClick}
     >
       <div sx={stripeStyle} />

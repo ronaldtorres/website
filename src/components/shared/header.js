@@ -13,9 +13,9 @@ import { faAt } from "@fortawesome/free-solid-svg-icons"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import ColorModeButton from "./color-mode-button"
 
-const Icon = ({ icon, url }) => {
+const Icon = ({ icon, url, label }) => {
   return (
-    <a href={url} target="__blank">
+    <a href={url} target="__blank" aria-label={label}>
       <FontAwesomeIcon
         size="20px"
         fixedWidth
@@ -55,20 +55,43 @@ const Links = () => {
   )
   return (
     <div sx={{ alignSelf: "center" }}>
-      <Icon icon={faGithub} url={siteMetadata.links.github} />
-      <Icon icon={faAt} url={siteMetadata.links.email} />
-      <Icon icon={faTwitter} url={siteMetadata.links.twitter} />
-      <Icon icon={faLinkedin} url={siteMetadata.links.linkedin} />
-      <Icon icon={faStackOverflow} url={siteMetadata.links.stackoverflow} />
-      <Icon icon={faSoundcloud} url={siteMetadata.links.soundcloud} />
-      <Icon icon={faSpotify} url={siteMetadata.links.spotify} />
+      <Icon
+        icon={faGithub}
+        url={siteMetadata.links.github}
+        label="GitHub profile"
+      />
+      <Icon icon={faAt} url={siteMetadata.links.email} label="Send an email" />
+      <Icon
+        icon={faTwitter}
+        url={siteMetadata.links.twitter}
+        label="Twitter profile"
+      />
+      <Icon
+        icon={faLinkedin}
+        url={siteMetadata.links.linkedin}
+        label="LinkedIn profile"
+      />
+      <Icon
+        icon={faStackOverflow}
+        url={siteMetadata.links.stackoverflow}
+        label="Stackoverflow profile"
+      />
+      <Icon
+        icon={faSoundcloud}
+        url={siteMetadata.links.soundcloud}
+        label="SoundCloud profile"
+      />
+      <Icon
+        icon={faSpotify}
+        url={siteMetadata.links.spotify}
+        label="Spotify profile"
+      />
     </div>
   )
 }
 
 const SectionButton = ({ title, url, path }) => {
   const linkStyle = {
-    textDecoration: "none",
     fontFamily: "'Rosario',sans-serif",
     color: "white",
     ":hover, :link, :visited": {
@@ -135,7 +158,7 @@ const Description = () => {
       }}
     >
       Software Engineer at{" "}
-      <a href="https://shopify.com" sx={{ textDecoration: "none" }}>
+      <a href="https://shopify.com">
         <span sx={{ color: "shopify" }}>Shopify</span>
       </a>{" "}
       🛍. I like building tools for developers and doing open source.

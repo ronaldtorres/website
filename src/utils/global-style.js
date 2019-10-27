@@ -6,8 +6,6 @@ export default () => (
     styles={theme => ({
       "h1, h2, h3, h4, h5, h6": {
         color: theme.colors.text,
-      },
-      "h1, h2, h3, h4, h5, h6": {
         a: {
           color: theme.colors.secondary,
         },
@@ -23,12 +21,7 @@ export default () => (
       a: {
         color: theme.colors.secondary,
         backgroundImage: "none",
-        textDecoration: "none",
       },
-      "a:hover": {
-        textDecoration: "none",
-      },
-
       "::-moz-selection": {
         background: theme.colors.textSelection,
       },
