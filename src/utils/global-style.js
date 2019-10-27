@@ -22,6 +22,9 @@ export default () => (
         color: theme.colors.secondary,
         backgroundImage: "none",
       },
+      "a:focus": {
+        textDecoration: "underline",
+      },
       "::-moz-selection": {
         background: theme.colors.textSelection,
       },

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, useColorMode } from "theme-ui"
+import { jsx } from "theme-ui"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faGithub,
@@ -17,11 +17,8 @@ const Icon = ({ icon, url, label }) => {
   return (
     <a href={url} target="__blank" aria-label={label}>
       <FontAwesomeIcon
-        size="20px"
         fixedWidth
         sx={{
-          width: "20px",
-          height: "20px",
           margin: "5px",
           color: "text",
         }}

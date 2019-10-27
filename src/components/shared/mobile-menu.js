@@ -1,7 +1,8 @@
 /** @jsx jsx */
+import React from "react"
 import { jsx } from "theme-ui"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { Link } from "gatsby"
 import ColorModeButton from "./color-mode-button"
 
@@ -39,63 +40,59 @@ const MenuButton = ({ path, alt, children }) => {
     </div>
   )
 }
-
-const Menu = () => {
-  return (
-    <div
-      sx={{
-        display: "flex",
-        padding: 3,
-        bg: "primary",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
+const Menu = React.forwardRef(({ isOpened }, ref) => (
+  <div
+    ref={ref}
+    sx={{
+      display: isOpened ? "flex" : "none",
+      padding: 3,
+      bg: "primary",
+      flexDirection: "column",
+      alignItems: "center",
+    }}
+  >
+    <MenuButton path="/" alt="Home page">
+      Home
+    </MenuButton>
+    <MenuButton path="/journal" alt="Journal">
+      Journal
+    </MenuButton>
+    <MenuButton path="/about" alt="Read more about Pedro Piñera">
+      About
+    </MenuButton>
+    <MenuButton
+      path="/speaking"
+      alt="It contains a list of talks that Pedro has given in some conferences, as well as a list of upcoming talks."
     >
-      <MenuButton path="/" alt="Home page">
-        Home
-      </MenuButton>
-      <MenuButton path="/journal" alt="Journal">
-        Journal
-      </MenuButton>
-      <MenuButton path="/about" alt="Read more about Pedro Piñera">
-        About
-      </MenuButton>
-      <MenuButton
-        path="/speaking"
-        alt="It contains a list of talks that Pedro has given in some conferences, as well as a list of upcoming talks."
-      >
-        Speaking
-      </MenuButton>
-      {/* <MenuButton
-        path="/open-source"
-        alt="This page contains a list of open source projects that Pedro is maintainer of"
-      >
-        Open Source
-      </MenuButton> */}
-      <MenuButton
-        path="/wiki"
-        alt="It contains a series of documents that whose content don't fit the blog post format"
-      >
-        Wiki
-      </MenuButton>
-      <MenuButton
-        path="/books"
-        alt="This page contains the books that I read in the past, the one that I'm currently reading, and a list of books that I'm planning to read next"
-      >
-        Books
-      </MenuButton>
-    </div>
-  )
-}
+      Speaking
+    </MenuButton>
+    <MenuButton
+      path="/wiki"
+      alt="It contains a series of documents that whose content don't fit the blog post format"
+    >
+      Wiki
+    </MenuButton>
+    <MenuButton
+      path="/books"
+      alt="This page contains the books that I read in the past, the one that I'm currently reading, and a list of books that I'm planning to read next"
+    >
+      Books
+    </MenuButton>
+  </div>
+))
 
 export default () => {
   const [isOpened, setIsOpened] = useState(false)
+  const menuRef = useRef(null)
   const onClick = () => {
     setIsOpened(!isOpened)
+    if (!isOpened) {
+      menuRef.current.focus()
+    }
   }
   return (
     <div sx={{ display: ["block", "block", "none"] }}>
-      {isOpened && <Menu />}
+      <Menu ref={menuRef} isOpened={isOpened} />
       <div
         sx={{ display: "flex", padding: 3, justifyContent: "space-between" }}
       >
