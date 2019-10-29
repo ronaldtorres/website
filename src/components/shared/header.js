@@ -20,6 +20,9 @@ const Icon = ({ icon, url, label }) => {
         size="sm"
         fixedWidth
         sx={{
+          width: "15px",
+          height: "15px",
+          fontSize: "15px",
           margin: "5px",
           color: "text",
         }}
