@@ -17,6 +17,7 @@ const Icon = ({ icon, url, label }) => {
   return (
     <a href={url} target="__blank" aria-label={label}>
       <FontAwesomeIcon
+        size="sm"
         fixedWidth
         sx={{
           margin: "5px",

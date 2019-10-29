@@ -3,10 +3,10 @@ import { jsx } from "theme-ui"
 
 export default ({ tags }) => {
   const tagStyle = {
-    "-webkit-user-select": "none",
-    "-moz-user-select": "none",
-    "-ms-user-select": "none",
-    "user-select": "none",
+    WebkitUserSelect: "none",
+    MozUserSelect: "none",
+    msUserSelect: "none",
+    userSelect: "none",
     mr: 2,
     px: 2,
     my: 2,

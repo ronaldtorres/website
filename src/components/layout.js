@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
   const px = [4, 5, 6]
   return (
     <>
-      <GlobalStyle />
+      <GlobalStyle />{" "}
       <div
         sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
       >

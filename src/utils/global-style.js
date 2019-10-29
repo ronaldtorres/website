@@ -17,6 +17,9 @@ export default () => (
       ".js-focus-visible :focus:not(.focus-visible)": {
         outline: "none",
       },
+      ".js-focus-visible :focus:not([data-focus-visible-added])": {
+        outline: "none",
+      },
       body: {
         bg: theme.colors.background,
         color: theme.colors.text,
