@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
@@ -25,9 +25,7 @@ export default ({ data }) => {
         />
       </Helmet>
       <article>
-        <header>
-          <h1>{title}</h1>
-        </header>
+        <Styled.h1>{title}</Styled.h1>
         <MDXRenderer>{entity.body}</MDXRenderer>
         <footer />
       </article>

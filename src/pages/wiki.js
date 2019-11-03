@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
 import { graphql, useStaticQuery } from "gatsby"
@@ -49,7 +49,7 @@ const WikiPage = () => {
         keywords={["wiki", "pedro", "swift"]}
       />
       <div>
-        <h1>Wiki</h1>
+        <Styled.h1>Wiki</Styled.h1>
         <p>
           This page is a space for me to share ideas, lessons and notes that I
           come up with:

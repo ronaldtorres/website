@@ -1,4 +1,5 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx, Styled } from "theme-ui"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
 import { graphql, useStaticQuery } from "gatsby"
@@ -7,7 +8,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 const Project = ({ project }) => {
   return (
     <article>
-      <h2 color="main">{project.frontmatter.name}</h2>
+      <Styled.h2 color="main">{project.frontmatter.name}</Styled.h2>
       <ul>
         <li>
           <b>State:</b> {project.frontmatter.state}
@@ -54,7 +55,7 @@ const OpenSourcePage = () => {
         description="Check out the open source projects that I'm currently maintaining or maintained in the past."
         keywords={["github", "open source", "projects", "swift", "rails"]}
       />
-      <h1>Open Source</h1>
+      <Styled.h1>Open Source</Styled.h1>
       <p>
         Most of my software projects are designed and developed in the open and
         published under my GitHub username or organizations created for the

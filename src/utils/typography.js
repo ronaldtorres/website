@@ -1,5 +1,5 @@
 import Typography from "typography"
-import theme from "typography-theme-sutro"
-const typography = new Typography(theme)
-export { theme }
+import sutroTheme from "typography-theme-sutro"
+const typography = new Typography(sutroTheme)
+
 export default typography

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
 import Tags from "../components/shared/tags"
@@ -7,11 +7,11 @@ import { Link, graphql } from "gatsby"
 
 const Post = ({ post }) => {
   return (
-    <article sx={{ mb: 5 }}>
+    <article sx={{ mb: 4 }}>
       <header>
-        <h2 sx={{ mb: 1 }}>
+        <Styled.h2 sx={{ mb: 1 }}>
           <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
-        </h2>
+        </Styled.h2>
         <div>{post.fields.date}</div>
         <Tags tags={post.frontmatter.tags} />
       </header>
@@ -62,6 +62,7 @@ const BlogList = ({
   return (
     <Layout>
       <Meta />
+      <Styled.h1>Blog</Styled.h1>
       {Posts}
       <Footer {...pageContext} />
     </Layout>

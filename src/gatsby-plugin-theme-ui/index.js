@@ -13,13 +13,13 @@ breakpoints.xl = breakpoints[3]
 const radii = [0, 4, 8, 16]
 
 // Space
-const space = [0, 4, 8, 16, 32, 64, 128]
+const space = [0, 4, 8, 16, 32, 64, 50]
 space.small = space[1]
 space.medium = space[2]
 space.large = space[3]
 
 // Font sizes
-const fontSizes = [12, 14, 16, 20, 24, 32]
+const fontSizes = [12, 14, 16, 20, 24, 32, 40, 56, 72]
 fontSizes.body = fontSizes[2]
 fontSizes.display = fontSizes[5]
 
@@ -51,10 +51,6 @@ export default {
     secondary: "#007faa",
     muted: "#eaeaea",
     dark: "rgba(0, 0, 0, 0.8)",
-    shopify: "#1d781d",
-    ruby: "#d50000",
-    swift: "#aa5d00",
-    javascript: "#8d6708",
     modes: {
       dark: {
         text: "#fff",
@@ -62,10 +58,6 @@ export default {
         primary: "#9b59b6",
         secondary: "#00bfff",
         muted: "#fefefe",
-        shopify: "#9acd32",
-        ruby: "#f22613",
-        swift: "#f27935",
-        javascript: "#ffd700",
       },
     },
   },
@@ -76,13 +68,19 @@ export default {
       borderRadius: 2,
     },
     code: {
-      fontSize: 1,
+      fontSize: [1, 1],
     },
     h1: {
-      fontSize: 4,
+      fontSize: [7, 8],
     },
     h2: {
-      fontSize: 3,
+      fontSize: [4, 6],
+    },
+    h3: {
+      fontSize: [3, 5],
+    },
+    h4: {
+      fontSize: [2, 4],
     },
   },
 }

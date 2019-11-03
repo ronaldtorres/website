@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
 
 const SectionButton = ({ title, url, path }) => {
@@ -83,7 +83,7 @@ const Header = () => {
           sx={{ color: "text", "&:hover": { textDecoration: "none" } }}
           to="/"
         >
-          <h1
+          <Styled.h1
             sx={{
               mt: [2, 2, 4],
               marginBottom: "0px",
@@ -92,7 +92,7 @@ const Header = () => {
             }}
           >
             Pedro Piñera
-          </h1>
+          </Styled.h1>
         </Link>
       </div>
       <Sections />

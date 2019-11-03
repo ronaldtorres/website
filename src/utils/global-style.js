@@ -10,9 +10,12 @@ export default () => (
           color: theme.colors.secondary,
         },
       },
+      "h1 .header-anchor": {
+        display: "none",
+      },
       ".header-anchor": {
         marginRight: "10px",
-        fill: theme.colors.muted,
+        fill: theme.colors.primary,
       },
       ".js-focus-visible :focus:not(.focus-visible)": {
         outline: "none",

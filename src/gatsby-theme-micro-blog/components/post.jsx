@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
 export default ({ date, body, tags }) => {
@@ -7,39 +7,27 @@ export default ({ date, body, tags }) => {
     <article
       sx={{
         borderRadius: 1,
-        px: 4,
-        py: 4,
         marginTop: 2,
         bg: "background",
         color: "text",
-        borderColor: "muted",
-        borderWidth: 1,
-        borderStyle: "solid",
       }}
     >
-      <header sx={{ fontSize: 1, color: "primary" }}>{date}</header>
+      <header sx={{ mb: 4 }}>
+        <Styled.h3 sx={{ mb: 3 }}>{date}</Styled.h3>
+        <div
+          sx={{
+            marginRight: 2,
+            marginBottom: 1,
+          }}
+        >
+          <span>Tagged with: </span>
+          <span>
+            <i>{tags.join(", ")}</i>
+          </span>
+        </div>
+      </header>
       <MDXRenderer>{body}</MDXRenderer>
-      <footer sx={{ display: "flex", flexWrap: "wrap" }}>
-        {tags.map((tag, index) => {
-          return (
-            <span
-              sx={{
-                fontSize: 1,
-                marginRight: 1,
-                marginBottom: 1,
-                bg: "primary",
-                color: "white",
-                px: 2,
-                py: 1,
-                borderRadius: 1,
-              }}
-              key={index}
-            >
-              {tag}
-            </span>
-          )
-        })}
-      </footer>
+      <footer sx={{ display: "flex", flexWrap: "wrap" }}></footer>
     </article>
   )
 }

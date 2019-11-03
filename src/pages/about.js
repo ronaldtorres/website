@@ -3,7 +3,6 @@ import { jsx } from "theme-ui"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
 import { graphql, useStaticQuery } from "gatsby"
-import Avatar from "../components/shared/avatar"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const AboutPage = () => {
@@ -20,9 +19,7 @@ const AboutPage = () => {
   return (
     <Layout>
       <Meta title="About" />
-      <div sx={{ flexDirection: "column", alignItems: "vertical" }}>
-        <Avatar />
-      </div>
+      <div sx={{ flexDirection: "column", alignItems: "vertical" }}></div>
       <MDXRenderer>{file.childMdx.body}</MDXRenderer>
     </Layout>
   )

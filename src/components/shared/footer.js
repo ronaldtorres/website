@@ -1,28 +1,9 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import { useStaticQuery, graphql } from "gatsby"
+import { jsx, Styled } from "theme-ui"
 import BodyMargin from "./body-margin"
+import Avatar from "../shared/avatar"
 
 export default () => {
-  const {
-    site: {
-      siteMetadata: {
-        links: { github, twitter },
-      },
-    },
-  } = useStaticQuery(graphql`
-    {
-      site {
-        siteMetadata {
-          links {
-            github
-            twitter
-          }
-        }
-      }
-    }
-  `)
-  const feed = "/feed.xml"
   return (
     <footer sx={{ bg: "muted", pb: 3 }}>
       <BodyMargin>
@@ -34,7 +15,7 @@ export default () => {
           }}
         >
           <div>
-            <h2>A bit about me</h2>
+            <Styled.h2>A bit about me</Styled.h2>
             <p>
               Hola 👋! I'm Pedro Piñera, a Spanish software developer living in
               Berlin. I work as an engineer manager of the mobile tooling team
@@ -57,8 +38,10 @@ export default () => {
           </div>
           <div sx={{ m: 3 }}>
             <div
-              sx={{ bg: "red", width: 100, height: 100, borderRadius: 50 }}
-            ></div>
+              sx={{ bg: "primary", width: 100, height: 100, borderRadius: 50 }}
+            >
+              <Avatar />
+            </div>
           </div>
         </div>
         <small>Copyright © Pedro Piñera, 2019</small>
