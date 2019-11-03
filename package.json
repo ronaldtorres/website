@@ -40,7 +40,7 @@
     "react-typography": "^0.16.19",
     "theme-ui": "^0.2.46",
     "typography": "^0.16.19",
-    "typography-theme-github": "^0.16.19"
+    "typography-theme-sutro": "^0.16.19"
   },
   "devDependencies": {
     "prettier": "^1.16.4",

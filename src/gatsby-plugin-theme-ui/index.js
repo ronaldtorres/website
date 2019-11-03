@@ -1,4 +1,4 @@
-import theme from "typography-theme-github"
+import theme from "typography-theme-sutro"
 import { toTheme } from "@theme-ui/typography"
 import prismTheme from "@theme-ui/prism/presets/night-owl.json"
 
@@ -77,6 +77,12 @@ export default {
     },
     code: {
       fontSize: 1,
+    },
+    h1: {
+      fontSize: 4,
+    },
+    h2: {
+      fontSize: 3,
     },
   },
 }
