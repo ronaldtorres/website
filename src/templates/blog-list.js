@@ -68,7 +68,7 @@ const BlogList = ({
   const Posts = edges.map((edge, index) => (
     <Post key={index} post={edge.node} />
   ))
-  const [_, setColorMode] = useColorMode()
+  const [, setColorMode] = useColorMode()
   setColorMode("light")
   return (
     <Layout>

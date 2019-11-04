@@ -6,7 +6,7 @@ import Meta from "../components/shared/meta"
 import { Timeline } from "gatsby-theme-micro-blog"
 
 const JournalPage = () => {
-  const [_, setColorMode] = useColorMode()
+  const [, setColorMode] = useColorMode()
   setColorMode("journal")
   return (
     <Layout>

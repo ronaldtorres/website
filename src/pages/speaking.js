@@ -13,7 +13,7 @@ const SpeakingPage = () => {
       }
     }
   `)
-  const [_, setColorMode] = useColorMode()
+  const [, setColorMode] = useColorMode()
   setColorMode("speaking")
   return (
     <Layout>

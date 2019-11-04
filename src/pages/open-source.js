@@ -27,7 +27,7 @@ const Project = ({ project }) => {
 }
 
 const OpenSourcePage = () => {
-  const [_, setColorMode] = useColorMode()
+  const [, setColorMode] = useColorMode()
   setColorMode("opensource")
   const data = useStaticQuery(graphql`
     {

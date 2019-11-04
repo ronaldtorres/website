@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
+import Color from "color"
 
-const SectionButton = ({ title, url, path }) => {
+const SectionButton = ({ title, url, path, index }) => {
   const linkStyle = {
     fontFamily: "'Rosario',sans-serif",
     color: "white",
@@ -28,11 +29,9 @@ const SectionButton = ({ title, url, path }) => {
     <div
       sx={{
         userSelect: "none",
-        bg: "primary",
-        margin: [1, 2],
+        bg: `gradient${index}`,
         px: 2,
         py: 1,
-        borderRadius: 1,
       }}
     >
       {link}
@@ -43,19 +42,21 @@ const Sections = () => {
   return (
     <div
       sx={{
-        display: ["none", "none", "flex"],
+        mt: 3,
+        display: ["flex"],
         flexWrap: "wrap",
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "row",
+        bg: theme => theme.colors.primary,
       }}
     >
-      <SectionButton title="Journal 📝" path="/journal" />
-      <SectionButton title="About 👨‍💻" path="/about" />
-      <SectionButton title="Speaking 🎤" path="/speaking" />
-      <SectionButton title="Open Source 🐙" path="/open-source" />
-      <SectionButton title="Wiki 📝" path="/wiki" />
-      <SectionButton title="Books 📚" path="/books" />
+      <SectionButton title="Journal 📝" path="/journal" index={0} />
+      <SectionButton title="About 👨‍💻" path="/about" index={1} />
+      <SectionButton title="Speaking 🎤" path="/speaking" index={2} />
+      <SectionButton title="Open Source 🐙" path="/open-source" index={3} />
+      <SectionButton title="Wiki 📝" path="/wiki" index={4} />
+      <SectionButton title="Books 📚" path="/books" index={5} />
     </div>
   )
 }
@@ -64,7 +65,6 @@ const Header = () => {
   return (
     <header
       sx={{
-        pb: 3,
         display: "flex",
         flexDirection: "column",
         alignItems: "stretch",
@@ -83,7 +83,7 @@ const Header = () => {
           sx={{ color: "text", "&:hover": { textDecoration: "none" } }}
           to="/"
         >
-          <Styled.h1
+          <Styled.h2
             sx={{
               mt: [2, 2, 4],
               marginBottom: "0px",
@@ -92,7 +92,7 @@ const Header = () => {
             }}
           >
             Pedro Piñera
-          </Styled.h1>
+          </Styled.h2>
         </Link>
       </div>
       <Sections />

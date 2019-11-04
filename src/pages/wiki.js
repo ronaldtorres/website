@@ -17,7 +17,7 @@ const WikiItem = ({ wiki }) => {
 }
 
 const WikiPage = () => {
-  const [_, setColorMode] = useColorMode()
+  const [, setColorMode] = useColorMode()
   setColorMode("wiki")
   const {
     allMdx: { edges: wikiEdges },

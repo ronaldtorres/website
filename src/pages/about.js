@@ -16,7 +16,7 @@ const AboutPage = () => {
       }
     }
   `)
-  const [_, setColorMode] = useColorMode()
+  const [, setColorMode] = useColorMode()
   setColorMode("about")
   return (
     <Layout>

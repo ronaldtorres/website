@@ -37,6 +37,45 @@ const lineHeights = {
   heading: 1.125,
 }
 
+const makeTheme = (primary, secondary) => {
+  return {
+    gradient0: Color(primary)
+      .darken(0)
+      .string(),
+    gradient1: Color(primary)
+      .darken(0.2)
+      .string(),
+    gradient2: Color(primary)
+      .darken(0.4)
+      .string(),
+    gradient3: Color(primary)
+      .darken(0.6)
+      .string(),
+    gradient4: Color(primary)
+      .darken(0.8)
+      .string(),
+    gradient5: Color(primary)
+      .darken(1.0)
+      .string(),
+    gradient6: Color(primary)
+      .darken(1.2)
+      .string(),
+    gradient7: Color(primary)
+      .darken(1.4)
+      .string(),
+    text: Color(primary)
+      .darken(1.6)
+      .string(),
+    background: "#fff",
+    primary: primary,
+    secondary: secondary,
+    muted: Color(secondary)
+      .negate()
+      .lighten(0.4)
+      .string(),
+  }
+}
+
 export default {
   ...toTheme(theme),
   breakpoints,
@@ -46,89 +85,14 @@ export default {
   fontWeights,
   lineHeights,
   colors: {
-    text: Color("#7149c1")
-      .darken(0.7)
-      .string(),
-    background: "#fff",
-    primary: "#7149c1",
-    secondary: "#007faa",
-    muted: Color("#007faa")
-      .negate()
-      .lighten(0.4)
-      .string(),
+    ...makeTheme("#7149c1", "#007faa"),
     modes: {
-      about: {
-        text: Color("#00918e")
-          .darken(0.7)
-          .string(),
-        background: "#fff",
-        primary: "#00918e",
-        secondary: "#4dd599",
-        muted: Color("#4dd599")
-          .negate()
-          .lighten(0.9)
-          .string(),
-      },
-      journal: {
-        text: Color("#e8647c")
-          .darken(0.7)
-          .string(),
-        background: "#fff",
-        primary: "#e8647c",
-        secondary: "#e8647c",
-        muted: Color("#e8647c")
-          .negate()
-          .lighten(1.3)
-          .string(),
-      },
-      speaking: {
-        text: Color("#71a95a")
-          .darken(0.7)
-          .string(),
-        background: "#fff",
-        primary: "#71a95a",
-        secondary: "#d1274b",
-        muted: Color("#d1274b")
-          .negate()
-          .lighten(0.2)
-          .string(),
-      },
-      opensource: {
-        text: Color("#d62196")
-          .darken(0.7)
-          .string(),
-        background: "#fff",
-        primary: "#d62196",
-        secondary: "#6915cf",
-        muted: Color("#6915cf")
-          .negate()
-          .lighten(0.4)
-          .string(),
-      },
-      wiki: {
-        text: Color("#df4d19")
-          .darken(0.7)
-          .string(),
-        background: "#fff",
-        primary: "#df4d19",
-        secondary: "#e61c5d",
-        muted: Color("#e61c5d")
-          .negate()
-          .lighten(0.4)
-          .string(),
-      },
-      books: {
-        text: Color("#951555")
-          .darken(0.7)
-          .string(),
-        background: "#fff",
-        primary: "#951555",
-        secondary: "#7971ea",
-        muted: Color("#7971ea")
-          .negate()
-          .lighten(1.3)
-          .string(),
-      },
+      about: makeTheme("#00918e", "#4dd599"),
+      journal: makeTheme("#e8647c", "#e8647c"),
+      speaking: makeTheme("#71a95a", "#d1274b"),
+      opensource: makeTheme("#d62196", "#6915cf"),
+      wiki: makeTheme("#df4d19", "#e61c5d"),
+      books: makeTheme("#951555", "#7971ea"),
     },
   },
   styles: {

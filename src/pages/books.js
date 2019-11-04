@@ -13,7 +13,7 @@ const BooksPage = () => {
       }
     }
   `)
-  const [_, setColorMode] = useColorMode()
+  const [, setColorMode] = useColorMode()
   setColorMode("books")
   return (
     <Layout>
