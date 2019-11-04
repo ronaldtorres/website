@@ -34,12 +34,6 @@ export default () => (
       "a:focus": {
         textDecoration: "underline",
       },
-      "::-moz-selection": {
-        background: theme.colors.textSelection,
-      },
-      "::selection": {
-        background: theme.colors.textSelection,
-      },
       "pre[class*='language-']": {
         overflow: "auto",
       },

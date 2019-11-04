@@ -6,8 +6,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./shared/header"
 import Footer from "./shared/footer"
 import GlobalStyle from "../utils/global-style"
-import { toTheme } from "@theme-ui/typography"
-import sutro from "typography-theme-sutro"
 
 import "focus-visible"
 
@@ -28,7 +26,8 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <GlobalStyle /> <Header siteTitle={title} />
+      <GlobalStyle />
+      <Header siteTitle={title} />
       <BodyMargin>
         <main sx={{ py: [1, 4] }}>{children}</main>
       </BodyMargin>

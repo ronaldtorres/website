@@ -1,6 +1,7 @@
 import theme from "typography-theme-sutro"
 import { toTheme } from "@theme-ui/typography"
 import prismTheme from "@theme-ui/prism/presets/night-owl.json"
+import Color from "color"
 
 // Breakpoints
 const breakpoints = ["40em", "52em", "64em", "80em"]
@@ -45,23 +46,21 @@ export default {
   fontWeights,
   lineHeights,
   colors: {
-    text: "#000",
+    text: Color("#7149c1")
+      .darken(0.7)
+      .string(),
     background: "#fff",
     primary: "#7149c1",
     secondary: "#007faa",
-    muted: "#eaeaea",
-    dark: "rgba(0, 0, 0, 0.8)",
-    modes: {
-      dark: {
-        text: "#fff",
-        background: "#000",
-        primary: "#9b59b6",
-        secondary: "#00bfff",
-        muted: "#fefefe",
-      },
-    },
+    muted: Color("#007faa")
+      .negate()
+      .lighten(0.4)
+      .string(),
   },
   styles: {
+    root: {
+      color: "text",
+    },
     pre: {
       ...prismTheme,
       padding: 3,

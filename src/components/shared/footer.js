@@ -37,11 +37,7 @@ export default () => {
             </p>
           </div>
           <div sx={{ m: 3 }}>
-            <div
-              sx={{ bg: "primary", width: 100, height: 100, borderRadius: 50 }}
-            >
-              <Avatar />
-            </div>
+            <Avatar />
           </div>
         </div>
         <small>Copyright © Pedro Piñera, 2019</small>

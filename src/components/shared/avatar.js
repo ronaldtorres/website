@@ -19,6 +19,6 @@ const Avatar = () => {
       }
     }
   `)
-  return <Img fixed={fixed} width="200px" height="200px" />
+  return <Img fixed={fixed} />
 }
 export default Avatar

@@ -22,9 +22,9 @@ export default ({ date, body, tags }) => {
             sx={{
               bg: "primary",
               color: "background",
-              pl: "4px",
-              pr: "6px",
-              borderRadius: "26px",
+              pl: ["2px", "4px"],
+              pr: ["3px", "6px"],
+              borderRadius: ["20px", "26px"],
             }}
           >
             {dateDay}
@@ -44,7 +44,6 @@ export default ({ date, body, tags }) => {
         </div>
       </header>
       <MDXRenderer>{body}</MDXRenderer>
-      <footer sx={{ display: "flex", flexWrap: "wrap" }}></footer>
     </article>
   )
 }
