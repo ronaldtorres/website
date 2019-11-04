@@ -41,27 +41,35 @@ const makeTheme = (primary, secondary) => {
   return {
     gradient0: Color(primary)
       .darken(0)
+      .mix(Color(secondary))
       .string(),
     gradient1: Color(primary)
       .darken(0.2)
+      .mix(Color(secondary))
       .string(),
     gradient2: Color(primary)
       .darken(0.4)
+      .mix(Color(secondary))
       .string(),
     gradient3: Color(primary)
       .darken(0.6)
+      .mix(Color(secondary))
       .string(),
     gradient4: Color(primary)
       .darken(0.8)
+      .mix(Color(secondary))
       .string(),
     gradient5: Color(primary)
       .darken(1.0)
+      .mix(Color(secondary))
       .string(),
     gradient6: Color(primary)
       .darken(1.2)
+      .mix(Color(secondary))
       .string(),
     gradient7: Color(primary)
       .darken(1.4)
+      .mix(Color(secondary))
       .string(),
     text: Color(primary)
       .darken(1.6)

@@ -2,41 +2,48 @@
 import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
 import Color from "color"
+import { Location } from "@reach/router"
 
 const SectionButton = ({ title, url, path, index }) => {
-  const linkStyle = {
-    fontFamily: "'Rosario',sans-serif",
-    color: "white",
-    ":hover, :link, :visited": {
-      color: "white",
-    },
-  }
-  let link
+  let button = (
+    <Location>
+      {({ location }) => {
+        let selected = false
+        if (path == "/" && path == location.pathname) {
+          selected = true
+        } else if (path != "/" && location.pathname.includes(path)) {
+          selected = true
+        }
+        return (
+          <div
+            sx={{
+              userSelect: "none",
+              color: selected ? `gradient${index}` : "background",
+              bg: selected ? "background" : `gradient${index}`,
+              px: 3,
+              py: 1,
+            }}
+          >
+            {title}
+          </div>
+        )
+      }}
+    </Location>
+  )
+  const linkSx = { ":hover": { textDecorationColor: `gradient${index}` } }
   if (url) {
-    link = (
-      <a href={url} target="__blank" sx={linkStyle}>
-        {title}
+    return (
+      <a href={url} target="__blank" sx={linkSx}>
+        {button}
       </a>
     )
   } else {
-    link = (
-      <Link to={path} sx={linkStyle}>
-        {title}
+    return (
+      <Link to={path} sx={linkSx}>
+        {button}
       </Link>
     )
   }
-  return (
-    <div
-      sx={{
-        userSelect: "none",
-        bg: `gradient${index}`,
-        px: 2,
-        py: 1,
-      }}
-    >
-      {link}
-    </div>
-  )
 }
 const Sections = () => {
   return (
@@ -51,6 +58,7 @@ const Sections = () => {
         bg: theme => theme.colors.primary,
       }}
     >
+      <SectionButton title="Home 🏚" path="/" index={0} />
       <SectionButton title="Journal 📝" path="/journal" index={0} />
       <SectionButton title="About 👨‍💻" path="/about" index={1} />
       <SectionButton title="Speaking 🎤" path="/speaking" index={2} />
@@ -79,21 +87,16 @@ const Header = () => {
           justifyContent: "center",
         }}
       >
-        <Link
-          sx={{ color: "text", "&:hover": { textDecoration: "none" } }}
-          to="/"
+        <Styled.h2
+          sx={{
+            mt: [2, 2, 4],
+            marginBottom: "0px",
+            borderBottom: "none",
+            textAlign: "center",
+          }}
         >
-          <Styled.h2
-            sx={{
-              mt: [2, 2, 4],
-              marginBottom: "0px",
-              borderBottom: "none",
-              textAlign: "center",
-            }}
-          >
-            Pedro Piñera
-          </Styled.h2>
-        </Link>
+          Pedro Piñera
+        </Styled.h2>
       </div>
       <Sections />
     </header>
