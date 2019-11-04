@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, useColorMode } from "theme-ui"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
 import { graphql, useStaticQuery } from "gatsby"
@@ -16,6 +16,8 @@ const AboutPage = () => {
       }
     }
   `)
+  const [_, setColorMode] = useColorMode()
+  setColorMode("about")
   return (
     <Layout>
       <Meta title="About" />

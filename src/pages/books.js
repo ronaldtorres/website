@@ -1,3 +1,4 @@
+import { useColorMode } from "theme-ui"
 import React from "react"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
@@ -12,6 +13,8 @@ const BooksPage = () => {
       }
     }
   `)
+  const [_, setColorMode] = useColorMode()
+  setColorMode("books")
   return (
     <Layout>
       <Meta

@@ -1,18 +1,27 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Styled, useColorMode } from "theme-ui"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
 import Tags from "../components/shared/tags"
 import { Link, graphql } from "gatsby"
+import NumberBadge from "../components/shared/number-badge"
+import moment from "moment"
 
 const Post = ({ post }) => {
+  const dateMoment = moment(post.fields.date, "YYYY-MM-DD")
+  const dateMonth = dateMoment.format("MMMM YYYY")
+  const dateDay = dateMoment.format("D")
+
   return (
     <article sx={{ mb: 4 }}>
       <header>
         <Styled.h2 sx={{ mb: 1 }}>
           <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
         </Styled.h2>
-        <div>{post.fields.date}</div>
+        <div sx={{ display: "flex" }}>
+          <NumberBadge number={dateDay} size={[30]} />{" "}
+          <b sx={{ ml: 2 }}>{dateMonth}</b>
+        </div>
         <Tags tags={post.frontmatter.tags} />
       </header>
       <p>{post.frontmatter.excerpt}</p>
@@ -59,6 +68,8 @@ const BlogList = ({
   const Posts = edges.map((edge, index) => (
     <Post key={index} post={edge.node} />
   ))
+  const [_, setColorMode] = useColorMode()
+  setColorMode("light")
   return (
     <Layout>
       <Meta />

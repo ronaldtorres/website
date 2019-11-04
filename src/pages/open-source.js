@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Styled, useColorMode } from "theme-ui"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
 import { graphql, useStaticQuery } from "gatsby"
@@ -27,6 +27,8 @@ const Project = ({ project }) => {
 }
 
 const OpenSourcePage = () => {
+  const [_, setColorMode] = useColorMode()
+  setColorMode("opensource")
   const data = useStaticQuery(graphql`
     {
       allMdx(

@@ -2,11 +2,12 @@
 import { jsx, Styled } from "theme-ui"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import moment from "moment"
+import NumberBadge from "../../components/shared/number-badge"
 
 export default ({ date, body, tags }) => {
   const dateMoment = moment(date, "MMMM Do YYYY")
   const dateMonth = dateMoment.format("MMMM YYYY")
-  const dateDay = dateMoment.format("DD")
+  const dateDay = dateMoment.format("D")
   return (
     <article
       sx={{
@@ -17,19 +18,13 @@ export default ({ date, body, tags }) => {
       }}
     >
       <header sx={{ mb: 4 }}>
-        <Styled.h3 sx={{ mb: 3 }}>
-          <span
-            sx={{
-              bg: "primary",
-              color: "background",
-              pl: ["2px", "4px"],
-              pr: ["3px", "6px"],
-              borderRadius: ["20px", "26px"],
-            }}
-          >
-            {dateDay}
-          </span>{" "}
-          {dateMonth}
+        <Styled.h3 sx={{ mb: 3, display: "flex" }}>
+          <NumberBadge
+            number={dateDay}
+            size={[26, 35]}
+            fontSize={["16px", "20px"]}
+          />{" "}
+          <span sx={{ ml: 2 }}>{dateMonth}</span>
         </Styled.h3>
         <div
           sx={{

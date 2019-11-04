@@ -1,11 +1,13 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Styled, useColorMode } from "theme-ui"
 
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
 import { Timeline } from "gatsby-theme-micro-blog"
 
 const JournalPage = () => {
+  const [_, setColorMode] = useColorMode()
+  setColorMode("journal")
   return (
     <Layout>
       <Meta
