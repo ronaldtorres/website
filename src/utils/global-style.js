@@ -31,8 +31,12 @@ export default () => (
         color: theme.colors.secondary,
         backgroundImage: "none",
       },
-      "a:focus": {
+      "p a": {
         textDecoration: "underline",
+      },
+      "a:hover": {
+        textDecoration: "underline",
+        color: theme.colors.gradient3,
       },
       "pre[class*='language-']": {
         overflow: "auto",
