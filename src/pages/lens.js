@@ -103,7 +103,7 @@ export default () => {
         You can subscribe to my lens{" "}
         <Styled.a href="/lens.xml">RSS feed</Styled.a>.
       </Styled.p>
-      <div>
+      <div sx={{ mb: 6 }}>
         {lens.map((len, index) => (
           <Len len={len} key={index} />
         ))}
