@@ -74,6 +74,11 @@ const BlogList = ({
     <Layout>
       <Meta />
       <Styled.h1>Blog</Styled.h1>
+      <Styled.p>
+        You can subscribe to my blog{" "}
+        <Styled.a href="/feed.xml">RSS feed</Styled.a>.
+      </Styled.p>
+
       {Posts}
       <Footer {...pageContext} />
     </Layout>

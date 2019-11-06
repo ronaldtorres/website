@@ -75,9 +75,11 @@ module.exports = {
               return allMdx.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.frontmatter.excerpt,
-                  date: edge.node.fields.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  copyright: "2019 Pedro Piñera",
+                  language: "en",
+                  site_url: site.siteMetadata.siteUrl,
                 })
               })
             },
@@ -106,6 +108,44 @@ module.exports = {
             `,
             output: "/feed.xml",
             title: "Pedro Piñera's Blog RSS Feed",
+          },
+          {
+            serialize: ({ query: { site, allFile } }) => {
+              return allFile.nodes.map(node => {
+                return Object.assign({
+                  title: new Date(
+                    parseInt(node.relativeDirectory) * 1000
+                  ).toLocaleDateString("en-US", {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  }),
+                  description: node.childMdx.excerpt,
+                  guid: node.relativeDirectory,
+                  copyright: "2019 Pedro Piñera",
+                  language: "en",
+                  site_url: site.siteMetadata.siteUrl,
+                })
+              })
+            },
+            query: `
+            {
+              allFile(
+                filter: { sourceInstanceName: { eq: "micro-posts" } }
+                sort: { order: DESC, fields: relativeDirectory }
+              ) {
+                nodes {
+                  relativeDirectory
+                  childMdx {
+                    excerpt(pruneLength: 5000)
+                  }
+                }
+              }
+            }
+            `,
+            output: "/journal.xml",
+            title: "Pedro Piñera's Journal RSS Feed",
           },
         ],
       },

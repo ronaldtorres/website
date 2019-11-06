@@ -15,10 +15,15 @@ const JournalPage = () => {
         description="This page contains tiny posts with thoughts, ideas, reflections, that are not long enough to justify a blog post"
       />
       <Styled.h1>Journal</Styled.h1>
+
       <p>
         Social networks come and go, and I really like posting social media. In
         this section, I’m trying to mirror the stuff I post to social networks.
       </p>
+      <Styled.p>
+        You can subscribe to my journal{" "}
+        <Styled.a href="/journal.xml">RSS feed</Styled.a>.
+      </Styled.p>
       <Timeline />
     </Layout>
   )
