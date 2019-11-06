@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
-import Color from "color"
 import { Location } from "@reach/router"
 
 const SectionButton = ({ title, url, path, index }) => {
@@ -9,7 +8,7 @@ const SectionButton = ({ title, url, path, index }) => {
     <Location>
       {({ location }) => {
         let selected = false
-        if (path == "/" && path == location.pathname) {
+        if (path === "/" && path === location.pathname) {
           selected = true
         } else if (path != "/" && location.pathname.includes(path)) {
           selected = true
@@ -63,6 +62,7 @@ const Sections = () => {
       <SectionButton title="About 👨‍💻" path="/about" index={1} />
       <SectionButton title="Speaking 🎤" path="/speaking" index={2} />
       <SectionButton title="Open Source 🐙" path="/open-source" index={3} />
+      <SectionButton title="Lens 🔍" path="/lens" index={3} />
       <SectionButton title="Wiki 📝" path="/wiki" index={4} />
       <SectionButton title="Books 📚" path="/books" index={5} />
     </div>

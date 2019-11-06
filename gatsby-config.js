@@ -39,6 +39,13 @@ module.exports = {
         path: `${__dirname}/markdown/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `lens`,
+        path: "lens",
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -146,6 +153,44 @@ module.exports = {
             `,
             output: "/journal.xml",
             title: "Pedro Piñera's Journal RSS Feed",
+          },
+          {
+            serialize: ({ query: { site, allFile } }) => {
+              return allFile.nodes.map(node => {
+                return Object.assign({
+                  title: new Date(
+                    parseInt(node.relativeDirectory) * 1000
+                  ).toLocaleDateString("en-US", {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  }),
+                  description: node.childMdx.excerpt,
+                  guid: node.relativeDirectory,
+                  copyright: "2019 Pedro Piñera",
+                  language: "en",
+                  site_url: site.siteMetadata.siteUrl,
+                })
+              })
+            },
+            query: `
+            {
+              allFile(
+                filter: { sourceInstanceName: { eq: "lens" } }
+                sort: { order: DESC, fields: relativeDirectory }
+              ) {
+                nodes {
+                  relativeDirectory
+                  childMdx {
+                    excerpt(pruneLength: 5000)
+                  }
+                }
+              }
+            }
+            `,
+            output: "/lens.xml",
+            title: "Pedro Piñera's Lens RSS Feed",
           },
         ],
       },
