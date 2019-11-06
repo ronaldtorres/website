@@ -45,6 +45,9 @@ exports.createPages = ({ graphql, actions }) => {
               fields {
                 slug
               }
+              frontmatter {
+                title
+              }
             }
           }
         }
@@ -73,11 +76,20 @@ exports.createPages = ({ graphql, actions }) => {
 
     // Create blog posts
     result.data.allMdx.edges.forEach(({ node }, index) => {
+      const prev =
+        index === 0 ? false : result.data.allMdx.edges[index - 1].node
+      const next =
+        index === posts.length - 1
+          ? false
+          : result.data.allMdx.edges[index + 1].node
+
       createPage({
         path: node.fields.slug,
         component: path.resolve(`./src/templates/markdown.js`),
         context: {
           slug: node.fields.slug,
+          prev,
+          next,
         },
       })
     })
