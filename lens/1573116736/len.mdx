@@ -1,0 +1,8 @@
+---
+author: Troy Hunt
+title: "Locking Down Your Website Scripts with CSP, Hashes, Nonces and Report URI"
+url: https://www.troyhunt.com/locking-down-your-website-scripts-with-csp-hashes-nonces-and-report-uri/
+tags: ["security", "rails"]
+---
+
+Yes, this is screwy, but welcome to the web! I see far worse on a near daily basis and arguably, there are multiple different circumstances in which you may genuinely need a script block that contains dynamic content that's potentially malicious. But that means you can't return a hash because you simply don't know what the script block will contain. Yes, you could build the whole thing up dynamically, calculate the hash then return that in the CSP and render the script block to the page but not only is that getting super messy, it doesn't help with the maintainability problem.
