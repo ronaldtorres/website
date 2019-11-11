@@ -20,7 +20,7 @@
     "gatsby-plugin-feed": "^2.3.19",
     "gatsby-plugin-manifest": "^2.2.26",
     "gatsby-plugin-mdx": "^1.0.56",
-    "gatsby-plugin-offline": "^3.0.18",
+    "gatsby-plugin-offline": "^3.0.19",
     "gatsby-plugin-react-helmet": "^3.1.13",
     "gatsby-plugin-sharp": "^2.2.36",
     "gatsby-plugin-theme-ui": "^0.2.43",
