@@ -21,7 +21,6 @@ const AboutPage = () => {
   return (
     <Layout>
       <Meta title="About" />
-      <div sx={{ flexDirection: "column", alignItems: "vertical" }}></div>
       <MDXRenderer>{file.childMdx.body}</MDXRenderer>
     </Layout>
   )

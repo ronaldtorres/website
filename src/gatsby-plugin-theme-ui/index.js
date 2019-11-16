@@ -102,6 +102,7 @@ export default {
       wiki: makeTheme("#df4d19", "#e61c5d"),
       books: makeTheme("#951555", "#904e55"),
       lens: makeTheme("#39393a", "#00a9a5"),
+      photos: makeTheme("#a35638", "#bc4873"),
     },
   },
   styles: {

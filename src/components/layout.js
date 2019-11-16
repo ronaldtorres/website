@@ -9,7 +9,7 @@ import GlobalStyle from "../utils/global-style"
 
 import "focus-visible"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, withMargin = true }) => {
   const {
     site: {
       siteMetadata: { title },
@@ -24,13 +24,22 @@ const Layout = ({ children }) => {
     }
   `)
 
+  let main
+  if (withMargin) {
+    main = (
+      <BodyMargin>
+        <main sx={{ py: [1, 4] }}>{children}</main>
+      </BodyMargin>
+    )
+  } else {
+    main = <main sx={{ py: [1, 4] }}>{children}</main>
+  }
+
   return (
     <>
       <GlobalStyle />
       <Header siteTitle={title} />
-      <BodyMargin>
-        <main sx={{ py: [1, 4] }}>{children}</main>
-      </BodyMargin>
+      {main}
       <Footer />
     </>
   )
