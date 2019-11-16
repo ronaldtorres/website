@@ -56,7 +56,7 @@ const PhotosPage = () => {
             <Img
               fluid={photo.nodes[1].childImageSharp.fluid}
               key={index}
-              sx={{ width: ["25%", "30%", "30%"] }}
+              sx={{ width: ["25%", "12.5%"] }}
               alt={photo.nodes[0].childMdx.excerpt}
             />
           )
