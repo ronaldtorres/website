@@ -28,6 +28,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       const filename = createFilePath({ node, getNode })
       createNodeField({ node, name: `slug`, value: filename })
     }
+  } else if (node.sourceInstanceName === "photos") {
+    const slug = `/photos/${node.relativeDirectory}`
+    createNodeField({ node, name: `slug`, value: slug })
   }
 }
 
@@ -124,5 +127,39 @@ exports.createPages = ({ graphql, actions }) => {
     })
   })
 
-  return Promise.all([createBlogPosts, createWiki])
+  const fetchPhotos = graphql(
+    `
+      {
+        allFile(
+          filter: {
+            sourceInstanceName: { eq: "photos" }
+            extension: { eq: "mdx" }
+          }
+          sort: { order: DESC, fields: [fields___slug] }
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `
+  )
+  const createPhotos = fetchPhotos.then(result => {
+    return result.data.allFile.edges.map(({ node }) => {
+      const slug = node.fields.slug
+      return createPage({
+        path: slug,
+        component: path.resolve(`./src/templates/photo.js`),
+        context: {
+          slug: slug,
+        },
+      })
+    })
+  })
+
+  return Promise.all([createBlogPosts, createWiki, createPhotos])
 }

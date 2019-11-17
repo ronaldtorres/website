@@ -21,6 +21,9 @@ const PhotosPage = () => {
       ) {
         group(field: dir) {
           nodes {
+            fields {
+              slug
+            }
             mobileImage: childImageSharp {
               fluid(maxWidth: 300, quality: 100) {
                 ...GatsbyImageSharpFluid_noBase64
@@ -71,12 +74,13 @@ const PhotosPage = () => {
             },
           ]
           return (
-            <Img
-              fluid={sources}
-              key={index}
+            <a
+              href={photo.nodes[0].fields.slug}
               sx={{ width: ["100%", "25%"] }}
               alt={photo.nodes[0].childMdx.excerpt}
-            />
+            >
+              <Img fluid={sources} key={index} />
+            </a>
           )
         })}
       </div>
