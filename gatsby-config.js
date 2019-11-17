@@ -199,6 +199,51 @@ module.exports = {
             output: "/lens.xml",
             title: "Pedro Piñera's Lens RSS Feed",
           },
+          {
+            serialize: ({
+              query: {
+                site,
+                allFile: { group: photos },
+              },
+            }) => {
+              return photos.map(photo => {
+                return Object.assign({
+                  title: new Date(
+                    parseInt(photo.nodes[0].dir) * 1000
+                  ).toLocaleDateString("en-US", {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  }),
+                  description: photo.nodes[0].childMdx.excerpt,
+                  guid: photo.nodes[0].dir,
+                  copyright: "2019 Pedro Piñera",
+                  language: "en",
+                  site_url: site.siteMetadata.siteUrl,
+                })
+              })
+            },
+            query: `
+            {
+              allFile(
+                filter: { sourceInstanceName: { eq: "photos" } }
+                sort: { order: DESC, fields: dir }
+              ) {
+                group(field: dir) {
+                  nodes {
+                    dir
+                    childMdx {
+                      excerpt
+                    }
+                  }
+                }
+              }
+            }
+            `,
+            output: "/photos.xml",
+            title: "Pedro Piñera's Photos RSS Feed",
+          },
         ],
       },
     },

@@ -41,7 +41,6 @@ const PhotosPage = () => {
       }
     }
   `)
-  console.log(photos)
   return (
     <Layout withMargin={false}>
       <Meta
@@ -55,6 +54,10 @@ const PhotosPage = () => {
           This page contains a compilation of photos that I've taken. No likes,
           views, or any other attention-driven features that defeat the
           important element here, the photo itself.
+        </Styled.p>
+        <Styled.p>
+          You can subscribe to my journal{" "}
+          <Styled.a href="/photos.xml">RSS feed</Styled.a>.
         </Styled.p>
       </BodyMargin>
       <div sx={{ display: "flex", flexWrap: "wrap" }}>
