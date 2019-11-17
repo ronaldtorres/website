@@ -21,7 +21,13 @@ const PhotosPage = () => {
       ) {
         group(field: dir) {
           nodes {
-            childImageSharp {
+            mobileImage: childImageSharp {
+              fluid(maxWidth: 300, quality: 100) {
+                ...GatsbyImageSharpFluid_noBase64
+                presentationWidth
+              }
+            }
+            desktopImage: childImageSharp {
               fluid(maxWidth: 400, quality: 100) {
                 ...GatsbyImageSharpFluid_noBase64
                 presentationWidth
@@ -35,6 +41,7 @@ const PhotosPage = () => {
       }
     }
   `)
+  console.log(photos)
   return (
     <Layout withMargin={false}>
       <Meta
@@ -52,11 +59,19 @@ const PhotosPage = () => {
       </BodyMargin>
       <div sx={{ display: "flex", flexWrap: "wrap" }}>
         {photos.map((photo, index) => {
+          // We can change the fluid image based on the media query.
+          const sources = [
+            photo.nodes[1].mobileImage.fluid,
+            {
+              ...photo.nodes[1].desktopImage.fluid,
+              media: `(min-width: 768px)`,
+            },
+          ]
           return (
             <Img
-              fluid={photo.nodes[1].childImageSharp.fluid}
+              fluid={sources}
               key={index}
-              sx={{ width: ["25%", "12.5%"] }}
+              sx={{ width: ["100%", "25%"] }}
               alt={photo.nodes[0].childMdx.excerpt}
             />
           )
