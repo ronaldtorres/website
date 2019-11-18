@@ -28,11 +28,11 @@ const Layout = ({ children, withMargin = true }) => {
   if (withMargin) {
     main = (
       <BodyMargin>
-        <main sx={{ py: [1, 4] }}>{children}</main>
+        <main sx={{ py: [1, 5] }}>{children}</main>
       </BodyMargin>
     )
   } else {
-    main = <main sx={{ py: [1, 4] }}>{children}</main>
+    main = <main sx={{ py: [1, 5] }}>{children}</main>
   }
 
   return (
