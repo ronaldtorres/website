@@ -127,13 +127,13 @@ export const query = graphql`
         nodes {
           mobileImage: childImageSharp {
             fluid(maxWidth: 300, quality: 100) {
-              ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluid_tracedSVG
               presentationWidth
             }
           }
           desktopImage: childImageSharp {
             fluid(maxWidth: 1000, quality: 100) {
-              ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluid_tracedSVG
               presentationWidth
             }
           }
