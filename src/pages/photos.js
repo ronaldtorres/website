@@ -3,7 +3,6 @@ import { jsx, useColorMode, Styled } from "theme-ui"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
 import { graphql, useStaticQuery } from "gatsby"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 import Img from "gatsby-image"
 import BodyMargin from "../components/shared/body-margin"
 

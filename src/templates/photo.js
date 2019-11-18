@@ -10,9 +10,51 @@ import moment from "moment"
 import NumberBadge from "../components/shared/number-badge"
 import Img from "gatsby-image"
 
+const Footer = ({ pageContext }) => {
+  const prev = pageContext.prev
+  const next = pageContext.next
+
+  return (
+    <div
+      sx={{
+        display: "flex",
+        flex: 1,
+        my: 5,
+        alignItems: ["center", "center", "center"],
+        flexDirection: ["column", "column", "row"],
+        justifyContent: "space-between",
+      }}
+    >
+      {prev && (
+        <div
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <b>Previous: </b>
+          <Link to={prev.fields.slug}>{prev.childMdx.frontmatter.title}</Link>
+        </div>
+      )}
+      {next && (
+        <div
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <b>Next: </b>
+          <Link to={next.fields.slug}>{next.childMdx.frontmatter.title}</Link>
+        </div>
+      )}
+    </div>
+  )
+}
+
 export default ({ data, pageContext }) => {
   const {
-    site: { siteMetadata },
     allFile: { group: photo },
   } = data
   const childMdx = photo[0].nodes[0].childMdx
@@ -20,12 +62,10 @@ export default ({ data, pageContext }) => {
 
   let dateMonth
   let dateDay
-  let dateString
   if (image.relativeDirectory) {
     const dateMoment = moment(parseInt(image.relativeDirectory) * 1000)
     dateMonth = dateMoment.format("MMMM YYYY")
     dateDay = dateMoment.format("D")
-    dateString = dateMoment.format("MMMM Do YYYY")
   }
   const keywords = childMdx.frontmatter.tags ? childMdx.frontmatter.tags : []
 
@@ -36,7 +76,6 @@ export default ({ data, pageContext }) => {
       media: `(min-width: 768px)`,
     },
   ]
-
   return (
     <Layout>
       <Meta
@@ -70,6 +109,7 @@ export default ({ data, pageContext }) => {
         <MDXRenderer>{childMdx.body}</MDXRenderer>
         <Img fluid={sources} />
       </article>
+      <Footer pageContext={pageContext} />
     </Layout>
   )
 }

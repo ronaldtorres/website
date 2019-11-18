@@ -139,6 +139,11 @@ exports.createPages = ({ graphql, actions }) => {
         ) {
           edges {
             node {
+              childMdx {
+                frontmatter {
+                  title
+                }
+              }
               fields {
                 slug
               }
@@ -149,13 +154,19 @@ exports.createPages = ({ graphql, actions }) => {
     `
   )
   const createPhotos = fetchPhotos.then(result => {
-    return result.data.allFile.edges.map(({ node }) => {
+    const photos = result.data.allFile.edges
+    return photos.map(({ node }, index) => {
+      const prev = index === 0 ? false : photos[index - 1].node
+      const next = index === photos.length - 1 ? false : photos[index + 1].node
+
       const slug = node.fields.slug
       return createPage({
         path: slug,
         component: path.resolve(`./src/templates/photo.js`),
         context: {
           slug: slug,
+          prev: prev,
+          next: next,
         },
       })
     })
