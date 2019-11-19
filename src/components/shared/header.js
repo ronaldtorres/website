@@ -2,6 +2,8 @@
 import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
 import { Location } from "@reach/router"
+import { useEffect, useRef } from "react"
+import { useCookie } from "@use-hook/use-cookie"
 
 const SectionButton = ({ title, url, path, index }) => {
   let button = (
@@ -49,8 +51,23 @@ const SectionButton = ({ title, url, path, index }) => {
   }
 }
 const Sections = () => {
+  const ref = useRef(null)
+  const [navigationScrollLeft, setNavigationScrollLeft] = useCookie(
+    "navigation-scroll-left",
+    0
+  )
+
+  const scrollToBottom = () => {
+    ref.current.scrollLeft = navigationScrollLeft
+  }
+
+  useEffect(scrollToBottom, [])
   return (
     <div
+      ref={ref}
+      onScroll={element => {
+        setNavigationScrollLeft(element.target.scrollLeft, { expires: 1 })
+      }}
       sx={{
         mt: 3,
         display: "flex",
@@ -58,8 +75,8 @@ const Sections = () => {
         justifyContent: ["flex-start", "flex-start", "flex-start", "center"],
         flexDirection: "row",
         overflow: ["scroll", "scroll", "scroll", "visible"],
-        "&::-webkit-overflow-scrolling": "touch",
-        "&::-webkit-scrollbar": {
+        "&::WebkitOverflowScrolling": "touch",
+        "&::WebkitScrollbar": {
           display: "none",
         },
         bg: theme => theme.colors.primary,
