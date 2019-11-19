@@ -29,7 +29,11 @@ const SectionButton = ({ title, url, path, index }) => {
       }}
     </Location>
   )
-  const linkSx = { ":hover": { textDecorationColor: `gradient${index}` } }
+  const linkSx = {
+    flex: "0 0 auto",
+    minWidth: 0,
+    ":hover": { textDecorationColor: `gradient${index}` },
+  }
   if (url) {
     return (
       <a href={url} target="__blank" sx={linkSx}>
@@ -49,11 +53,15 @@ const Sections = () => {
     <div
       sx={{
         mt: 3,
-        display: ["flex"],
-        flexWrap: "wrap",
-        justifyContent: "center",
-        alignItems: "center",
+        display: "flex",
+        flexWrap: "no-wrap",
+        justifyContent: ["flex-start", "flex-start", "flex-start", "center"],
         flexDirection: "row",
+        overflow: ["scroll", "scroll", "scroll", "visible"],
+        "&::-webkit-overflow-scrolling": "touch",
+        "&::-webkit-scrollbar": {
+          display: "none",
+        },
         bg: theme => theme.colors.primary,
       }}
     >
