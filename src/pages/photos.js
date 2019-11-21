@@ -63,7 +63,7 @@ const PhotosPage = () => {
         </Styled.p>
       </BodyMargin>
       <div sx={{ display: "flex", flexWrap: "wrap" }}>
-        {photos.map((photo, index) => {
+        {photos.reverse().map((photo, index) => {
           // We can change the fluid image based on the media query.
           const sources = [
             photo.nodes[1].mobileImage.fluid,
