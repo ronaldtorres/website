@@ -5,44 +5,47 @@ import Meta from "../components/shared/meta"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import BodyMargin from "../components/shared/body-margin"
+import { sortBy, groupBy, map } from "underscore"
 
 const PhotosPage = () => {
   const [, setColorMode] = useColorMode()
   setColorMode("photos")
 
-  const {
-    allFile: { group: photos },
+  let {
+    allFile: { nodes: photos },
   } = useStaticQuery(graphql`
     {
-      allFile(
-        filter: { sourceInstanceName: { eq: "photos" } }
-        sort: { order: DESC, fields: [dir, name] }
-      ) {
-        group(field: dir) {
-          nodes {
-            fields {
-              slug
+      allFile(filter: { sourceInstanceName: { eq: "photos" } }) {
+        nodes {
+          relativeDirectory
+          fields {
+            slug
+          }
+          mobileImage: childImageSharp {
+            fluid(maxWidth: 300, quality: 100) {
+              ...GatsbyImageSharpFluid_tracedSVG
+              presentationWidth
             }
-            mobileImage: childImageSharp {
-              fluid(maxWidth: 300, quality: 100) {
-                ...GatsbyImageSharpFluid_tracedSVG
-                presentationWidth
-              }
+          }
+          desktopImage: childImageSharp {
+            fluid(maxWidth: 400, quality: 100) {
+              ...GatsbyImageSharpFluid_tracedSVG
+              presentationWidth
             }
-            desktopImage: childImageSharp {
-              fluid(maxWidth: 400, quality: 100) {
-                ...GatsbyImageSharpFluid_tracedSVG
-                presentationWidth
-              }
-            }
-            childMdx {
-              excerpt
-            }
+          }
+          childMdx {
+            excerpt
           }
         }
       }
     }
   `)
+  let groupedPhotos = groupBy(photos, photo => photo.relativeDirectory)
+  let arrayedPhotos = map(groupedPhotos, (photo, timestamp) => ({
+    timestamp: timestamp,
+    photo: photo,
+  }))
+  let sortedPhotos = sortBy(arrayedPhotos, photo => -photo.timestamp)
   return (
     <Layout withMargin={false}>
       <Meta
@@ -63,22 +66,23 @@ const PhotosPage = () => {
         </Styled.p>
       </BodyMargin>
       <div sx={{ display: "flex", flexWrap: "wrap" }}>
-        {photos.reverse().map((photo, index) => {
+        {sortedPhotos.map(item => {
           // We can change the fluid image based on the media query.
           const sources = [
-            photo.nodes[1].mobileImage.fluid,
+            item.photo[1].mobileImage.fluid,
             {
-              ...photo.nodes[1].desktopImage.fluid,
+              ...item.photo[1].desktopImage.fluid,
               media: `(min-width: 768px)`,
             },
           ]
           return (
             <a
-              href={photo.nodes[0].fields.slug}
+              href={item.photo[0].fields.slug}
               sx={{ width: ["100%", "25%"] }}
-              alt={photo.nodes[0].childMdx.excerpt}
+              alt={item.photo[0].childMdx.excerpt}
+              key={item.timestamp}
             >
-              <Img fluid={sources} key={index} />
+              <Img fluid={sources} />
             </a>
           )
         })}
