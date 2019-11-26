@@ -6,6 +6,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./shared/header"
 import Footer from "./shared/footer"
 import GlobalStyle from "../utils/global-style"
+import { MDXProvider } from "@mdx-js/react"
+import Youtube from "./mdx/youtube"
 
 import "focus-visible"
 
@@ -39,7 +41,7 @@ const Layout = ({ children, withMargin = true }) => {
     <>
       <GlobalStyle />
       <Header siteTitle={title} />
-      {main}
+      <MDXProvider components={{ youtube: Youtube }}>{main}</MDXProvider>
       <Footer />
     </>
   )
