@@ -23,7 +23,7 @@ Otherwise,
 the process will exit,
 and the tasks get canceled.
 
-Foundation has API for synchronizing asynchronous work such as dispatch semaphores and groups.
+Foundation provides APIs for synchronizing asynchronous work such as dispatch [semaphores](https://developer.apple.com/documentation/dispatch/dispatchsemaphore) and [groups](https://developer.apple.com/documentation/dispatch/dispatchgroup).
 However,
 it might not be evident from the resulting code to read how the execution of the asynchronous takes place.
 Conversely,
@@ -36,14 +36,14 @@ let result = combineLatest([a, b, c]).wait()
 ```
 
 Right for that particular reason,
-we are starting to introduce some bits of reactive programming in Tuist using RxSwift.
+we are starting to introduce some bits of reactive programming in Tuist using [RxSwift](https://github.com/ReactiveX/RxSwift).
 It's not a binary decision,
 or in other words,
 it doesn’t mean that we go from an entirely imperative codebase to a fully reactive one.
 Reactive programming makes sense in areas where asynchronous work is required, and where that asynchronous work might need to synchronize with other asynchronous work.
 
 At this point,
-you might wonder why not Combine? Well, Combine is a macOS 10.15.x framework,
+you might wonder why not [Combine](https://developer.apple.com/documentation/combine)? Well, Combine is a macOS 10.15.x framework,
 and we might have users in older versions of macOS.
 A migration to Combine will definitively happen gradually as soon as we deprecate macOS 10.14.
 Until then,
