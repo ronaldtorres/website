@@ -1,0 +1,9 @@
+---
+tags: ["xcode", "macos development", "swift"]
+---
+
+Today I learned that when using `altool` with an account that belongs to to more than one development team, you need to specify the itc provider, which can be obtained using the `iTMSTransporter` utility. Here's the code snippet in case someone might find it useful:
+
+```bash
+/Applications/Xcode.app/Contents/SharedFrameworks/ContentDeliveryServices.framework/Versions/A/itms/bin/iTMSTransporter -m provider -u email -p password
+```
