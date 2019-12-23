@@ -68,7 +68,11 @@ export default ({ data, pageContext }) => {
       <Meta
         title={title}
         keywords={entity.frontmatter.tags}
-        description={entity.frontmatter.excerpt}
+        description={
+          entity.frontmatter.excerpt
+            ? entity.frontmatter.excerpt
+            : entity.excerpt
+        }
       />
       <Helmet>
         <meta name="twitter:card" content="summary_large_image" />
@@ -107,6 +111,7 @@ export const query = graphql`
         date
       }
       body
+      excerpt
       frontmatter {
         title
         tags

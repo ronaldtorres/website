@@ -24,7 +24,9 @@ const Post = ({ post }) => {
         </div>
         <Tags tags={post.frontmatter.tags} />
       </header>
-      <p>{post.frontmatter.excerpt}</p>
+      <p>
+        {post.frontmatter.excerpt ? post.frontmatter.excerpt : post.excerpt}
+      </p>
     </article>
   )
 }
@@ -102,6 +104,7 @@ export const blogListQuery = graphql`
             date
             slug
           }
+          excerpt
           frontmatter {
             tags
             title

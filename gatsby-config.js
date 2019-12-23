@@ -91,7 +91,9 @@ module.exports = {
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.frontmatter.excerpt,
+                  description: edge.node.frontmatter.excerpt
+                    ? edge.node.frontmatter.excerpt
+                    : edge.node.excerpt,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   custom_elements: [{ "content:encoded": edge.node.html }],
@@ -116,6 +118,7 @@ module.exports = {
                         slug
                         date
                       }
+                      excerpt
                       frontmatter {
                         title
                         excerpt
@@ -141,7 +144,9 @@ module.exports = {
                     day: "numeric",
                   }),
                   custom_elements: [{ "content:encoded": node.childMdx.html }],
-                  description: node.childMdx.excerpt,
+                  description: node.childMdx.excerpt.excerpt
+                    ? node.childMdx.excerpt.excerpt
+                    : node.childMdx.excerpt,
                   guid: node.relativeDirectory,
                   copyright: copyright,
                   language: language,
@@ -160,6 +165,9 @@ module.exports = {
                   childMdx {
                     html
                     excerpt(pruneLength: 5000)
+                    frontmatter {
+                      excerpt
+                    }
                   }
                 }
               }
@@ -181,7 +189,9 @@ module.exports = {
                     day: "numeric",
                   }),
                   custom_elements: [{ "content:encoded": node.childMdx.html }],
-                  description: node.childMdx.excerpt,
+                  description: node.childMdx.frontmatter.excerpt
+                    ? node.childMdx.frontmatter.excerpt
+                    : node.childMdx.excerpt,
                   guid: node.relativeDirectory,
                   copyright: copyright,
                   language: language,
@@ -200,6 +210,9 @@ module.exports = {
                   childMdx {
                     html
                     excerpt(pruneLength: 5000)
+                    frontmatter {
+                      excerpt
+                    }
                   }
                 }
               }
@@ -267,6 +280,12 @@ module.exports = {
       options: {
         extensions: [".mdx"],
         gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {

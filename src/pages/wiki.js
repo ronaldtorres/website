@@ -11,7 +11,9 @@ const WikiItem = ({ wiki }) => {
       <Link to={wiki.fields.slug}>
         <b>{wiki.frontmatter.title}:</b>
       </Link>{" "}
-      <span>{wiki.frontmatter.excerpt}</span>
+      <span>
+        {wiki.frontmatter.excerpt ? wiki.frontmatter.excerpt : wiki.excerpt}
+      </span>
     </li>
   )
 }
@@ -32,6 +34,7 @@ const WikiPage = () => {
             fields {
               slug
             }
+            excerpt
             frontmatter {
               title
               excerpt
