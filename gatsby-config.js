@@ -1,3 +1,6 @@
+const copyright = "2019 Pedro Piñera"
+const language = "en"
+
 module.exports = {
   siteMetadata: {
     siteUrl: `https://ppinera.es`,
@@ -69,7 +72,7 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     {
-      resolve: `gatsby-plugin-feed`,
+      resolve: `gatsby-plugin-feed-mdx`,
       options: {
         query: `
           {
@@ -91,8 +94,9 @@ module.exports = {
                   description: edge.node.frontmatter.excerpt,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  copyright: "2019 Pedro Piñera",
-                  language: "en",
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                  copyright: copyright,
+                  language: language,
                   site_url: site.siteMetadata.siteUrl,
                 })
               })
@@ -106,6 +110,7 @@ module.exports = {
                 ) {
                   edges {
                     node {
+                      html
                       body
                       fields {
                         slug
@@ -135,10 +140,11 @@ module.exports = {
                     month: "long",
                     day: "numeric",
                   }),
+                  custom_elements: [{ "content:encoded": node.childMdx.html }],
                   description: node.childMdx.excerpt,
                   guid: node.relativeDirectory,
-                  copyright: "2019 Pedro Piñera",
-                  language: "en",
+                  copyright: copyright,
+                  language: language,
                   site_url: site.siteMetadata.siteUrl,
                 })
               })
@@ -152,6 +158,7 @@ module.exports = {
                 nodes {
                   relativeDirectory
                   childMdx {
+                    html
                     excerpt(pruneLength: 5000)
                   }
                 }
@@ -173,10 +180,11 @@ module.exports = {
                     month: "long",
                     day: "numeric",
                   }),
+                  custom_elements: [{ "content:encoded": node.childMdx.html }],
                   description: node.childMdx.excerpt,
                   guid: node.relativeDirectory,
-                  copyright: "2019 Pedro Piñera",
-                  language: "en",
+                  copyright: copyright,
+                  language: language,
                   site_url: site.siteMetadata.siteUrl,
                 })
               })
@@ -190,6 +198,7 @@ module.exports = {
                 nodes {
                   relativeDirectory
                   childMdx {
+                    html
                     excerpt(pruneLength: 5000)
                   }
                 }
@@ -218,8 +227,8 @@ module.exports = {
                   }),
                   description: photo.nodes[0].childMdx.excerpt,
                   guid: photo.nodes[0].dir,
-                  copyright: "2019 Pedro Piñera",
-                  language: "en",
+                  copyright: copyright,
+                  language: language,
                   site_url: site.siteMetadata.siteUrl,
                 })
               })
