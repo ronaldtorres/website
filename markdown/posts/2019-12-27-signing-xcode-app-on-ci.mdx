@@ -3,28 +3,31 @@ title: Signing with Xcode on CI
 tags: [xcode, swift, signing, macos]
 ---
 
-This morning,
+Today,
 I worked on automating the release process of [Angle](https://angle.dev) on CI.
 At first,
 I thought it'd be a straightforward task,
 but it turned out not to be so.
-Most iOS projects don't have to deal with this because they use [Match](https://fastlane.tools),
+Most Xcode projects don't have to deal with this because they use [Match](https://fastlane.tools),
 which abstracts us from all those intricacies,
 but Angle doesn't use Match to keep the tooling stack as lean as possible.
 
 For those of you who run into this need in the future, this is the TL;DR; version of what needs to be done:
 
 1. Create an **unlocked** keychain where signing certificates will be imported.
-   If we use the system one, the OS will prompt the user to confirm the access,
+   If we use the system one,
+   the OS will prompt the user to confirm the access,
    and since there's no user interface on CI,
    the build will get stuck.
 2. **Import the certificates** and their private keys into the Keychain created in the previous step.
-3. Allow `codesign`, the signing tool from Xcode, to access the certificates without prompting the user for the password.
+3. Allow `codesign`,
+   the signing tool from Xcode,
+   to access the certificates without prompting the user for the password.
 4. **Copy the provisioning profiles** into the directory where Xcode reads them from.
 5. Run **xcodebuild** using the `OTHER_CODE_SIGN_FLAGS` build setting to indicate the certificate that should be used to read the certificates from.
 
-Since we are using Ruby and [Rake](https://github.com/ruby/rake) for automation in the project,
-below I include some code snippets that I extracted from the project.
+Since we are using [Ruby](https://www.ruby-lang.org/en/) and [Rake](https://github.com/ruby/rake) for automation in the project,
+in the following sections I include some Ruby snippets that I extracted from the project.
 
 #### Executing commands in the system
 
@@ -74,14 +77,15 @@ end
 Once we have the keychain created,
 we can proceed with installing the certificates.
 We can do that by using the `security import` command.
-As we can notice in the code snippet below,
+As we can note in the code snippet below,
 we need to use the `-T` argument to indicate which executables will have access to the certificate.
 
 In the case of provisioning profiles,
 we need to copy them to `~/Library/MobileDevice/Provisioning Profies`,
 the directory where Xcode reads them from.
 
-The snippet below iterates through all the certificates and profiles under the `certificates/` directories, installing and copying the certificates and provisioning profiles respectively:
+The snippet below iterates through all the certificates and profiles under the `certificates/` directories,
+installing and copying the certificates and provisioning profiles respectively:
 
 ```rb
 def install_certificates(keychain: nil)
