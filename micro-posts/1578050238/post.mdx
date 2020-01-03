@@ -1,0 +1,34 @@
+---
+tags: ["xcode", "signing", "macos", "sparkle"]
+---
+
+TIL that when generic passwords are imported into a Keychain,
+we need to use `set-generic-password-partition-list` to give access to apps and binaries to the password.
+Otherwise,
+the system will prompt the user for the password,
+which is not possible on continuous inetgration.
+
+This is an example:
+
+```bash
+security set-generic-password-partition-list -S apple-tool: -s -k password ci.keychain
+```
+
+To know the partition id, one can run the following command in a keychain where the password has already given permissions to the app:
+
+```bash
+security dump-keychain -a | less
+```
+
+And locate the app. Then we'll see something along the lines of:
+
+```
+entry 3:
+authorizations (1): partition_id
+don't-require-password
+description: apple-tool:, apple:, teamid:483DWKW443
+applications: <null>
+```
+
+Where `apple-tool:,apple:,teamid:483DWKW443` indicates the app references.
+You can read more about it [here](https://mostlikelee.com/blog-1/2017/9/16/scripting-the-macos-keychain-partition-ids)
