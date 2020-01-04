@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, useColorMode, Styled } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
 import { graphql, useStaticQuery } from "gatsby"
@@ -8,9 +8,6 @@ import BodyMargin from "../components/shared/body-margin"
 import { sortBy, groupBy, map } from "underscore"
 
 const PhotosPage = () => {
-  const [, setColorMode] = useColorMode()
-  setColorMode("photos")
-
   let {
     allFile: { nodes: photos },
   } = useStaticQuery(graphql`

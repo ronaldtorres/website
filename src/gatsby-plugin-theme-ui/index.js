@@ -77,10 +77,7 @@ const makeTheme = (primary, secondary) => {
     background: "#fff",
     primary: primary,
     secondary: secondary,
-    muted: Color(secondary)
-      .negate()
-      .lighten(0.4)
-      .string(),
+    muted: Color(secondary).string(),
   }
 }
 
@@ -93,17 +90,7 @@ export default {
   fontWeights,
   lineHeights,
   colors: {
-    ...makeTheme("#7149c1", "#007faa"),
-    modes: {
-      about: makeTheme("#00918e", "#4dd599"),
-      journal: makeTheme("#e8647c", "#e8647c"),
-      speaking: makeTheme("#71a95a", "#d1274b"),
-      opensource: makeTheme("#d62196", "#6915cf"),
-      wiki: makeTheme("#df4d19", "#e61c5d"),
-      books: makeTheme("#951555", "#904e55"),
-      lens: makeTheme("#39393a", "#00a9a5"),
-      photos: makeTheme("#a35638", "#bc4873"),
-    },
+    ...makeTheme("#00918e", "#10316b"),
   },
   styles: {
     root: {

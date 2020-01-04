@@ -84,10 +84,6 @@ const Sections = () => {
     >
       <SectionButton title="Home 🏚" path="/" index={0} />
       <SectionButton title="Journal 📝" path="/journal" index={0} />
-      <SectionButton
-        title="Newsletter 📬"
-        url="https://tinyletter.com/pepibumur"
-      />
       <SectionButton title="About 👨‍💻" path="/about" index={1} />
       <SectionButton title="Speaking 🎤" path="/speaking" index={2} />
       <SectionButton title="Photos 📸" path="/photos" index={3} />
@@ -123,6 +119,7 @@ const Header = () => {
             marginBottom: "0px",
             borderBottom: "none",
             textAlign: "center",
+            color: "white",
           }}
         >
           Pedro Piñera
