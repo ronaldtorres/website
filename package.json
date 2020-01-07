@@ -44,7 +44,7 @@
     "theme-ui": "^0.2.52",
     "typography": "^0.16.19",
     "typography-theme-sutro": "^0.16.19",
-    "underscore": "^1.9.1"
+    "underscore": "^1.9.2"
   },
   "devDependencies": {
     "prettier": "^1.19.1",
