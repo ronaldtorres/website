@@ -20,13 +20,13 @@ const PhotosPage = () => {
           }
           mobileImage: childImageSharp {
             fluid(maxWidth: 300, quality: 100) {
-              ...GatsbyImageSharpFluid_tracedSVG
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
               presentationWidth
             }
           }
           desktopImage: childImageSharp {
             fluid(maxWidth: 400, quality: 100) {
-              ...GatsbyImageSharpFluid_tracedSVG
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
               presentationWidth
             }
           }
