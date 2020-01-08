@@ -12,23 +12,36 @@ export default () => {
             display: "flex",
             flexDirection: ["column", "row", "row"],
             alignItems: "center",
+            color: "white",
           }}
         >
           <div>
-            <Styled.h2>A bit about me</Styled.h2>
+            <Styled.h2 sx={{ color: "white" }}>A bit about me</Styled.h2>
             <p>
               Hola 👋! I'm Pedro Piñera, a Spanish software developer living in
               Berlin. I work as an engineer manager of the mobile tooling team
               at{" "}
-              <a href="https://shopify.com" target="__blank">
+              <a
+                href="https://shopify.com"
+                target="__blank"
+                sx={{ color: "white" }}
+              >
                 Shopify
               </a>
               . I'm a highly passionate for open source, being{" "}
-              <a href="https://tuist.io" target="__blank">
+              <a
+                href="https://tuist.io"
+                target="__blank"
+                sx={{ color: "white" }}
+              >
                 Tuist
               </a>{" "}
               and{" "}
-              <a href="https://github.com/tuist/xcodeproj" target="__blank">
+              <a
+                href="https://github.com/tuist/xcodeproj"
+                target="__blank"
+                sx={{ color: "white" }}
+              >
                 XcodeProj
               </a>{" "}
               the crafts that I'm most proud of. When I'm not coding or dumping
@@ -40,7 +53,7 @@ export default () => {
             <Avatar />
           </div>
         </div>
-        <small>Copyright © Pedro Piñera, 2019</small>
+        <small sx={{ color: "white" }}>Copyright © Pedro Piñera, 2019</small>
       </BodyMargin>
     </footer>
   )

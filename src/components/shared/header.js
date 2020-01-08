@@ -119,6 +119,7 @@ const Header = () => {
             marginBottom: "0px",
             borderBottom: "none",
             textAlign: "center",
+            color: "white",
           }}
         >
           Pedro Piñera

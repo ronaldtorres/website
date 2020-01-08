@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, useColorMode } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
 import { graphql, useStaticQuery } from "gatsby"
@@ -11,14 +11,14 @@ const WikiItem = ({ wiki }) => {
       <Link to={wiki.fields.slug}>
         <b>{wiki.frontmatter.title}:</b>
       </Link>{" "}
-      <span>{wiki.frontmatter.excerpt}</span>
+      <span>
+        {wiki.frontmatter.excerpt ? wiki.frontmatter.excerpt : wiki.excerpt}
+      </span>
     </li>
   )
 }
 
 const WikiPage = () => {
-  const [, setColorMode] = useColorMode()
-  setColorMode("wiki")
   const {
     allMdx: { edges: wikiEdges },
   } = useStaticQuery(graphql`
@@ -32,6 +32,7 @@ const WikiPage = () => {
             fields {
               slug
             }
+            excerpt
             frontmatter {
               title
               excerpt
