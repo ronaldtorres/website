@@ -17,7 +17,7 @@
     "color": "^3.1.2",
     "focus-visible": "^5.0.2",
     "gatsby": "^2.18.23",
-    "gatsby-image": "^2.2.38",
+    "gatsby-image": "^2.2.39",
     "gatsby-plugin-feed": "^2.3.26",
     "gatsby-plugin-feed-mdx": "^1.0.1",
     "gatsby-plugin-manifest": "^2.2.37",
