@@ -33,7 +33,7 @@
     "gatsby-remark-social-cards": "https://github.com/pepibumur/gatsby-remark-social-cards.git#0.5.2",
     "gatsby-theme-micro-blog": "^1.1.2",
     "gatsby-transformer-remark": "^2.6.48",
-    "gatsby-transformer-sharp": "^2.3.12",
+    "gatsby-transformer-sharp": "^2.3.13",
     "prismjs": "^1.19.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
