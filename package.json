@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "prettier": "^1.19.1",
-    "slug": "^2.1.0"
+    "slug": "^2.1.1"
   },
   "license": "MIT",
   "scripts": {
