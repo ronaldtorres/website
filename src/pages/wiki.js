@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, useColorMode } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
 import { graphql, useStaticQuery } from "gatsby"
@@ -19,8 +19,6 @@ const WikiItem = ({ wiki }) => {
 }
 
 const WikiPage = () => {
-  const [, setColorMode] = useColorMode()
-  setColorMode("wiki")
   const {
     allMdx: { edges: wikiEdges },
   } = useStaticQuery(graphql`

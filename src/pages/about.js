@@ -16,8 +16,6 @@ const AboutPage = () => {
       }
     }
   `)
-  const [, setColorMode] = useColorMode()
-  setColorMode("about")
   return (
     <Layout>
       <Meta title="About" />

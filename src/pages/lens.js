@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, useColorMode } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
@@ -58,8 +58,6 @@ const Len = ({ len }) => {
 }
 
 export default () => {
-  const [, setColorMode] = useColorMode()
-  setColorMode("lens")
   const {
     allFile: { nodes: lens },
   } = useStaticQuery(graphql`

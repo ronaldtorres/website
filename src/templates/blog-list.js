@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, useColorMode } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
 import Tags from "../components/shared/tags"
@@ -70,8 +70,6 @@ const BlogList = ({
   const Posts = edges.map((edge, index) => (
     <Post key={index} post={edge.node} />
   ))
-  const [, setColorMode] = useColorMode()
-  setColorMode("light")
   return (
     <Layout>
       <Meta />

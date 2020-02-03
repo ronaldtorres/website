@@ -22,6 +22,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-next-seo`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -330,5 +331,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-theme-ui`,
+    `gatsby-plugin-robots-txt`,
   ],
 }
