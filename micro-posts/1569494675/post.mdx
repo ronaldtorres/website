@@ -1,5 +1,0 @@
----
-tags: ["gatsby", "javascript", "react"]
----
-
-After a handful of hours debugging a [FOUC](https://en.wikipedia.org/wiki/Flash_of_unstyled_content) content on this Gatsby website, and even [opening an issue](https://github.com/system-ui/theme-ui/issues/387) on the theme-ui repository, I found out what was the problem. I was using a `<body>` tag inside another `<body>` tag. That caused the browser to apply styles after having already loaded most of the content.

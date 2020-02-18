@@ -1,5 +1,0 @@
----
-tags: ["swift"]
----
-
-TIL from Vytis, release engineer at Zalando, that `XCTest` creates an instance of `XCTestCase` per method, and for that reason if the instance variables of the class are not set to `nil` in the `teardown` method they remain in memory until the execution of the tests suite finishes.

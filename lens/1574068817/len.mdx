@@ -1,8 +1,0 @@
----
-author: Jack Li
-title: "Successfully Merging the Work of 1000+ Developers"
-url: https://engineering.shopify.com/blogs/engineering/successfully-merging-work-1000-developers
-tags: ["engineering", "github", "git"]
----
-
-Collaboration with a large team is challenging, and even more so if it’s on a single codebase, like the Shopify monolith. Shopify changes 40 times a day. We follow a trunk-based development workflow and merge around 400 commits to master daily. There are three rules that govern how we deploy safely, but they were hard to maintain at our growing scale. Soft conflicts broke master, slow deployments caused large drift between master and production, and the time to deploy emergency merges slowed due to a backlog of pull requests. To solve these issues, we upgraded the Merge Queue (our tool to automate and control the rate of merges going into master) so it integrates with GitHub, runs continuous integration (CI) before merging to master keeping it green, removes pull requests that fail CI, and maximizes deployment throughput of pull requests.

@@ -1,8 +1,0 @@
----
-author: Miguel Gaeta
-title: "How Discord achieves native iOS performance with React Native"
-url: https://blog.discordapp.com/how-discord-achieves-native-ios-performance-with-react-native-390c84dcd502
-tags: ["react native", "mobile", "development"]
----
-
-`[UIImage imageNamed]` is the de-facto method for loading images on iOS, so, why was it slow? It turns out, React Native was passing it absolute paths instead of referencing named images in the bundle. So, we deleted all the images again and added a few of them to the bundle and tried again. Now, the exact same images were loading in 0.1ms and the app was fast.

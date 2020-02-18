@@ -82,15 +82,10 @@ const Sections = () => {
         bg: theme => theme.colors.primary,
       }}
     >
-      <SectionButton title="Home 🏚" path="/" index={0} />
-      <SectionButton title="Journal 📝" path="/journal" index={0} />
+      <SectionButton title="Blog 🏚" path="/" index={0} />
       <SectionButton title="About 👨‍💻" path="/about" index={1} />
-      <SectionButton title="Speaking 🎤" path="/speaking" index={2} />
-      <SectionButton title="Photos 📸" path="/photos" index={3} />
       <SectionButton title="Open Source 🐙" path="/open-source" index={4} />
-      <SectionButton title="Lens 🔍" path="/lens" index={5} />
       <SectionButton title="Wiki 📝" path="/wiki" index={6} />
-      <SectionButton title="Books 📚" path="/books" index={7} />
     </div>
   )
 }
