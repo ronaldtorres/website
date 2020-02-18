@@ -126,33 +126,5 @@ exports.createPages = ({ graphql, actions }) => {
       })
     })
   })
-
-  const fetchPhotos = graphql(
-    `
-      {
-        allFile(
-          filter: {
-            sourceInstanceName: { eq: "photos" }
-            extension: { eq: "mdx" }
-          }
-          sort: { order: DESC, fields: [fields___slug] }
-        ) {
-          edges {
-            node {
-              childMdx {
-                frontmatter {
-                  title
-                }
-              }
-              fields {
-                slug
-              }
-            }
-          }
-        }
-      }
-    `
-  )
-
   return Promise.all([createBlogPosts, createWiki])
 }
