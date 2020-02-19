@@ -167,7 +167,7 @@ module.exports = {
                 x: null,
                 y: null,
               },
-              background: "#7149c1",
+              background: "#10316b",
               xMargin: 24,
               yMargin: 24,
             },
