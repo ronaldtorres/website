@@ -1,6 +1,8 @@
 import React from "react"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import avatar from "../../images/avatar.png"
+import urljoin from "url-join"
 
 const Meta = ({ description, lang, meta, keywords, title }) => {
   const { site } = useStaticQuery(
@@ -8,6 +10,7 @@ const Meta = ({ description, lang, meta, keywords, title }) => {
       query {
         site {
           siteMetadata {
+            siteUrl
             title
             description
             author
@@ -17,6 +20,7 @@ const Meta = ({ description, lang, meta, keywords, title }) => {
     `
   )
 
+  const siteUrl = site.siteMetadata.siteUrl
   const metaDescription = description || site.siteMetadata.description
   const titleTemplate = title ? `%s | ${site.siteMetadata.title}` : `%s`
   const _title = title ? title : site.siteMetadata.title
@@ -44,6 +48,10 @@ const Meta = ({ description, lang, meta, keywords, title }) => {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:image`,
+          content: urljoin(siteUrl, avatar),
         },
         {
           name: `twitter:card`,

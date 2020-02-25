@@ -74,13 +74,6 @@ export default ({ data, pageContext }) => {
             : entity.excerpt
         }
       />
-      <Helmet>
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:image"
-          content={`${data.site.siteMetadata.siteUrl}${entity.fields.slug}twitter-card.jpg`}
-        />
-      </Helmet>
       <article>
         <Styled.h1>{title}</Styled.h1>
         {dateDay && dateMonth && (
