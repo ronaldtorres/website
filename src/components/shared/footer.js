@@ -1,59 +1,94 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx } from "theme-ui"
 import BodyMargin from "./body-margin"
-import Avatar from "../shared/avatar"
+import {
+  FaTwitter as Twitter,
+  FaGithub as GitHub,
+  FaSoundcloud as SoundCloud,
+  FaSpotify as Spotify,
+  FaLinkedin as LinkedIn,
+} from "react-icons/fa"
 
-export default () => {
+export default ({
+  twitterUrl,
+  githubUrl,
+  soundcloudUrl,
+  spotifyUrl,
+  linkedinUrl,
+}) => {
   return (
-    <footer sx={{ bg: "muted", pb: 3 }}>
+    <footer sx={{ pb: 3 }}>
       <BodyMargin>
         <div
           sx={{
             display: "flex",
-            flexDirection: ["column", "row", "row"],
+            flexDirection: "column",
             alignItems: "center",
-            color: "white",
+            p: 3,
           }}
         >
-          <div>
-            <Styled.h2 sx={{ color: "white" }}>A bit about me</Styled.h2>
-            <p>
-              Hola 👋! I'm Pedro Piñera, a Spanish software developer living in
-              Berlin. I work as an engineer manager of the mobile tooling team
-              at{" "}
-              <a
-                href="https://shopify.com"
-                target="__blank"
-                sx={{ color: "white" }}
-              >
-                Shopify
-              </a>
-              . I'm a highly passionate for open source, being{" "}
-              <a
-                href="https://tuist.io"
-                target="__blank"
-                sx={{ color: "white" }}
-              >
-                Tuist
-              </a>{" "}
-              and{" "}
-              <a
-                href="https://github.com/tuist/xcodeproj"
-                target="__blank"
-                sx={{ color: "white" }}
-              >
-                XcodeProj
-              </a>{" "}
-              the crafts that I'm most proud of. When I'm not coding or dumping
-              my thoughts and learnings on this little corner in the Internet, I
-              like to travel ✈️ and spend time with the family and friends.
-            </p>
+          <div sx={{ display: "flex", flexDirection: "row", mb: 3 }}>
+            <a
+              target="__blank"
+              href={twitterUrl}
+              title="Twitter"
+              sx={{
+                variant: "styles.navitem",
+                ml: 2,
+                mr: 3,
+              }}
+            >
+              <Twitter size={24} />
+            </a>
+            <a
+              target="__blank"
+              href={githubUrl}
+              title="GitHub"
+              sx={{
+                ml: 2,
+                mr: 3,
+                variant: "styles.navitem",
+              }}
+            >
+              <GitHub size={24} />
+            </a>
+            <a
+              target="__blank"
+              href={soundcloudUrl}
+              title="SoundCloud"
+              sx={{
+                ml: 2,
+                mr: 3,
+                variant: "styles.navitem",
+              }}
+            >
+              <SoundCloud size={24} />
+            </a>
+            <a
+              target="__blank"
+              href={spotifyUrl}
+              title="Spotify"
+              sx={{
+                ml: 2,
+                mr: 3,
+                variant: "styles.navitem",
+              }}
+            >
+              <Spotify size={24} />
+            </a>
+            <a
+              target="__blank"
+              href={linkedinUrl}
+              title="LinkedIn"
+              sx={{
+                variant: "styles.navitem",
+              }}
+            >
+              <LinkedIn size={24} />
+            </a>
           </div>
-          <div sx={{ m: 3 }}>
-            <Avatar />
-          </div>
+          <small>Copyright © Pedro Piñera, 2019</small>
         </div>
-        <small sx={{ color: "white" }}>Copyright © Pedro Piñera, 2019</small>
       </BodyMargin>
     </footer>
   )

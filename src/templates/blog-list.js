@@ -16,7 +16,14 @@ const Post = ({ post }) => {
     <article sx={{ mb: 4 }}>
       <header>
         <Styled.h2 sx={{ mb: 1 }}>
-          <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
+          <Link
+            sx={{
+              variant: "styles.navlink",
+            }}
+            to={post.fields.slug}
+          >
+            {post.frontmatter.title}
+          </Link>
         </Styled.h2>
         <div sx={{ display: "flex" }}>
           <NumberBadge number={dateDay} size={[30]} />{" "}

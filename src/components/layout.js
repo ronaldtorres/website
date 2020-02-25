@@ -14,13 +14,23 @@ import "focus-visible"
 const Layout = ({ children, withMargin = true }) => {
   const {
     site: {
-      siteMetadata: { title },
+      siteMetadata: {
+        title,
+        links: { twitter, github, soundcloud, spotify, linkedin },
+      },
     },
   } = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
           title
+          links {
+            twitter
+            github
+            soundcloud
+            spotify
+            linkedin
+          }
         }
       }
     }
@@ -42,7 +52,13 @@ const Layout = ({ children, withMargin = true }) => {
       <GlobalStyle />
       <Header siteTitle={title} />
       <MDXProvider components={{ youtube: Youtube }}>{main}</MDXProvider>
-      <Footer />
+      <Footer
+        twitterUrl={twitter}
+        githubUrl={github}
+        soundcloudUrl={soundcloud}
+        spotifyUrl={spotify}
+        linkedinUrl={linkedin}
+      />
     </>
   )
 }

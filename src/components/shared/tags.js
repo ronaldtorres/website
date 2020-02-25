@@ -11,7 +11,7 @@ export default ({ tags }) => {
     px: 2,
     my: 2,
     bg: "primary",
-    color: "white",
+    color: "background",
     fontSize: 1,
     borderRadius: "4px",
   }

@@ -1,4 +1,5 @@
 const copyright = "2019 Pedro Piñera"
+
 const language = "en"
 
 module.exports = {
@@ -23,12 +24,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-next-seo`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -4,12 +4,6 @@ import { Global } from "@emotion/core"
 export default () => (
   <Global
     styles={theme => ({
-      "h1, h2, h3, h4, h5, h6": {
-        color: theme.colors.text,
-        a: {
-          color: theme.colors.secondary,
-        },
-      },
       "h1 .header-anchor": {
         display: "none",
       },
@@ -30,13 +24,6 @@ export default () => (
       a: {
         color: theme.colors.secondary,
         backgroundImage: "none",
-      },
-      "p a": {
-        textDecoration: "underline",
-      },
-      "a:hover": {
-        textDecoration: "underline",
-        color: theme.colors.gradient3,
       },
       "pre[class*='language-']": {
         overflow: "auto",

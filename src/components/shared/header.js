@@ -1,40 +1,71 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, useColorMode } from "theme-ui"
 import { Link } from "gatsby"
-import { Location } from "@reach/router"
-import { useEffect, useRef } from "react"
-import { useCookie } from "@use-hook/use-cookie"
+import BodyMargin from "../shared/body-margin.jsx"
+
+const ColorButton = ({ mode, ...props }) => (
+  <button
+    {...props}
+    title="Cycle Color Mode"
+    sx={{
+      display: "inline-block",
+      appearance: "none",
+      bg: "transparent",
+      color: "inherit",
+      p: 1,
+      m: 0,
+      border: 0,
+      borderRadius: 9999,
+      ":hover,:focus": {
+        color: "primary",
+        boxShadow: "0 0 0 3px",
+        outline: "none",
+      },
+    }}
+  >
+    <svg
+      viewBox="0 0 32 32"
+      width="24"
+      height="24"
+      fill="currentcolor"
+      sx={{
+        display: "block",
+      }}
+    >
+      <circle
+        cx="16"
+        cy="16"
+        r="14"
+        fill="none"
+        stroke="currentcolor"
+        strokeWidth="4"
+      />
+      <path
+        d={`
+          M 16 0
+          A 16 16 0 0 0 16 32
+          z
+        `}
+      />
+    </svg>
+  </button>
+)
 
 const SectionButton = ({ title, url, path, index }) => {
   let button = (
-    <Location>
-      {({ location }) => {
-        let selected = false
-        if (path === "/" && path === location.pathname) {
-          selected = true
-        } else if (path != "/" && location.pathname.includes(path)) {
-          selected = true
-        }
-        return (
-          <div
-            sx={{
-              userSelect: "none",
-              color: selected ? `gradient${index}` : "background",
-              bg: selected ? "background" : `gradient${index}`,
-              px: 3,
-              py: 1,
-            }}
-          >
-            {title}
-          </div>
-        )
+    <div
+      sx={{
+        userSelect: "none",
+        px: 3,
+        py: 1,
       }}
-    </Location>
+    >
+      {title}
+    </div>
   )
   const linkSx = {
-    flex: "0 0 auto",
-    minWidth: 0,
-    ":hover": { textDecorationColor: `gradient${index}` },
+    variant: "styles.navitem",
+    fontSize: 0,
   }
   if (url) {
     return (
@@ -50,77 +81,48 @@ const SectionButton = ({ title, url, path, index }) => {
     )
   }
 }
+
+const modes = ["light", "black", "dark", "deep", "hack", "pink"]
+
 const Sections = () => {
-  const ref = useRef(null)
-  const [navigationScrollLeft, setNavigationScrollLeft] = useCookie(
-    "navigation-scroll-left",
-    0
-  )
-
-  const scrollToBottom = () => {
-    ref.current.scrollLeft = navigationScrollLeft
+  const [mode, setMode] = useColorMode()
+  const cycleMode = e => {
+    const i = modes.indexOf(mode)
+    const n = (i + 1) % modes.length
+    setMode(modes[n])
   }
-
-  useEffect(scrollToBottom, [])
   return (
     <div
-      ref={ref}
-      onScroll={element => {
-        setNavigationScrollLeft(element.target.scrollLeft, { expires: 1 })
-      }}
       sx={{
         mt: 3,
         display: "flex",
         flexWrap: "no-wrap",
-        justifyContent: ["flex-start", "flex-start", "flex-start", "center"],
-        flexDirection: "row",
-        overflow: ["scroll", "scroll", "scroll", "visible"],
-        "&::WebkitOverflowScrolling": "touch",
-        "&::WebkitScrollbar": {
-          display: "none",
-        },
-        bg: theme => theme.colors.primary,
+        alignItems: "center",
+        justifyContent: "center",
+        flex: 1,
+        flexDirection: ["column", "column", "column", "row"],
       }}
     >
-      <SectionButton title="Blog 🏚" path="/" index={0} />
-      <SectionButton title="About 👨‍💻" path="/about" index={1} />
-      <SectionButton title="Open Source 🐙" path="/open-source" index={4} />
-      <SectionButton title="Wiki 📝" path="/wiki" index={6} />
+      <SectionButton title="Pedro Piñera" path="/" index={0} />
+      <SectionButton title="About" path="/about" index={1} />
+      <SectionButton title="Open Source" path="/open-source" index={4} />
+      <SectionButton title="Wiki" path="/wiki" index={6} />
+      <div sx={{ mx: "auto" }} />
+      <ColorButton mode={mode} onClick={cycleMode} />
     </div>
   )
 }
 
 const Header = () => {
   return (
-    <header
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "stretch",
-        bg: "muted",
-      }}
-    >
-      <div
-        sx={{
-          mb: 0,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Styled.h2
-          sx={{
-            mt: [2, 2, 4],
-            marginBottom: "0px",
-            borderBottom: "none",
-            textAlign: "center",
-            color: "white",
-          }}
+    <header>
+      <BodyMargin>
+        <div
+          sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
         >
-          Pedro Piñera
-        </Styled.h2>
-      </div>
-      <Sections />
+          <Sections />
+        </div>
+      </BodyMargin>
     </header>
   )
 }
