@@ -12,7 +12,7 @@ const Avatar = () => {
     query {
       placeholderImage: file(relativePath: { eq: "avatar.png" }) {
         childImageSharp {
-          fixed(width: 200) {
+          fixed(width: 40) {
             ...GatsbyImageSharpFixed_noBase64
           }
         }

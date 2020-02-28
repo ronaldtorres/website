@@ -2,6 +2,7 @@
 import { jsx, useColorMode } from "theme-ui"
 import { Link } from "gatsby"
 import BodyMargin from "../shared/body-margin.jsx"
+import Avatar from "../shared/avatar"
 
 const ColorButton = ({ mode, ...props }) => (
   <button
@@ -13,7 +14,7 @@ const ColorButton = ({ mode, ...props }) => (
       bg: "transparent",
       color: "inherit",
       p: 1,
-      m: 0,
+      m: [2, 0],
       border: 0,
       borderRadius: 9999,
       ":hover,:focus": {
@@ -103,7 +104,9 @@ const Sections = () => {
         flexDirection: ["column", "column", "column", "row"],
       }}
     >
+      <Avatar />
       <SectionButton title="Pedro Piñera" path="/" index={0} />
+      <SectionButton title="Blog" path="/blog" index={1} />
       <SectionButton title="About" path="/about" index={1} />
       <SectionButton title="Open Source" path="/open-source" index={4} />
       <SectionButton title="Wiki" path="/wiki" index={6} />
