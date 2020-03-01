@@ -17,7 +17,7 @@ export default ({
   linkedinUrl,
 }) => {
   return (
-    <footer sx={{ pb: 3 }}>
+    <footer sx={{ py: 3 }}>
       <BodyMargin>
         <div
           sx={{

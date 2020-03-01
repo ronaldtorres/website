@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
-import React from "react"
+import { jsx } from "theme-ui"
 
 export default ({ id }) => {
   return (
     <iframe
+      title={id}
       sx={{
         width: ["100%", 560],
         height: 315,

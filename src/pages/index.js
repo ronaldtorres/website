@@ -2,11 +2,9 @@
 import { jsx, Styled } from "theme-ui"
 import Layout from "../components/layout"
 import Meta from "../components/shared/meta"
-import { graphql, useStaticQuery, Link } from "gatsby"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const HomePage = () => {
-  const projectStyle = { width: "30%" }
+  const projectStyle = { width: ["100%", "30%"] }
   return (
     <Layout>
       <Meta />
@@ -32,7 +30,7 @@ const HomePage = () => {
       </div>
 
       <Styled.h2>Projects</Styled.h2>
-      <div sx={{ display: "flex", flexDirection: "row" }}>
+      <div sx={{ display: "flex", flexDirection: ["column", "row"] }}>
         <div sx={projectStyle}>
           <Styled.h3>
             <a
