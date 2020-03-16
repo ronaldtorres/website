@@ -41,7 +41,7 @@
     "react-helmet": "^5.2.0",
     "react-helmet-async": "^1.0.4",
     "react-icons": "^3.9.0",
-    "react-share": "^4.0.1",
+    "react-share": "^4.1.0",
     "theme-ui": "^0.3.1",
     "underscore": "^1.9.2",
     "url-join": "^4.0.1"
