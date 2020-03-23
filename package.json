@@ -47,7 +47,7 @@
     "url-join": "^4.0.1"
   },
   "devDependencies": {
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.1",
     "slug": "^2.1.1"
   },
   "license": "MIT",
