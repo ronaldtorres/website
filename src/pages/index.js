@@ -62,7 +62,7 @@ const HomePage = () => {
           <Styled.h3>
             <a
               sx={{ variant: "styles.navlink" }}
-              href="https://github.com/tuist/microfeatures-guidelines"
+              href="https://tuist.io/docs/architectures/microfeatures/"
             >
               Microfeatures
             </a>
