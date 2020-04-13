@@ -43,7 +43,7 @@
     "react-icons": "^3.9.0",
     "react-share": "^4.1.0",
     "theme-ui": "^0.3.1",
-    "underscore": "^1.9.2",
+    "underscore": "^1.10.2",
     "url-join": "^4.0.1"
   },
   "devDependencies": {
