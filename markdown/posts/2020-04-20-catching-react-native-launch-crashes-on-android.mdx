@@ -75,3 +75,7 @@ After that,
 the test was passing when the app launched successfully, and failed when the application crashed.
 
 > By default, when building a React Native app for debug it doesn't bundle the Javascript and the resources because it reads them from a local HTTP server that runs alongside the application. Since that's not what we want, before building the app, we run the following command: `react-native bundle --platform android --dev false --entry-file index.js --bundle-output app/android/app/src/main/assets/index.android.bundle --assets-dest app/android/app/src/main/res --config metro.config.js`
+
+In a follow-up blog post I'll talk about how we achieve a similar thing on iOS.
+In that case, we didn't have to implement an XCTest test;
+instead, we added a Rake task that built the app and attempted to launch it on an iOS simulator using the `simctl` tool.
