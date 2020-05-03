@@ -1,0 +1,35 @@
+---
+title: Installing Swift Packages with Nix
+tags: ["apple", "swift", "packages", "nix", "swift package manager"]
+---
+
+At Shopify,
+our dev infrastructure team introduced [Nix](https://nixos.org/nix/) in our internal tool dev that every developer has in their laptop.
+The main motivation behind using Nix as a package manager is to make the configuration of the environments deterministic and reproducible.
+_How often have you heard the "it works on my laptop"?_
+Nix alongside deterministic build systems should mitigate those issues.
+
+Since [Burke](https://twitter.com/burkelibbey) started advocating for it internally and publishing [useful content](https://twitter.com/burkelibbey/status/1256233815812554752) around the topic,
+I've been reading about Nix — mostly the documentation and the [Nix pills](https://nixos.org/nixos/nix-pills/).
+I find the idea behind it fascinating,
+but the amount of concepts fairly overwhelming.
+At Shopify we don't have to deal with Nix's concepts directly because those are abstracted by dev,
+but I wanted to get familiar with them myself to use them from the [`tuist up`](https://tuist.io/docs/commands/up/) feature.
+Tuist's users run `tuist up` to install tools like [Carthage](https://github.com/Carthage/Carthage) and [SwiftLint](https://github.com/realm/SwiftLint),
+and they experience the same issues that led Shopify to adopt Nix:
+_non-deterministic results._
+
+To consolidate what I've read so far,
+I thought it'd be a good idea to define a [derivation](https://nixos.org/nixos/nix-pills/our-first-derivation.html) to install a tool like SwiftLint.
+In this blog post I'll share the steps that I took to define and build it,
+and talk about some potential improvements that we could add in the future.
+
+## Derivation
+
+## Future improvements
+
+- **Set up a binary cache:** Another benefit of using Nix is being able to leverage the [binary cache](https://nixos.wiki/wiki/Binary_Cache) to share built packages with other people.
+  If a developer is trying to build a package to install it locally, and another developer has already built it, Nix would pull it from the cache. Awesome, isn't it?
+- **Re-use transitive dynamic targets:** Each transitive dependency that the Swift Package Manager (SPM) needs to build for SwiftLint could be a derivation.
+  That'd allow reusing dynamic targets from the Nix store against which the SPM could link dependant targets.
+  A feature like this would require an integration between Nix and the SPM's build system.
