@@ -26,6 +26,10 @@ and talk about some potential improvements that we could add in the future.
 
 ## Derivation
 
+**The idea:** We'll define a derivation that will have a dependency with [Swift](https://nixos.org/nixos/packages.html?attr=swift&channel=nixpkgs-unstable&query=swift), build the Swift Package using the Swift compiler, and place the output artifacts in the right directory.
+
+> The Nix language is used to write expressions that produce derivations. The nix-build tool is used to build a derivations from an expression. Even as a system administrator that wants to customize the installation, it's necessary to master Nix. Using Nix for your jobs means you get the features we saw in the previous articles for free — From [the basics of the language](https://nixos.org/nixos/nix-pills/basics-of-language.html#basics-of-language).
+
 ## Future improvements
 
 - **Set up a binary cache:** Another benefit of using Nix is being able to leverage the [binary cache](https://nixos.wiki/wiki/Binary_Cache) to share built packages with other people.
@@ -33,3 +37,9 @@ and talk about some potential improvements that we could add in the future.
 - **Re-use transitive dynamic targets:** Each transitive dependency that the Swift Package Manager (SPM) needs to build for SwiftLint could be a derivation.
   That'd allow reusing dynamic targets from the Nix store against which the SPM could link dependant targets.
   A feature like this would require an integration between Nix and the SPM's build system.
+
+As I mentioned earlier, I think the ideas behind Nix are fascinating, but the learning curve is a bit steep.
+Unless you are configuring environments frequently, either local or remote, the investment might not be worth it.
+At a company like Shopify having a tool like Nix is key for developers' productivity.
+The time since developers clone a repository until they start contributing to it is insignificant.
+Moreover, there's no frustration coming from developers having to figure out conflicts in their environment setup.
