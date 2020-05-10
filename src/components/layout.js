@@ -16,7 +16,7 @@ const Layout = ({ children, withMargin = true }) => {
     site: {
       siteMetadata: {
         title,
-        links: { twitter, github, soundcloud, spotify, linkedin },
+        links: { twitter, github, soundcloud, spotify, linkedin, instagram },
       },
     },
   } = useStaticQuery(graphql`
@@ -28,6 +28,7 @@ const Layout = ({ children, withMargin = true }) => {
             twitter
             github
             soundcloud
+            instagram
             spotify
             linkedin
           }
@@ -55,6 +56,7 @@ const Layout = ({ children, withMargin = true }) => {
       <Footer
         twitterUrl={twitter}
         githubUrl={github}
+        instagramUrl={instagram}
         soundcloudUrl={soundcloud}
         spotifyUrl={spotify}
         linkedinUrl={linkedin}

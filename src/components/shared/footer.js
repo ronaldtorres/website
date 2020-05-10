@@ -7,12 +7,14 @@ import {
   FaSoundcloud as SoundCloud,
   FaSpotify as Spotify,
   FaLinkedin as LinkedIn,
+  FaInstagram as Instagram,
 } from "react-icons/fa"
 
 export default ({
   twitterUrl,
   githubUrl,
   soundcloudUrl,
+  instagramUrl,
   spotifyUrl,
   linkedinUrl,
 }) => {
@@ -63,6 +65,18 @@ export default ({
               }}
             >
               <SoundCloud size={24} />
+            </a>
+            <a
+              target="__blank"
+              href={instagramUrl}
+              title="Instagram"
+              sx={{
+                ml: 2,
+                mr: 3,
+                variant: "styles.navitem",
+              }}
+            >
+              <Instagram size={24} />
             </a>
             <a
               target="__blank"

@@ -15,6 +15,7 @@ module.exports = {
       linkedin:
         "https://www.linkedin.com/in/pedro-pi%C3%B1era-buendia-9765a9125/",
       soundcloud: "https://soundcloud.com/ppinera",
+      instagram: "https://www.instagram.com/pepibumur/",
       spotify:
         "https://open.spotify.com/user/pepibumur?si=9fYZLPyuQOq368OoWop5rg",
       stackoverflow:
@@ -71,7 +72,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.edges.map(edge => {
+              return allMdx.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.frontmatter.excerpt
                     ? edge.node.frontmatter.excerpt
