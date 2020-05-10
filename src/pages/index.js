@@ -29,8 +29,34 @@ const HomePage = () => {
         </Styled.p>
       </div>
 
+      <Styled.h2>Newsletter: Keep it simple</Styled.h2>
+      <p>
+        Honestly, I don't have a fixed topic about which I talk in the
+        newsletter. I'm a curious person, so you might expect issues around
+        topics that get me intrigued. Here are some that I find fascinating:{" "}
+        <i>
+          technology, open-source economy, surveillance capitalism, developer
+          tooling, user experience, engineering management.
+        </i>
+      </p>
+      <p>
+        You can subscribe to the newsletter{" "}
+        <a target="__blank" href="https://tinyletter.com/pepibumur">
+          here
+        </a>
+        .
+      </p>
+      <p>
+        <b>The newsletter goes out every Saturday morning (Berlin time).</b>
+      </p>
       <Styled.h2>Projects</Styled.h2>
-      <div sx={{ display: "flex", flexDirection: ["column", "row"] }}>
+      <div
+        sx={{
+          display: "flex",
+          flexDirection: ["column", "row"],
+          flexWrap: "wrap",
+        }}
+      >
         <div sx={projectStyle}>
           <Styled.h3>
             <a
@@ -68,6 +94,32 @@ const HomePage = () => {
             </a>
           </Styled.h3>
           <Styled.p>An architecture for iOS applications</Styled.p>
+        </div>
+        <div sx={projectStyle}>
+          <Styled.h3>
+            <a sx={{ variant: "styles.navlink" }} href="https://angle.dev">
+              Angle
+            </a>
+          </Styled.h3>
+          <Styled.p>
+            Test builds <i>(e.g. iOS apps)</i> in your local environment, and
+            share them with the rest of the team to get their feedback ―{" "}
+            <i>(work in progress)</i>
+          </Styled.p>
+        </div>
+        <div sx={projectStyle}>
+          <Styled.h3>
+            <a
+              sx={{ variant: "styles.navlink" }}
+              href="https://github.com/logosapp"
+            >
+              Logos
+            </a>
+          </Styled.h3>
+          <Styled.p>
+            A platform to snapshot your interconnected thoughts and ideas and
+            keep them alive journeying through them ― <i>(work in progress)</i>
+          </Styled.p>
         </div>
       </div>
     </Layout>
