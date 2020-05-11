@@ -7,6 +7,7 @@ import Meta from "../components/shared/meta"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import moment from "moment"
 import NumberBadge from "../components/shared/number-badge"
+import CTA from "../components/shared/cta"
 
 const Footer = ({ pageContext }) => {
   const prev = pageContext.prev
@@ -82,7 +83,7 @@ export default ({ data, pageContext }) => {
           </div>
         )}
         <MDXRenderer>{entity.body}</MDXRenderer>
-        <footer />
+        <CTA />
       </article>
       <Footer pageContext={pageContext} />
     </Layout>
