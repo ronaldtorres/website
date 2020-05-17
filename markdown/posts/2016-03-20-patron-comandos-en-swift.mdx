@@ -4,9 +4,10 @@ excerpt: "Cómo he aplicado el patrón de comandos en Swift para desarrollar el 
 modified: 2016-02-28
 tags: [command, pattern, swift, reactive]
 ---
-Cuando empezamos a desarrollar toda la lógica de negocio de [GitDo](http://gitdo.io), hace apróximadamente un año, decidimos primero extraerla en un framework que pudiera ser posteriormente reusado para otras plataformas como OSX. Segundo, decidimos organizar la lógica en *"interactors"*. La idea de tener interactors venía de la arquitectura [*VIPER*](https://www.objc.io/issues/13-architecture/viper/) donde a partir de la capa de presentación, el acceso a los datos se hacía a través de interactors que aplicaban una determinada lógica de negocio a los datos retornados por repositorios. Además decidimos optar por una implementación Reactiva, en nuestro caso utilizamos [ReactiveCocoa](https://github.com/reactivecocoa/reactivecocoa) implementando como señales tanto la interfaz pública como la privada.
 
-Un año después, todavía quedan rastros de esos interactors ya que todavía estamos en proceso de migrar sus operaciones en unidades más simples y atómicas, *"comandos"*. Los interactors pasaron a ser massive-interactors, con un montón de operaciones que no eran para nada, reusables, y con una implementación tan reactiva que debuggear se convertía en un auténtico dolor de cabeza. *¡No podíamos continuar con esa arquitectura!* pensamos. De querer movernos rápidos con el producto en un futuro esto nos iba a bloquear y bastante, de hecho ya lo estaba haciendo en su momento. Algunos de los problemas que encontramos en dicha arquitectura fueron:
+Cuando empezamos a desarrollar toda la lógica de negocio de [GitDo](http://gitdo.io), hace apróximadamente un año, decidimos primero extraerla en un framework que pudiera ser posteriormente reusado para otras plataformas como OSX. Segundo, decidimos organizar la lógica en _"interactors"_. La idea de tener interactors venía de la arquitectura [_VIPER_](https://www.objc.io/issues/13-architecture/viper/) donde a partir de la capa de presentación, el acceso a los datos se hacía a través de interactors que aplicaban una determinada lógica de negocio a los datos retornados por repositorios. Además decidimos optar por una implementación Reactiva, en nuestro caso utilizamos [ReactiveCocoa](https://github.com/reactivecocoa/reactivecocoa) implementando como señales tanto la interfaz pública como la privada.
+
+Un año después, todavía quedan rastros de esos interactors ya que todavía estamos en proceso de migrar sus operaciones en unidades más simples y atómicas, _"comandos"_. Los interactors pasaron a ser massive-interactors, con un montón de operaciones que no eran para nada, reusables, y con una implementación tan reactiva que debuggear se convertía en un auténtico dolor de cabeza. _¡No podíamos continuar con esa arquitectura!_ pensamos. De querer movernos rápidos con el producto en un futuro esto nos iba a bloquear y bastante, de hecho ya lo estaba haciendo en su momento. Algunos de los problemas que encontramos en dicha arquitectura fueron:
 
 - Las operaciones de los interactors no eran reusables.
 - La implementación reactiva al 100% hacía el debugging muy complicado.
@@ -20,21 +21,20 @@ Decidimos pivotar la arquitectura antes de incluso lanzar el producto. Lo que hi
 - Además podrían ser **reusados** de forma que un comando a su vez podría hacer uso de otros comandos.
 - Aunque podrían ser observados de forma **reactiva** la implementación sería reactiva facilitando el debugging.
 - Las **operaciones** de los interactos pasarían a ser commandos, y estos a su vez serían generados por factories.
-- El *"consumidor"* de dichos comandos solo sabría de la interfaz de un comando y del tipo de datos pero no de la concrección del comando.
+- El _"consumidor"_ de dichos comandos solo sabría de la interfaz de un comando y del tipo de datos pero no de la concrección del comando.
 - Cada **framework** de la arquitectura expondría sus operaciones mediante comandos a ser consumidos por otro framework de la capa superior.
-
 
 ### Definición de un comando
 
-Como nuestro comando debía ser añadido a una cola de ejecución que determinara la concurrencia y el hilo de ejecución, decidimos definir la clase `Command` a partir de `NSOperation`. *Command* sería una clase genérica respecto al tipo retornado y al tipo de error:
+Como nuestro comando debía ser añadido a una cola de ejecución que determinara la concurrencia y el hilo de ejecución, decidimos definir la clase `Command` a partir de `NSOperation`. _Command_ sería una clase genérica respecto al tipo retornado y al tipo de error:
 
-```swift 
+```swift
 public class Command<T, E: ErrorType>: NSOperation {}
 ```
 
 Cualquier comando debería definir un método `execute` que contendría la implementación de dicho comando. Usamos en nuestro caso la librería [Result](https://github.com/antitypical/Result) para encapsular bajo un mismo tipo el valor y el error de retorno.
 
-```swift 
+```swift
 public func execute() -> Result<T!, E> {
   assertionFailure("The execute method of command must be overriden")
   return Result(value: nil)
@@ -47,7 +47,7 @@ Cualquier implementación de un nuevo comando tan solo tendría que definirse co
 
 Cuando una `NSOperation` es ejecutada en una `NSOperationQueue` esta llama a un método `main()` que define en las `NSOperation` la operación a ejecutar. En nuestro caso definimos una implementación base para dicho método que notificara a todos los observers de la ejecución de la operación. Internamente haría uso de la función `execute` requerida para los comandos:
 
-```swift 
+```swift
 class Command<T, E: ErrorType>: NSOperation {
   let executionSubject: PublishSubject<T> = PublishSubject<T>()
   override func main() {
@@ -76,7 +76,7 @@ class Command<T, E: ErrorType>: NSOperation {
 
 Cualquier `observer` interesado podría subscribirse a `executionSubject` y saber de la ejecución del comando.
 
-> En el caso de que no sepas sobre el tipo `Subject` en la programación reactiva. `Subject` es un tipo que puede ser observado y al cual podemos enviar eventos. Estos pueden número ilimitado de observers y cuando a este subject se le envía un evento, internamente el subject hace un *"forward"* de ese evento a todos los obsevers.
+> En el caso de que no sepas sobre el tipo `Subject` en la programación reactiva. `Subject` es un tipo que puede ser observado y al cual podemos enviar eventos. Estos pueden número ilimitado de observers y cuando a este subject se le envía un evento, internamente el subject hace un _"forward"_ de ese evento a todos los obsevers.
 
 ### CommandQueue
 
@@ -87,7 +87,7 @@ Teniendo definido `Command` y como poder escuchar su ejecución mediante una int
 
 Además posteriormente introdujimos un nuevo parámetro `reuse` que permitía subscribirnos a la operación si esta ya estaba ya en la cola, de forma que si lanzábamos la operación dos veces, al subscribirnos a la segunda lo que en realidad haríamos sería subscribirnos al comando ya existente en la cola.
 
-```swift 
+```swift
 class CommandQueue: NSOperationQueue {
 
   init(concurrency: Int? = nil) {
@@ -118,9 +118,9 @@ class CommandQueue: NSOperationQueue {
 }
 ```
 
-Finalmente, y puesto que ibamos  a utilizar una única cola para toda la aplicación lo que hicimos fue tener una instancia **singleton** y añadir un método en el propio comando para que desde el mismo pudiéramos añadirlo a una cola de ejecución:
+Finalmente, y puesto que ibamos a utilizar una única cola para toda la aplicación lo que hicimos fue tener una instancia **singleton** y añadir un método en el propio comando para que desde el mismo pudiéramos añadirlo a una cola de ejecución:
 
-```swift 
+```swift
 public func observable(inQueue queue: CommandQueue = CommandQueue.instance, reuse: Bool = false) -> Observable<T> {
   return queue.addCommand(self, reuse: reuse)
 }
@@ -132,7 +132,7 @@ La definición tanto de `Command` como de `CommandQueue` la incluímos en el fra
 
 Teniendo la definición base de `Command`, implementamos concrecciones del mismo para distintos usos, por ejemplo en el framework `GitDoAPI` donde incluimos todos los comandos de interacción con la API definimos un comando de HTTP `HTTPCommand` con una estructura como la siguiente:
 
-```swift 
+```swift
 public class HTTPCommand<O, T>: Command<T, HTTPError> {
   internal let httpRequestDispatcher: HTTPRequestDispatcher
   internal let request: NSURLRequest
@@ -141,9 +141,9 @@ public class HTTPCommand<O, T>: Command<T, HTTPError> {
 }
 ```
 
-Dónde `httpRequestDispatcher` es responsable de dado un `NSURLRequest` ejecutar la petición y retornar el resultado de forma **síncrona**. El propio comando sería responsable además de adaptar la respoesta y mapearla a modelos usando el adapter `modelAdapter`. De esa forma mediante *factories* generaríamos comandos para interactuar con diversos endpoints de la API de GitHub como por ejemplo el siguiente para obtener el model user:
+Dónde `httpRequestDispatcher` es responsable de dado un `NSURLRequest` ejecutar la petición y retornar el resultado de forma **síncrona**. El propio comando sería responsable además de adaptar la respoesta y mapearla a modelos usando el adapter `modelAdapter`. De esa forma mediante _factories_ generaríamos comandos para interactuar con diversos endpoints de la API de GitHub como por ejemplo el siguiente para obtener el model user:
 
-```swift 
+```swift
 class GitHubAccountCommandFactory: GitHubCommandFactory {
 
     private let requestFactory: GitHubAccountRequestFactory
@@ -163,9 +163,9 @@ class GitHubAccountCommandFactory: GitHubCommandFactory {
 }
 ```
 
-De forma similar, y para interactuar con la base de datos *(en nuestro caso usamos Realm como base de datos)*, definimos un tipo de comando llamado `StoreCommand` cuya particularidad era poder acceder a la instancia de acceso a la base de datos, en nuestro caso, a una instancia de `Realm`:
+De forma similar, y para interactuar con la base de datos _(en nuestro caso usamos Realm como base de datos)_, definimos un tipo de comando llamado `StoreCommand` cuya particularidad era poder acceder a la instancia de acceso a la base de datos, en nuestro caso, a una instancia de `Realm`:
 
-```swift 
+```swift
 class StoreCommand<T, E: ErrorType>: Command<T, E> {
 
     let store: () -> Store
@@ -184,9 +184,9 @@ class StoreCommand<T, E: ErrorType>: Command<T, E> {
 
 ## Uso de comandos
 
-La forma en la que usaríamos dichos comandos sería en su mayoría desde presenters *(a menos que la ejecución de estos sea independiente del ciclo de vida de las vistas, como por ejemplo una sincronización periódica en la app)*. En los presenters tendríamos instancias de las factories de comandos y en cualquier instante en el que necesitáramos de un comando, simplemente lo instanciaríamos y ejecutaríamos subscribiéndonos a él. Por ejemplo los siguientes métodos son ejemplos de ejecución de comandos desde la vista de repositorios de `GitDo`, el primero de ellos para traer los repositorios de la base de datos, y el segundo de ellos para sincronizarlos:
+La forma en la que usaríamos dichos comandos sería en su mayoría desde presenters _(a menos que la ejecución de estos sea independiente del ciclo de vida de las vistas, como por ejemplo una sincronización periódica en la app)_. En los presenters tendríamos instancias de las factories de comandos y en cualquier instante en el que necesitáramos de un comando, simplemente lo instanciaríamos y ejecutaríamos subscribiéndonos a él. Por ejemplo los siguientes métodos son ejemplos de ejecución de comandos desde la vista de repositorios de `GitDo`, el primero de ellos para traer los repositorios de la base de datos, y el segundo de ellos para sincronizarlos:
 
-```swift 
+```swift
 private func fetchProjects() {
   self.fethRepositoryCommandFactory.projects()
     .observable()
@@ -213,7 +213,7 @@ private func syncRepositories() {
 
 Al principio de la entrada mencionaba que una de las razones que nos llevó a usar comandos fue la falicidad de reuso de estos. La forma de reusar comandos es muy sencilla ya que estos exponen su ejecución mediante el método `execute()`. Digamos por ejemplo que un comando de sincronización necesita primero de un comando que ejecute una petición a la API, y también de un segundo comando que guarde el resultado de la ejecución del primero:
 
-```swift 
+```swift
 class GitHubAccountSyncCommand: Command<Void, CoreError> {
 
   private let githubAccountCommandFactory: GitHubAccountCommandFactory
@@ -237,13 +237,13 @@ class GitHubAccountSyncCommand: Command<Void, CoreError> {
 }
 ```
 
-Como se aprecia en el ejemplo lo que hacemos es primero con `execute()` obtenemos el resultado de la petición de la API *(recuerda que la ejecución es síncrona en el mismo thread en el que estamos ejecutando este comando)*. Si este ha retornado un error abortamos el comando retornando dicho error, de lo contrario lo que hacemos es **reutilizar** el comando de guardar, pasando el valor del primero. Retornamos el `Result` de la ejecución del segundo de los comandos. Voila! :tada:
+Como se aprecia en el ejemplo lo que hacemos es primero con `execute()` obtenemos el resultado de la petición de la API _(recuerda que la ejecución es síncrona en el mismo thread en el que estamos ejecutando este comando)_. Si este ha retornado un error abortamos el comando retornando dicho error, de lo contrario lo que hacemos es **reutilizar** el comando de guardar, pasando el valor del primero. Retornamos el `Result` de la ejecución del segundo de los comandos. Voila! :tada:
 
 ## Testing
 
 ¿Cómo podemos testear un componente que usa comandos? En nuestro caso lo que hicimos fue definir en nuestro framework con herramientas de testing `GitDoTestKit` un comando llamado `TestCommand` con el siguiente formato:
 
-```swift 
+```swift
 class TestCommand<T, E: ErrorType>: Command<T, E> {
 
     let result: Result<T!, E>
@@ -266,7 +266,7 @@ class TestCommand<T, E: ErrorType>: Command<T, E> {
 
 Es importante para el uso de estos comandos que las **factories no definan concrecciones**, es decir, en lugar de tener una definición como la siguiente para retornar un comando que hace fetch de la cuenta:
 
-```swift 
+```swift
 class AccountCommandFactory {
   func fetch() -> AccountFetchCommand {
     // Initialize and return the command
@@ -276,7 +276,7 @@ class AccountCommandFactory {
 
 Lo que hacemos en su lugar es especificar que el tipo retornado es de tipo `Command` con los tipos asociados.
 
-```swift 
+```swift
 class AccountCommandFactory {
   func fetch() -> Command<GitHubAccount, CoreError> {
     // Initialize and return the command
@@ -287,8 +287,9 @@ class AccountCommandFactory {
 De esta forma podemos hacer stub de dicho método y retornar en su lugar un `TestCommand` asociado al mismo tipo.
 
 # Conclusiones
+
 La introducción de dicho patrón nos ha permitido solucionar la mayoría de problemas que teníamos con al anterior arquitectura donde todas las operaciones estaban agrupadas bajo grandes factories llamadas interactors. En su lugar no tenemos interactors, si no que las factories actúan de forma más cercana al tipo de comando que están generando. Por su parte nos beneficiamos de las ventajas del uso del paradigma reactivo como la combinación de varios `Observables` o la observación en determinados threads. Aunque no haya mostrado ningún ejemplo a nivel de vista usamos ViewModels con variables de `RxSwift` bindeando rel resultado de dichos comandos con estas variables. La vista escucha dicho `ViewModel` y automáticamente actualiza la UI de acuerdo a estos.
 
 El patrón comando es uno de los muchos patrones que puedes encontrar y aplicar en tus proyectos. En nuestro caso particular nos ha sido de gran utilidad pero recuerda que depende del proyecto y de la organización del mismo. Si te apetecería probarlo prueba a trasladar la implementación base de `Command` y a extraer algunas operaciones de tu code base. Si ves que encaja bien con tu arquitectura puedes seguir adelante con él. Una de sus ventajas es que la migración es bastante gradual y puedes ir extrayendo operaciones de forma progresiva sin afectar a tu arquitectura actual.
 
-#### Si te ha gustado el post, no olvides compartirlo. Si tienes cualquier duda o quieres compartir feedback, puedes escribirme a [pedro@ppinera.es](mailto://pedro@ppinera.es).
+#### Si te ha gustado el post, no olvides compartirlo. Si tienes cualquier duda o quieres compartir feedback, puedes escribirme a [pepibumur@gmail.com](mailto://pepibumur@gmail.com).

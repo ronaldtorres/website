@@ -14,7 +14,7 @@ For those who don't know what a Property is in ReactiveCocoa 3/4 it's a custom g
 
 Here's an example of a property:
 
-```swift 
+```swift
 import ReactiveCocoa
 
 let myProperty: MutableProperty<String> = MutableProperty("")
@@ -29,7 +29,7 @@ As you can see we in the example above the property has a producer that we can s
 
 ReactiveCocoa offers currently three types of Properties that cover most of the cases where we'll need to this pattern and all of them conform the same protocol:
 
-```swift 
+```swift
 public protocol PropertyType {
 	typealias Value
 	var value: Value { get }
@@ -37,11 +37,11 @@ public protocol PropertyType {
 }
 ```
 
-- **ConstantProperty**: Kind of property that doesn't mutate its value once it's initialized. The main advantage *(in my opinion)* on using this kind of property is the fact that you can connect it with other ReactiveCocoa components.
+- **ConstantProperty**: Kind of property that doesn't mutate its value once it's initialized. The main advantage _(in my opinion)_ on using this kind of property is the fact that you can connect it with other ReactiveCocoa components.
 
 - **PropertyOf**: It's a kind of property that once created doesn't allow the modification of it's value externaly. You can only subscribe to the changes of this property that are sent from another Signal/SignalProducer or even another property. Consequently this kind of property can be initialized using these three components:
 
-```swift 
+```swift
 public init<P: PropertyType where P.Value == T>(_ property: P)
 public init(initialValue: T, producer: SignalProducer<T, NoError>)
 public init(initialValue: T, signal: Signal<T, NoError>)
@@ -79,13 +79,13 @@ class ProfileViewModel {
 }
 ```
 
-We want to update the avatar image in the ProfileView when we get the image from somewhere, no matter the source. Then we would define our Profile view ViewModel that includes that `MutableProperty` of type `UIImage`. From the view we subscribe to that property and when there's a new image we just set it to the `UIImageView`. Data source and its use in the layout is fully decouple. The view doesn't know where the data comes from, the image might come from a local cache, from a web request, from the camera... It just has to know how to set that image in the view. Great right? You can extend that to more views around the app and for more types of properties and then you can have your views *"synchronizes"* with the data source.
+We want to update the avatar image in the ProfileView when we get the image from somewhere, no matter the source. Then we would define our Profile view ViewModel that includes that `MutableProperty` of type `UIImage`. From the view we subscribe to that property and when there's a new image we just set it to the `UIImageView`. Data source and its use in the layout is fully decouple. The view doesn't know where the data comes from, the image might come from a local cache, from a web request, from the camera... It just has to know how to set that image in the view. Great right? You can extend that to more views around the app and for more types of properties and then you can have your views _"synchronizes"_ with the data source.
 
 > There's also a great avantage when working with ReactiveCocoa properties and is the fact tat you can use Reactive concepts like for example applying functional operators and combine multiple properties in a single one.
 
 In the example above, we could for example define a map function with the following format:
 
-```swift 
+```swift
 func addBadge(badgeConfig: BadgeConfig)(image: UIImage) -> UIImage {
 	// Add badge logic
 }
@@ -99,20 +99,19 @@ lazy var avatarImageWithBadge: MutableProperty<UIImage> = {
 }()
 ```
 
-
 ### Collection property
 
-When you work with collections in your view it's very complicated to have granularity with these properties deteting what really changed in the collection. I noticed I ended up calling `reloadData()` method in the table/collection view and forcing a relayout of all the elements in the view. Not good performance right? Components like the NSFetchedResultsController were designed to avoid this things but in this case the component is extremly coupled to CoreData, if you want to use it for example with your custom collections you have to look for a custom implementation *(I don't have any in mind right now)* that proxies collections operations and notifies different observers about these operations like insertion, deletion, update, passing the index back where these operations where executed.
+When you work with collections in your view it's very complicated to have granularity with these properties deteting what really changed in the collection. I noticed I ended up calling `reloadData()` method in the table/collection view and forcing a relayout of all the elements in the view. Not good performance right? Components like the NSFetchedResultsController were designed to avoid this things but in this case the component is extremly coupled to CoreData, if you want to use it for example with your custom collections you have to look for a custom implementation _(I don't have any in mind right now)_ that proxies collections operations and notifies different observers about these operations like insertion, deletion, update, passing the index back where these operations where executed.
 
 > What if we had this approach based on ReactiveCocoa, using Properties? Let's try to develop a MutableCollectionProperty
 
-*Note: I've created a repository where this new component has been implemented, [https://github.com/gitdoapp/RAC-MutableCollectionProperty](https://github.com/gitdoapp/RAC-MutableCollectionProperty). You can clone the repository and try it on your environment*
+_Note: I've created a repository where this new component has been implemented, [https://github.com/gitdoapp/RAC-MutableCollectionProperty](https://github.com/gitdoapp/RAC-MutableCollectionProperty). You can clone the repository and try it on your environment_
 
 ### RAC-MutableCollectionProperty
 
 `MutableCollectionProperty` is a ReactiveCocoa property that notifies about the changes that are produced in an internal collection. It exposes Swift array methods to modify collections in order to redirect these changes to the attached subscribers as shown in the example below:
 
-```swift 
+```swift
 let property: MutableCollectionProperty<String> = MutableCollectionProperty(["test1", "test2"])
 property.changesProducer.startWithNext { [weak self] next in
   case .StartChange:
@@ -129,7 +128,7 @@ property.append("test4"s)
 
 Every sequence of changes is preceded by an event `StartChange` and ends with a `EndChange`. It allows multiple changes together and set the view which is going to reflect these changes in an "update" state. The methods exposed by the property are:
 
-```swift 
+```swift
 public func removeFirst()
 public func removeLast()
 public func removeAll()
@@ -144,4 +143,4 @@ You can get this component from [here](https://github.com/gitdoapp/RAC-MutableCo
 
 If you're interested on Reactive paradigms and you want to keep learning, I'm currently writing about about the use of Reactive in Swift apps using ReactiveCocoa. You follow the status [here](https://leanpub.com/functionalreactiveprogrammingswift)
 
-> If you found any bug or you would like to comment something about Reactive or this port in particular, feel free to drop me a line, pedro@ppinera.es. We're using this an another Reactive concepts on [GitDo](www.gitdo.io)
+> If you found any bug or you would like to comment something about Reactive or this port in particular, feel free to drop me a line, pepibumur@gmail.com. We're using this an another Reactive concepts on [GitDo](www.gitdo.io)
