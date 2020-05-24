@@ -122,6 +122,7 @@ module.exports = {
       options: {
         extensions: [".mdx"],
         gatsbyRemarkPlugins: [
+          `gatsby-remark-embedder`,
           {
             resolve: `gatsby-remark-images`,
             options: {
