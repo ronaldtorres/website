@@ -24,7 +24,7 @@
     "gatsby-plugin-mdx": "^1.2.14",
     "gatsby-plugin-next-seo": "^1.5.1",
     "gatsby-plugin-offline": "^3.2.8",
-    "gatsby-plugin-react-helmet": "^3.3.2",
+    "gatsby-plugin-react-helmet": "^3.3.3",
     "gatsby-plugin-robots-txt": "^1.5.1",
     "gatsby-plugin-sharp": "^2.6.10",
     "gatsby-plugin-theme-ui": "^0.3.0",
