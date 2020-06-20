@@ -24,25 +24,6 @@ const Wrapper = ({ title, children }) => {
     </div>
   )
 }
-const Newsletter = () => {
-  return (
-    <Wrapper title="Subscribe to my newsletter: Keep it simple">
-      <div sx={{ mb: 3 }}>
-        Every Saturday I send out a new issue of my newsletter where I talk
-        about the things that I'm curious about:{" "}
-        <i>
-          technology, open-source economy, surveillance capitalism, developer
-          tooling, user experience, engineering management.
-        </i>
-        <p>
-          If you like my content, and would like to get more of it every
-          Saturday in your inbox, you can subscribe clicking the button below.
-        </p>
-      </div>
-      <Button title="Subscribe" to="https://tinyletter.com/pepibumur" />
-    </Wrapper>
-  )
-}
 
 const Button = ({ title, to }) => {
   return (
@@ -70,5 +51,5 @@ const Sponsor = () => {
 
 export default () => {
   const randomBoolean = Math.random() >= 0.5
-  return <footer>{randomBoolean ? <Newsletter /> : <Sponsor />}</footer>
+  return <footer>{randomBoolean ? <Sponsor /> : <Sponsor />}</footer>
 }

@@ -28,17 +28,6 @@ const HomePage = () => {
           . Based in Berlin.
         </Styled.p>
       </div>
-
-      <Styled.h2>Newsletter: Keep it simple</Styled.h2>
-      <p>
-        Honestly, I don't have a fixed topic about which I talk in the
-        newsletter. I'm a curious person, so you might expect issues around
-        topics that get me intrigued. Here are some that I find fascinating:{" "}
-        <i>
-          technology, open-source economy, surveillance capitalism, developer
-          tooling, user experience, engineering management.
-        </i>
-      </p>
       <p>
         You can subscribe to the newsletter{" "}
         <a target="__blank" href="https://tinyletter.com/pepibumur">
@@ -97,13 +86,15 @@ const HomePage = () => {
         </div>
         <div sx={projectStyle}>
           <Styled.h3>
-            <a sx={{ variant: "styles.navlink" }} href="https://angle.dev">
-              Angle
+            <a
+              sx={{ variant: "styles.navlink" }}
+              href="https://github.com/appgalaxy"
+            >
+              Galaxy
             </a>
           </Styled.h3>
           <Styled.p>
-            Test builds <i>(e.g. iOS apps)</i> in your local environment, and
-            share them with the rest of the team to get their feedback ―{" "}
+            Faster Xcode builds and insights from your Xcode projects ―{" "}
             <i>(work in progress)</i>
           </Styled.p>
         </div>
