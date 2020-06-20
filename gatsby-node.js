@@ -5,7 +5,6 @@
  */
 
 const { createFilePath } = require(`gatsby-source-filesystem`)
-const slugify = require("slug")
 const path = require(`path`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
@@ -19,7 +18,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
         /^\/([\d]{4}-[\d]{2}-[\d]{2})-{1}(.+)\/$/
       )
 
-      const slug = `/${slugify([date].join("-"), "/")}/${title}/`
+      const slug = `/${date.replace(/-/g, "/")}/${title}/`
 
       createNodeField({ node, name: `type`, value: "blog-post" })
       createNodeField({ node, name: `slug`, value: slug })
@@ -58,7 +57,7 @@ exports.createPages = ({ graphql, actions }) => {
     `
   )
 
-  const createBlogPosts = fetchBlogPosts.then(result => {
+  const createBlogPosts = fetchBlogPosts.then((result) => {
     const posts = result.data.allMdx.edges
     const postsPerPage = 10
     const numPages = Math.ceil(posts.length / postsPerPage)
@@ -115,7 +114,7 @@ exports.createPages = ({ graphql, actions }) => {
       }
     `
   )
-  const createWiki = fetchWiki.then(result => {
+  const createWiki = fetchWiki.then((result) => {
     result.data.allMdx.edges.forEach(({ node }) => {
       createPage({
         path: node.fields.slug,
