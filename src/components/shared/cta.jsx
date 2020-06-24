@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import React from "react"
 import { Button as ThemUIButton } from "theme-ui"
 
 const Wrapper = ({ title, children }) => {
