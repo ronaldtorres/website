@@ -21,7 +21,7 @@
     "gatsby-plugin-feed": "^2.5.5",
     "gatsby-plugin-feed-mdx": "^1.0.1",
     "gatsby-plugin-manifest": "^2.4.11",
-    "gatsby-plugin-mdx": "^1.2.18",
+    "gatsby-plugin-mdx": "^1.2.22",
     "gatsby-plugin-next-seo": "^1.5.1",
     "gatsby-plugin-offline": "^3.2.13",
     "gatsby-plugin-react-helmet": "^3.3.6",
