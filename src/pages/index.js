@@ -82,13 +82,15 @@ const HomePage = () => {
               Microfeatures
             </a>
           </Styled.h3>
-          <Styled.p>An architecture for iOS applications</Styled.p>
+          <Styled.p>
+            An architecture for applications for Apple platforms.
+          </Styled.p>
         </div>
         <div sx={projectStyle}>
           <Styled.h3>
             <a
               sx={{ variant: "styles.navlink" }}
-              href="https://github.com/appgalaxy"
+              href="https://building.appgalaxy.io"
             >
               Galaxy
             </a>
@@ -96,20 +98,6 @@ const HomePage = () => {
           <Styled.p>
             Faster Xcode builds and insights from your Xcode projects ―{" "}
             <i>(work in progress)</i>
-          </Styled.p>
-        </div>
-        <div sx={projectStyle}>
-          <Styled.h3>
-            <a
-              sx={{ variant: "styles.navlink" }}
-              href="https://github.com/logosapp"
-            >
-              Logos
-            </a>
-          </Styled.h3>
-          <Styled.p>
-            A platform to snapshot your interconnected thoughts and ideas and
-            keep them alive journeying through them ― <i>(work in progress)</i>
           </Styled.p>
         </div>
       </div>
