@@ -28,16 +28,6 @@ const HomePage = () => {
           . Based in Berlin.
         </Styled.p>
       </div>
-      <p>
-        You can subscribe to the newsletter{" "}
-        <a target="__blank" href="https://tinyletter.com/pepibumur">
-          here
-        </a>
-        .
-      </p>
-      <p>
-        <b>The newsletter goes out every Saturday morning (Berlin time).</b>
-      </p>
       <Styled.h2>Projects</Styled.h2>
       <div
         sx={{
