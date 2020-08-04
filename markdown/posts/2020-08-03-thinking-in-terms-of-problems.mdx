@@ -40,7 +40,7 @@ we need to understand why we are building it in the first place.
 
 - **We built updates into Tuist** because the existing solution for managing the installation of system dependencies _(e.g. Homebrew)_ might yield non-deterministic results that cause frustrations to developers.
 - **We built project generation** because Xcode difficults defining a modular project consistently, which is crucial for sharing code and keeping build times low with architectures like [uFeatures]()
-- **We are adding cache** because developers use ⌘+K often and end up waisting a lot of time doing clean builds with Xcode.
+- **We are adding cache** because developers use ⌘+K often and end up wasting a lot of time doing clean builds with Xcode.
 - **We are adding automation** because Fastlane's approach in practice result in large and complex `Fastfiles` that are hard to maintain.
 - **We are synthesizing interfaces for resources** to prevent runtime errors when accessing non-existing resources.
 

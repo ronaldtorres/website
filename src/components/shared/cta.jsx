@@ -50,5 +50,5 @@ const Sponsor = () => {
 
 export default () => {
   const randomBoolean = Math.random() >= 0.5
-  return <footer>{randomBoolean ? <Sponsor /> : <Sponsor />}</footer>
+  return <footer></footer>
 }
