@@ -15,7 +15,6 @@ module.exports = {
       linkedin:
         "https://www.linkedin.com/in/pedro-pi%C3%B1era-buendia-9765a9125/",
       soundcloud: "https://soundcloud.com/ppinera",
-      instagram: "https://www.instagram.com/pepibumur/",
       spotify:
         "https://open.spotify.com/user/pepibumur?si=9fYZLPyuQOq368OoWop5rg",
       stackoverflow:

@@ -77,7 +77,7 @@ const HomePage = () => {
           </Styled.p>
         </div>
         <div sx={projectStyle}>
-          <Styled.h3>Tuist Pro</Styled.h3>
+          <Styled.h3>TUIST PRO</Styled.h3>
           <Styled.p>
             Faster Xcode builds and insights from your Xcode projects ―{" "}
             <i>(work in progress)</i>
