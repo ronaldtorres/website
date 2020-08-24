@@ -33,7 +33,7 @@
     "gatsby-remark-embedder": "^3.0.0",
     "gatsby-remark-images": "^3.3.25",
     "gatsby-theme-micro-blog": "^1.1.2",
-    "gatsby-transformer-remark": "^2.8.19",
+    "gatsby-transformer-remark": "^2.8.28",
     "gatsby-transformer-sharp": "^2.5.13",
     "prismjs": "^1.21.0",
     "prop-types": "^15.7.2",
